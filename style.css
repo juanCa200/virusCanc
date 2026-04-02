@@ -1,0 +1,2886 @@
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding-top: 80px;
+    
+}
+
+/*
+.top-bar {
+    width: 100%;
+    background-color: #ffffff;
+position: fixed;
+z-index: 10001;
+top: 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    color: #666;
+    padding: 8px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    box-sizing: border-box;
+}
+*/
+
+.contact-info {
+    font-size: 15px;
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.btn-como-donar {
+    background-color: #c0272c;
+    /* Color fucsia de la Liga */
+    color: white;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-como-donar:hover {
+    background-color: #9e0059;
+}
+
+
+header {
+    position: fixed;
+    /* Esto lo despega del flujo y lo deja fijo */
+    top: 0px;
+    /* Lo pega al borde superior */
+    left: 0;
+    /* Lo pega al borde izquierdo */
+    width: 100%;
+    /* Obliga a que ocupe todo el ancho */
+    z-index: 1000;
+    /* Lo pone por encima de todo (carruseles, mapas, etc.) */
+
+    /* Opcional: un sombreado para que se note cuando pasa sobre el contenido */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    width: 100%;
+    padding: 20px 5%;
+    margin-top: 0;
+    box-sizing: border-box;
+    background-color: #002140;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px #002140;
+    z-index: 10;
+    position: relative;
+}
+
+.nav .toggle_btn {
+    color: #e2e8f0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links span {
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 100%;
+    background: linear-gradient(45deg, #4f1919, #ff3333);
+}
+
+
+.logo img {
+    height: 100%;
+    width: 110px;
+    /* Ocupa todo el alto del contenedor */
+    object-fit: contain;
+    filter: brightness(1.1);
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+
+.nav-links li a {
+    position: relative;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    padding: 10px 10px;
+    transition: 0.3s;
+}
+
+.nav-links .link_active a {
+    background: white;
+    color: #3d5888;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+
+}
+
+.nav-links li a:hover {
+    background-color: white;
+    color: #3d5888;
+    border-radius: 2.3rem;
+}
+
+.btns {
+    display: flex;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: #c0272c;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+.dropdown_menu {
+    position: fixed;
+    /* Mejor que absolute para móviles */
+    top: 85px;
+    right: 5%;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    /* Bordes redondeados consistentes */
+    box-shadow: 0 15px 35px rgba(0, 33, 64, 0.15);
+    border: 1px solid rgba(0, 51, 102, 0.1);
+    z-index: 2000;
+
+    /* Estado inicial para la animación */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown_menu li {
+    list-style: none;
+    width: 100%;
+}
+
+.dropdown_menu li a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #003366;
+    /* Azul de la Liga */
+    text-decoration: none;
+    transition: 0.3s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown_menu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown_menu li a:hover {
+    color: #e30613;
+    /* Rojo institucional al señalar */
+    background: #f8fbff;
+}
+
+/* El botón "Te Apoyamos" */
+.dropdown_menu .btn {
+    width: 85%;
+    margin: 15px auto;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    transition: 0.3s;
+}
+
+.dropdown_menu .btn:hover {
+    background-color: #002244;
+    transform: scale(1.05);
+}
+
+@media(max-width: 1100px) {
+
+    .nav-links li a {
+        font-size: 13px;
+    }
+}
+
+
+@media(max-width: 992px) {
+
+    .nav .nav-links,
+    .nav .btns {
+        display: none;
+    }
+
+    .top-bar .contact-info {
+        font-size: 12px;
+    }
+
+    .btn-como-donar {
+        padding: 4px 13px;
+        font-size: 13px;
+    }
+
+    .nav .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px) {
+    /* 1. Limpieza total de ruido */
+
+    .slider-box {
+        height: 300px !important;
+    }
+
+    .slider-box img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    .texto h2, 
+    .texto .btns {
+        display: none !important;
+    }
+
+    /* 2. Contenedor de entrada: Alineación limpia a la izquierda */
+    .texto {
+        position: absolute !important;
+        top: 55% !important;
+        transform: translateY(-50%) !important;
+        left: 20px !important; /* Margen elegante lateral */
+        width: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 0 !important;
+    }
+
+    /* 3. Tarjetas con Estilo "Glass-Card" */
+    .mini-card {
+        width: 200px !important; /* Más compactas y elegantes */
+        height: 60px !important;
+        
+        /* Efecto cristal translúcido para que se vea el fondo sutilmente */
+        background: rgba(0, 33, 64, 0.85) !important;
+        backdrop-filter: blur(5px) !important; /* Desenfoque de fondo */
+        -webkit-backdrop-filter: blur(5px);
+        
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 15px !important; /* Bordes más modernos y suaves */
+        
+        display: flex !important;
+        align-items: center !important;
+        padding: 0 15px !important;
+        gap: 12px !important;
+        
+        /* Sombra suave para dar profundidad */
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important;
+        transition: all 0.3s ease;
+    }
+
+    /* 4. Refinamiento de Iconos y Textos */
+    .mini-card i {
+        font-size: 1.4rem !important;
+        color: #00d4ff !important; /* Un azul cian para que resalte el icono */
+        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.4));
+    }
+
+    /* DEFINICIÓN DE LA ANIMACIÓN */
+    @keyframes entradaCard {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px) scale(0.9);
+        }
+        70% {
+            transform: translateX(5px) scale(1.02);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    .mini-card .num {
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        letter-spacing: 0.5px !important;
+        line-height: 1 !important;
+    }
+
+    .mini-card .lab {
+        font-size: 0.6rem !important;
+        text-transform: uppercase !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin-top: 3px !important;
+        font-weight: 500 !important;
+    }
+
+    /* 5. Ajuste del slider-stats para no desbordar */
+    .slider-stats {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: auto !important;
+    }
+}
+
+.slider-box {
+    width: 100%;
+    height: 440px; /* Altura fija en PC */
+    min-height: 300px; /* <--- IMPORTANTE: Evita que se haga muy pequeña */
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.fd-background {
+    width: 100%;
+    max-height: 440px;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+
+.fd-background img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.fd-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 30, 61, 0.4);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.slider-box ul {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: slide 200s infinite alternate ease-in-out;
+}
+
+.slider-box img {
+    width: 100%;
+    height: 100%; /* Obliga a la imagen a llenar el contenedor */
+    object-fit: cover; /* Recorta la imagen sin deformarla para llenar el espacio */
+    object-position: center;
+}
+
+.slider-box li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+/* Aseguramos que el contenedor sea la base */
+.slider-box li:first-child {
+    position: relative;
+}
+
+/* El degradado mágico para leer mejor el texto */
+.slider-box li:first-child::after {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 60%; 
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        transparent 100%);
+    z-index: 1;
+    pointer-events: none; 
+}
+
+/* El texto debe estar por encima de la neblina */
+
+.texto span {
+    display: block;
+    font-family: inherit;
+    font-weight: 800;
+    white-space: nowrap;
+    border-radius: 4px solid;
+    width: 25ch;
+    animation: typing 2s steps(15) forwards, blink .5s infinite;
+    overflow: hidden;
+}
+
+
+.texto {
+    position: absolute;
+    width: 100%; /* Asegura que cubra el ancho */
+    padding: 0 5%; /* Padding relativo en lugar de 100px */
+    top: 50%; /* Centramos verticalmente */
+    transform: translateY(-50%); /* Ajuste fino de centrado */
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.slider-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Alineadas a la izquierda */
+    gap: 12px; /* Espacio más pequeño entre cards */
+    margin-top: 15px;
+    width: auto; /* IMPORTANTE: Que no fuerce el 100% */
+}
+
+.mini-card {
+    background-color: #002140;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid white;
+    width: 150px; /* Un poco más de aire para números grandes */
+    height: 55px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alineación fija al inicio */
+    gap: 10px;
+}
+
+
+
+
+.mini-card i {
+        font-size: 1.4rem !important;
+        color: #00d4ff !important; /* Un azul cian para que resalte el icono */
+        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.4));
+        text-align: center;
+    }
+
+    /* DEFINICIÓN DE LA ANIMACIÓN */
+    @keyframes entradaCard {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px) scale(0.9);
+        }
+        70% {
+            transform: translateX(5px) scale(1.02);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+
+.mini-card .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* IMPORTANTE: Alinea el texto a la izquierda */
+    justify-content: center;
+    overflow: hidden; /* Seguridad extra */
+}
+
+.mini-card .num {
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
+    display: inline-block;
+    min-width: 80px; /* Reserva el espacio para el número final */
+    text-align: left; /* El número crece hacia la derecha, no hacia la izquierda */
+}
+
+.mini-card .lab {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.mini-card:hover {
+    box-shadow: 0 15px 25px rgba(61, 88, 136, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+/* Estado inicial de los elementos (invisibles y abajo) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Estado cuando se hacen visibles */
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto cascada para las mini-cards (aparecen una tras otra) */
+.mini-card:nth-child(1) { transition-delay: 0.1s; }
+.mini-card:nth-child(2) { transition-delay: 0.3s; }
+.mini-card:nth-child(3) { transition-delay: 0.5s; }
+
+/* Efecto cascada para las service-cards del carrusel */
+.service-card { transition-delay: 0.1s; }
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.texto h2 {
+    margin-bottom: 30px; /* Reducimos un poco para acercar el CTA */
+    font-size: 3.8rem;
+    color: #002140;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -1.5px; /* Estilo editorial */
+}
+
+.texto .linea-2 {
+    color: #e63946; /* Un rojo más vibrante y moderno para "vida!" */
+    display: inline-block;
+
+}
+
+menu {
+    --size: 2.5rem;
+    --radius: 6rem;
+    --padding: 1rem;
+    --bg-color: rgba(255, 255, 255, 0.9);
+    --fg-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    /* AGREGAR: Tamaño para que el hover funcione bien */
+    width: calc(1.6 * var(--size));
+    height: calc(1.6 * var(--size));
+    bottom: var(--padding);
+    right: var(--padding);
+    --hi-color: #c22eff;
+    z-index: 999;
+}
+
+menu>* {
+    position: absolute;
+    border-radius: 50%;
+    text-decoration: none;
+    background: var(--bg-color);
+    color: var(--fg-color);
+    display: grid;
+    place-content: center;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+}
+
+menu.open>.action {
+    --factor: 0;
+}
+
+menu>.action {
+
+    --factor: 1;
+    width: var(--size);
+    height: var(--size);
+    right: calc(0.35 * var(--size));
+    bottom: calc(0.35 * var(--size));
+    transform: rotate(calc(-1* var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+    background-color: white;
+}
+
+menu>.action:hover,
+menu>.trigger:hover {
+    box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+}
+
+menu>.action:hover {
+    background-color: #002140;
+    color: white;
+
+}
+
+
+menu>.trigger {
+    width: calc(1.6 * var(--size));
+    height: calc(1.6 * var(--size));
+    font-size: 2rem;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    color: #e2e8f0;
+}
+
+menu>.trigger>i {
+    transition: transform 250ms ease-in-out;
+}
+
+
+menu>.action:nth-child(1) {
+    --angle: 0deg;
+    transition-delay: 0ms;
+}
+
+
+
+menu>.action:nth-child(2) {
+    --angle: 30deg;
+    transition-delay: 50ms;
+
+}
+
+
+menu>.action:nth-child(3) {
+    --angle: 60deg;
+    transition-delay: 100ms;
+
+}
+
+
+menu>.action:nth-child(4) {
+    --angle: 90deg;
+    transition-delay: 150ms;
+
+}
+
+
+.text-overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centrado absoluto perfecto */
+    z-index: 10;
+    /* Por encima de la capa de color */
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    /* Limita el ancho del texto para legibilidad */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.education-title {
+    font-size: 5rem;
+    /* Muy grande, como en tu imagen */
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para resaltar */
+}
+
+.education-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    /* Blanco con ligera opacidad */
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+.texto .btns {
+    align-items: center;
+
+}
+
+.texto .btns .btn {
+    background-color: #c0272c;
+    color: #ffffff;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    margin-left: 142px;
+    z-index: 999;
+}
+
+.texto .btns .btn:hover {
+    box-shadow: 0 15px 25px rgba(61, 88, 136, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+
+}
+
+
+@media(max-width:991px) {
+    .slider-box {
+        width: 100%;
+        height: 150%;
+    }
+
+    .top-bar {
+        display: none;
+        position: relative;
+    }
+}
+
+
+.servicios-barra {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #002140;
+    /* Usa el mismo azul del NAV para consistencia */
+    padding: 20px 5%;
+    box-shadow: 0px 4px 10px #002140;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 0;
+    /* Asegura que esté pegado */
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Opcional: una línea fina de unión */
+    margin-top: 0;
+    z-index: 10;
+
+}
+
+.servicios-barra a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.servicio-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    flex: 1;
+    /* Distribuye espacio equitativo */
+    min-width: 150px;
+    /* Evita que se compriman demasiado */
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: center;
+}
+
+/* Quitar la línea al último elemento */
+.servicio-item:last-child {
+    border-right: none;
+}
+
+.servicio-item i {
+    font-size: 1.5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 8px;
+    min-width: 40px;
+    text-align: center;
+
+}
+
+.servicio-item:hover {
+    background-color: white;
+    color: #3d5888;
+    border-radius: 2.3rem;
+    cursor: pointer;
+}
+
+.servicio-item span {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .servicios-barra {
+        justify-content: center;
+    }
+
+    .servicio-item {
+        flex: 0 0 45%;
+        /* Dos columnas en tablets */
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .servicio-item {
+        flex: 0 0 100%;
+        /* Una columna en celulares */
+    }
+}
+
+
+/* Fondo oscuro detrás del anuncio */
+.modal-overlay {
+    display: flex;
+    /* Cambiar a 'none' con JS para ocultar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    /* Por encima de todo, incluso del nav */
+    justify-content: center;
+    align-items: center;
+    display: none;
+    /* Empieza oculto por defecto */
+    /* ... el resto de tus estilos (position, background, etc) ... */
+}
+
+/* Caja del anuncio */
+.modal-content {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+/* La imagen del anuncio (Sin estirarse) */
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+/* Botón X de cerrar */
+.close-modal {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #e74c3c;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nuestra-esencia {
+    padding: 60px 10%;
+    background-color: #fff;
+}
+
+.esencia-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    /* Para que en móviles se ponga uno abajo del otro */
+}
+
+.esencia-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+
+
+.esencia-image img {
+    width: 100%;
+    border-radius: 30px;
+    /* Bordes muy redondeados como en la imagen */
+    box-shadow: 0 10px 30px #002140;
+    /* Sombra suave */
+    border: 2px solid #003366;
+    animation: balanceo 4s ease-in-out infinite;
+}
+
+
+@keyframes balanceo {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    /* Se mueve 10px a la derecha */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.esencia-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.esencia-content h5 {
+    color: #3498db;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.esencia-content h2 {
+    color: #003366;
+    /* Azul oscuro de la Liga */
+    font-size: 33px;
+    margin-bottom: 15px;
+}
+
+.separador {
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    margin-bottom: 20px;
+}
+
+.esencia-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #003366;
+    color: #003366;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #003366;
+    color: white;
+}
+
+
+.contenedor-testimonios {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.seccion-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion-galeria {
+    color: #003366; /* Azul oscuro de la Liga */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.separador-galeria {
+    width: 60px;
+    height: 4px;
+    background-color: #3498db; /* Azul claro para resaltar */
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.galeria-testimonios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+    background-color: #002140;
+}
+
+
+.tarjeta-video {
+    position: relative;
+    width: 260px;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 4px solid #eee;
+}
+
+.tarjeta-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa-ajuste {
+    position: absolute;
+    inset: 0;
+    /* Degradado que emula tu imagen de referencia */
+    background: linear-gradient(180deg, rgba(220, 50, 120, 0.2) 0%, rgba(15, 40, 80, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icono-play {
+    width: 65px;
+    height: 65px;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.icono-play svg {
+    fill: white;
+    width: 30px;
+    margin-left: 5px;
+    /* Ajuste óptico para centrar el triángulo */
+}
+
+.titulo-testimonio {
+    position: absolute;
+    bottom: 30px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Estilos del Visor (Ex-Modal) */
+.pantalla-completa {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+}
+
+.contenedor-iframe {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1000px;
+}
+
+#reproductorIframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.boton-cerrar {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+
+.seccion-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que se baje en móviles */
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fff;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.columna-info {
+    flex: 1;
+    min-width: 280px; 
+    padding: 10px;
+    color: var(--gris-oscuro);
+}
+
+
+.columna-mapa {
+    flex: 1;
+    min-width: 280px; 
+    width: 100%; 
+}
+
+.columna-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: #e2007a;
+    /* Rosa institucional */
+    border-radius: 2px;
+}
+
+/* Bloques de información con bordes laterales */
+.bloque-direccion,
+.bloque-datos {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 3px solid #eee;
+    /* Línea sutil a la izquierda */
+    transition: border-color 0.3s ease;
+}
+
+.bloque-direccion:hover,
+.bloque-datos:hover {
+    border-left-color: #e2007a;
+    /* Cambia a rosa al pasar el mouse */
+}
+
+h3 {
+    font-size: 1rem;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+h2{
+    display: inline-block;
+    color: #002140;
+    font-size: 2.2rem;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+
+
+/* Sección de "Contáctanos" resaltada */
+.bloque-formulario {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f0f4f8;
+    /* Fondo azulado muy claro */
+    border-radius: 15px;
+}
+
+.bloque-formulario h3 {
+    color: #004a87;
+    margin-bottom: 10px;
+}
+
+/* Transformar el link en un botón de acción */
+.bloque-formulario a {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: white;
+    color: #ffffff;
+    padding: 4px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 74, 135, 0.2);
+    border: 2px solid gray;
+
+}
+
+.bloque-formulario i {
+    font-size: 2rem;
+
+}
+
+
+.bloque-formulario a:hover {
+    background-color: #004a87;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(226, 0, 122, 0.3);
+}
+
+iframe {
+    display: block;
+    height: 100%;
+    min-height: 400px;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .seccion-contacto {
+        flex-direction: column;
+    }
+}
+
+.carrusel-servicios-wrapper {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.carrusel-servicios-wrapper-i {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: -80px auto;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.servicios-header h2 {
+    display: inline-block;
+    color: #002140;
+    font-size: 2.2rem;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.servicios-header p {
+    display: inline-block;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.carousel-area {
+    position: relative;
+    margin-top: 40px;
+}
+
+.carousel-window {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    gap: 24px;
+}
+
+.service-card, .service-card-eventos, .service-card-voluntariado {
+    min-width: calc(33.333% - 16px);
+    background: #fff;
+    max-width: 200px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover , .ser-vice-card-eventos:hover, .service-card-voluntariado:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%px;
+    object-fit: cover;
+    border-bottom: 3px solid #004a87;
+}
+
+.service-card-eventos img {
+    width: 100%;
+    /* Definimos un alto fijo para todas las imágenes */
+    height: 300px; 
+    /* Esta es la propiedad mágica: recorta la imagen para que llene el espacio sin estirarse */
+    object-fit: cover; 
+    /* Centra la imagen para que el recorte sea equilibrado */
+    object-position: center; 
+    border-bottom: 3px solid #004a87;
+    display: block;
+}
+
+.service-card-voluntariado img {
+    width: 100%;
+    /* Definimos un alto fijo para todas las imágenes */
+    height: 300px; 
+    /* Esta es la propiedad mágica: recorta la imagen para que llene el espacio sin estirarse */
+    object-fit: cover; 
+    /* Centra la imagen para que el recorte sea equilibrado */
+    object-position: center; 
+    border-bottom: 3px solid #004a87;
+    display: block;
+}
+
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    font-size: 1.15rem;
+    color: #222;
+    margin-bottom: 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.resumen-servicio {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ver-mas-link {
+    color: #004a87;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ver-mas-link:hover {
+    text-decoration: underline;
+}
+
+/* Botones de Navegación */
+.carousel-nav-container {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 5;
+}
+
+.nav-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #004a87;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #004a87;
+    color: #fff;
+}
+
+/* Footer */
+.carousel-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.btn-ver-todos {
+    background-color: #004a87;
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: backgrounf 0.3s;
+}
+
+.btn-ver-todos:hover {
+    background-color: #003366;
+}
+
+/* Móvil */
+@media (max-width: 900px) {
+    .service-card {
+        min-width: calc(50% - 12px);
+    }
+
+    .carousel-nav-container {
+        position: static;
+        flex-direction: row;
+        margin-bottom: 10px;
+    }
+    .service-card-eventos{
+        min-width: calc(50% - 12px);
+    }
+
+    .service-card-voluntariado{
+        min-width: calc(50% - 12px);
+    }
+
+    
+}
+
+@media (max-width: 600px) {
+    .service-card {
+        min-width: 100%;
+    }
+
+    .service-card-eventos{
+                min-width: 100%;
+
+    }
+
+    .service-card-voluntariado{
+                min-width: 100%;
+
+    }
+}
+
+
+
+
+.footer-simple {
+    background-color: #010a1a;
+    /* Azul muy oscuro para que pegue con las estrellas */
+    color: #ffffff;
+    padding: 60px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    border-top: 3px solid #c0272c;
+    /* Línea delgada rosa en la parte superior */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: #c0272c;
+    /* Rosado característico de la Liga */
+    font-weight: bold;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #c0272c;
+    /* Detalle rosa */
+}
+
+.footer-column p {
+    line-height: 1.6;
+    color: #cfcfcf;
+    font-size: 0.95rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #cfcfcf;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #c0272c;
+    padding-left: 8px;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #c0272c;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.contenedor-voluntariado {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    font-family: sans-serif;
+    min-height: 400px;
+}
+
+/* Sidebar */
+/* 1. Estilo base (Móvil primero o común) */
+.sidebar-botones {
+    flex: 0 0 100%; /* Por defecto ocupa todo el ancho en móvil */
+    background: #1a3a5a;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px; /* Espacio para que no pegue con el texto en móvil */
+}
+
+/* 2. Solo aplicamos el efecto "Pegajoso" en pantallas grandes (PC) */
+@media (min-width: 801px) {
+    .contenedor-voluntariado {
+        display: flex;
+        align-items: flex-start; /* Permite que el sticky funcione */
+    }
+
+    .sidebar-botones {
+        flex: 0 0 300px; /* Vuelve a su ancho fijo de 300px */
+        position: sticky;
+        top: 130px;
+        margin-bottom: 0;
+    }
+}
+
+/* 3. Tus Media Queries actuales para la galería (se mantienen igual) */
+@media (max-width: 992px) {
+    .mosaico-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .mosaico-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-voluntariado {
+        flex-direction: column; 
+    }
+    
+    .sidebar-botones {
+        position: static; 
+        width: 100%;
+    }
+}
+.sidebar-header {
+    padding: 20px;
+    color: white;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-navegacion {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-b {
+    background: transparent;
+    border: none;
+    color: #a0b0c0;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.nav-b:hover,
+.nav-b.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-left: 4px solid #00aeef;
+    /* Azul claro */
+}
+
+.btn-registro {
+    width: 100%;
+    padding: 20px;
+    background: #c0272c;
+    /* Rosa fuerte */
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Contenido */
+.contenido-derecho {
+    flex: 1;
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.mosaico-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 2 filas de 3 */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.img-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 2px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-item:hover {
+    transform: scale(1.05);
+    border-color: #c0272c;
+    /* Color rosa liga */
+}
+
+.pie {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 74, 135, 0.8);
+    /* Azul liga con transparencia */
+    color: white;
+    width: 100%;
+    padding: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+@media (max-width: 992px) {
+    .mosaico-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+    .mosaico-galeria {
+        grid-template-columns: 1fr;
+        /* Una imagen debajo de otra */
+    }
+
+    /* Opcional: reducimos el espacio para ganar pantalla */
+    .contenedor-voluntariado {
+        flex-direction: column;
+        /* La sidebar se pone arriba del contenido */
+    }
+}
+
+.contenedor-pdfs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tarjeta-pdf {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-left: 5px solid #004a87;
+    /* Azul Liga */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.icono-pdf {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.info-pdf {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nombre-pdf {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.btn-descarga {
+    align-self: flex-start;
+    background: #c0272c;
+    /* Rosa Liga */
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-descarga:hover {
+    background: #004a87;
+    transform: translateY(-2px);
+}
+
+/*Educacion*/
+
+/* Contenedor general de la sección */
+.seccion-educacion {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    /* Gris muy claro para resaltar las tarjetas blancas */
+    font-family: sans-serif;
+}
+
+/* El Grid que divide en 3 */
+.container-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Se hace 1 columna en móvil automáticamente */
+    gap: 30px;
+    /* Espacio entre los cuadros */
+}
+
+/* Estilo de cada tarjeta (div) */
+.card-educacion {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid #002140;
+    /* Línea decorativa con tu azul */
+}
+
+.card-educacion:hover {
+    transform: translateY(-10px);
+    /* Efecto de levante al pasar el mouse */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos y Textos */
+.card-educacion .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card-educacion h3 {
+    color: #002140;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.card-educacion p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.card-educacion .leer-mas {
+    color: #0088cc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.card-educacion .leer-mas:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor General */
+.seccion-campana {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    /* Fondo blanco para limpieza */
+}
+
+.container-campana {
+    max-width: 990px;
+    margin: 0 auto;
+    /* Centra todo el bloque */
+}
+
+/* 1. Estilo del Título Centrado */
+.camp-institucional {
+    /* Centrado horizontal */
+    margin-bottom: 50px;
+    /* Espacio abajo */
+}
+
+.camp-institucional h2 {
+    font-size: 2.2rem;
+    /* Tamaño grande, como el de Educación */
+    color: #002140;
+    /* Tu azul oscuro */
+    font-weight: 800;
+    margin: 0;
+}
+
+/* 2. Estilo de la Fila de Imágenes (Flexbox) */
+.fila-imagenes {
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre las imágenes */
+    gap: 30px;
+    /* Espacio entre columnas */
+    margin-bottom: 40px;
+    /* Espacio abajo antes del texto */
+}
+
+.columna-imagen {
+    flex: 1;
+    /* Cada imagen ocupa el mismo espacio */
+    overflow: hidden;
+    /* Limpia bordes de imagen */
+    border-radius: 8px;
+    /* Bordes redondeados opcionales */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+.columna-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Elimina espacio inferior fantasma */
+    object-fit: cover;
+    /* Asegura que la imagen llene su espacio */
+}
+
+/* 3. Estilo del Párrafo de Texto */
+.texto-campana {
+    text-align: center;
+    /* Texto centrado para equilibrar */
+    max-width: 900px;
+    /* Limita ancho para mejor lectura */
+    margin: 0 auto;
+    /* Centra el bloque de texto */
+}
+
+.texto-campana p {
+    font-size: 1.2rem;
+    color: #555555;
+    /* Gris suave para legibilidad */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive (Para móviles) */
+@media (max-width: 768px) {
+    .camp-institucional h2 {
+        font-size: 2.2rem;
+        /* Reduce título en móvil */
+    }
+
+    .fila-imagenes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .texto-campana p {
+        font-size: 1.1rem;
+    }
+}
+
+.program-educativos .h2-program {
+    font-size: 2.2rem;
+    color: #002140;
+    margin-bottom: 50px;
+    margin-top: -25px;
+}
+
+#tituloInfo {
+    margin-top: -15px;
+}
+
+.program-educativos {
+    max-width: 990px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- ESTILOS PARA EL PANEL EDUCATIVO --- */
+
+.panel-educativo {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* Video más ancho, tarjetas más estrechas */
+    gap: 30px;
+    /* Espacio entre columnas */
+    margin-top: 20px;
+    align-items: start;
+}
+
+
+/* -- Sección Video -- */
+.contenedor-video-estilizado {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 33, 64, 0.2);
+    /* Sombra con tu azul */
+    background: #000;
+}
+
+.contenedor-video-estilizado video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pie-video {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* -- Sección Tarjetas -- */
+.seccion-tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espacio entre tarjetas */
+}
+
+.tarjeta-clave {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent;
+    /* Para el efecto hover */
+}
+
+.tarjeta-clave:hover {
+    transform: translateY(-5px);
+    /* Se eleva un poco */
+    box-shadow: 0 8px 25px rgba(0, 33, 64, 0.1);
+    border-left: 4px solid #c0272c;
+    /* Tu rojo institucional */
+}
+
+.icono-clave {
+    width: 50px;
+    height: 50px;
+    background: rgba(227, 6, 19, 0.1);
+    /* Fondo rojo muy suave */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    /* Evita que el icono se encoja */
+}
+
+.icono-clave svg {
+    width: 25px;
+    fill: #c0272c;
+    /* Tu rojo institucional */
+}
+
+.info-clave h4 {
+    margin: 0 0 5px 0;
+    color: #002140;
+    /* Tu azul institucional */
+    font-size: 1.1rem;
+}
+
+.info-clave p {
+    margin: 0;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* -- Responsive (para pantallas más pequeñas) -- */
+@media (max-width: 900px) {
+    .panel-educativo {
+        grid-template-columns: 1fr;
+        /* Una sola columna: video arriba, tarjetas abajo */
+    }
+}
+
+/* Contenedor principal en Flexbox */
+.contenedor-prevencion-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* Para que en móviles se pongan uno abajo de otro */
+}
+
+/* Cada columna (Card + Video) */
+.columna-educativa {
+    flex: 1;
+    min-width: 250px;
+    /* Evita que se encojan demasiado */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo de la Card Superior */
+.tarjeta-superior {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 4px solid #c0272c;
+    /* Detalle en rojo abajo */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.tarjeta-superior:hover {
+    transform: translateY(-5px);
+}
+
+.icono-mini {
+    width: 40px;
+    height: 40px;
+    background: rgba(227, 6, 19, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icono-mini svg {
+    width: 20px;
+    fill: #c0272c;
+}
+
+.tarjeta-superior h4 {
+    margin: 5px 0;
+    color: #002140;
+    font-size: 1rem;
+}
+
+.tarjeta-superior p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Estilo del Video */
+.video-pequeno {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-pequeno video {
+    width: 100%;
+    display: block;
+}
+
+.seccion-derechos {
+    display: flex;
+    gap: 60px;
+    /* Un poco más de espacio para que respire */
+    align-items: center;
+    /* Centra verticalmente la imagen con respecto al bloque de texto */
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bloque-info {
+    flex: 1.5;
+    /* El texto tiene un poco más de peso visual */
+}
+
+.bloque-imagen {
+    flex: 1;
+    /* La imagen ocupa el espacio restante de forma equilibrada */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.bloque-imagen img {
+    width: 100%;
+    max-width: 450px;
+    /* Un tamaño más controlado */
+    height: auto;
+    border-radius: 20px;
+    border: 12px solid #fff;
+    /* Marco blanco tipo cuadro para resaltar */
+    box-shadow: 0 15px 35px rgba(0, 33, 64, 0.15);
+    /* Sombra azulada sutil */
+    transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
+    /* Efecto 3D más elegante */
+    transition: all 0.5s ease;
+}
+
+#tituloInf {
+    color: #003366;
+    font-size: 2.3rem;
+    margin-bottom: 27px;
+    position: relative;
+}
+
+/* El detalle de la línea bajo el título */
+#tituloInf::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #c0272c;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* Tarjetas del acordeón */
+.item-acordeon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #fff;
+    border: 1px solid #edf2f7;
+    border-radius: 15px;
+    /* Bordes más orgánicos */
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.item-acordeon span {
+    transition: all 0.3s ease;
+}
+
+.item-acordeon:hover span:first-child {
+    color: #c0272c;
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.item-acordeon:hover {
+    border-left: 5px solid #c0272c;
+    /* Una barra lateral roja al activar */
+    background: linear-gradient(90deg, #fff 0%, #fdfdfd 100%);
+}
+
+.flecha {
+    color: var(--rojo-liga);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.item-acordeon:hover .flecha {
+    transform: scale(1.3);
+}
+
+
+.bloque-imagen::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #c0272c 0%, transparent 70%);
+    opacity: 0.1;
+    /* Un destello rojo muy suave detrás */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.contenido-acordeon {
+    padding: 10px 30px 25px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    border-left: 3px solid #f4f7f6;
+    margin-left: 20px;
+    animation: fadeIn 0.5s ease;
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.entrega {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para resaltar */
+}
+
+@media (max-width: 768px) {
+
+
+    .seccion-derechos {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 40px 15px;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .bloque-info,
+    .bloque-imagen {
+        width: 100%;
+        /* Ocupan todo el ancho disponible */
+    }
+
+    #tituloInf {
+        font-size: 1.6rem;
+        /* Título un poco más pequeño en móvil */
+        text-align: center;
+    }
+
+    #tituloInf::after {
+        margin: 10px auto;
+        /* Centra la línea roja debajo del título */
+    }
+
+    .bloque-imagen img {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 15px;
+        margin-right: 15px;
+        transform: none;
+        /* Quitamos la rotación 3D en móvil para evitar bugs visuales */
+        margin: 0;
+    }
+
+    .entrega {
+        font-size: 3rem !important;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+    .item-acordeon {
+        padding: 15px 20px;
+    }
+
+    .item-acordeon span:first-child {
+        font-size: 1rem;
+    }
+
+    .entrega {
+        font-size: 2rem !important;
+
+    }
+}
+
+
+.servicios-preparacion {
+    width: 100%;
+    display: block; /* Asegura que no haya flex interfiriendo con el título */
+    padding: 20px 0;
+}
+
+.titulo-preparacion {
+    text-align: center;
+    width: 100%; /* Ocupa todo el ancho para que el center funcione */
+    color: #003366;
+    font-size: 2.5rem;
+    margin: 50px auto 30px; /* Centrado automático */
+    font-weight: 800;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.titulo-preparacion::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    /* Azul claro de acento */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Ajuste para el contenedor de imágenes para que no se desborde */
+.procedimientos-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Importante para el diseño responsivo */
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .titulo-preparacion {
+        font-size: 1.8rem;
+    }
+}
+
+.servicios-detalles {
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 15px 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    color: #003366;
+}
+
+.tab-btn.active {
+    color: #003366;
+    /* Azul oscuro de la Liga */
+    border-bottom: 3px solid #3498db;
+    /* Azul claro de acento */
+}
+
+/* Manejo de visibilidad de contenido */
+.tab-content {
+    display: none;
+    /* Oculto por defecto */
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+    /* Solo el activo se ve */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.procedimientos {
+    padding: 50px 10%;
+    background-color: #ffffff;
+}
+
+.procedimientos-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    /* Espacio entre las imágenes */
+}
+
+.tarjeta-lab {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 20px;
+    /* Bordes redondeados como en "Nuestra Esencia" */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border:2px solid rgba(0, 0, 0, 0.8);
+}
+
+.tarjeta-lab:hover {
+    transform: scale(1.03);
+    /* Efecto de zoom suave al pasar el mouse */
+}
+
+.tarjeta-lab img {
+    width: 100%;
+    height: 300px;
+    /* Altura uniforme para las tres tarjetas */
+    object-fit: cover;
+    /* Evita que las imágenes se estiren */
+    display: block;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    .procedimientos-container {
+        flex-direction: column;
+        /* Se apilan verticalmente en móviles */
+    }
+
+    .tarjeta-lab img {
+        height: 200px;
+        /* Altura más pequeña para pantallas pequeñas */
+    }
+}
+
+
+.entrega-resultados {
+    padding: 80px 10%;
+    background: linear-gradient(135px, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    background-color: #002140;
+}
+
+.resultados-card {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 30px;
+    /* Bordes muy redondeados como tus otras secciones */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px rgba(0, 33, 64, 0.1);
+    border-left: 8px solid #3498db;
+    /* Acento en azul claro */
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.resultados-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 2;
+}
+
+.icon-box {
+    font-size: 50px;
+    color: #003366;
+    /* Azul oscuro de la Liga */
+    background: #eef2f7;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.text-box h2 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.text-box p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.resultados-action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botón de WhatsApp Creativo */
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+    padding: 18px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+    background-color: #20ba5a;
+}
+
+.nota {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .resultados-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .resultados-info {
+        flex-direction: column;
+    }
+
+    .icon-box {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Contenedor Principal */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Configuración de la Tarjeta */
+.card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    /* Necesario para el efecto 3D */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* El giro ocurre al pasar el mouse */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Posicionamiento de las caras */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Cara Frontal */
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cara Trasera */
+/* Cara Trasera con Azul Institucional */
+.card-back {
+    /* Azul profundo institucional con un ligero degradado para profundidad */
+    background: #002244;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalle decorativo: una curva sutil de fondo */
+.card-back::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+/* Título con acento en Rosa (Prevención) */
+.card-back h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    /* Línea divisoria en rosa para contraste */
+    border-bottom: 3px solid #c0272c;
+    padding-bottom: 8px;
+}
+
+/* Texto de descripción */
+.card-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #f0f0f0;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Botón de Acción Institucional */
+.card-back .btn {
+    padding: 12px 25px;
+    background-color: #ffffff;
+    /* Botón blanco para resaltar sobre el azul */
+    color: #004a99;
+    /* Texto en el azul institucional */
+    text-decoration: none;
+    border-radius: 5px;
+    /* Bordes menos redondeados para seriedad */
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.card-back .btn:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Suavizar la transición general */
+.card-inner {
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

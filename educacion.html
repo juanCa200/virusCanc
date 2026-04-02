@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Cancer Meta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/iconLogo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📞 Citas Médicas: +57 606 333 3340</span>
+            <span>📧 contacto@laliga.org.co</span>
+            <span>📧 contacto@laliga.org.co</span>
+        </div>
+        <div class="top-buttons">
+            <a href="#" class="btn-como-donar">Cómo Donar</a>
+        </div>
+    </div>
+    <header>
+        <nav class="nav">
+            <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+            <ul class="nav-links">
+                <li ><a href="inicio.html">Inicio</a></li>
+                <li><a href="inicio.html#seccion-contacto">Nuestros Servicios</a></li>
+                <li><a href="institucion.html">Nuestra Institución</a></li>
+                <li class="link_active"><a href="educacion.html">Educación</a></li>
+                <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
+            </ul>
+            <div class="btns">
+                <button class="btn">Te Apoyamos</button>
+            </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div class="dropdown_menu">
+            <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="inicio.html#seccion-contacto">Nuestros Servicios</a></li>
+                <li ><a href="institucion.html">Nuestra Institución</a></li>
+                <li class="link_active"><a href="educacion.html">Educación</a></li>
+                <li ><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
+            <button class="btn">Te Apoyamos</button>
+        </div>
+    </header>
+    <section>
+        <div class="fd-background">
+            <img src="img/fde.jpg" alt="">
+            <div class="container text-overlay-content">
+                <div class="row">
+                    <div class="col-12 text-center text-white">
+                        <h1 class="education-title">EDUCACIÓN</h1>
+                        <p class="education-subtitle">Empoderamiento y Prevención: Descubre nuestros programas
+                            educativos para un futuro sin cáncer.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="seccion-educacion">
+            <div class="container-grid">
+
+                <div class="card-educacion">
+                    <div class="icon">📢</div>
+                    <h3>Campañas Institucionales</h3>
+                    <p>Promovemos la cultura de la prevención a través de iniciativas locales y nacionales diseñadas
+                        para informar a la comunidad sobre los riesgos y cuidados oportunos.</p>
+                    <a href="#seccion-campana" class="leer-mas">Saber más →</a>
+                </div>
+
+                <div class="card-educacion">
+                    <div class="icon">📅</div>
+                    <h3>Eventos</h3>
+                    <p>Participa en nuestros foros, seminarios y jornadas de salud. Creamos espacios de encuentro para
+                        compartir conocimientos con expertos en oncología y bienestar.</p>
+                    <a href="#eventos" class="leer-mas">Ver mas →</a>
+                </div>
+
+                <div class="card-educacion">
+                    <div class="icon">🎓</div>
+                    <h3>Programas Educativos</h3>
+                    <p>Formación especializada y talleres prácticos dirigidos a pacientes, familias y profesionales de
+                        la salud para fortalecer el apoyo integral en cada etapa.</p>
+                    <a href="#program-educativos" class="leer-mas">Explorar →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="seccion-campana" id="seccion-campana">
+            <div class="container-campana">
+
+                <div class="camp-institucional">
+                    <h2>Campaña Institucional</h2>
+                </div>
+
+                <div class="fila-imagenes">
+                    <div class="columna-imagen">
+                        <img src="img/campana1.jpeg" alt="Campaña de Prevención">
+                    </div>
+                    <div class="columna-imagen">
+                        <img src="img/campana2.jpeg" alt="Campaña de Voluntariado">
+                    </div>
+                </div>
+
+                <div class="texto-campana">
+                    <p>Nuestras campañas institucionales están diseñadas para informar, concientizar y movilizar a la
+                        comunidad en torno a la prevención y detección temprana del cáncer. A través de iniciativas
+                        visuales y mensajes claros, buscamos empoderar a las personas para que tomen decisiones
+                        saludables y se unan a nuestra causa. Juntos, estamos construyendo un futuro con más esperanza y
+                        salud para todos.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="carrusel-servicios-wrapper" id="eventos">
+            <div class="servicios-header">
+                <h2>Eventos</h2>
+            </div>
+
+            <div class="carousel-area">
+                <div class="carousel-nav-container">
+                    <button class="nav-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+                    <button class="nav-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+                </div>
+
+                <div class="carousel-window">
+                    <div class="carousel-track" id="trackServicios">
+
+                        <div class="service-card-eventos">
+                            <img src="img/eventoRosa1.jpeg" alt="Consulta Especializada">
+                            <div class="card-content">
+                                <h3>Consulta Médica Especializada</h3>
+                                <p class="resumen-servicio">Atención personalizada con los mejores profesionales en
+                                    diversas áreas de la salud.</p>
+                                <a href="#" class="ver-mas-link">Más información</a>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/simposio.jpeg" alt="Ayudas Diagnósticas">
+                            <div class="card-content">
+                                <h3>Apoyo Diagnóstico y Terapéutico</h3>
+                                <p class="resumen-servicio">Tecnología de vanguardia para resultados precisos y
+                                    tratamientos efectivos.</p>
+                                <a href="#" class="ver-mas-link">Más información</a>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/Bingo1.jpeg" alt="Urgencias">
+                            <div class="card-content">
+                                <h3>Atención Prioritaria y Urgencias</h3>
+                                <p class="resumen-servicio">Disponibilidad inmediata para atender situaciones que
+                                    requieren cuidado pronto.</p>
+                                <a href="#" class="ver-mas-link">Más información</a>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/PasoPorlaVida1.jpeg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Laboratorio Clínico</h3>
+                                <p class="resumen-servicio">Procesamiento de muestras con altos estándares de calidad y
+                                    rapidez.</p>
+                                <a href="#" class="ver-mas-link">Más información</a>
+                            </div>
+                        </div>
+
+
+                        <div class="service-card-eventos">
+                            <img src="img/PasoPorlaVida2.jpeg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Laboratorio Clínico</h3>
+                                <p class="resumen-servicio">Procesamiento de muestras con altos estándares de calidad y
+                                    rapidez.</p>
+                                <a href="#" class="ver-mas-link">Más información</a>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/RelevoPorLaVida1.jpeg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Laboratorio Clínico</h3>
+                                <p class="resumen-servicio">Procesamiento de muestras con altos estándares de calidad y
+                                    rapidez.</p>
+                                <a href="#" class="ver-mas-link">Más información</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-footer">
+                <div class="dots-group">
+                    <span class="dot-item active"></span>
+                    <span class="dot-item"></span>
+                    <span class="dot-item"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="program-educativos" id="program-educativos">
+            <h2 class="h2-program">Programas educativos</h2>
+
+            <div class="contenedor-voluntariado">
+                <aside class="sidebar-botones">
+                    <div class="sidebar-header">
+                        Educación y Prevención
+                    </div>
+                    <nav class="menu-navegacion">
+                        <button class="nav-b active" onclick="cambiarInfo(0)">Aprendamos del Cancer de Mama</button>
+                        <button class="nav-b" onclick="cambiarInfo(1)">Identifica el tipo de Cancer</button>
+                        <button class="nav-b" onclick="cambiarInfo(2)">Especialista de la Liga</button>
+                        <button class="nav-b" onclick="cambiarInfo(3)">Cuidado Personal</button>
+                    </nav>
+                    <button class="btn-registro">QUIERO SER VOLUNTARIO</button>
+                </aside>
+
+                <main class="contenido-derecho" id="contenidoPrincipal">
+                    <h2 id="tituloInfo">Educación y Prevención</h2>
+                    <div id="textoInfo">
+                        <p>Bienvenido a nuestra plataforma de formación y prevención, un espacio diseñado para transformar el conocimiento en tu mejor aliado contra la enfermedad. En este apartado, encontrarás contenido educativo detallado sobre los diferentes tipos de cáncer, sus factores de riesgo y las señales de alerta que no debes ignorar. Nuestro objetivo es brindarte información clara, médica y actualizada para que puedas tomar decisiones informadas sobre tu salud y la de tus seres queridos.</p>
+                        <p>A través de nuestras guías interactivas, videos de especialistas y manuales de cuidado personal, te acompañamos en un recorrido de aprendizaje continuo sobre la detección temprana. Aquí no solo aprenderás a identificar síntomas, sino que también descubrirás hábitos de vida saludable y estrategias de autocuidado respaldadas por la Liga Contra el Cáncer Seccional Meta. Te invitamos a explorar cada recurso, porque entender el cáncer es el primer paso para ganarle la batalla.</p>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <menu class="open">
+            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0" class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
+            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram" style="color: rgb(239, 47, 189);"></i></a>
+            <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
+            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook" style="color: rgb(47, 106, 210);"></i></a>
+            <a  class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
+        </menu>
+    </section>
+    <footer class="footer-simple">
+        <div class="footer-content">
+
+            <div class="footer-column">
+                            <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
+                    región.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Campañas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Calle 33A # 38 - 56 Barzal</p>
+                <p>Villavicencio, Meta</p>
+                <p>Tel: 608 6632320</p>
+                <div class="social-icons">
+                    <a href="#" title="Facebook">FB</a>
+                    <a href="#" title="Instagram">IG</a>
+                    <a href="#" title="YouTube">YT</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+            // 1. Seleccionamos los bloques importantes de tu HTML
+            const selectores = [
+                '.fd-background',
+                '.seccion-educacion',
+                '.seccion campana',
+                '.carrusel-servicios-wrapper',
+                '.program-educativos'
+            ];
+
+            const elementos = document.querySelectorAll(selectores.join(', '));
+
+            // 2. Configuramos el observador
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Si quieres que la animación se repita cada vez que subas/bajes, 
+                      
+                    }
+                });
+            }, {
+                threshold: 0.15 // Se activa cuando el 15% del elemento es visible
+            });
+
+            // 3. Aplicamos la clase base y empezamos a observar
+            elementos.forEach(el => {
+                el.classList.add('scroll-reveal');
+                observer.observe(el);
+            });
+        });
+
+
+
+        const trigger = document.querySelector('menu > .trigger');
+        trigger.addEventListener('click', (e) => {
+            e.currentTarget.parentElement.classList.toggle('open');
+        })
+
+ const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+        let indiceActual = 0;
+
+        function moverCarrusel(direccion) {
+            const track = document.getElementById('trackServicios');
+            const cards = document.querySelectorAll('.service-card-eventos');
+            const totalCards = cards.length;
+
+            let visibles = 3;
+            if (window.innerWidth <= 900) visibles = 2;
+            if (window.innerWidth <= 600) visibles = 1;
+
+            indiceActual += direccion;
+
+            if (indiceActual < 0) indiceActual = 0;
+            if (indiceActual > totalCards - visibles) indiceActual = totalCards - visibles;
+
+            const anchoContenedor = track.parentElement.offsetWidth;
+            const gap = 24;
+            const anchoCard = (anchoContenedor - (gap * (visibles - 1))) / visibles;
+
+            const desplazamiento = indiceActual * (anchoCard + gap);
+
+            track.style.transform = `translateX(-${desplazamiento}px)`;
+            actualizarPuntos();
+        }
+
+        function actualizarPuntos() {
+            const puntos = document.querySelectorAll('.dot-item');
+            puntos.forEach((punto, i) => {
+                punto.classList.toggle('active', i === indiceActual);
+            });
+        }
+
+
+
+
+
+        const datosInfo = [
+            {
+                titulo: "Aprendamos del Cáncer de Mama",
+                texto: `<div class="panel-educativo">
+            
+            <div class="seccion-video">
+                <p>Cuidarte es el acto de amor más grande hacia ti y hacia quienes te quieren. Identificar un cambio a tiempo hace toda la diferencia entre un susto y una historia de victoria. Mira nuestro contenido y descubre cómo protegerte hoy mismo.</p>
+                <div class="contenedor-video-estilizado">
+                    <video controls>
+                        <source src="img/cancer-de-mama.mp4" type="video/mp4">
+                        <source src="img/cancer-de-mama.webm" type="video/webm">
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </div>
+                <p class="pie-video">Video educativo oficial - Liga Contra el Cáncer Seccional Meta</p>
+            </div>
+
+            <div class="seccion-tarjetas">
+                
+                <div class="tarjeta-clave">
+                    <div class="icono-clave">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    </div>
+                    <div class="info-clave">
+                        <h4>El Autoexamen</h4>
+                        <p>Realízalo una vez al mes, 8 días después de tu periodo.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-clave">
+                    <div class="icono-clave">
+                        <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                    </div>
+                    <div class="info-clave">
+                        <h4>Signos de Alarma</h4>
+                        <p>Cambios de color, bultos, hundimientos o secreciones.</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-clave">
+                    <div class="icono-clave">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h2v-2h-2v2zm0-4h2V7h-2v6z"/></svg>
+                    </div>
+                    <div class="info-clave">
+                        <h4>Mamografía</h4>
+                        <p>Vital para mujeres mayores de 50 años o con riesgos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>`
+            },
+            {
+                titulo: "Identifica el tipo de cancer",
+                texto: `<div class="contenedor-prevencion-fila">
+            
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-10-10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></div>
+                    <h4>Cáncer de Higado</h4>
+                    <p>Evita el alcohol y vacúnate.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/cancer-de-higado.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+                    <h4>Cáncer de Piel</h4>
+                    <p>Revisa manchas y usa protector.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/cancer-de-piel.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+                    <h4>Cáncer de Hígado</h4>
+                    <p>Evita el alcohol y vacúnate.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/cancer-de-higado.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+        </div>`
+            },
+            {
+                titulo: "Especialistas de la Liga",
+                texto: `<div class="contenedor-prevencion-fila">
+            
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-10-10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></div>
+                    <h4>Pediatria</h4>
+                    <p>Control de crecimiento, esquemas de vacunación y nutrición integral.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/pediatria.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+                    <h4>Urologia</h4>
+                    <p>Chequeo anual de próstata y riñón. Sin tabúes, por tu vida.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/urologia.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+                    <h4>Dermatologia</h4>
+                    <p>Tu piel tiene memoria. Protégela hoy para que te cuide siempre.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/dermatologia.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+        </div>`
+            },
+            {
+                titulo: "Aprendamos a lavarnos las manos",
+                texto: `
+    <div class="contenedor-prevencion-fila">
+            
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-10-10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></div>
+                    <h4>Lavado de manos</h4>
+                    <p>Tus manos son tu primer escudo. ¡Lávalas bien y protege tu vida!</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/lavado-manos.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+            <div class="columna-educativa">
+                <div class="tarjeta-superior">
+                    <div class="icono-mini"><svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+                    <h4>Aprende la tecnica</h4>
+                    <p>Aprende la técnica correcta en segundos. La higiene es salud.</p>
+                </div>
+                <div class="video-pequeno">
+                    <video controls><source src="img/como-debes-lavar-manos.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+            </div>`
+            }
+        ];
+
+        function cambiarInfo(indice) {
+            document.getElementById('tituloInfo').innerText = datosInfo[indice].titulo;
+            document.getElementById('textoInfo').innerHTML = datosInfo[indice].texto;
+
+            const botones = document.querySelectorAll('.nav-b');
+            botones.forEach(btn => btn.classList.remove('active'));
+            if (botones[indice]) {
+                botones[indice].classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
