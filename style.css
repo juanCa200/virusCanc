@@ -265,13 +265,13 @@ header {
 
 }
 
-@media (max-width: 576px) {
-    /* 1. Limpieza total de ruido */
 
-    .slider-box {
-        height: 300px !important;
+@media (max-width: 650px) {
+    /* 1. Ocultamos h2 y botones definitivamente */
+
+      .slider-box {
+        height: 100px !important;
     }
-
     .slider-box img {
         height: 100% !important;
         object-fit: cover !important;
@@ -281,87 +281,76 @@ header {
         display: none !important;
     }
 
-    /* 2. Contenedor de entrada: Alineación limpia a la izquierda */
+    /* 2. El contenedor ahora solo maneja las tarjetas */
     .texto {
         position: absolute !important;
-        top: 55% !important;
+        top: 50% !important; /* Centrado vertical en el slider */
         transform: translateY(-50%) !important;
-        left: 20px !important; /* Margen elegante lateral */
+        left: 10px !important; /* Pegado al borde izquierdo */
         width: auto !important;
         display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
+        flex-direction: column !important; /* Una debajo de otra */
+        align-items: flex-start !important;
+        gap: 8px !important;
         padding: 0 !important;
+        background: none !important;
     }
 
-    /* 3. Tarjetas con Estilo "Glass-Card" */
-    .mini-card {
-        width: 200px !important; /* Más compactas y elegantes */
-        height: 60px !important;
-        
-        /* Efecto cristal translúcido para que se vea el fondo sutilmente */
-        background: rgba(0, 33, 64, 0.85) !important;
-        backdrop-filter: blur(5px) !important; /* Desenfoque de fondo */
-        -webkit-backdrop-filter: blur(5px);
-        
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        border-radius: 15px !important; /* Bordes más modernos y suaves */
-        
-        display: flex !important;
-        align-items: center !important;
-        padding: 0 15px !important;
-        gap: 12px !important;
-        
-        /* Sombra suave para dar profundidad */
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2) !important;
-        transition: all 0.3s ease;
-    }
-
-    /* 4. Refinamiento de Iconos y Textos */
-    .mini-card i {
-        font-size: 1.4rem !important;
-        color: #00d4ff !important; /* Un azul cian para que resalte el icono */
-        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.4));
-    }
-
-    /* DEFINICIÓN DE LA ANIMACIÓN */
-    @keyframes entradaCard {
-        0% {
-            opacity: 0;
-            transform: translateX(-50px) scale(0.9);
-        }
-        70% {
-            transform: translateX(5px) scale(1.02);
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-        }
-    }
-
-    .mini-card .num {
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        color: #ffffff !important;
-        letter-spacing: 0.5px !important;
-        line-height: 1 !important;
-    }
-
-    .mini-card .lab {
-        font-size: 0.6rem !important;
-        text-transform: uppercase !important;
-        color: rgba(255, 255, 255, 0.7) !important;
-        margin-top: 3px !important;
-        font-weight: 500 !important;
-    }
-
-    /* 5. Ajuste del slider-stats para no desbordar */
+    /* 3. Estilo de las tarjetas (Compactas y elegantes) */
     .slider-stats {
         display: flex !important;
         flex-direction: column !important;
-        gap: 15px !important;
-        width: auto !important;
+        gap: 8px !important;
     }
+
+    .mini-card {
+        width: 140px !important; /* Delgadas para liberar espacio */
+        height: 46px !important;
+        background: rgba(0, 33, 64, 0.8) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 0 10px !important;
+        gap: 8px !important;
+        margin: 0 !important;
+    }
+
+    
+
+    /* 4. Ajuste de iconos y textos internos */
+    .mini-card i {
+        font-size: 1rem !important;
+        color: #00d4ff !important;
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .mini-card .num {
+        font-size: 0.8rem !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+    }
+
+    .mini-card .lab {
+        font-size: 0.5rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        display: block !important;
+        text-transform: uppercase;
+    }
+    .education-title{
+        margin-top: 90px;
+        font-size: 2rem !important;
+    }
+    .education-subtitle{
+        font-size: 1.2rem !important;
+    }
+
+    
 }
 
 .slider-box {
@@ -497,8 +486,6 @@ header {
     justify-content: flex-start; /* Alineación fija al inicio */
     gap: 10px;
 }
-
-
 
 
 .mini-card i {
@@ -896,9 +883,55 @@ menu>.action:nth-child(4) {
 }
 
 @media (max-width: 480px) {
+    .servicios-barra {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important; /* Centra el grupo de 2 columnas */
+        padding: 15px 0 !important;
+        gap: 0 !important; /* Manejamos el espacio con padding interno */
+    }
+
+    /* 1. Forzamos 2 columnas (50% cada una) */
+    .servicios-barra a, 
+    .servicios-barra > .servicio-item {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        display: flex !important;
+        justify-content: center !important; /* Centra el bloque en su mitad */
+        box-sizing: border-box;
+    }
+
+    /* 2. El item interno: ancho fijo para que iconos y textos se alineen */
     .servicio-item {
-        flex: 0 0 100%;
-        /* Una columna en celulares */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important; /* Alinea icono y texto entre sí */
+        width: 145px !important; /* Ancho ajustado para que quepan dos de 145px */
+        padding: 12px 5px !important;
+        margin: 0 auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        gap: 8px !important;
+    }
+
+    /* 3. Ajuste de iconos y texto para el tamaño "doble" */
+    .servicio-item i {
+        font-size: 1rem !important;
+        padding: 6px !important;
+        min-width: 32px !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .servicio-item span {
+        font-size: 0.7rem !important; /* Tamaño pequeño para que no salte de línea */
+        line-height: 1.1 !important;
+        white-space: normal !important; /* Permite que el texto respire */
+    }
+
+    /* Quitar el borde inferior a los últimos dos para que se vea limpio */
+    .servicios-barra a:nth-last-child(-n+2) .servicio-item,
+    .servicios-barra > .servicio-item:nth-last-child(-n+2) {
+        border-bottom: none !important;
     }
 }
 
