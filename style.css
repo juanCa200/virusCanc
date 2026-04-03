@@ -114,6 +114,81 @@ header {
 }
 
 
+/* Contenedor del item con submenú */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 110%; /* Un poco más abajo para que no pegue al borde */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Centrado y un poco abajo */
+    background-color: #ffffff;
+    min-width: 220px;
+    border-radius: 12px; /* Bordes bien redondeados, más moderno */
+    padding: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efecto rebote */
+    z-index: 9999;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffffff;
+}
+
+
+.dropdown-menu li {
+    margin-bottom: 2px;
+}
+
+.dropdown-menu li a {
+    color: #333 !important;
+    padding: 12px 15px;
+    display: block;
+    border-radius: 8px; /* Redondeado interno */
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #fce4ec; /* Un rosa muy clarito (Liga) */
+    color: #c0272c !important; /* Rosa fuerte */
+    padding-left: 20px; /* Pequeño desplazamiento a la derecha */
+}
+
+/* 5. ACTIVACIÓN (Hover) */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Sube suavemente a su posición */
+}
+
+.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+    color: #c0272c;
+}
+
+.fa-chevron-down {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+
+
 .nav-links li a {
     position: relative;
     font-size: 1.05rem;
@@ -206,7 +281,7 @@ header {
 }
 
 .dropdown_menu li a:hover {
-    color: #e30613;
+    color: #c0272c;
     /* Rojo institucional al señalar */
     background: #f8fbff;
 }
@@ -478,7 +553,7 @@ header {
     color: white;
     border-radius: 8px;
     border: 1px solid white;
-    width: 150px; /* Un poco más de aire para números grandes */
+    width: 180px; /* Un poco más de aire para números grandes */
     height: 55px;
     padding: 10px 15px;
     display: flex;
@@ -868,6 +943,99 @@ menu>.action:nth-child(4) {
     line-height: 1.2;
 }
 
+/* --- ESTILO DEL DESPLEGABLE --- */
+
+/* --- ESTILO DEL DESPLEGABLE --- */
+.dropdown-servicio {
+    position: relative; /* Clave para que el hijo se posicione respecto a este */
+}
+
+.servicio-trigger {
+    display: flex;
+    flex-direction: row; /* Cambiado de column a row */
+    align-items: center;
+    gap: 10px;
+}
+
+.servicio-trigger .icon-mini {
+    border: none !important; 
+    padding: 0 !important;
+    min-width: auto !important;
+    font-size: 0.8rem;
+    border-radius: 0 !important;
+}
+
+/* Ocultar el menú por defecto */
+.dropdown-contenido {
+    display: none; /* Se oculta inicialmente */
+    position: absolute;
+    top: 100%; /* Aparece justo debajo de la barra azul */
+    left: 50%;
+    transform: translateX(-50%); /* Lo centra horizontalmente */
+    background-color: #ffffff;
+    min-width: 260px; /* Ancho suficiente para los textos largos */
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    z-index: 999; /* Valor alto para que pase por encima de videos o imágenes */
+    border-radius: 12px;
+    padding: 10px 0;
+    list-style: none;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* MOSTRAR AL HACER HOVER */
+.dropdown-servicio:hover .dropdown-contenido {
+    display: block; /* Aquí es donde ocurre la magia */
+    animation: slideUp 0.3s ease;
+}
+
+/* Estilo de los links dentro del desplegable */
+.dropdown-contenido li a {
+    color: #002140 !important; /* Forzamos el azul oscuro */
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    text-align: left;
+    transition: all 0.2s;
+    border-right: none !important; /* Quitamos la línea vertical de tu estilo general */
+}
+
+.dropdown-contenido li a:hover {
+    background-color: #f1f5f9;
+    color: #c0272c !important; /* Rosa al pasar el mouse */
+    padding-left: 25px; /* Efecto de movimiento sutil */
+}
+
+/* Animación suave */
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translate(-50%, 15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, 0); 
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, 10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    .dropdown-contenido {
+        position: static;
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        background-color: #f1f1f1;
+    }
+}
+
 /* Ajustes para móviles */
 @media (max-width: 768px) {
     .servicios-barra {
@@ -979,7 +1147,7 @@ menu>.action:nth-child(4) {
     position: absolute;
     top: -15px;
     right: -15px;
-    background: #e74c3c;
+    background: #c0272c;
     color: white;
     width: 35px;
     height: 35px;
@@ -1242,7 +1410,7 @@ menu>.action:nth-child(4) {
     left: 0;
     width: 50px;
     height: 4px;
-    background: #e2007a;
+    background: #c0272c;
     /* Rosa institucional */
     border-radius: 2px;
 }
@@ -1259,7 +1427,7 @@ menu>.action:nth-child(4) {
 
 .bloque-direccion:hover,
 .bloque-datos:hover {
-    border-left-color: #e2007a;
+    border-left-color: #c0272c;
     /* Cambia a rosa al pasar el mouse */
 }
 
@@ -1622,7 +1790,7 @@ iframe {
     transition: 0.3s;
 }
 
-.cerrar-modal:hover { color: #ff0000; }
+.cerrar-modal:hover { color: #c0272c; }
 
 /* Texto del pie de foto */
 #caption-modal {
@@ -1914,8 +2082,6 @@ iframe {
 
 .img-item:hover {
     transform: scale(1.05);
-    border-color: #c0272c;
-    /* Color rosa liga */
 }
 
 .pie {
@@ -2002,6 +2168,35 @@ iframe {
     background: #004a87;
     transform: translateY(-2px);
 }
+
+/* Contenedor de la sección historia */
+.historia-container {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Estilo de la imagen de historia */
+.img-historia {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* Resaltado de años o hitos */
+.historia-container p strong {
+    color: #002140; /* El azul oscuro de tu marca */
+    font-size: 1.1rem;
+}
+
+/* Animación suave al cambiar de pestaña */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 /*Educacion*/
 
@@ -2990,3 +3185,661 @@ video {
 .card-inner {
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+
+/* VOLUNTARIADO .HTML */
+
+
+/* Contenedor General */
+.seccion-voluntariado {
+    padding: 60px 20px;
+    background-color: #fcfcfc;
+}
+
+.contenedor-vol {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Estilo del Título y Texto */
+.vol-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.vol-header h1 {
+    font-size: 2.5rem;
+    color: #002140; /* Azul Institucional */
+    margin-bottom: 10px;
+}
+
+.separador-rosa {
+    width: 80px;
+    height: 4px;
+    background-color: #c0272c; /* Rosa Liga */
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+.descripcion-vol {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Mosaico Estilo Grid */
+.mosaico-voluntariado {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.img-item {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Capa de información (aparece al pasar el mouse) */
+.capa-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(89, 48, 240, 0.4), transparent);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.capa-info span {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Hover Effects */
+.img-item:hover img {
+    transform: scale(1.1);
+}
+
+.img-item:hover .capa-info {
+    opacity: 1;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .vol-header h1 { font-size: 2rem; }
+    .mosaico-voluntariado { grid-template-columns: 1fr; }
+}
+
+
+/* --- SECCIÓN ÚNETE --- */
+.seccion-unete {
+    padding: 80px 20px;
+    background: linear-gradient(rgba(0, 33, 64, 0.9), rgba(0, 33, 64, 0.9)), 
+                url('img/fondo-voluntarios.jpg'); /* Opcional: una foto de fondo con opacidad */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax */
+    text-align: center;
+    color: white;
+}
+
+.contenedor-unete {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contenido-unete h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.separador-rosa-corto {
+    width: 60px;
+    height: 4px;
+    background-color: #c0272c; /* Rosa de la Liga */
+    margin: 0 auto 25px;
+    border-radius: 2px;
+}
+
+.contenido-unete p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* --- BOTÓN DE FORMULARIO --- */
+.btn-formulario {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #c0272c;
+    color: white !important;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-radius: 50px; /* Estilo píldora, muy moderno */
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+    text-transform: uppercase;
+}
+
+.btn-formulario:hover {
+    background-color: #c0272c;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(233, 30, 99, 0.4);
+}
+
+.btn-formulario i {
+    font-size: 1.3rem;
+}
+
+.nota-informativa {
+    display: block;
+    margin-top: 25px;
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contenido-unete h2 { font-size: 2rem; }
+    .btn-formulario { width: 100%; justify-content: center; padding: 15px 20px; }
+}
+
+
+
+/*************************** REGIMEN TRIBUTARIOOOOO **********************************/
+
+.seccion-transparencia {
+    padding: 100px 20px;
+    background-color: #f8faff;
+}
+
+.transparencia-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.transparencia-header h2 {
+    color: #002140;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.separador-azul {
+    width: 80px;
+    height: 4px;
+    background: #c0272c; /* Rosa para resaltar */
+    margin: 0 auto 20px;
+}
+
+/* Contenedor para solo 2 elementos */
+.contenedor-dual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Tarjetas más anchas */
+    gap: 40px;
+    max-width: 1000px; /* Limita el ancho total para que no se estiren infinito */
+    margin: 0 auto;
+}
+
+.card-documento {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px; /* Más espacio interno */
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 33, 64, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-documento:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(233, 30, 99, 0.15); /* Sombra rosada sutil */
+    border-color: #c0272c;
+}
+
+.card-icon {
+    font-size: 4rem;
+    color: #c0272c;
+    margin-bottom: 25px;
+}
+
+.card-body h3 {
+    color: #002140;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.card-body p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    min-height: 80px; /* Mantiene las tarjetas del mismo alto si el texto varía */
+}
+
+.btn-full-descarga {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #002140;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-full-descarga:hover {
+    background: #c0272c;
+    transform: scale(1.02);
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 850px) {
+    .contenedor-dual {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
+
+
+/* NUESTROS PROFESIONALESSSS */
+
+
+/* --- CONTENEDOR PADRE --- */
+.seccion-profesionales {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título superior fuera del banner */
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion {
+    font-size: 2.2rem;
+    color: #002140; /* Azul igual a tu barra */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.linea-decorativa {
+    width: 60px;
+    height: 4px;
+    background-color: #c0272c; /* Rojo institucional */
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* --- EL BANNER AZUL OSCURO --- */
+.banner-profesionales-azul {
+    background-color: #002140; /* Color idéntico a tu barra */
+    background-image: radial-gradient(circle at 90% 10%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    border-radius: 15px;
+    padding: 60px 40px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 33, 64, 0.2);
+}
+
+.contenido-banner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tagline {
+    color: #c0272c; /* Rojo */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.titulo-banner {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.texto-rojo {
+    color: #c0272c;
+}
+
+.extracto-banner {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 45px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- TARJETAS DE NÚMEROS (Estilo Transparente) --- */
+.bloque-estadisticas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.07); /* Efecto cristal muy sutil */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #c0272c; /* Ilumina el borde en rojo al pasar el mouse */
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    display: block;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #c0272c; /* Etiquetas en rojo para contraste */
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .titulo-banner { font-size: 2rem; }
+    .stat-card { min-width: 100%; }
+    .banner-profesionales-azul { padding: 40px 20px; }
+}
+
+/* QUIENES SOMOS  VIDEO SECCION INSTITUCION.HTML*/
+
+.seccion-video-local {
+    background-color: transparent; /* Quitamos el gris para que se integre al fondo blanco */
+    display: flex;
+    justify-content: flex-start; /* Alinea al inicio (izquierda) igual que el título */
+    align-items: flex-start;
+}
+
+.contenedor-reproductor {
+    width: 100%;
+    /* Ajustamos el tamaño para que sea impactante pero manejable */
+    max-width: 700px; 
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #000;
+    /* Una sombra más suave para fondo blanco */
+    box-shadow: 0 10px 30px rgba(0, 33, 64, 0.1); 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.video-institucional {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9; /* Fuerza la proporción horizontal */
+    outline: none;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .seccion-video-local {
+        padding: 40px 10px;
+    }
+    
+    .contenedor-reproductor {
+        border-radius: 10px; /* Bordes menos redondeados en móvil */
+    }
+}
+
+/********************+ SECCION DERECHOS Y DEBERES *******************/
+
+.seccion-derechos-deberes {
+    padding: 60px 20px;
+    background-color: #fcfcfc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.encabezado-seccion h1 {
+    color: #002140;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.encabezado-seccion p {
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Grid de dos columnas */
+.grid-derechos-deberes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.bloque-info {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 5px solid #002140; /* Por defecto azul */
+    transition: transform 0.3s ease;
+    min-width: 300px;
+    max-width: 100%;
+    box-sizing: border-box; 
+}
+
+
+.bloque-info:hover {
+    transform: translateY(-5px);
+}
+
+.bloque-info.derechos {
+    border-top-color: #c0272c; /* Derechos en rosa */
+}
+
+.titulo-bloque {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.titulo-bloque i {
+    font-size: 1.8rem;
+    color: #002140;
+}
+
+.derechos .titulo-bloque i {
+    color: #c0272c;
+}
+
+.titulo-bloque h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.bloque-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bloque-info ul li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* Bullet points personalizados */
+.bloque-info ul li::before {
+    content: "\f00c"; /* Icono check de FontAwesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #002140;
+    font-size: 0.8rem;
+}
+
+.derechos ul li::before {
+    color: #c0272c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .grid-derechos-deberes {
+        grid-template-columns: 1fr;
+    }
+    
+    .encabezado-seccion h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* HISTORIA CLINICA SECCION 2 : RESULTADOS */
+.seccion-resultados {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.grid-imagenes-resultados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.card-imagen {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-imagen img {
+    width: 100%;
+    height: 300px; /* Altura fija para que todas sean iguales */
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Botones de abajo --- */
+.footer-contacto-resultados {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.footer-contacto-resultados p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-rs {
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.whatsapp { background-color: #25d366; }
+.email { background-color: #002140; }
+
+.btn-rs:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Ajuste móvil */
+@media (max-width: 600px) {
+    .botones-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-rs {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+

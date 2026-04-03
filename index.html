@@ -20,25 +20,30 @@
             <img src="img/publicidad.jpg" alt="Anuncio Liga Contra el Cáncer">
         </div>
     </div>
-
-    <div class="top-bar">
-        <div class="contact-info">
-            <span>📞 Citas Médicas: +57 606 333 3340</span>
-            <span>📧 contacto@laliga.org.co</span>
-            <span>📧 contacto@laliga.org.co</span>
-        </div>
-        <div class="top-buttons">
-            <a href="#" class="btn-como-donar">Cómo Donar</a>
-        </div>
-    </div>
     <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
                 <li class="link_active"><a href="index.html">Inicio</a></li>
-                <li><a href="#seccion-servicios">Nuestros Servicios</a></li>
-                <li><a href="institucion.html">Nuestra Institución</a></li>
-                <li><a href="educacion.html">Educación</a></li>
+                <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
+                <li class="dropdown">
+                    <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="institucion.html">Quiénes somos</a></li>
+                        <li><a href="voluntariado.html">Voluntariado</a></li>
+                        <li><a href="nuestras-instalaciones.html">Nuestras instalaciones</a></li>
+                        <li><a href="tributario.html">Régimen tributario</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="campanas.html">Campañas Institucionales</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="programas.html">Programas Educativos</a></li>
+                    </ul>
+                </li>
+                <li><a href="profesionales.html">Profesionales</a></li>
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             </ul>
             <div class="btns">
@@ -51,14 +56,32 @@
         <div class="dropdown_menu">
             <li class="link_active"><a href="index.html">Inicio</a></li>
             <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
-            <li><a href="institucion.html">Nuestra Institución</a></li>
-            <li><a href="educacion.html">Educación</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="institucion.html">Quiénes somos</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="instalaciones.html">Nuestras instalaciones</a></li>
+                    <li><a href="tributario.html">Régimen tributario</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="campanas.html">Campañas Institucionales</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="programas.html">Programas Educativos</a></li>
+                </ul>
+            </li>
+            <li><a href="profesionales.html">Profesionales</a></li>
             <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             <button class="btn">Quiero Ser Voluntario</button>
 
         </div>
     </header>
     <section>
+
+
 
         <div class="slider-box">
             <ul>
@@ -73,8 +96,8 @@
                             <div class="mini-card">
                                 <i class="fas fa-female"></i>
                                 <div class="info">
-                                    <span class="num" data-val="8500">+8.500</span>
-                                    <span class="lab">Pelucas</span>
+                                    <span class="num" data-val="480234"></span>
+                                    <span class="lab">Personas Atendidas</span>
                                 </div>
                             </div>
 
@@ -82,15 +105,15 @@
                             <div class="mini-card">
                                 <i class="fas fa-user-check"></i>
                                 <div class="info">
-                                    <span class="num" data-val="80000">+80.000M</span>
-                                    <span class="lab">Pacientes</span>
+                                    <span class="num" data-val="137">+80.000M</span>
+                                    <span class="lab">Cancer Detectado 2025</span>
                                 </div>
                             </div>
                             <div class="mini-card">
                                 <i class="fas fa-award"></i>
                                 <div class="info">
-                                    <span class="num" data-val="30">30</span>
-                                    <span class="lab">Años</span>
+                                    <span class="num" data-val="47">30</span>
+                                    <span class="lab">Años de Servicio</span>
                                 </div>
                             </div>
                         </div>
@@ -113,40 +136,50 @@
         </div>
 
         <nav class="servicios-barra">
-            <a href="atencion.html">
-                <div class="servicio-item">
+            <div class="servicio-item dropdown-servicio">
+                <div class="servicio-trigger">
                     <i class="fas fa-hands-helping"></i>
                     <span>Atencion Paciente</span>
+                    <i class="fas fa-chevron-down icon-mini"></i>
                 </div>
-            </a>
+
+                <!-- El Menú Desplegable -->
+                <ul class="dropdown-contenido">
+                    <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
+                    <li><a href="resultados.html">Entrega de resultados</a></li>
+                    <li><a href="historiaClinica.html">Solicitud de historia clínica</a></li>
+                    <li><a href="preparacion-procedimientos.html">Preparación para procedimientos</a></li>
+                    <li><a href="PQRSF.html">Canales de comunicación PQRSF</a></li>
+                </ul>
+            </div>
             <a href="#ubicacion">
                 <div class="servicio-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Ubicacion y Horarios</span>
                 </div>
             </a>
-            <a href="educacion.html#eventos">
+            <a href="preparacion-procedimientos.html">
                 <div class="servicio-item">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>Eventos</span>
+                    <i class="far fa-copy"></i>
+                    <span>Preparacion Resultado</span>
                 </div>
             </a>
-            <a href="atencion.html#resultados">
+            <a href="historiaClinica.html#resultados">
                 <div class="servicio-item">
                     <i class="fas fa-file-medical"></i>
                     <span>Entrega de resultados</span>
                 </div>
             </a>
-            <a href="atencion.html#resultados">
+            <a href="eventos.html">
                 <div class="servicio-item">
-                    <i class="far fa-copy"></i>
+                    <i class="far fa-calendar-alt"></i>
                     <span>Eventos</span>
                 </div>
             </a>
-            <a href="atencion.html#resultados">
+            <a href="voluntariado.html">
                 <div class="servicio-item">
-                    <i class="fas fa-id-card"></i>
-                    <span>Noticias</span>
+                    <i class="far fa-copy"></i>
+                    <span>Voluntariado</span>
                 </div>
             </a>
         </nav>
@@ -167,7 +200,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="contenedor-testimonios">
             <!-- Título agregado fuera de la galería para no romper el CSS actual -->
@@ -411,9 +443,6 @@
             <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
         </menu>
     </section>
-
-
-
 
     <footer class="footer-simple">
         <div class="footer-content">

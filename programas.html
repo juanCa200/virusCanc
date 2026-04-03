@@ -7,18 +7,18 @@
     <title>Liga Cancer Meta</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/iconLogo.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+
     <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
-                <li class="link_active"><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
                 <li class="dropdown">
                     <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
@@ -29,7 +29,7 @@
                         <li><a href="tributario.html">Régimen tributario</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="link_active dropdown">
                     <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="campanas.html">Campañas Institucionales</a></li>
@@ -48,7 +48,7 @@
             </div>
         </nav>
         <div class="dropdown_menu">
-            <li class="link_active"><a href="index.html">Inicio</a></li>
+            <li ><a href="index.html">Inicio</a></li>
             <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
             <li class="dropdown">
                 <a href="" class="dropdown-toggle">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
@@ -74,152 +74,8 @@
         </div>
     </header>
     <section>
-        <div class="fd-background">
-            <img src="img/fde.jpg" alt="">
-            <div class="container text-overlay-content">
-                <div class="row">
-                    <div class="col-12 text-center text-white">
-                        <h1 class="education-title">EDUCACIÓN</h1>
-                        <p class="education-subtitle">Empoderamiento y Prevención: Descubre nuestros programas
-                            educativos para un futuro sin cáncer.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="seccion-educacion">
-            <div class="container-grid">
-
-                <div class="card-educacion">
-                    <div class="icon">📢</div>
-                    <h3>Campañas Institucionales</h3>
-                    <p>Promovemos la cultura de la prevención a través de iniciativas locales y nacionales diseñadas
-                        para informar a la comunidad sobre los riesgos y cuidados oportunos.</p>
-                    <a href="#seccion-campana" class="leer-mas">Saber más →</a>
-                </div>
-
-                <div class="card-educacion">
-                    <div class="icon">📅</div>
-                    <h3>Eventos</h3>
-                    <p>Súmate a nuestras iniciativas académicas y sociales. Eventos de congresos médicos y jornadas recreativas, creamos espacios para fortalecer la prevención, el apoyo mutuo y la educación sobre el cáncer en nuestra comunidad.</p>
-                    <a href="#eventos" class="leer-mas">Ver mas →</a>
-                </div>
-
-                <div class="card-educacion">
-                    <div class="icon">🎓</div>
-                    <h3>Programas Educativos</h3>
-                    <p>Formación especializada y talleres prácticos dirigidos a pacientes, familias y profesionales de
-                        la salud para fortalecer el apoyo integral en cada etapa.</p>
-                    <a href="#program-educativos" class="leer-mas">Explorar →</a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="seccion-campana" id="seccion-campana">
-            <div class="container-campana">
-
-                <div class="camp-institucional">
-                    <h2>Campaña Institucional</h2>
-                </div>
-
-                <div class="fila-imagenes">
-                    <div class="columna-imagen">
-                        <img src="img/campana1.jpeg" alt="Campaña de Prevención">
-                    </div>
-                    <div class="columna-imagen">
-                        <img src="img/campana2.jpeg" alt="Campaña de Voluntariado">
-                    </div>
-                </div>
-
-                <div class="texto-campana">
-                    <p>Nuestras campañas institucionales están diseñadas para informar, concientizar y movilizar a la
-                        comunidad en torno a la prevención y detección temprana del cáncer. A través de iniciativas
-                        visuales y mensajes claros, buscamos empoderar a las personas para que tomen decisiones
-                        saludables y se unan a nuestra causa. Juntos, estamos construyendo un futuro con más esperanza y
-                        salud para todos.</p>
-                </div>
-
-            </div>
-        </div>
-        <div class="carrusel-servicios-wrapper" id="eventos">
-            <div class="servicios-header">
-                <h2>Eventos</h2>
-            </div>
-
-            <div class="carousel-area">
-                <div class="carousel-nav-container">
-                    <button class="nav-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-                    <button class="nav-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-                </div>
-
-                <div class="carousel-window">
-                    <div class="carousel-track" id="trackServicios">
-
-                        <div class="service-card-eventos">
-                            <img src="img/eventoRosa1.jpeg" alt="Consulta Especializada">
-                            <div class="card-content">
-                                <h3>Evento Rosa</h3>
-                                <p class="resumen-servicio">Jornada deportiva y solidaria donde buscamos recaudar fondos para exámenes, biopsias y tratamientos de personas con cáncer que carecen de recursos.</p>
-                            </div>
-                        </div>
-
-                        <div class="service-card-eventos">
-                            <img src="img/simposio.jpeg" alt="Ayudas Diagnósticas">
-                            <div class="card-content">
-                                <h3>Simposio</h3>
-                                <p class="resumen-servicio">Encuentro académico de alto nivel donde expertos comparten los últimos avances en oncología y cuidado integral, fortaleciendo el conocimiento para una atención médica más humana y avanzada.</p>
-                            </div>
-                        </div>
-
-                        <div class="service-card-eventos">
-                            <img src="img/Bingo1.jpeg" alt="Urgencias">
-                            <div class="card-content">
-                                <h3>Bingo</h3>
-                                <p class="resumen-servicio">Tradicional evento solidario diseñado para unir a la comunidad en torno a una causa común: recaudar fondos que permiten brindar apoyo directo y esperanza a quienes más lo necesitan.</p>
-                            </div>
-                        </div>
-
-                        <div class="service-card-eventos">
-                            <img src="img/PasoPorlaVida1.jpeg" alt="Laboratorio">
-                            <div class="card-content">
-                                <h3>Pasos por la vida</h3>
-                                <p class="resumen-servicio">Caminata recreativa y solidaria que busca sensibilizar a la comunidad sobre la detección temprana del cáncer, promoviendo hábitos de vida saludables a través del deporte y la unión familiar.</p>
-                            </div>
-                        </div>
-
-
-                        <div class="service-card-eventos">
-                            <img src="img/PasoPorlaVida2.jpeg" alt="Laboratorio">
-                            <div class="card-content">
-                                <h3>Pasos por la vida</h3>
-                                <p class="resumen-servicio">Nuestra tradicional jornada de actividad física donde cada kilómetro recorrido se traduce en esperanza y apoyo para los programas de prevención en el departamento.</p>
-                            </div>
-                        </div>
-
-                        <div class="service-card-eventos">
-                            <img src="img/RelevoPorLaVida1.jpeg" alt="Laboratorio">
-                            <div class="card-content">
-                                <h3>Relevo por la vida</h3>
-                                <p class="resumen-servicio">Un emotivo evento de resistencia y amor donde equipos caminan por turnos para honrar a los valientes sobrevivientes, recordar a quienes ya no están y recaudar fondos para continuar nuestra misión.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-footer">
-                <div class="dots-group">
-                    <span class="dot-item active"></span>
-                    <span class="dot-item"></span>
-                    <span class="dot-item"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="program-educativos" id="program-educativos">
-            <h2 class="h2-program">Programas educativos</h2>
+         <div class="program-educativos" id="program-educativos">
+             <h2 class="titulo-preparacion">PROGRAMAS EDUCATIVOS</h2>
 
             <div class="contenedor-voluntariado">
                 <aside class="sidebar-botones">
@@ -246,18 +102,23 @@
         </div>
 
         <menu class="open">
-            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0" class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
-            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram" style="color: rgb(239, 47, 189);"></i></a>
+            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
+                class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
+            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
+                    style="color: rgb(239, 47, 189);"></i></a>
             <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
-            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook" style="color: rgb(47, 106, 210);"></i></a>
-            <a  class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
+            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
+                    style="color: rgb(47, 106, 210);"></i></a>
+            <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
         </menu>
     </section>
-    <footer class="footer-simple">
+
+       <footer class="footer-simple">
         <div class="footer-content">
 
             <div class="footer-column">
-                            <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+
                 <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
                     región.</p>
             </div>
@@ -291,94 +152,6 @@
         </div>
     </footer>
     <script>
-
-
- document.addEventListener("DOMContentLoaded", function () {
-            // 1. Seleccionamos los bloques importantes de tu HTML
-            const selectores = [
-                '.fd-background',
-                '.seccion-educacion',
-                '.seccion campana',
-                '.carrusel-servicios-wrapper',
-                '.program-educativos'
-            ];
-
-            const elementos = document.querySelectorAll(selectores.join(', '));
-
-            // 2. Configuramos el observador
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Si quieres que la animación se repita cada vez que subas/bajes, 
-                      
-                    }
-                });
-            }, {
-                threshold: 0.15 // Se activa cuando el 15% del elemento es visible
-            });
-
-            // 3. Aplicamos la clase base y empezamos a observar
-            elementos.forEach(el => {
-                el.classList.add('scroll-reveal');
-                observer.observe(el);
-            });
-        });
-
-
-
-        const trigger = document.querySelector('menu > .trigger');
-        trigger.addEventListener('click', (e) => {
-            e.currentTarget.parentElement.classList.toggle('open');
-        })
-
- const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const dropDownMenu = document.querySelector('.dropdown_menu')
-
-        toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-
-        let indiceActual = 0;
-
-        function moverCarrusel(direccion) {
-            const track = document.getElementById('trackServicios');
-            const cards = document.querySelectorAll('.service-card-eventos');
-            const totalCards = cards.length;
-
-            let visibles = 3;
-            if (window.innerWidth <= 900) visibles = 2;
-            if (window.innerWidth <= 600) visibles = 1;
-
-            indiceActual += direccion;
-
-            if (indiceActual < 0) indiceActual = 0;
-            if (indiceActual > totalCards - visibles) indiceActual = totalCards - visibles;
-
-            const anchoContenedor = track.parentElement.offsetWidth;
-            const gap = 24;
-            const anchoCard = (anchoContenedor - (gap * (visibles - 1))) / visibles;
-
-            const desplazamiento = indiceActual * (anchoCard + gap);
-
-            track.style.transform = `translateX(-${desplazamiento}px)`;
-            actualizarPuntos();
-        }
-
-        function actualizarPuntos() {
-            const puntos = document.querySelectorAll('.dot-item');
-            puntos.forEach((punto, i) => {
-                punto.classList.toggle('active', i === indiceActual);
-            });
-        }
-
-
         const datosInfo = [
             {
                 titulo: "Aprendamos del Cáncer de Mama",
@@ -549,7 +322,26 @@
                 botones[indice].classList.add('active');
             }
         }
+
+        //Menu Responsive y Trigger Redes Sociales
+
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+        const trigger = document.querySelector('menu > .trigger');
+        trigger.addEventListener('click', (e) => {
+            e.currentTarget.parentElement.classList.toggle('open');
+        })
     </script>
 </body>
-
 </html>

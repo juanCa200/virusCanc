@@ -18,7 +18,7 @@
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
-                <li class="link_active"><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
                 <li class="dropdown">
                     <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
@@ -29,7 +29,7 @@
                         <li><a href="tributario.html">Régimen tributario</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="link_active dropdown">
                     <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="campanas.html">Campañas Institucionales</a></li>
@@ -73,174 +73,101 @@
 
         </div>
     </header>
+
     <section>
-
-        <div class="seccion-derechos">
-            <div class="bloque-info">
-
-                <h2 id="tituloInf">Derechos y deberes del paciente</h2>
-
-
-                <div class="acordeon">
-                    <div class="item-acordeon" onclick="toggleAcordeon(this)">
-                        <span>Derechos</span>
-                        <span class="flecha">↓</span>
-                    </div>
-                    <div class="contenido-acordeon">
-                        <p>Como paciente, usted tiene el derecho fundamental a recibir una atención humanizada, digna y
-                            sin discriminación, garantizando en todo momento la confidencialidad de su historial clínico
-                            y el respeto a su intimidad. Tiene derecho a ser informado de manera clara y oportuna sobre
-                            su diagnóstico, opciones de tratamiento y posibles riesgos, permitiéndole participar
-                            activamente en las decisiones sobre su salud con total libertad y autonomía.</p>
-                    </div>
-                </div>
-
-                <div class="acordeon">
-                    <div class="item-acordeon" onclick="toggleAcordeon(this)">
-                        <span>Deberes</span>
-                        <span class="flecha">↓</span>
-                    </div>
-                    <div class="contenido-acordeon">
-                        <p>Como usuario de nuestra institución, usted tiene el deber de suministrar información veraz,
-                            completa y clara sobre su estado de salud y antecedentes médicos. Asimismo, es su
-                            responsabilidad tratar con respeto al personal médico y administrativo, cumplir con las
-                            normas de seguridad del centro, cuidar las instalaciones y seguir las indicaciones del
-                            equipo asistencial para garantizar el éxito de su tratamiento.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bloque-imagen">
-                <img src="img/fde.jpg" alt="Personal de salud">
-            </div>
-        </div>
-
-
-        <div class="fd-background">
-            <img src="img/imgx.jpg" alt="">
-            <div class="container text-overlay-content">
-                <div class="row">
-                    <div class="col-12 text-center text-white">
-                        <h1 class="entrega">Solicitud historia clinica</h1>
-                        <button class="btn">Formulario</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
         <div class="servicios-preparacion">
-            <h2 class="titulo-preparacion">Preparación para procedimientos</h2>
+            <h2 class="titulo-preparacion">Campañas Institucionales</h2>
+            <p class="descripcion-vol">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis asperiores aliquam aperiam quae saepe assumenda distinctio.
+                Rem tempora, quo quos inventore natus, rerum iusto voluptatum cum ipsa doloremque, corrupti veritatis?
+            </p>
             <div class="servicios-detalles">
                 <div class="tabs-container">
                     <button class="tab-btn active"
-                        onclick="mostrarContenido(event, 'laboratorios')">Laboratorios</button>
-                    <button class="tab-btn" onclick="mostrarContenido(event, 'ecografias')">Ecografías</button>
-                    <button class="tab-btn" onclick="mostrarContenido(event, 'biopsias')">Biopsias</button>
+                        onclick="mostrarContenido(event, 'crecer-saludable')">Crecer Saludable</button>
+                    <button class="tab-btn" onclick="mostrarContenido(event, 'piel')">Piel</button>
+                    <button class="tab-btn" onclick="mostrarContenido(event, 'prostata')">Prostata</button>
                 </div>
 
                 <div class="content-container">
-                    <div id="laboratorios" class="tab-content active">
-                        <h3>Nuestros Laboratorios</h3>
+                    <div id="crecer-saludable" class="tab-content active">
+                        <h3>Crecer Saludable</h3>
                         <p>
                         <div class="procedimientos">
                             <div class="procedimientos-container">
                                 <div class="tarjeta-lab">
-                                    <img src="img/laboratorio1.jfif" alt="Laboratorio de Patología">
+                                    <img src="img/crecerSaludable1.jpeg" alt="">
                                 </div>
                                 <div class="tarjeta-lab">
-                                    <img src="img/laboratorio2.jfif" alt="Equipos de Análisis">
+                                    <img src="img/crecerSaludable2.jpeg" alt="">
                                 </div>
                                 <div class="tarjeta-lab">
-                                    <img src="img/laboratorio3.jfif" alt="Toma de Muestras">
+                                    <img src="img/crecerSaludable3.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
                         </p>
                     </div>
-
-                    <div id="ecografias" class="tab-content">
-                        <h3>Ecografías Especializadas</h3>
+                    <div id="piel" class="tab-content">
+                        <h3>Piel</h3>
                         <p>
                         <div class="procedimientos">
                             <div class="procedimientos-container">
                                 <div class="tarjeta-lab">
-                                    <img src="img/ecografia1.jpg" alt="Laboratorio de Patología">
+                                    <img src="img/piel1.jpeg" alt="">
                                 </div>
                                 <div class="tarjeta-lab">
-                                    <img src="img/ecografia2.jpg" alt="Equipos de Análisis">
+                                    <img src="img/piel2.jpeg" alt="">
                                 </div>
                                 <div class="tarjeta-lab">
-                                    <img src="img/ecografia3.jpg" alt="Toma de Muestras">
+                                    <img src="img/piel3.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
                         </p>
                     </div>
-
-                    <div id="biopsias" class="tab-content">
-                        <h3>Servicio de Biopsias</h3>
+                    <div id="prostata" class="tab-content">
+                        <h3>Prostata</h3>
                         <p>
                         <div class="procedimientos">
                             <div class="procedimientos-container">
                                 <div class="tarjeta-lab">
-                                    <img src="img/ins1.jpg" alt="Laboratorio de Patología">
+                                    <img src="img/prostata1.jpeg" alt="">
                                 </div>
                                 <div class="tarjeta-lab">
-                                    <img src="img/ins2.jpg" alt="Equipos de Análisis">
-                                </div>
-                                <div class="tarjeta-lab">
-                                    <img src="img/ins3.jpg" alt="Toma de Muestras">
+                                    <img src="img/prostata2.jpeg" alt="">
                                 </div>
                             </div>
                         </div>
                         </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="entrega-resultados" id="resultados">
-                <div class="resultados-card">
-                    <div class="resultados-info">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-file-medical"></i>
-                        </div>
-                        <div class="text-box">
-                            <h2>Entrega de Resultados</h2>
-                            <p>Consulta tus exámenes de **Laboratorio**, **Ecografías** o **Biopsias** de forma rápida y
-                                segura.</p>
-                        </div>
-                    </div>
-                    <div class="resultados-action">
-                        <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Solicitar por WhatsApp</span>
-                        </a>
-                        <span class="nota">Atención inmediata de Lunes a Viernes</span>
                     </div>
                 </div>
             </div>
         </div>
-
+        <menu class="open">
+            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
+                class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
+            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
+                    style="color: rgb(239, 47, 189);"></i></a>
+            <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
+            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
+                    style="color: rgb(47, 106, 210);"></i></a>
+            <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
+        </menu>
     </section>
 
-    <menu class="open">
-        <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
-            class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
-        <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
-                style="color: rgb(239, 47, 189);"></i></a>
-        <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
-        <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
-                style="color: rgb(47, 106, 210);"></i></a>
-        <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
-    </menu>
 
-
+    <div id="modalImagen" class="modal-zoom">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" id="imgExpandida">
+        <div id="caption-modal"></div>
+    </div>
     <footer class="footer-simple">
         <div class="footer-content">
 
             <div class="footer-column">
                 <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+
                 <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
                     región.</p>
             </div>
@@ -274,39 +201,9 @@
         </div>
     </footer>
 
+
+
     <script>
-
-
-        const trigger = document.querySelector('menu > .trigger');
-        trigger.addEventListener('click', (e) => {
-            e.currentTarget.parentElement.classList.toggle('open');
-        })
-
-
-        const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const dropDownMenu = document.querySelector('.dropdown_menu')
-
-        toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-
-
-
-        function toggleAcordeon(elemento) {
-            const contenido = elemento.nextElementSibling;
-            // Cierra otros si quieres, o solo abre este:
-            if (contenido.style.display === "block") {
-                contenido.style.display = "none";
-            } else {
-                contenido.style.display = "block";
-            }
-        }
         function mostrarContenido(evt, nombreServicio) {
             // 1. Ocultar todos los contenidos
             const contenidos = document.getElementsByClassName("tab-content");
@@ -325,7 +222,89 @@
             evt.currentTarget.classList.add("active");
         }
 
-        
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
+
+            // Seleccionamos todas las imágenes dentro del carrusel
+            const imagenes = Array.from(document.querySelectorAll('.content-container .tab-content img'));
+            let indiceActual = 0;
+
+            // Función para abrir y actualizar el modal
+            function abrirModal(index) {
+                indiceActual = index;
+                modal.style.display = "flex"; // Usamos flex para centrar
+                const imgSeleccionada = imagenes[indiceActual];
+
+                imgModal.src = imgSeleccionada.src;
+
+                // Buscamos el H3 más cercano para el título
+                const titulo = imgSeleccionada.closest('.tab-content').querySelector('h3').innerText;
+                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
+            }
+
+            // Asignar el evento click a cada imagen
+            imagenes.forEach((img, index) => {
+                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
+                img.onclick = function () {
+                    abrirModal(index);
+                };
+            });
+
+            // --- NAVEGACIÓN POR TECLADO ---
+            document.addEventListener('keydown', function (e) {
+                // Solo si el modal está abierto
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") { // Flecha Derecha
+                        indiceActual = (indiceActual + 1) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
+                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") { // Tecla Esc
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar al clickear la X
+            spanCerrar.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+
+
+        //Menu Responsive y Trigger Redes Sociales
+
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+        const trigger = document.querySelector('menu > .trigger');
+        trigger.addEventListener('click', (e) => {
+            e.currentTarget.parentElement.classList.toggle('open');
+        })
 
     </script>
 </body>

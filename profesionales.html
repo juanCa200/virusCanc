@@ -13,23 +13,14 @@
 </head>
 
 <body>
-    <div class="top-bar">
-        <div class="contact-info">
-            <span>📞 Citas Médicas: +57 606 333 3340</span>
-            <span>📧 contacto@laliga.org.co</span>
-            <span>📧 contacto@laliga.org.co</span>
-        </div>
-        <div class="top-buttons">
-            <a href="#" class="btn-como-donar">Cómo Donar</a>
-        </div>
-    </div>
+
     <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
-                <li ><a href="index.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
-                <li class="link_active dropdown">
+                <li class="dropdown">
                     <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="institucion.html">Quiénes somos</a></li>
@@ -46,7 +37,7 @@
                         <li><a href="programas.html">Programas Educativos</a></li>
                     </ul>
                 </li>
-                <li><a href="profesionales.html">Profesionales</a></li>
+                <li class="link_active"><a href="profesionales.html">Profesionales</a></li>
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             </ul>
             <div class="btns">
@@ -59,7 +50,7 @@
         <div class="dropdown_menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
-            <li class="link_active dropdown">
+            <li class="dropdown">
                 <a href="" class="dropdown-toggle">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="institucion.html">Quiénes somos</a></li>
@@ -76,53 +67,51 @@
                         <li><a href="programas.html">Programas Educativos</a></li>
                     </ul>
                 </li>
-            <li><a href="profesionales.html">Profesionales</a></li>
+            <li class="link_active"><a href="profesionales.html">Profesionales</a></li>
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             <button class="btn">Quiero Ser Voluntario</button>
 
         </div>
     </header>
-    <section>
-        <div class="contenedor-voluntariado">
-            <aside class="sidebar-botones">
-                <div class="sidebar-header">
-                    Nuestros Pilares
-                </div>
-                <nav class="menu-navegacion">
-                    <button class="nav-b active" onclick="cambiarInfo(0)">¿Quiénes somos?</button>
-                    <button class="nav-b" onclick="cambiarInfo(1)">Historia</button>
-                    <button class="nav-b" onclick="cambiarInfo(2)">Misión y visión</button>
-                    <button class="nav-b" onclick="cambiarInfo(3)">Valores institucionales</button>
-                    <button class="nav-b" onclick="cambiarInfo(4)">Política de calidad</button>
-                    <button class="nav-b" onclick="cambiarInfo(5)">Política para gestión integral del riesgo</button>
-                    <button class="nav-b" onclick="cambiarInfo(6)">Sarlaft/Ftdam</button>
 
-                </nav>
-            </aside>
+    <section class="seccion-profesionales">
+    
+    <div class="encabezado-seccion">
+        <h2 class="titulo-preparacion">Nuestros Profesionales</h2>
+    </div>
 
-            <main class="contenido-derecho" id="contenidoPrincipal">
-                <h2 id="tituloInfo">Nuestros Pilares</h2>
-                <div id="textoInfo">
-                    <p>Bienvenido al espacio dedicado a la identidad y el corazón de nuestra institución. En este
-                        apartado, podrás explorar la trayectoria histórica de la Liga Contra el Cáncer Seccional Meta,
-                        conociendo de cerca los pilares éticos y humanos que sostienen nuestra labor diaria. Aquí
-                        encontrarás información detallada sobre nuestra misión de salvar vidas, la visión que nos
-                        proyecta hacia el futuro y el compromiso inquebrantable de un equipo profesional dedicado a la
-                        prevención y el bienestar de todas las familias llaneras.</p>
-                    <p>Nuestro propósito es brindarte la transparencia y seguridad que necesitas al confiar en nosotros.
-                        Al navegar por esta sección, descubrirás cómo hemos transformado la lucha contra el cáncer en un
-                        modelo de servicio integral, donde la educación y el diagnóstico temprano son nuestras
-                        herramientas más poderosas. Te invitamos a conocer las bases de una organización que nace de la
-                        solidaridad y trabaja incansablemente por la salud de nuestra región.</p>
-                    <p>Te invitamos a ser parte de nuestra historia, ya sea informándote, participando en nuestras
-                        campañas o simplemente compartiendo este conocimiento con los tuyos. Juntos, seguimos
-                        construyendo un departamento del Meta más sano, consciente y fuerte frente al cáncer, porque tu
-                        salud es, y será siempre, nuestra mayor inspiración.</p>
+    <div class="banner-profesionales-azul">
+        <div class="contenido-banner">
+            <span class="tagline">Compromiso Institucional</span>
+            
+            <h1 class="titulo-banner">
+                Especialistas que <span class="texto-rojo">transforman vidas</span>
+            </h1>
+            
+            <p class="extracto-banner">
+                Más de 140 profesionales de la salud comprometidos con brindarte atención médica de excelencia, con calidad humana y científica en el departamento del Meta.
+            </p>
+            
+            <div class="bloque-estadisticas">
+                <div class="stat-card">
+                    <div class="stat-value">140+</div>
+                    <div class="stat-label">Especialistas</div>
                 </div>
-            </main>
+                
+                <div class="stat-card">
+                    <div class="stat-value">40+</div>
+                    <div class="stat-label">Especialidades</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Compromiso</div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <menu class="open">
+    <menu class="open">
             <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
                 class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
             <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
@@ -133,9 +122,8 @@
             <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
         </menu>
     </section>
-    <!--
+
     <div class="servicios-preparacion">
-        <h2 class="titulo-preparacion">Profesionales</h2>
         <div class="servicios-detalles">
             <div class="tabs-container">
                 <button class="tab-btn active" onclick="mostrarContenido(event, 'dermatologos')">Dermatologos</button>
@@ -539,48 +527,7 @@
         </div>
 
     </div>
---->
-
-    <footer class="footer-simple">
-        <div class="footer-content">
-
-            <div class="footer-column">
-                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
-                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
-                    región.</p>
-            </div>
-
-            <div class="footer-column">
-                <h3>Secciones</h3>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Nuestros Servicios</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Campañas</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Contacto</h3>
-                <p>Calle 33A # 38 - 56 Barzal</p>
-                <p>Villavicencio, Meta</p>
-                <p>Tel: 608 6632320</p>
-                <div class="social-icons">
-                    <a href="#" title="Facebook">FB</a>
-                    <a href="#" title="Instagram">IG</a>
-                    <a href="#" title="YouTube">YT</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
-        </div>
-    </footer>
     <script>
-
-
         function mostrarContenido(evt, nombreServicio) {
             // 1. Ocultar todos los contenidos
             const contenidos = document.getElementsByClassName("tab-content");
@@ -599,44 +546,8 @@
             evt.currentTarget.classList.add("active");
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // 1. Seleccionamos los bloques importantes de tu HTML
-            const selectores = [
-                '.texto h2',
-                '.btns',
-                '.servicios-preparacion',
-                '.card-container',
-                '.contenedor-voluntariado'
-            ];
 
-            const elementos = document.querySelectorAll(selectores.join(', '));
-
-            // 2. Configuramos el observador
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Si quieres que la animación se repita cada vez que subas/bajes, 
-
-                    }
-                });
-            }, {
-                threshold: 0.15 // Se activa cuando el 15% del elemento es visible
-            });
-
-            // 3. Aplicamos la clase base y empezamos a observar
-            elementos.forEach(el => {
-                el.classList.add('scroll-reveal');
-                observer.observe(el);
-            });
-        });
-
-
-
-        const trigger = document.querySelector('menu > .trigger');
-        trigger.addEventListener('click', (e) => {
-            e.currentTarget.parentElement.classList.toggle('open');
-        })
+        //Menu Responsive y Trigger Redes Sociales
 
         const toggleBtn = document.querySelector('.toggle_btn')
         const toggleBtnIcon = document.querySelector('.toggle_btn i')
@@ -651,194 +562,10 @@
                 : 'fa-solid fa-bars'
         }
 
-
-        let indiceActual = 0;
-
-        function moverCarrusel(direccion) {
-            const track = document.getElementById('trackServicios');
-            const cards = document.querySelectorAll('.service-card-voluntariado');
-            const totalCards = cards.length;
-
-            let visibles = 3;
-            if (window.innerWidth <= 900) visibles = 2;
-            if (window.innerWidth <= 600) visibles = 1;
-
-            indiceActual += direccion;
-
-            if (indiceActual < 0) indiceActual = 0;
-            if (indiceActual > totalCards - visibles) indiceActual = totalCards - visibles;
-
-            const anchoContenedor = track.parentElement.offsetWidth;
-            const gap = 24;
-            const anchoCard = (anchoContenedor - (gap * (visibles - 1))) / visibles;
-
-            const desplazamiento = indiceActual * (anchoCard + gap);
-
-            track.style.transform = `translateX(-${desplazamiento}px)`;
-            actualizarPuntos();
-        }
-
-        function actualizarPuntos() {
-            const puntos = document.querySelectorAll('.dot-item');
-            puntos.forEach((punto, i) => {
-                punto.classList.toggle('active', i === indiceActual);
-            });
-        }
-
-
-
-        const datosInfo = [
-            {
-                titulo: "Quienes somos",
-                texto: `<section class="seccion-video-local">
-    <div class="contenedor-reproductor">
-        <!-- El atributo 'poster' pone una imagen de portada antes de dar play -->
-        <video 
-            controls 
-            class="video-institucional" 
-            poster="img/portada-video.jpg">
-            
-            <source src="img/urologia.mp4" type="video/mp4">
-            <!-- Texto de respaldo por si el navegador es muy antiguo -->
-            Tu navegador no soporta la reproducción de video. 
-            <a href="video/tu-video-aqui.mp4">Descarga el video aquí</a>.
-        </video>
-    </div>
-</section>`
-            },
-            {
-
-
-
-                titulo: "Historia",
-                texto: `<div class="historia-container">
-                    <img src="img/historiaimagen.jpeg" alt="Historia Liga Contra el Cáncer" class="img-historia">
-                    
-                    <p><strong>En 1979</strong> surge la idea de fundar una sede de la Liga Contra el Cáncer en el Meta. Importantes figuras públicas y privadas acordaron que era una necesidad primaria, ya que muchos ciudadanos de alto riesgo debían trasladarse hasta Bogotá solventando muchas dificultades.</p>
-                    
-                    <p><strong>En 1980</strong> se da inicio a la construcción de la sede. Los recursos para esta actividad se consiguieron a través de actividades como bazares, rifas y bingos; una tradición que persiste anualmente como símbolo de unión regional.</p>
-                    
-                    <p>En sus <strong>47 años</strong>, la institución ha contado con la guía de 11 presidentas, cada una realizando significativos aportes al crecimiento institucional. Hoy día, la Liga realiza proyectos mancomunados con su equipo de Voluntarias para impactar positivamente a las empresas y familias de la región.</p>
-                </div>`
-
-                /*
-                titulo: "Nuestras Instalaciones",
-                texto: `
-        <div class="mosaico-galeria">
-            <div class="img-item"><img src="img/ins1.jpg" alt="Sede 1"><div class="pie">Consultorios</div></div>
-            <div class="img-item"><img src="img/ins2.jpg" alt="Sede 2"><div class="pie">Salas de Espera</div></div>
-            <div class="img-item"><img src="img/ins3.jpg" alt="Sede 3"><div class="pie">Laboratorio</div></div>
-            <div class="img-item"><img src="img/ins4.jpg" alt="Sede 4"><div class="pie">Área Administrativa</div></div>
-            <div class="img-item"><img src="img/ins2.jpg" alt="Sede 5"><div class="pie">Equipos Médicos</div></div>
-            <div class="img-item"><img src="img/ins2.jpg" alt="Sede 6"><div class="pie">Atención al Usuario</div></div>
-        </div>`*/
-            },
-            {
-
-                titulo: "Misión",
-                texto: `<p>El propósito de La Liga contra el Cáncer Seccional Meta, es contribuir en la disminución de la morbimortalidad por la enfermedad de cáncer y otras patologías, a través de programas educación, formación, promoción, diagnóstico precoz y rehabilitación del paciente. Somos una entidad sin ánimo de lucro, que presta servicios de salud en diferentes especialidades, para ello, contamos con talento humano altamente calificado y un equipo comprometido con el cuidado de nuestros usuarios y pacientes, que actúa bajo los principios de calidad, oportunidad y satisfacción en cada uno de los procesos que llevamos a cabo.<p>
-            <h2>Visión</h2>   
-            <p>La Liga Contra el Cáncer – seccional Meta se compromete para el 2028 a ser líder en programas de promoción de salud, prevención y diagnóstico del cáncer y otras patologías, para la región de la Orinoquía, expandiendo y ampliando nuestros servicios de alta calidad, en todo tipo de población en los diferentes rangos de edad, siendo reconocidos por el alto impacto en la comunidad, brindando un modelo efectivo de apoyo y acompañamiento a nuestros pacientes con plena vocación de un servicio humanizado y confidencial, contribuyendo con la protección del medio ambiente.</p>`
-
-                /*
-                    titulo: "Voluntariado",
-                    texto: `<div class="carrusel-servicios-wrapper-i">
-                            <div class="carousel-area">
-                    <div class="carousel-nav-container">
-                        <button class="nav-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-                        <button class="nav-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-                    </div>
-    
-                    <div class="carousel-window">
-                        <div class="carousel-track" id="trackServicios">
-    
-                            <div class="service-card-voluntariado">
-                                <img src="img/voluntariado1.jpeg" alt="Consulta Especializada">
-                            </div>
-    
-    
-                            <div class="service-card-voluntariado">
-                                <img src="img/voluntariado2.jpeg" alt="Consulta Especializada">
-                            </div>
-    
-                            <div class="service-card-voluntariado">
-                                <img src="img/voluntariado3.jpeg" alt="Consulta Especializada">
-                            </div>
-    
-                            <div class="service-card-voluntariado">
-                                <img src="img/voluntariado4.jpeg" alt="Consulta Especializada">
-                            </div>
-    
-                            <div class="service-card-voluntariado">
-                                <img src="img/voluntariado5.jpeg" alt="Consulta Especializada">
-                            </div>
-    
-                            <div class="service-card-voluntariado">
-                                <img src="img/voluntariado6.jpeg" alt="Consulta Especializada">
-                            </div>
-                        </div>
-                   </div>
-                </div>`*/
-            },
-            {
-
-                titulo: "Valores Institucionales",
-                texto: `<p>La Liga Contra el Cáncer – seccional Meta se compromete para el 2028 a ser líder en programas de promoción de salud, prevención y diagnóstico del cáncer y otras patologías, para la región de la Orinoquía, expandiendo y ampliando nuestros servicios de alta calidad, en todo tipo de población en los diferentes rangos de edad, siendo reconocidos por el alto impacto en la comunidad, brindando un modelo efectivo de apoyo y acompañamiento a nuestros pacientes con plena vocación de un servicio humanizado y confidencial, contribuyendo con la protección del medio ambiente.</p>`
-
-                /*
-                titulo: "Régimen Tributario",
-                texto: `
-    <div class="contenedor-pdfs">
-        <p>En cumplimiento de la normativa vigente, compartimos nuestros documentos de transparencia:</p>
-        
-        <div class="tarjeta-pdf">
-            <div class="icono-pdf">📄</div>
-            <div class="info-pdf">
-                <span class="nombre-pdf">INFORME DE GESTIÓN PRESIDENCIA 2024</span>
-                <a href="img/INFORME.pdf" target="_blank" class="btn-descarga">Ver Documento</a>
-            </div>
-        </div>
-
-        <div class="tarjeta-pdf">
-            <div class="icono-pdf">📄</div>
-            <div class="info-pdf">
-                <span class="nombre-pdf">ESTADOS FINANCIEROS 2024 CON NOTAS</span>
-                <a href="img/ESTADOS-FINANCIEROS.pdf" target="_blank" class="btn-descarga">Ver Documento</a>
-            </div>
-        </div>
-    </div>`*/
-            },
-            {
-                titulo: "Política de calidad",
-                texto:  `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
-            },
-            {
-                titulo: "Política para gestión integral del riesgo",
-                texto:  `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
-            },
-            {
-                titulo: "Sarlaft/Ftdam",
-                texto:  `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
-            }
-
-
-        ];
-
-        function cambiarInfo(indice) {
-            // 1. Actualizar texto y título
-            document.getElementById('tituloInfo').innerText = datosInfo[indice].titulo;
-            document.getElementById('textoInfo').innerHTML = datosInfo[indice].texto;
-
-            // 2. Cambiar clase activa (CORREGIDO: ahora busca .nav-b)
-            const botones = document.querySelectorAll('.nav-b');
-            botones.forEach(btn => btn.classList.remove('active'));
-            if (botones[indice]) {
-                botones[indice].classList.add('active');
-            }
-        }
-
-
+        const trigger = document.querySelector('menu > .trigger');
+        trigger.addEventListener('click', (e) => {
+            e.currentTarget.parentElement.classList.toggle('open');
+        })
     </script>
 </body>
-
 </html>

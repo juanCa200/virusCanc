@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Cancer Meta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/iconLogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
+                <li class="link_active dropdown">
+                    <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="institucion.html">Quiénes somos</a></li>
+                        <li><a href="voluntariado.html">Voluntariado</a></li>
+                        <li><a href="nuestras-instalaciones.html">Nuestras instalaciones</a></li>
+                        <li><a href="tributario.html">Régimen tributario</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="campanas.html">Campañas Institucionales</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="programas.html">Programas Educativos</a></li>
+                    </ul>
+                </li>
+                <li><a href="profesionales.html">Profesionales</a></li>
+                <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
+            </ul>
+            <div class="btns">
+                <button class="btn">Como Donar</button>
+            </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div class="dropdown_menu">
+            <li class="link_active"><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="institucion.html">Quiénes somos</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="instalaciones.html">Nuestras instalaciones</a></li>
+                    <li><a href="tributario.html">Régimen tributario</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                    <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="campanas.html">Campañas Institucionales</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="programas.html">Programas Educativos</a></li>
+                    </ul>
+                </li>
+            <li><a href="profesionales.html">Profesionales</a></li>
+                <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
+            <button class="btn">Quiero Ser Voluntario</button>
+
+        </div>
+    </header>
+
+    <section>
+        <div class="servicios-preparacion">
+            <h2 class="titulo-preparacion">Nuestras Instalaciones</h2>
+            <p class="descripcion-vol">
+                Contamos con una infraestructura diseñada para brindar comodidad, seguridad y una atención humanizada 
+                a todos nuestros usuarios. Nuestras instalaciones combinan tecnología médica de vanguardia con espacios amplios 
+                y confortables, garantizando un entorno óptimo para el diagnóstico, tratamiento y recuperación. 
+                En la Liga Contra el Cáncer Seccional Meta, cada rincón está pensado para su bienestar y el de su familia.
+            </p>
+            <div class="servicios-detalles">
+                <div class="tabs-container">
+                    <button class="tab-btn active"
+                        onclick="mostrarContenido(event, 'consultorios')">Consultorios</button>
+                    <button class="tab-btn" onclick="mostrarContenido(event, 'sala-espera')">Salas de Espera</button>
+                    <button class="tab-btn" onclick="mostrarContenido(event, 'laboratorio')">Laboratorio</button>
+                    <button class="tab-btn" onclick="mostrarContenido(event, 'area-administrativa')">Area
+                        Administrativa</button>
+                    <button class="tab-btn" onclick="mostrarContenido(event, 'equipos-medicos')">Equipos
+                        Medicos</button>
+                </div>
+
+                <div class="content-container">
+
+                    <div id="consultorios" class="tab-content active">
+                        <h3>Consultorios</h3>
+                        <p>
+                        <div class="procedimientos">
+                            <div class="procedimientos-container">
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins3.jpg" alt="Laboratorio de Patología">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins2.jpg" alt="Equipos de Análisis">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins4.jpg" alt="Toma de Muestras">
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+                    <div id="sala-espera" class="tab-content">
+                        <h3>Sala de Espera</h3>
+                        <p>
+                        <div class="procedimientos">
+                            <div class="procedimientos-container">
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins1.jpg" alt="Laboratorio de Patología">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins2.jpg" alt="Equipos de Análisis">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins3.jpg" alt="Toma de Muestras">
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+                    <div id="laboratorio" class="tab-content">
+                        <h3>Laboratorios</h3>
+                        <p>
+                        <div class="procedimientos">
+                            <div class="procedimientos-container">
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins1.jpg" alt="Laboratorio de Patología">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins2.jpg" alt="Equipos de Análisis">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins3.jpg" alt="Toma de Muestras">
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+
+                    <div id="area-administrativa" class="tab-content">
+                        <h3>Area Administrativa</h3>
+                        <p>
+                        <div class="procedimientos">
+                            <div class="procedimientos-container">
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins1.jpg" alt="">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins2.jpg" alt="">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+
+
+                    <div id="equipos-medicos" class="tab-content">
+                        <h3>Equipos Medicos</h3>
+                        <p>
+                        <div class="procedimientos">
+                            <div class="procedimientos-container">
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins1.jpg" alt="">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins2.jpg" alt="">
+                                </div>
+                                <div class="tarjeta-lab">
+                                    <img src="img/ins3.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <menu class="open">
+            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
+                class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
+            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
+                    style="color: rgb(239, 47, 189);"></i></a>
+            <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
+            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
+                    style="color: rgb(47, 106, 210);"></i></a>
+            <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
+        </menu>
+    </section>
+
+
+    <div id="modalImagen" class="modal-zoom">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" id="imgExpandida">
+        <div id="caption-modal"></div>
+    </div>
+
+    <!--
+    <section class="seccion-voluntariado">
+    <div class="contenedor-vol">
+        <div class="vol-header">
+            <h1>Nuestras Instalaciones</h1>
+            <div class="separador-rosa"></div>
+            <p class="descripcion-vol">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero ipsam quae labore nesciunt. Nisi assumenda nostrum quo quisquam non architecto, delectus provident, alias, cupiditate numquam dolor? Placeat illo obcaecati doloremque!
+            </p>
+        </div>
+
+        <div class="mosaico-voluntariado">
+            <div class="img-item">
+                <img src="img/ins1.jpg" alt="Acompañamiento">
+                <div class="capa-info">
+                    <span>Acompañamiento a Pacientes</span>
+                </div>
+            </div>
+            <div class="img-item">
+                <img src="img/ins2.jpg" alt="Eventos">
+                <div class="capa-info">
+                    <span>Eventos de Recaudación</span>
+                </div>
+            </div>
+            <div class="img-item">
+                <img src="img/ins3.jpg" alt="Educación">
+                <div class="capa-info">
+                    <span>Jornadas Educativas</span>
+                </div>
+            </div>
+            <div class="img-item">
+                <img src="img/ins4.jpg" alt="Logística">
+                <div class="capa-info">
+                    <span>Apoyo Logístico</span>
+                </div>
+            </div>
+            <div class="img-item">
+                <img src="img/ins3.jpg" alt="Brigadas">
+                <div class="capa-info">
+                    <span>Brigadas de Salud</span>
+                </div>
+            </div>
+            <div class="img-item">
+                <img src="img/ins1.jpg" alt="Donaciones">
+                <div class="capa-info">
+                    <span>Entrega de Donaciones</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+    <footer class="footer-simple">
+        <div class="footer-content">
+
+            <div class="footer-column">
+                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+
+                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
+                    región.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Campañas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Calle 33A # 38 - 56 Barzal</p>
+                <p>Villavicencio, Meta</p>
+                <p>Tel: 608 6632320</p>
+                <div class="social-icons">
+                    <a href="#" title="Facebook">FB</a>
+                    <a href="#" title="Instagram">IG</a>
+                    <a href="#" title="YouTube">YT</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        function mostrarContenido(evt, nombreServicio) {
+            // 1. Ocultar todos los contenidos
+            const contenidos = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < contenidos.length; i++) {
+                contenidos[i].classList.remove("active");
+            }
+
+            // 2. Desactivar todos los botones
+            const botones = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < botones.length; i++) {
+                botones[i].classList.remove("active");
+            }
+
+            // 3. Mostrar el contenido seleccionado y activar el botón
+            document.getElementById(nombreServicio).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
+
+            // Seleccionamos todas las imágenes dentro del carrusel
+            const imagenes = Array.from(document.querySelectorAll('.content-container .tab-content img'));
+            let indiceActual = 0;
+
+            // Función para abrir y actualizar el modal
+            function abrirModal(index) {
+                indiceActual = index;
+                modal.style.display = "flex"; // Usamos flex para centrar
+                const imgSeleccionada = imagenes[indiceActual];
+
+                imgModal.src = imgSeleccionada.src;
+
+                // Buscamos el H3 más cercano para el título
+                const titulo = imgSeleccionada.closest('.tab-content').querySelector('h3').innerText;
+                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
+            }
+
+            // Asignar el evento click a cada imagen
+            imagenes.forEach((img, index) => {
+                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
+                img.onclick = function () {
+                    abrirModal(index);
+                };
+            });
+
+            // --- NAVEGACIÓN POR TECLADO ---
+            document.addEventListener('keydown', function (e) {
+                // Solo si el modal está abierto
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") { // Flecha Derecha
+                        indiceActual = (indiceActual + 1) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
+                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") { // Tecla Esc
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar al clickear la X
+            spanCerrar.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+
+
+        //Menu Responsive y Trigger Redes Sociales
+
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+        const trigger = document.querySelector('menu > .trigger');
+        trigger.addEventListener('click', (e) => {
+            e.currentTarget.parentElement.classList.toggle('open');
+        })
+    </script>
+</body>
+
+</html>

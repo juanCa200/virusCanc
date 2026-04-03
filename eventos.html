@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Cancer Meta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/iconLogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    
+    <header>
+        <nav class="nav">
+            <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
+                <li class="dropdown">
+                    <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="institucion.html">Quiénes somos</a></li>
+                        <li><a href="voluntariado.html">Voluntariado</a></li>
+                        <li><a href="nuestras-instalaciones.html">Nuestras instalaciones</a></li>
+                        <li><a href="tributario.html">Régimen tributario</a></li>
+                    </ul>
+                </li>
+                <li class="link_active dropdown">
+                    <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="campanas.html">Campañas Institucionales</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="programas.html">Programas Educativos</a></li>
+                    </ul>
+                </li>
+                <li><a href="profesionales.html">Profesionales</a></li>
+                <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
+            </ul>
+            <div class="btns">
+                <button class="btn">Como Donar</button>
+            </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div class="dropdown_menu">
+            <li class="link_active"><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#seccion-servicios">Nuestros Servicios</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="institucion.html">Quiénes somos</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="instalaciones.html">Nuestras instalaciones</a></li>
+                    <li><a href="tributario.html">Régimen tributario</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                    <a href="">Educación<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="campanas.html">Campañas Institucionales</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="programas.html">Programas Educativos</a></li>
+                    </ul>
+                </li>
+            <li><a href="profesionales.html">Profesionales</a></li>
+                <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
+            <button class="btn">Quiero Ser Voluntario</button>
+
+        </div>
+    </header>
+    <section>
+        <div class="carrusel-servicios-wrapper" id="eventos">
+                <h2 class="titulo-preparacion">Eventos</h2>
+            <p class="descripcion-vol">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis asperiores aliquam aperiam quae saepe assumenda distinctio.
+                Rem tempora, quo quos inventore natus, rerum iusto voluptatum cum ipsa doloremque, corrupti veritatis?
+            </p>
+
+            <div class="carousel-area">
+                <div class="carousel-nav-container">
+                    <button class="nav-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+                    <button class="nav-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+                </div>
+
+                <div class="carousel-window">
+                    <div class="carousel-track" id="trackServicios">
+
+                        <div class="service-card-eventos">
+                            <img src="img/eventoRosa1.jpeg" alt="Consulta Especializada">
+                            <div class="card-content">
+                                <h3>Evento Rosa</h3>
+                                <p class="resumen-servicio">Jornada deportiva y solidaria donde buscamos recaudar fondos para exámenes, biopsias y tratamientos de personas con cáncer que carecen de recursos.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/simposio.jpeg" alt="Ayudas Diagnósticas">
+                            <div class="card-content">
+                                <h3>Simposio</h3>
+                                <p class="resumen-servicio">Encuentro académico de alto nivel donde expertos comparten los últimos avances en oncología y cuidado integral, fortaleciendo el conocimiento para una atención médica más humana y avanzada.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/Bingo1.jpeg" alt="Urgencias">
+                            <div class="card-content">
+                                <h3>Bingo</h3>
+                                <p class="resumen-servicio">Tradicional evento solidario diseñado para unir a la comunidad en torno a una causa común: recaudar fondos que permiten brindar apoyo directo y esperanza a quienes más lo necesitan.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/PasoPorlaVida1.jpeg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Pasos por la vida</h3>
+                                <p class="resumen-servicio">Caminata recreativa y solidaria que busca sensibilizar a la comunidad sobre la detección temprana del cáncer, promoviendo hábitos de vida saludables a través del deporte y la unión familiar.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="service-card-eventos">
+                            <img src="img/PasoPorlaVida2.jpeg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Pasos por la vida</h3>
+                                <p class="resumen-servicio">Nuestra tradicional jornada de actividad física donde cada kilómetro recorrido se traduce en esperanza y apoyo para los programas de prevención en el departamento.</p>
+                            </div>
+                        </div>
+
+                        <div class="service-card-eventos">
+                            <img src="img/RelevoPorLaVida1.jpeg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Relevo por la vida</h3>
+                                <p class="resumen-servicio">Un emotivo evento de resistencia y amor donde equipos caminan por turnos para honrar a los valientes sobrevivientes, recordar a quienes ya no están y recaudar fondos para continuar nuestra misión.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-footer">
+                <div class="dots-group">
+                    <span class="dot-item active"></span>
+                    <span class="dot-item"></span>
+                    <span class="dot-item"></span>
+                </div>
+            </div>
+        </div>
+        <menu class="open">
+            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
+                class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
+            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
+                    style="color: rgb(239, 47, 189);"></i></a>
+            <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
+            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
+                    style="color: rgb(47, 106, 210);"></i></a>
+            <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
+        </menu>
+    </section>
+
+       <footer class="footer-simple">
+        <div class="footer-content">
+
+            <div class="footer-column">
+                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+
+                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
+                    región.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Campañas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Calle 33A # 38 - 56 Barzal</p>
+                <p>Villavicencio, Meta</p>
+                <p>Tel: 608 6632320</p>
+                <div class="social-icons">
+                    <a href="#" title="Facebook">FB</a>
+                    <a href="#" title="Instagram">IG</a>
+                    <a href="#" title="YouTube">YT</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="modalImagen" class="modal-zoom">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" id="imgExpandida">
+        <div id="caption-modal"></div>
+    </div>
+
+    <script>
+        
+let indiceActual = 0;
+
+        function moverCarrusel(direccion) {
+            const track = document.getElementById('trackServicios');
+            const cards = document.querySelectorAll('.service-card-eventos');
+            const totalCards = cards.length;
+
+            let visibles = 3;
+            if (window.innerWidth <= 900) visibles = 2;
+            if (window.innerWidth <= 600) visibles = 1;
+
+            indiceActual += direccion;
+
+            if (indiceActual < 0) indiceActual = 0;
+            if (indiceActual > totalCards - visibles) indiceActual = totalCards - visibles;
+
+            const anchoContenedor = track.parentElement.offsetWidth;
+            const gap = 24;
+            const anchoCard = (anchoContenedor - (gap * (visibles - 1))) / visibles;
+
+            const desplazamiento = indiceActual * (anchoCard + gap);
+
+            track.style.transform = `translateX(-${desplazamiento}px)`;
+            actualizarPuntos();
+        }
+
+        function actualizarPuntos() {
+            const puntos = document.querySelectorAll('.dot-item');
+            puntos.forEach((punto, i) => {
+                punto.classList.toggle('active', i === indiceActual);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
+
+            // Seleccionamos todas las imágenes dentro del carrusel
+            const imagenes = Array.from(document.querySelectorAll('.carousel-track .service-card-eventos img'));
+            let indiceActual = 0;
+
+            // Función para abrir y actualizar el modal
+            function abrirModal(index) {
+                indiceActual = index;
+                modal.style.display = "flex"; // Usamos flex para centrar
+                const imgSeleccionada = imagenes[indiceActual];
+
+                imgModal.src = imgSeleccionada.src;
+
+                // Buscamos el H3 más cercano para el título
+                const titulo = imgSeleccionada.closest('.service-card').querySelector('h3').innerText;
+                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
+            }
+
+            // Asignar el evento click a cada imagen
+            imagenes.forEach((img, index) => {
+                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
+                img.onclick = function () {
+                    abrirModal(index);
+                };
+            });
+
+            // --- NAVEGACIÓN POR TECLADO ---
+            document.addEventListener('keydown', function (e) {
+                // Solo si el modal está abierto
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") { // Flecha Derecha
+                        indiceActual = (indiceActual + 1) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
+                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") { // Tecla Esc
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar al clickear la X
+            spanCerrar.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+
+//Menu Responsive y Trigger Redes Sociales
+
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+        const trigger = document.querySelector('menu > .trigger');
+        trigger.addEventListener('click', (e) => {
+            e.currentTarget.parentElement.classList.toggle('open');
+        })
+
+    </script>
+</body>
+</html>
