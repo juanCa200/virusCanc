@@ -17,10 +17,7 @@
     <div id="modalAnuncio" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <img src="img/anuncio.jpg" alt="Anuncio Liga Contra el Cáncer">
-            <div class="modal-footer">
-                <button id="btnEntendido" class="btn">Entendido</button>
-            </div>
+            <img src="img/publicidad.jpg" alt="Anuncio Liga Contra el Cáncer">
         </div>
     </div>
 
@@ -141,23 +138,23 @@
                 </div>
             </a>
             <a href="atencion.html#resultados">
-            <div class="servicio-item">
-                <i class="far fa-copy"></i>
-                <span>Eventos</span>
-            </div>
+                <div class="servicio-item">
+                    <i class="far fa-copy"></i>
+                    <span>Eventos</span>
+                </div>
             </a>
             <a href="atencion.html#resultados">
-            <div class="servicio-item">
-                <i class="fas fa-id-card"></i>
-                <span>Noticias</span>
-            </div>
+                <div class="servicio-item">
+                    <i class="fas fa-id-card"></i>
+                    <span>Noticias</span>
+                </div>
             </a>
         </nav>
 
         <div class="nuestra-esencia">
             <div class="esencia-container">
                 <div class="esencia-image">
-                    <img src="img/instalacion.jpg" alt="Clínica Primavera">
+                    <img src="img/esenciaaa.jpeg" alt="Clínica Primavera">
                 </div>
                 <div class="esencia-content">
                     <h5>NUESTRA ESENCIA</h5>
@@ -187,7 +184,7 @@
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <p class="titulo-testimonio">Historia de Valentia</p>
+                        <p class="titulo-testimonio">Blanca Pastrana</p>
                     </div>
                 </div>
 
@@ -199,7 +196,7 @@
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <p class="titulo-testimonio">Grupo de Apoyo Lazos de Amor</p>
+                        <p class="titulo-testimonio">Rubiela Carrero</p>
                     </div>
                 </div>
 
@@ -225,7 +222,7 @@
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </div>
-                        <p class="titulo-testimonio">Historia de Valentia</p>
+                        <p class="titulo-testimonio">Natalia Carvajal</p>
                     </div>
                 </div>
 
@@ -339,6 +336,16 @@
                             </div>
                         </div>
 
+                        <div class="service-card">
+                            <img src="img/servicio6.jpg" alt="Laboratorio">
+                            <div class="card-content">
+                                <h3>Servicios Médicos y Horarios</h3>
+                                <p class="resumen-servicio">Descubre nuestra oferta completa de salud. Estamos listos
+                                    para atenderte con horarios flexibles de lunes a sábado, ofreciendo desde medicina
+                                    interna hasta programas de planificación familiar y nutrición.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -405,6 +412,9 @@
         </menu>
     </section>
 
+
+
+
     <footer class="footer-simple">
         <div class="footer-content">
 
@@ -445,7 +455,17 @@
     </footer>
 
 
+    <!-- Modal para Pantalla Completa -->
+    <div id="modalImagen" class="modal-zoom">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" id="imgExpandida">
+        <div id="caption-modal"></div>
+    </div>
+
     <script>
+
+
+
         document.addEventListener("DOMContentLoaded", function () {
             // 1. Seleccionamos los bloques importantes de tu HTML
             const selectores = [
@@ -467,7 +487,7 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
                         // Si quieres que la animación se repita cada vez que subas/bajes, 
-                      
+
                     }
                 });
             }, {
@@ -532,7 +552,6 @@
         // Seleccionamos los elementos
         document.addEventListener("DOMContentLoaded", function () {
             const modal = document.getElementById("modalAnuncio");
-            const btnEntendido = document.getElementById("btnEntendido");
             const btnCerrar = document.querySelector(".close-modal");
 
             // 1. Verificamos si ya existe la "marca" en el navegador
@@ -550,7 +569,6 @@
             }
 
             // Eventos para cerrar
-            btnEntendido.addEventListener("click", cerrarModal);
             btnCerrar.addEventListener("click", cerrarModal);
 
             // Opcional: Cerrar si hace clic fuera del contenido blanco
@@ -616,6 +634,68 @@
                 punto.classList.toggle('active', i === indiceActual);
             });
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
+
+            // Seleccionamos todas las imágenes dentro del carrusel
+            const imagenes = Array.from(document.querySelectorAll('.carousel-track .service-card img'));
+            let indiceActual = 0;
+
+            // Función para abrir y actualizar el modal
+            function abrirModal(index) {
+                indiceActual = index;
+                modal.style.display = "flex"; // Usamos flex para centrar
+                const imgSeleccionada = imagenes[indiceActual];
+
+                imgModal.src = imgSeleccionada.src;
+
+                // Buscamos el H3 más cercano para el título
+                const titulo = imgSeleccionada.closest('.service-card').querySelector('h3').innerText;
+                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
+            }
+
+            // Asignar el evento click a cada imagen
+            imagenes.forEach((img, index) => {
+                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
+                img.onclick = function () {
+                    abrirModal(index);
+                };
+            });
+
+            // --- NAVEGACIÓN POR TECLADO ---
+            document.addEventListener('keydown', function (e) {
+                // Solo si el modal está abierto
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") { // Flecha Derecha
+                        indiceActual = (indiceActual + 1) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
+                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") { // Tecla Esc
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar al clickear la X
+            spanCerrar.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
 
     </script>
 </body>
