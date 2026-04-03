@@ -14,7 +14,7 @@
 
 <body>
 
-     <header>
+    <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
@@ -161,28 +161,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="entrega-resultados" id="resultados">
-                <div class="resultados-card">
-                    <div class="resultados-info">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-file-medical"></i>
-                        </div>
-                        <div class="text-box">
-                            <h2>Entrega de Resultados</h2>
-                            <p>Consulta tus exámenes de **Laboratorio**, **Ecografías** o **Biopsias** de forma rápida y
-                                segura.</p>
-                        </div>
-                    </div>
-                    <div class="resultados-action">
-                        <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Solicitar por WhatsApp</span>
-                        </a>
-                        <span class="nota">Atención inmediata de Lunes a Viernes</span>
-                    </div>
-                </div>
-            </div>
         </div>
         <menu class="open">
             <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
@@ -195,6 +173,57 @@
             <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
         </menu>
     </section>
+
+
+
+
+    <div id="modalImagen" class="modal-zoom">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" id="imgExpandida">
+        <div id="caption-modal"></div>
+    </div>
+
+
+    <footer class="footer-simple">
+        <div class="footer-content">
+
+            <div class="footer-column">
+                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+
+                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
+                    región.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Secciones</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nuestros Servicios</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Campañas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>Carrera 40 No. 37 – 102 Barrio Barzal, Villavicencio – Colombia</p>
+                <p>Villavicencio, Meta</p>
+                <p>3102040672 – 3134628259 – (8)6719105</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ligaCancermeta" title="Facebook">FB</a>
+                    <a href="https://www.instagram.com/ligaseccionalmeta/" title="Instagram">IG</a>
+                    <a href="https://www.youtube.com/@ligacancermeta" title="YouTube">YT</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
     <script>
         function mostrarContenido(evt, nombreServicio) {
             // 1. Ocultar todos los contenidos
@@ -233,6 +262,70 @@
         trigger.addEventListener('click', (e) => {
             e.currentTarget.parentElement.classList.toggle('open');
         })
+
+
+         document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
+
+            // Seleccionamos todas las imágenes dentro del carrusel
+            const imagenes = Array.from(document.querySelectorAll('.procedimientos .tarjeta-lab img'));
+            let indiceActual = 0;
+
+            // Función para abrir y actualizar el modal
+            function abrirModal(index) {
+                indiceActual = index;
+                modal.style.display = "flex"; // Usamos flex para centrar
+                const imgSeleccionada = imagenes[indiceActual];
+
+                imgModal.src = imgSeleccionada.src;
+
+                // Buscamos el H3 más cercano para el título
+                const titulo = imgSeleccionada.closest('.service-card').querySelector('h3').innerText;
+                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
+            }
+
+            // Asignar el evento click a cada imagen
+            imagenes.forEach((img, index) => {
+                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
+                img.onclick = function () {
+                    abrirModal(index);
+                };
+            });
+
+            // --- NAVEGACIÓN POR TECLADO ---
+            document.addEventListener('keydown', function (e) {
+                // Solo si el modal está abierto
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") { // Flecha Derecha
+                        indiceActual = (indiceActual + 1) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
+                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") { // Tecla Esc
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar al clickear la X
+            spanCerrar.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
     </script>
 </body>
+
 </html>

@@ -3367,7 +3367,7 @@ video {
 /* Responsivo */
 @media (max-width: 768px) {
     .contenido-unete h2 { font-size: 2rem; }
-    .btn-formulario { width: 100%; justify-content: center; padding: 15px 20px; }
+    .btn-formulario { width: 100%; justify-content: center; padding: 10px 5px; }
 }
 
 
