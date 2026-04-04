@@ -14,7 +14,7 @@
 
 <body>
 
-    <header>
+      <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
@@ -91,99 +91,38 @@
 
         </div>
     </header>
-    <section>
-        <div class="seccion-unete">
-            <div class="contenedor-unete">
-                <div class="contenido-unete">
-                    <h2>PQRSF</h2>
-                    <div class="separador-rosa-corto"></div>
-                    <p>
-                        En la Liga Contra el Cáncer Seccional Meta, su opinión es nuestra mayor oportunidad de mejora.
-                        Hemos dispuesto este canal para escuchar sus inquietudes, agradecimientos o sugerencias.
-                        Nuestro compromiso es brindarle una respuesta oportuna y transparente que nos permita
-                        seguir elevando nuestros estándares de atención y humanización.
-                    </p>
-                    <div class="acciones-unete">
-                        <a href="https://tu-formulario-de-google-o-typeform.com" target="_blank" class="btn-formulario">
-                            <i class="fa-solid fa-pen-to-square"></i>Formulario de PQRSF
-                        </a>
-                    </div>
-                    <span class="nota-informativa">* Una vez enviado el formulario, nuestro equipo se pondrá en contacto
-                        contigo</span>
-                </div>
+    <section class="seccion-donaciones">
+    <div class="container">
+        
+        <div class="encabezado-donacion">
+            <h1>Certificado de Donación</h1>
+            <p>Gracias por apoyar nuestra labor. Su contribución nos permite seguir salvando vidas en el Meta.</p>
+        </div>
+
+        <div class="galeria-donacion">
+            <div class="foto-donacion">
+                <img src="img/donacion1.jpg" alt="Impacto 1">
+            </div>
+            <div class="foto-donacion">
+                <img src="img/donacion2.jpg" alt="Impacto 2">
+            </div>
+            <div class="foto-donacion">
+                <img src="img/donacion3.jpg" alt="Impacto 3">
             </div>
         </div>
 
-        <menu class="open">
-            <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
-                class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
-            <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
-                    style="color: rgb(239, 47, 189);"></i></a>
-            <a href="#" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
-            <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
-                    style="color: rgb(47, 106, 210);"></i></a>
-            <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
-        </menu>
-    </section>
-    <footer class="footer-simple">
-        <div class="footer-content">
-
-            <div class="footer-column">
-                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
-
-                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
-                    región.</p>
+        <!-- Bloque del Botón -->
+        <div class="accion-certificado">
+            <div class="caja-blanca-boton">
+                <h3>¿Requiere su certificado tributario?</h3>
+                <p>Haga clic en el botón para completar los datos de su donación y generar su documento.</p>
+                <a href="formulario-donacion.html" class="btn-cert">
+                    SOLICITAR CERTIFICADO <i class="fas fa-file-download"></i>
+                </a>
             </div>
-
-            <div class="footer-column">
-                <h3>Secciones</h3>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Nuestros Servicios</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Campañas</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Contacto</h3>
-                <p>Calle 33A # 38 - 56 Barzal</p>
-                <p>Villavicencio, Meta</p>
-                <p>Tel: 608 6632320</p>
-                <div class="social-icons">
-                    <a href="#" title="Facebook">FB</a>
-                    <a href="#" title="Instagram">IG</a>
-                    <a href="#" title="YouTube">YT</a>
-                </div>
-            </div>
-
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    <script>
-        //Menu Responsive y Trigger Redes Sociales
-
-        const toggleBtn = document.querySelector('.toggle_btn')
-        const toggleBtnIcon = document.querySelector('.toggle_btn i')
-        const dropDownMenu = document.querySelector('.dropdown_menu')
-
-        toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars'
-        }
-
-        const trigger = document.querySelector('menu > .trigger');
-        trigger.addEventListener('click', (e) => {
-            e.currentTarget.parentElement.classList.toggle('open');
-        })
-    </script>
+    </div>
+</section>
 </body>
-
 </html>

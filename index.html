@@ -56,7 +56,9 @@
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             </ul>
             <div class="btns">
-                <button class="btn">Como Donar</button>
+                <a href="donar.html">
+                    <button class="btn">Como Donar</button>
+                </a>
             </div>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -100,7 +102,6 @@
     <section>
 
 
-
         <div class="slider-box">
             <ul>
                 <li>
@@ -136,7 +137,9 @@
                             </div>
                         </div>
                         <div class="btns">
+                            <a href="voluntariado.html">
                             <button class="btn">QUIERO SER VOLUNTARIO</button>
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -445,7 +448,8 @@
                 class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
             <a href="https://www.instagram.com/ligaseccionalmeta/" class="action"><i class="fa-brands fa-instagram"
                     style="color: rgb(239, 47, 189);"></i></a>
-            <a href="https://www.youtube.com/@ligacancermeta" class="action"><i class="fa-brands fa-youtube" style="color: rgb(210, 47, 47);"></i></a>
+            <a href="https://www.youtube.com/@ligacancermeta" class="action"><i class="fa-brands fa-youtube"
+                    style="color: rgb(210, 47, 47);"></i></a>
             <a href="https://www.facebook.com/ligaCancermeta" class="action"><i class="fa-brands fa-facebook"
                     style="color: rgb(47, 106, 210);"></i></a>
             <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
@@ -500,6 +504,36 @@
     </div>
 
     <script>
+
+
+        const slider = document.querySelector('.slider-box');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Multiplicador de velocidad
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
 
 
 
