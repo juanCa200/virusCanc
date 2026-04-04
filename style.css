@@ -1,10 +1,8 @@
-
-
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding-top: 80px;
-    
+
 }
 
 /*
@@ -121,20 +119,25 @@ header {
 
 .dropdown-menu {
     position: absolute;
-    top: 110%; /* Un poco más abajo para que no pegue al borde */
+    top: 110%;
+    /* Un poco más abajo para que no pegue al borde */
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Centrado y un poco abajo */
+    transform: translateX(-50%) translateY(10px);
+    /* Centrado y un poco abajo */
     background-color: #ffffff;
     min-width: 220px;
-    border-radius: 12px; /* Bordes bien redondeados, más moderno */
+    border-radius: 12px;
+    /* Bordes bien redondeados, más moderno */
     padding: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* Sombra elegante */
     list-style: none;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efecto rebote */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Efecto rebote */
     z-index: 9999;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .dropdown-menu::before {
@@ -157,7 +160,8 @@ header {
     color: #333 !important;
     padding: 12px 15px;
     display: block;
-    border-radius: 8px; /* Redondeado interno */
+    border-radius: 8px;
+    /* Redondeado interno */
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
@@ -165,16 +169,20 @@ header {
 }
 
 .dropdown-menu li a:hover {
-    background-color: #fce4ec; /* Un rosa muy clarito (Liga) */
-    color: #c0272c !important; /* Rosa fuerte */
-    padding-left: 20px; /* Pequeño desplazamiento a la derecha */
+    background-color: #fce4ec;
+    /* Un rosa muy clarito (Liga) */
+    color: #c0272c !important;
+    /* Rosa fuerte */
+    padding-left: 20px;
+    /* Pequeño desplazamiento a la derecha */
 }
 
 /* 5. ACTIVACIÓN (Hover) */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0); /* Sube suavemente a su posición */
+    transform: translateX(-50%) translateY(0);
+    /* Sube suavemente a su posición */
 }
 
 .dropdown:hover .fa-chevron-down {
@@ -344,14 +352,16 @@ header {
 @media (max-width: 650px) {
     /* 1. Ocultamos h2 y botones definitivamente */
 
-      .slider-box {
+    .slider-box {
         height: 100px !important;
     }
+
     .slider-box img {
         height: 100% !important;
         object-fit: cover !important;
     }
-    .texto h2, 
+
+    .texto h2,
     .texto .btns {
         display: none !important;
     }
@@ -359,12 +369,15 @@ header {
     /* 2. El contenedor ahora solo maneja las tarjetas */
     .texto {
         position: absolute !important;
-        top: 50% !important; /* Centrado vertical en el slider */
+        top: 50% !important;
+        /* Centrado vertical en el slider */
         transform: translateY(-50%) !important;
-        left: 10px !important; /* Pegado al borde izquierdo */
+        left: 10px !important;
+        /* Pegado al borde izquierdo */
         width: auto !important;
         display: flex !important;
-        flex-direction: column !important; /* Una debajo de otra */
+        flex-direction: column !important;
+        /* Una debajo de otra */
         align-items: flex-start !important;
         gap: 8px !important;
         padding: 0 !important;
@@ -379,7 +392,8 @@ header {
     }
 
     .mini-card {
-        width: 140px !important; /* Delgadas para liberar espacio */
+        width: 140px !important;
+        /* Delgadas para liberar espacio */
         height: 46px !important;
         background: rgba(0, 33, 64, 0.8) !important;
         backdrop-filter: blur(8px) !important;
@@ -393,7 +407,7 @@ header {
         margin: 0 !important;
     }
 
-    
+
 
     /* 4. Ajuste de iconos y textos internos */
     .mini-card i {
@@ -417,29 +431,36 @@ header {
         display: block !important;
         text-transform: uppercase;
     }
-    .education-title{
+
+    .education-title {
         margin-top: 90px;
         font-size: 2rem !important;
     }
-    .education-subtitle{
+
+    .education-subtitle {
         font-size: 1.2rem !important;
     }
 
-    
+
 }
 
 .slider-box {
     width: 100%;
-    height: 440px; /* Altura fija en PC */
-    min-height: 300px; /* <--- IMPORTANTE: Evita que se haga muy pequeña */
+    height: 440px;
+    /* Altura fija en PC */
+    min-height: 300px;
+    /* <--- IMPORTANTE: Evita que se haga muy pequeña */
     margin: 0;
     overflow: hidden;
     position: relative;
 
-    overflow-x: scroll; /* Permite el scroll horizontal */
-    scroll-snap-type: x mandatory; /* Hace que las fotos se ajusten solas */
+    overflow-x: scroll;
+    /* Permite el scroll horizontal */
+    scroll-snap-type: x mandatory;
+    /* Hace que las fotos se ajusten solas */
     scroll-behavior: smooth;
-    cursor: grab; /* Indica que se puede agarrar */
+    cursor: grab;
+    /* Indica que se puede agarrar */
 }
 
 .slider-box::-webkit-scrollbar {
@@ -489,8 +510,10 @@ header {
 
 .slider-box img {
     width: 100%;
-    height: 100%; /* Obliga a la imagen a llenar el contenedor */
-    object-fit: cover; /* Recorta la imagen sin deformarla para llenar el espacio */
+    height: 100%;
+    /* Obliga a la imagen a llenar el contenedor */
+    object-fit: cover;
+    /* Recorta la imagen sin deformarla para llenar el espacio */
     object-position: center;
 }
 
@@ -498,8 +521,10 @@ header {
     list-style: none;
     position: relative;
 
-    width: 100vw; /* Cada slide ocupa todo el ancho */
-    scroll-snap-align: start; /* Punto de anclaje */
+    width: 100vw;
+    /* Cada slide ocupa todo el ancho */
+    scroll-snap-align: start;
+    /* Punto de anclaje */
     flex-shrink: 0;
 }
 
@@ -511,17 +536,17 @@ header {
 /* El degradado mágico para leer mejor el texto */
 .slider-box li:first-child::after {
     content: "";
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
-    width: 60%; 
+    width: 60%;
     height: 100%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(255, 255, 255, 0.4) 50%, 
-        transparent 100%);
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 100%);
     z-index: 1;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* El texto debe estar por encima de la neblina */
@@ -540,10 +565,14 @@ header {
 
 .texto {
     position: absolute;
-    width: 100%; /* Asegura que cubra el ancho */
-    padding: 0 5%; /* Padding relativo en lugar de 100px */
-    top: 50%; /* Centramos verticalmente */
-    transform: translateY(-50%); /* Ajuste fino de centrado */
+    width: 100%;
+    /* Asegura que cubra el ancho */
+    padding: 0 5%;
+    /* Padding relativo en lugar de 100px */
+    top: 50%;
+    /* Centramos verticalmente */
+    transform: translateY(-50%);
+    /* Ajuste fino de centrado */
     left: 0;
     display: flex;
     flex-direction: column;
@@ -554,10 +583,13 @@ header {
 .slider-stats {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start; /* Alineadas a la izquierda */
-    gap: 12px; /* Espacio más pequeño entre cards */
+    justify-content: flex-start;
+    /* Alineadas a la izquierda */
+    gap: 12px;
+    /* Espacio más pequeño entre cards */
     margin-top: 15px;
-    width: auto; /* IMPORTANTE: Que no fuerce el 100% */
+    width: auto;
+    /* IMPORTANTE: Que no fuerce el 100% */
 }
 
 .mini-card {
@@ -565,44 +597,51 @@ header {
     color: white;
     border-radius: 8px;
     border: 1px solid white;
-    width: 180px; /* Un poco más de aire para números grandes */
+    width: 180px;
+    /* Un poco más de aire para números grandes */
     height: 55px;
     padding: 10px 15px;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alineación fija al inicio */
+    justify-content: flex-start;
+    /* Alineación fija al inicio */
     gap: 10px;
 }
 
 
 .mini-card i {
-        font-size: 1.4rem !important;
-        color: #00d4ff !important; /* Un azul cian para que resalte el icono */
-        filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.4));
-        text-align: center;
+    font-size: 1.4rem !important;
+    color: #00d4ff !important;
+    /* Un azul cian para que resalte el icono */
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.4));
+    text-align: center;
+}
+
+/* DEFINICIÓN DE LA ANIMACIÓN */
+@keyframes entradaCard {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.9);
     }
 
-    /* DEFINICIÓN DE LA ANIMACIÓN */
-    @keyframes entradaCard {
-        0% {
-            opacity: 0;
-            transform: translateX(-50px) scale(0.9);
-        }
-        70% {
-            transform: translateX(5px) scale(1.02);
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-        }
+    70% {
+        transform: translateX(5px) scale(1.02);
     }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
 
 .mini-card .info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* IMPORTANTE: Alinea el texto a la izquierda */
+    align-items: flex-start;
+    /* IMPORTANTE: Alinea el texto a la izquierda */
     justify-content: center;
-    overflow: hidden; /* Seguridad extra */
+    overflow: hidden;
+    /* Seguridad extra */
 }
 
 .mini-card .num {
@@ -611,8 +650,10 @@ header {
     line-height: 1;
     margin: 0;
     display: inline-block;
-    min-width: 80px; /* Reserva el espacio para el número final */
-    text-align: left; /* El número crece hacia la derecha, no hacia la izquierda */
+    min-width: 80px;
+    /* Reserva el espacio para el número final */
+    text-align: left;
+    /* El número crece hacia la derecha, no hacia la izquierda */
 }
 
 .mini-card .lab {
@@ -645,12 +686,22 @@ header {
 }
 
 /* Efecto cascada para las mini-cards (aparecen una tras otra) */
-.mini-card:nth-child(1) { transition-delay: 0.1s; }
-.mini-card:nth-child(2) { transition-delay: 0.3s; }
-.mini-card:nth-child(3) { transition-delay: 0.5s; }
+.mini-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.mini-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.mini-card:nth-child(3) {
+    transition-delay: 0.5s;
+}
 
 /* Efecto cascada para las service-cards del carrusel */
-.service-card { transition-delay: 0.1s; }
+.service-card {
+    transition-delay: 0.1s;
+}
 
 
 
@@ -669,16 +720,19 @@ header {
 }
 
 .texto h2 {
-    margin-bottom: 30px; /* Reducimos un poco para acercar el CTA */
+    margin-bottom: 30px;
+    /* Reducimos un poco para acercar el CTA */
     font-size: 3.8rem;
     color: #002140;
     font-weight: 900;
     line-height: 1.0;
-    letter-spacing: -1.5px; /* Estilo editorial */
+    letter-spacing: -1.5px;
+    /* Estilo editorial */
 }
 
 .texto .linea-2 {
-    color: #e63946; /* Un rojo más vibrante y moderno para "vida!" */
+    color: #e63946;
+    /* Un rojo más vibrante y moderno para "vida!" */
     display: inline-block;
 
 }
@@ -959,18 +1013,20 @@ menu>.action:nth-child(4) {
 
 /* --- ESTILO DEL DESPLEGABLE --- */
 .dropdown-servicio {
-    position: relative; /* Clave para que el hijo se posicione respecto a este */
+    position: relative;
+    /* Clave para que el hijo se posicione respecto a este */
 }
 
 .servicio-trigger {
     display: flex;
-    flex-direction: row; /* Cambiado de column a row */
+    flex-direction: row;
+    /* Cambiado de column a row */
     align-items: center;
     gap: 10px;
 }
 
 .servicio-trigger .icon-mini {
-    border: none !important; 
+    border: none !important;
     padding: 0 !important;
     min-width: auto !important;
     font-size: 0.8rem;
@@ -979,62 +1035,80 @@ menu>.action:nth-child(4) {
 
 /* Ocultar el menú por defecto */
 .dropdown-contenido {
-    display: none; /* Se oculta inicialmente */
+    display: none;
+    /* Se oculta inicialmente */
     position: absolute;
-    top: 100%; /* Aparece justo debajo de la barra azul */
+    top: 100%;
+    /* Aparece justo debajo de la barra azul */
     left: 50%;
-    transform: translateX(-50%); /* Lo centra horizontalmente */
+    transform: translateX(-50%);
+    /* Lo centra horizontalmente */
     background-color: #ffffff;
-    min-width: 260px; /* Ancho suficiente para los textos largos */
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
-    z-index: 999; /* Valor alto para que pase por encima de videos o imágenes */
+    min-width: 260px;
+    /* Ancho suficiente para los textos largos */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    /* Valor alto para que pase por encima de videos o imágenes */
     border-radius: 12px;
     padding: 10px 0;
     list-style: none;
     margin: 0;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* MOSTRAR AL HACER HOVER */
 .dropdown-servicio:hover .dropdown-contenido {
-    display: block; /* Aquí es donde ocurre la magia */
+    display: block;
+    /* Aquí es donde ocurre la magia */
     animation: slideUp 0.3s ease;
 }
 
 /* Estilo de los links dentro del desplegable */
 .dropdown-contenido li a {
-    color: #002140 !important; /* Forzamos el azul oscuro */
+    color: #002140 !important;
+    /* Forzamos el azul oscuro */
     padding: 12px 20px;
     text-decoration: none;
     display: block;
     font-size: 0.9rem;
     text-align: left;
     transition: all 0.2s;
-    border-right: none !important; /* Quitamos la línea vertical de tu estilo general */
+    border-right: none !important;
+    /* Quitamos la línea vertical de tu estilo general */
 }
 
 .dropdown-contenido li a:hover {
     background-color: #f1f5f9;
-    color: #c0272c !important; /* Rosa al pasar el mouse */
-    padding-left: 25px; /* Efecto de movimiento sutil */
+    color: #c0272c !important;
+    /* Rosa al pasar el mouse */
+    padding-left: 25px;
+    /* Efecto de movimiento sutil */
 }
 
 /* Animación suave */
 @keyframes slideUp {
-    from { 
-        opacity: 0; 
-        transform: translate(-50%, 15px); 
+    from {
+        opacity: 0;
+        transform: translate(-50%, 15px);
     }
-    to { 
-        opacity: 1; 
-        transform: translate(-50%, 0); 
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
     }
 }
 
 /* Animación de entrada */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, 10px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
+    from {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 /* Ajuste responsivo */
@@ -1066,18 +1140,21 @@ menu>.action:nth-child(4) {
     .servicios-barra {
         display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: center !important; /* Centra el grupo de 2 columnas */
+        justify-content: center !important;
+        /* Centra el grupo de 2 columnas */
         padding: 15px 0 !important;
-        gap: 0 !important; /* Manejamos el espacio con padding interno */
+        gap: 0 !important;
+        /* Manejamos el espacio con padding interno */
     }
 
     /* 1. Forzamos 2 columnas (50% cada una) */
-    .servicios-barra a, 
-    .servicios-barra > .servicio-item {
+    .servicios-barra a,
+    .servicios-barra>.servicio-item {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         display: flex !important;
-        justify-content: center !important; /* Centra el bloque en su mitad */
+        justify-content: center !important;
+        /* Centra el bloque en su mitad */
         box-sizing: border-box;
     }
 
@@ -1085,8 +1162,10 @@ menu>.action:nth-child(4) {
     .servicio-item {
         display: flex !important;
         align-items: center !important;
-        justify-content: flex-start !important; /* Alinea icono y texto entre sí */
-        width: 145px !important; /* Ancho ajustado para que quepan dos de 145px */
+        justify-content: flex-start !important;
+        /* Alinea icono y texto entre sí */
+        width: 145px !important;
+        /* Ancho ajustado para que quepan dos de 145px */
         padding: 12px 5px !important;
         margin: 0 auto !important;
         border-right: none !important;
@@ -1103,14 +1182,16 @@ menu>.action:nth-child(4) {
     }
 
     .servicio-item span {
-        font-size: 0.7rem !important; /* Tamaño pequeño para que no salte de línea */
+        font-size: 0.7rem !important;
+        /* Tamaño pequeño para que no salte de línea */
         line-height: 1.1 !important;
-        white-space: normal !important; /* Permite que el texto respire */
+        white-space: normal !important;
+        /* Permite que el texto respire */
     }
 
     /* Quitar el borde inferior a los últimos dos para que se vea limpio */
     .servicios-barra a:nth-last-child(-n+2) .servicio-item,
-    .servicios-barra > .servicio-item:nth-last-child(-n+2) {
+    .servicios-barra>.servicio-item:nth-last-child(-n+2) {
         border-bottom: none !important;
     }
 }
@@ -1279,7 +1360,8 @@ menu>.action:nth-child(4) {
 }
 
 .titulo-seccion-galeria {
-    color: #003366; /* Azul oscuro de la Liga */
+    color: #003366;
+    /* Azul oscuro de la Liga */
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -1288,7 +1370,8 @@ menu>.action:nth-child(4) {
 .separador-galeria {
     width: 60px;
     height: 4px;
-    background-color: #3498db; /* Azul claro para resaltar */
+    background-color: #3498db;
+    /* Azul claro para resaltar */
     margin: 0 auto;
     border-radius: 2px;
 }
@@ -1403,7 +1486,7 @@ menu>.action:nth-child(4) {
 
 .columna-info {
     flex: 1;
-    min-width: 280px; 
+    min-width: 280px;
     padding: 10px;
     color: var(--gris-oscuro);
 }
@@ -1411,8 +1494,8 @@ menu>.action:nth-child(4) {
 
 .columna-mapa {
     flex: 1;
-    min-width: 280px; 
-    width: 100%; 
+    min-width: 280px;
+    width: 100%;
 }
 
 .columna-info h2::after {
@@ -1450,7 +1533,8 @@ h3 {
     margin-bottom: 5px;
     letter-spacing: 1px;
 }
-h2{
+
+h2 {
     display: inline-block;
     color: #002140;
     font-size: 2.2rem;
@@ -1565,7 +1649,9 @@ iframe {
     gap: 24px;
 }
 
-.service-card, .service-card-eventos, .service-card-voluntariado {
+.service-card,
+.service-card-eventos,
+.service-card-voluntariado {
     min-width: calc(33.333% - 16px);
     background: #fff;
     max-width: 200px;
@@ -1577,7 +1663,9 @@ iframe {
     transition: transform 0.3s ease;
 }
 
-.service-card:hover , .ser-vice-card-eventos:hover, .service-card-voluntariado:hover {
+.service-card:hover,
+.ser-vice-card-eventos:hover,
+.service-card-voluntariado:hover {
     transform: translateY(-5px);
 }
 
@@ -1591,11 +1679,11 @@ iframe {
 .service-card-eventos img {
     width: 100%;
     /* Definimos un alto fijo para todas las imágenes */
-    height: 300px; 
+    height: 300px;
     /* Esta es la propiedad mágica: recorta la imagen para que llene el espacio sin estirarse */
-    object-fit: cover; 
+    object-fit: cover;
     /* Centra la imagen para que el recorte sea equilibrado */
-    object-position: center; 
+    object-position: center;
     border-bottom: 3px solid #004a87;
     display: block;
 }
@@ -1603,11 +1691,11 @@ iframe {
 .service-card-voluntariado img {
     width: 100%;
     /* Definimos un alto fijo para todas las imágenes */
-    height: 300px; 
+    height: 300px;
     /* Esta es la propiedad mágica: recorta la imagen para que llene el espacio sin estirarse */
-    object-fit: cover; 
+    object-fit: cover;
     /* Centra la imagen para que el recorte sea equilibrado */
-    object-position: center; 
+    object-position: center;
     border-bottom: 3px solid #004a87;
     display: block;
 }
@@ -1705,15 +1793,16 @@ iframe {
         flex-direction: row;
         margin-bottom: 10px;
     }
-    .service-card-eventos{
+
+    .service-card-eventos {
         min-width: calc(50% - 12px);
     }
 
-    .service-card-voluntariado{
+    .service-card-voluntariado {
         min-width: calc(50% - 12px);
     }
 
-    
+
 }
 
 @media (max-width: 600px) {
@@ -1721,13 +1810,13 @@ iframe {
         min-width: 100%;
     }
 
-    .service-card-eventos{
-                min-width: 100%;
+    .service-card-eventos {
+        min-width: 100%;
 
     }
 
-    .service-card-voluntariado{
-                min-width: 100%;
+    .service-card-voluntariado {
+        min-width: 100%;
 
     }
 }
@@ -1735,16 +1824,18 @@ iframe {
 
 /* El contenedor del modal (oculto por defecto) */
 .modal-zoom {
-    display: none; 
+    display: none;
     position: fixed;
-    z-index: 2000; /* Por encima de todo */
+    z-index: 2000;
+    /* Por encima de todo */
     padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 33, 64, 0.95); /* Azul muy oscuro traslúcido */
+    background-color: rgba(0, 33, 64, 0.95);
+    /* Azul muy oscuro traslúcido */
     backdrop-filter: blur(5px);
 }
 
@@ -1755,20 +1846,29 @@ iframe {
     max-width: 90%;
     max-height: 80vh;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: zoomIn 0.3s ease;
 }
 
 @keyframes zoomIn {
-    from {transform: scale(0.7); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* Contenedor principal del Modal */
 .modal-zoom {
-    display: none; /* Se activa con JS */
+    display: none;
+    /* Se activa con JS */
     position: fixed;
-    z-index: 9999; /* Valor muy alto para que esté sobre el menú */
+    z-index: 9999;
+    /* Valor muy alto para que esté sobre el menú */
     left: 0;
     top: 0;
     width: 100%;
@@ -1786,7 +1886,7 @@ iframe {
     max-height: 80vh;
     border: 3px solid white;
     border-radius: 8px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     object-fit: contain;
 }
 
@@ -1802,7 +1902,9 @@ iframe {
     transition: 0.3s;
 }
 
-.cerrar-modal:hover { color: #c0272c; }
+.cerrar-modal:hover {
+    color: #c0272c;
+}
 
 /* Texto del pie de foto */
 #caption-modal {
@@ -1963,22 +2065,26 @@ iframe {
 /* Sidebar */
 /* 1. Estilo base (Móvil primero o común) */
 .sidebar-botones {
-    flex: 0 0 100%; /* Por defecto ocupa todo el ancho en móvil */
+    flex: 0 0 100%;
+    /* Por defecto ocupa todo el ancho en móvil */
     background: #1a3a5a;
     border-radius: 15px;
     overflow: hidden;
-    margin-bottom: 20px; /* Espacio para que no pegue con el texto en móvil */
+    margin-bottom: 20px;
+    /* Espacio para que no pegue con el texto en móvil */
 }
 
 /* 2. Solo aplicamos el efecto "Pegajoso" en pantallas grandes (PC) */
 @media (min-width: 801px) {
     .contenedor-voluntariado {
         display: flex;
-        align-items: flex-start; /* Permite que el sticky funcione */
+        align-items: flex-start;
+        /* Permite que el sticky funcione */
     }
 
     .sidebar-botones {
-        flex: 0 0 300px; /* Vuelve a su ancho fijo de 300px */
+        flex: 0 0 300px;
+        /* Vuelve a su ancho fijo de 300px */
         position: sticky;
         top: 130px;
         margin-bottom: 0;
@@ -1998,14 +2104,15 @@ iframe {
     }
 
     .contenedor-voluntariado {
-        flex-direction: column; 
+        flex-direction: column;
     }
-    
+
     .sidebar-botones {
-        position: static; 
+        position: static;
         width: 100%;
     }
 }
+
 .sidebar-header {
     padding: 20px;
     color: white;
@@ -2190,23 +2297,32 @@ iframe {
 .img-historia {
     width: 100%;
     max-height: 400px;
-    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    object-fit: cover;
+    /* Recorta la imagen para que encaje sin deformarse */
     border-radius: 15px;
     margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     display: block;
 }
 
 /* Resaltado de años o hitos */
 .historia-container p strong {
-    color: #002140; /* El azul oscuro de tu marca */
+    color: #002140;
+    /* El azul oscuro de tu marca */
     font-size: 1.1rem;
 }
 
 /* Animación suave al cambiar de pestaña */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -2804,16 +2920,19 @@ video {
 
 .servicios-preparacion {
     width: 100%;
-    display: block; /* Asegura que no haya flex interfiriendo con el título */
+    display: block;
+    /* Asegura que no haya flex interfiriendo con el título */
     padding: 20px 0;
 }
 
 .titulo-preparacion {
     text-align: center;
-    width: 100%; /* Ocupa todo el ancho para que el center funcione */
+    width: 100%;
+    /* Ocupa todo el ancho para que el center funcione */
     color: #003366;
     font-size: 2.5rem;
-    margin: 50px auto 30px; /* Centrado automático */
+    margin: 50px auto 30px;
+    /* Centrado automático */
     font-weight: 800;
     text-transform: uppercase;
     position: relative;
@@ -2926,7 +3045,7 @@ video {
     /* Bordes redondeados como en "Nuestra Esencia" */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border:2px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
 }
 
 .tarjeta-lab:hover {
@@ -3221,14 +3340,16 @@ video {
 
 .vol-header h1 {
     font-size: 2.5rem;
-    color: #002140; /* Azul Institucional */
+    color: #002140;
+    /* Azul Institucional */
     margin-bottom: 10px;
 }
 
 .separador-rosa {
     width: 80px;
     height: 4px;
-    background-color: #c0272c; /* Rosa Liga */
+    background-color: #c0272c;
+    /* Rosa Liga */
     margin: 0 auto 20px;
     border-radius: 2px;
 }
@@ -3253,7 +3374,7 @@ video {
     height: 250px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .img-item img {
@@ -3263,53 +3384,67 @@ video {
     transition: transform 0.5s ease;
 }
 
-/* Capa de información (aparece al pasar el mouse) */
 .capa-info {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(89, 48, 240, 0.4), transparent);
+    height: 45px;
+    /* Altura de la barra azul */
+    background-color: #1a5276;
+    /* Azul institucional sólido */
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1;
+    /* Para que sea siempre visible como en la foto */
+    transition: background-color 0.3s ease;
 }
 
 .capa-info span {
     color: white;
     font-weight: 600;
-    font-size: 1rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    font-size: 0.95rem;
+    text-shadow: none;
+    /* Quitamos la sombra para un look más limpio */
 }
 
-/* Hover Effects */
-.img-item:hover img {
-    transform: scale(1.1);
-}
-
+/* Efecto opcional: Que cambie a un azul más claro o rosa al pasar el mouse */
 .img-item:hover .capa-info {
+    background-color: #c0272c;
     opacity: 1;
+
 }
+
+/* Para que la imagen se vea siempre bien */
+.img-item {
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
 
 /* Responsive para celulares */
 @media (max-width: 768px) {
-    .vol-header h1 { font-size: 2rem; }
-    .mosaico-voluntariado { grid-template-columns: 1fr; }
+    .vol-header h1 {
+        font-size: 2rem;
+    }
+
+    .mosaico-voluntariado {
+        grid-template-columns: 1fr;
+    }
 }
 
 
 /* --- SECCIÓN ÚNETE --- */
 .seccion-unete {
     padding: 80px 20px;
-    background: linear-gradient(rgba(0, 33, 64, 0.9), rgba(0, 33, 64, 0.9)), 
-                url('img/fondo-voluntarios.jpg'); /* Opcional: una foto de fondo con opacidad */
+    background: linear-gradient(rgba(0, 33, 64, 0.9), rgba(0, 33, 64, 0.9)),
+        url('img/fondo-voluntarios.jpg');
+    /* Opcional: una foto de fondo con opacidad */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efecto Parallax */
+    background-attachment: fixed;
+    /* Efecto Parallax */
     text-align: center;
     color: white;
 }
@@ -3329,7 +3464,8 @@ video {
 .separador-rosa-corto {
     width: 60px;
     height: 4px;
-    background-color: #c0272c; /* Rosa de la Liga */
+    background-color: #c0272c;
+    /* Rosa de la Liga */
     margin: 0 auto 25px;
     border-radius: 2px;
 }
@@ -3350,7 +3486,8 @@ video {
     color: white !important;
     text-decoration: none;
     padding: 18px 35px;
-    border-radius: 50px; /* Estilo píldora, muy moderno */
+    border-radius: 50px;
+    /* Estilo píldora, muy moderno */
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
@@ -3378,8 +3515,15 @@ video {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .contenido-unete h2 { font-size: 2rem; }
-    .btn-formulario { width: 100%; justify-content: center; padding: 10px 5px; }
+    .contenido-unete h2 {
+        font-size: 2rem;
+    }
+
+    .btn-formulario {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 5px;
+    }
 }
 
 
@@ -3406,32 +3550,37 @@ video {
 .separador-azul {
     width: 80px;
     height: 4px;
-    background: #c0272c; /* Rosa para resaltar */
+    background: #c0272c;
+    /* Rosa para resaltar */
     margin: 0 auto 20px;
 }
 
 /* Contenedor para solo 2 elementos */
 .contenedor-dual {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Tarjetas más anchas */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* Tarjetas más anchas */
     gap: 40px;
-    max-width: 1000px; /* Limita el ancho total para que no se estiren infinito */
+    max-width: 1000px;
+    /* Limita el ancho total para que no se estiren infinito */
     margin: 0 auto;
 }
 
 .card-documento {
     background: #ffffff;
     border-radius: 24px;
-    padding: 50px; /* Más espacio interno */
+    padding: 50px;
+    /* Más espacio interno */
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 33, 64, 0.08);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card-documento:hover {
     transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(233, 30, 99, 0.15); /* Sombra rosada sutil */
+    box-shadow: 0 25px 50px rgba(233, 30, 99, 0.15);
+    /* Sombra rosada sutil */
     border-color: #c0272c;
 }
 
@@ -3451,7 +3600,8 @@ video {
     color: #555;
     line-height: 1.8;
     margin-bottom: 35px;
-    min-height: 80px; /* Mantiene las tarjetas del mismo alto si el texto varía */
+    min-height: 80px;
+    /* Mantiene las tarjetas del mismo alto si el texto varía */
 }
 
 .btn-full-descarga {
@@ -3503,7 +3653,8 @@ video {
 
 .titulo-seccion {
     font-size: 2.2rem;
-    color: #002140; /* Azul igual a tu barra */
+    color: #002140;
+    /* Azul igual a tu barra */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -3512,15 +3663,17 @@ video {
 .linea-decorativa {
     width: 60px;
     height: 4px;
-    background-color: #c0272c; /* Rojo institucional */
+    background-color: #c0272c;
+    /* Rojo institucional */
     margin: 10px auto;
     border-radius: 2px;
 }
 
 /* --- EL BANNER AZUL OSCURO --- */
 .banner-profesionales-azul {
-    background-color: #002140; /* Color idéntico a tu barra */
-    background-image: radial-gradient(circle at 90% 10%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    background-color: #002140;
+    /* Color idéntico a tu barra */
+    background-image: radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
     border-radius: 15px;
     padding: 60px 40px;
     color: #ffffff;
@@ -3536,7 +3689,8 @@ video {
 }
 
 .tagline {
-    color: #c0272c; /* Rojo */
+    color: #c0272c;
+    /* Rojo */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -3571,7 +3725,8 @@ video {
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.07); /* Efecto cristal muy sutil */
+    background: rgba(255, 255, 255, 0.07);
+    /* Efecto cristal muy sutil */
     border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 30px;
     border-radius: 12px;
@@ -3582,7 +3737,8 @@ video {
 
 .stat-card:hover {
     background: rgba(255, 255, 255, 0.12);
-    border-color: #c0272c; /* Ilumina el borde en rojo al pasar el mouse */
+    border-color: #c0272c;
+    /* Ilumina el borde en rojo al pasar el mouse */
 }
 
 .stat-value {
@@ -3595,7 +3751,8 @@ video {
 }
 
 .stat-label {
-    color: #c0272c; /* Etiquetas en rojo para contraste */
+    color: #c0272c;
+    /* Etiquetas en rojo para contraste */
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -3604,29 +3761,39 @@ video {
 
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
-    .titulo-banner { font-size: 2rem; }
-    .stat-card { min-width: 100%; }
-    .banner-profesionales-azul { padding: 40px 20px; }
+    .titulo-banner {
+        font-size: 2rem;
+    }
+
+    .stat-card {
+        min-width: 100%;
+    }
+
+    .banner-profesionales-azul {
+        padding: 40px 20px;
+    }
 }
 
 /* QUIENES SOMOS  VIDEO SECCION INSTITUCION.HTML*/
 
 .seccion-video-local {
-    background-color: transparent; /* Quitamos el gris para que se integre al fondo blanco */
+    background-color: transparent;
+    /* Quitamos el gris para que se integre al fondo blanco */
     display: flex;
-    justify-content: flex-start; /* Alinea al inicio (izquierda) igual que el título */
+    justify-content: flex-start;
+    /* Alinea al inicio (izquierda) igual que el título */
     align-items: flex-start;
 }
 
 .contenedor-reproductor {
     width: 100%;
     /* Ajustamos el tamaño para que sea impactante pero manejable */
-    max-width: 700px; 
+    max-width: 700px;
     border-radius: 15px;
     overflow: hidden;
     background-color: #000;
     /* Una sombra más suave para fondo blanco */
-    box-shadow: 0 10px 30px rgba(0, 33, 64, 0.1); 
+    box-shadow: 0 10px 30px rgba(0, 33, 64, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -3634,7 +3801,8 @@ video {
     width: 100%;
     height: auto;
     display: block;
-    aspect-ratio: 16 / 9; /* Fuerza la proporción horizontal */
+    aspect-ratio: 16 / 9;
+    /* Fuerza la proporción horizontal */
     outline: none;
 }
 
@@ -3643,9 +3811,10 @@ video {
     .seccion-video-local {
         padding: 40px 10px;
     }
-    
+
     .contenedor-reproductor {
-        border-radius: 10px; /* Bordes menos redondeados en móvil */
+        border-radius: 10px;
+        /* Bordes menos redondeados en móvil */
     }
 }
 
@@ -3692,12 +3861,13 @@ video {
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border-top: 5px solid #002140; /* Por defecto azul */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #002140;
+    /* Por defecto azul */
     transition: transform 0.3s ease;
     min-width: 300px;
     max-width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 
@@ -3706,7 +3876,8 @@ video {
 }
 
 .bloque-info.derechos {
-    border-top-color: #c0272c; /* Derechos en rosa */
+    border-top-color: #c0272c;
+    /* Derechos en rosa */
 }
 
 .titulo-bloque {
@@ -3747,7 +3918,8 @@ video {
 
 /* Bullet points personalizados */
 .bloque-info ul li::before {
-    content: "\f00c"; /* Icono check de FontAwesome */
+    content: "\f00c";
+    /* Icono check de FontAwesome */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
@@ -3765,7 +3937,7 @@ video {
     .grid-derechos-deberes {
         grid-template-columns: 1fr;
     }
-    
+
     .encabezado-seccion h1 {
         font-size: 2rem;
     }
@@ -3792,12 +3964,13 @@ video {
     max-width: 350px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card-imagen img {
     width: 100%;
-    height: 300px; /* Altura fija para que todas sean iguales */
+    height: 300px;
+    /* Altura fija para que todas sean iguales */
     object-fit: cover;
     display: block;
 }
@@ -3834,8 +4007,13 @@ video {
     transition: 0.3s ease;
 }
 
-.whatsapp { background-color: #25d366; }
-.email { background-color: #002140; }
+.whatsapp {
+    background-color: #25d366;
+}
+
+.email {
+    background-color: #002140;
+}
 
 .btn-rs:hover {
     transform: translateY(-3px);
@@ -3848,6 +4026,7 @@ video {
         flex-direction: column;
         align-items: center;
     }
+
     .btn-rs {
         width: 100%;
         max-width: 280px;
@@ -3878,7 +4057,7 @@ video {
     height: 250px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .foto-donacion img {
@@ -3904,10 +4083,11 @@ video {
     padding: 40px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     max-width: 600px;
     width: 100%;
-    border-bottom: 5px solid #e91e63; /* Detalle rosa */
+    border-bottom: 5px solid #e91e63;
+    /* Detalle rosa */
 }
 
 .caja-blanca-boton h3 {
@@ -3934,13 +4114,14 @@ video {
     font-weight: bold;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0,33,64,0.2);
+    box-shadow: 0 8px 15px rgba(0, 33, 64, 0.2);
 }
 
 .btn-cert:hover {
-    background-color: #e91e63; /* Cambia a rosa */
+    background-color: #e91e63;
+    /* Cambia a rosa */
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(233,30,99,0.3);
+    box-shadow: 0 12px 25px rgba(233, 30, 99, 0.3);
 }
 
 /* Ajuste Móvil */
@@ -3948,9 +4129,9 @@ video {
     .foto-donacion {
         max-width: 100%;
     }
+
     .btn-cert {
         width: 100%;
         justify-content: center;
     }
 }
-
