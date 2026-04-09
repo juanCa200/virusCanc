@@ -14,13 +14,21 @@
 
 <body>
 
-     <header>
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📞 Llamanos: 3102040672 – 3134628259 – (8)6719105</span>
+            <span>📧 entregaresultados.ligameta@gmail.com</span>
+            <span>📍 Carrera 40 No. 37 – 102 Barrio Barzal</span>
+        </div>
+    </div>
+
+    <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
+                <li class="link_active"><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle">Atencion Paciente <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="" class="dropdown-toggle">Atencion al Paciente <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
                         <li><a href="historiaClinica.html#resultados">Entrega de resultados</a></li>
@@ -29,7 +37,7 @@
                         <li><a href="PQRSF.html">Canales de comunicación PQRSF</a></li>
                     </ul>
                 </li>
-                <li class="link_active dropdown">
+                <li class="dropdown">
                     <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="institucion.html">Quiénes somos</a></li>
@@ -50,7 +58,9 @@
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             </ul>
             <div class="btns">
-                <button class="btn">Como Donar</button>
+                <a href="donar.html">
+                    <button class="btn">Como Donar</button>
+                </a>
             </div>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -59,7 +69,7 @@
         <div class="dropdown_menu">
             <li class="link_active"><a href="index.html">Inicio</a></li>
             <li class="dropdown">
-                <a href="" class="dropdown-toggle">Atencion Paciente <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="" class="dropdown-toggle">Atencion al Paciente <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
                     <li><a href="historiaClinica.html#resultados">Entrega de resultados</a></li>
@@ -98,39 +108,95 @@
             <div class="separador-azul"></div>
             <p>En cumplimiento de la normativa vigente, compartimos nuestros documentos de transparencia:</p>
         </div>
-        <div class="contenedor-dual">
-            <!-- Tarjeta 1 -->
-            <div class="card-documento">
-                <div class="card-icon">
-                    <i class="fa-solid fa-file-signature"></i>
-                </div>
-                <div class="card-body">
-                    <h3>Informe de Gestión 2024</h3>
-                    <p>Consulte el balance detallado de las metas alcanzadas, el impacto social de nuestras brigadas y
-                        la transparencia en la ejecución de proyectos de la Presidencia.</p>
-                    <a href="img/INFORME.pdf" target="_blank" class="btn-full-descarga">
-                        <span>Descargar Informe PDF</span>
-                        <i class="fa-solid fa-download"></i>
-                    </a>
-                </div>
-            </div>
 
-            <!-- Tarjeta 2 -->
+        <div class="contenedor-dual">
+            <!-- BLOQUE 1 -->
+            <!-- Tarjeta 1: Informe de Gestión -->
             <div class="card-documento">
                 <div class="card-icon">
                     <i class="fa-solid fa-chart-line"></i>
                 </div>
                 <div class="card-body">
-                    <h3>Estados Financieros 2024</h3>
-                    <p>Acceda a los estados de situación financiera, excedentes y notas contables debidamente
-                        certificados, garantizando nuestra claridad administrativa.</p>
-                    <a href="img/ESTADOS-FINANCIEROS.pdf" target="_blank" class="btn-full-descarga">
-                        <span>Ver Estados Financieros</span>
+                    <h3>Estados Financieros 2025</h3>
+                    <p>Informe detallado que refleja la realidad económica y financiera de la Seccional, permitiendo
+                        conocer la gestión de los recursos durante el periodo fiscal.</p>
+                    <a href="img/ESTADOS FINANCIEROS 2025 CON NOTAS.pdf" target="_blank" class="btn-full-descarga">
+                        <span>Descargar Estados Financieros 2025</span>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Estados Financieros -->
+            <div class="card-documento">
+                <div class="card-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div class="card-body">
+                    <h3>Certificación de estados financieros</h3>
+                    <p>Documento formal que avala que la información financiera presentada ha sido verificada y cumple
+                        con las normas de contabilidad vigentes en Colombia.</p>
+                    <a href="img/CERTIFICACION DE ESTADOS FINANCIEROS 2025.pdf" target="_blank"
+                        class="btn-full-descarga">
+                        <span>Ver Certificación de Estados Financieros</span>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BLOQUE 2 -->
+            <!-- Tarjeta 3: Estatutos -->
+            <div class="card-documento">
+                <div class="card-icon">
+                    <i class="fa-solid fa-gavel"></i>
+                </div>
+                <div class="card-body">
+                    <h3>Dictamen Revisión Fiscal</h3>
+                    <p>Informe independiente que certifica la transparencia de los procesos contables y el cumplimiento
+                        de las obligaciones legales de la institución.</p>
+                    <a href="img/DICTAMEN REVISOR FISCAL.pdf" target="_blank" class="btn-full-descarga">
+                        <span>Descargar Dictamen Revisión Fiscal</span>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: Código de Ética -->
+            <div class="card-documento">
+                <div class="card-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="card-body">
+                    <h3>Destinación de Excedentes</h3>
+                    <p>Reporte sobre la reinversión de los beneficios económicos en la misión social, el fortalecimiento
+                        institucional y la atención a la comunidad.</p>
+                    <a href="img/DESTINACION DE EXCEDENTES 2022 A 2025.pdf" target="_blank" class="btn-full-descarga">
+                        <span>Ver Destinación de Excedentes</span>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BLOQUE 3 (TARJETA CENTRADA) -->
+            <!-- Tarjeta 5: Humanización -->
+            <div class="card-documento">
+                <div class="card-icon">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+                <div class="card-body">
+                    <h3>Informe Gestion presidencia</h3>
+                    <p>Documento que resume las acciones, logros y el impacto social alcanzado por la Seccional Meta en
+                        la lucha y prevención del cáncer.</p>
+                    <a href="img/INFORME DE GESTIÓN PRESIDENCIA 2025.pdf" target="_blank" class="btn-full-descarga">
+                        <span>Ver Informe Gestión Presidencia</span>
                         <i class="fa-solid fa-download"></i>
                     </a>
                 </div>
             </div>
         </div>
+
+
+
         <menu class="open">
             <a href="https://web.whatsapp.com/send/?phone=573102040672&text=Hola+%2Aligacancerseccionalmeta.com%2A.+Necesito+m%C3%A1s+informaci%C3%B3n+sobre+Escuela+Liga+https%3A%2F%2Fligacancerseccionalmeta.com%2Fprojects%2F&type=phone_number&app_absent=0"
                 class="action"><i class="fa-brands fa-whatsapp" style="color: rgb(0, 255, 58);"></i></a>
@@ -143,45 +209,75 @@
         </menu>
     </section>
 
-    <footer class="footer-simple">
-        <div class="footer-content">
 
-            <div class="footer-column">
-                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
+    <footer class="liga-footer">
+        <div class="contenedor-footer">
 
-                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
-                    región.</p>
+            <div class="footer-columna contacto-col">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Sede Principal: Carrera 40 No. 37 – 102 Barrio Barzal, Villavicencio – Colombia
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Llamanos: 3102040672 – 3134628259 – (8)6719105
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="entregaresultados.ligameta@gmail.com">entregaresultados.ligameta@gmail.com</a>
+                    </li>
+                </ul>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=entregaresultados.ligameta@gmail.com"
+                    target="_blank" class="btn-contacto-electronico">
+                    <i class="fa-solid fa-paper-plane"></i> Contacto Electrónico
+                </a>
             </div>
 
-            <div class="footer-column">
-                <h3>Secciones</h3>
+            <div class="footer-columna acceso-col">
+                <h3>Acceso Rápido</h3>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Nuestros Servicios</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Campañas</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="historiaClinica.html#resultados">Entrega de Resultados</a></li>
                 </ul>
             </div>
 
-            <div class="footer-column">
-                <h3>Contacto</h3>
-                <p>Calle 33A # 38 - 56 Barzal</p>
-                <p>Villavicencio, Meta</p>
-                <p>Tel: 608 6632320</p>
-                <div class="social-icons">
-                    <a href="#" title="Facebook">FB</a>
-                    <a href="#" title="Instagram">IG</a>
-                    <a href="#" title="YouTube">YT</a>
+            <div class="footer-columna redes-col">
+                <h3>Nuestras Redes</h3>
+                <div class="iconos-redes">
+                    <a href="https://www.youtube.com/@ligacancermeta"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ligaCancermeta"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ligaseccionalmeta/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        <div class="barra-final-copy">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta - Todos los derechos reservados.</p>
         </div>
     </footer>
+
     <script>
+
+        window.addEventListener('scroll', function () {
+            const topBar = document.querySelector('.top-bar');
+            const header = document.querySelector('header');
+
+            // Si el scroll es mayor a 10 pixeles...
+            if (window.scrollY > 10) {
+                topBar.classList.add('scrolled');
+                header.classList.add('scrolled');
+            } else {
+                // Solo si regresas al puro inicio
+                topBar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
+            }
+        });
+
+
+
         //Menu Responsive y Trigger Redes Sociales
 
         const toggleBtn = document.querySelector('.toggle_btn')

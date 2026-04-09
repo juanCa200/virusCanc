@@ -14,13 +14,20 @@
 
 <body>
 
-      <header>
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📞 Llamanos: 3102040672 – 3134628259 – (8)6719105</span>
+            <span>📧 entregaresultados.ligameta@gmail.com</span>
+            <span>📍 Carrera 40 No. 37 – 102 Barrio Barzal</span>
+        </div>
+    </div>
+    <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
                 <li class="link_active"><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle">Atencion Paciente <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="" class="dropdown-toggle">Atencion al Paciente <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
                         <li><a href="historiaClinica.html#resultados">Entrega de resultados</a></li>
@@ -50,7 +57,9 @@
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             </ul>
             <div class="btns">
-                <button class="btn">Como Donar</button>
+                <a href="donar.html">
+                    <button class="btn">Como Donar</button>
+                </a>
             </div>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -59,7 +68,7 @@
         <div class="dropdown_menu">
             <li class="link_active"><a href="index.html">Inicio</a></li>
             <li class="dropdown">
-                <a href="" class="dropdown-toggle">Atencion Paciente <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="" class="dropdown-toggle">Atencion al Paciente <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
                     <li><a href="historiaClinica.html#resultados">Entrega de resultados</a></li>
@@ -92,37 +101,198 @@
         </div>
     </header>
     <section class="seccion-donaciones">
-    <div class="container">
-        
-        <div class="encabezado-donacion">
-            <h1>Certificado de Donación</h1>
-            <p>Gracias por apoyar nuestra labor. Su contribución nos permite seguir salvando vidas en el Meta.</p>
+        <div class="container">
+
+            <div class="encabezado-donacion">
+                <h1>Nuestras formas de donar, juntos salvamos vidas</h1>
+                <p>Gracias por apoyar nuestra labor. Su contribución nos permite seguir salvando vidas en el Meta.</p>
+            </div>
+
+            <div class="galeria-donacion">
+                <div class="img-item-donacion">
+                    <img src="img/donacion1.jpg" alt="Acompañamiento">
+                    <div class="capa-info">
+                        <span>Donación de cabello</span>
+                    </div>
+                </div>
+                <div class="img-item-donacion">
+                    <img src="img/donacion2.jpg" alt="Acompañamiento">
+                    <div class="capa-info">
+                        <span>Donación de dinero</span>
+                    </div>
+                </div>
+                <div class="img-item-donacion">
+                    <img src="img/donacion3.jpg" alt="Acompañamiento">
+                    <div class="capa-info">
+                        <span>Donación de tapas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque del Botón -->
+            <div class="accion-certificado">
+                <div class="caja-blanca-formulario">
+                    <h3>Solicitud de Certificado de Donación</h3>
+                    <p>Complete los datos de su donación a continuación para que nuestro equipo contable genere su
+                        documento oficial.</p>
+
+                    <div class="contenedor-iframe-certificado">
+                        <!-- REEMPLAZA EL 'URL_AQUÍ' POR EL LINK DE "INSERTAR" DE TU GOOGLE FORM -->
+                        <iframe
+                            src="https://docs.google.com/forms/d/10cinMIJ0yz3CYt9RvAJ-q8Ay2QmK6U8KoSm1M1VTb38/viewform?edit_requested=true"
+                            width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">
+                            Cargando formulario...
+                        </iframe>
+                    </div>
+
+                    <div class="aviso-soporte">
+                        <i class="fas fa-info-circle"></i>
+                        <span>El certificado será enviado a su correo electrónico en un plazo de 3 a 5 días
+                            hábiles.</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="galeria-donacion">
-            <div class="foto-donacion">
-                <img src="img/donacion1.jpg" alt="Impacto 1">
-            </div>
-            <div class="foto-donacion">
-                <img src="img/donacion2.jpg" alt="Impacto 2">
-            </div>
-            <div class="foto-donacion">
-                <img src="img/donacion3.jpg" alt="Impacto 3">
-            </div>
+        <div id="modalImagen" class="modal-zoom">
+            <span class="cerrar-modal">&times;</span>
+            <img class="contenido-modal" id="imgExpandida">
+            <div id="caption-modal"></div>
         </div>
+    </section>
 
-        <!-- Bloque del Botón -->
-        <div class="accion-certificado">
-            <div class="caja-blanca-boton">
-                <h3>¿Requiere su certificado tributario?</h3>
-                <p>Haga clic en el botón para completar los datos de su donación y generar su documento.</p>
-                <a href="formulario-donacion.html" class="btn-cert">
-                    SOLICITAR CERTIFICADO <i class="fas fa-file-download"></i>
+    <footer class="liga-footer">
+        <div class="contenedor-footer">
+
+            <div class="footer-columna contacto-col">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Sede Principal: Carrera 40 No. 37 – 102 Barrio Barzal, Villavicencio – Colombia
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Llamanos: 3102040672 – 3134628259 – (8)6719105
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="entregaresultados.ligameta@gmail.com">entregaresultados.ligameta@gmail.com</a>
+                    </li>
+                </ul>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=entregaresultados.ligameta@gmail.com"
+                    target="_blank" class="btn-contacto-electronico">
+                    <i class="fa-solid fa-paper-plane"></i> Contacto Electrónico
                 </a>
             </div>
+
+            <div class="footer-columna acceso-col">
+                <h3>Acceso Rápido</h3>
+                <ul>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="historiaClinica.html#resultados">Entrega de Resultados</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-columna redes-col">
+                <h3>Nuestras Redes</h3>
+                <div class="iconos-redes">
+                    <a href="https://www.youtube.com/@ligacancermeta"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ligaCancermeta"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ligaseccionalmeta/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
         </div>
 
-    </div>
-</section>
+        <div class="barra-final-copy">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+
+        window.addEventListener('scroll', function () {
+            const topBar = document.querySelector('.top-bar');
+            const header = document.querySelector('header');
+
+            // Si el scroll es mayor a 10 pixeles...
+            if (window.scrollY > 10) {
+                topBar.classList.add('scrolled');
+                header.classList.add('scrolled');
+            } else {
+                // Solo si regresas al puro inicio
+                topBar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
+
+            // Seleccionamos todos los contenedores de las cards
+            const items = Array.from(document.querySelectorAll('.galeria-donacion .img-item-donacion'));
+            let indiceActual = 0;
+
+            function abrirModal(index) {
+                indiceActual = index;
+
+                // 1. Obtenemos el elemento item
+                const itemSeleccionado = items[indiceActual];
+
+                // 2. Buscamos la etiqueta <img> y el texto del <span> dentro de ese item
+                const imgInterior = itemSeleccionado.querySelector('img');
+                const textoInterior = itemSeleccionado.querySelector('.capa-info span');
+
+                // 3. Asignamos los valores al modal
+                imgModal.src = imgInterior.src;
+                captionText.innerHTML = textoInterior.innerHTML;
+
+                modal.style.display = "flex";
+            }
+
+            // Asignar el evento al click de cada card
+            items.forEach((item, index) => {
+                item.style.cursor = "zoom-in";
+                item.onclick = function () {
+                    abrirModal(index);
+                };
+            });
+
+            // --- NAVEGACIÓN POR TECLADO ---
+            document.addEventListener('keydown', function (e) {
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") {
+                        indiceActual = (indiceActual + 1) % items.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") {
+                        indiceActual = (indiceActual - 1 + items.length) % items.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") {
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar al clickear la X
+            spanCerrar.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            // Cerrar al clickear fuera de la imagen
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+    </script>
 </body>
+
 </html>

@@ -15,21 +15,18 @@
 <body>
     <div class="top-bar">
         <div class="contact-info">
-            <span>📞 Citas Médicas: +57 606 333 3340</span>
-            <span>📧 contacto@laliga.org.co</span>
-            <span>📧 contacto@laliga.org.co</span>
-        </div>
-        <div class="top-buttons">
-            <a href="#" class="btn-como-donar">Cómo Donar</a>
+            <span>📞 Llamanos: 3102040672 – 3134628259 – (8)6719105</span>
+            <span>📧 entregaresultados.ligameta@gmail.com</span>
+            <span>📍 Carrera 40 No. 37 – 102 Barrio Barzal</span>
         </div>
     </div>
-     <header>
+    <header>
         <nav class="nav">
             <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
             <ul class="nav-links">
-                <li ><a href="index.html">Inicio</a></li>
+                <li class="link_active"><a href="index.html">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle">Atencion Paciente <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="" class="dropdown-toggle">Atencion al Paciente <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
                         <li><a href="historiaClinica.html#resultados">Entrega de resultados</a></li>
@@ -38,7 +35,7 @@
                         <li><a href="PQRSF.html">Canales de comunicación PQRSF</a></li>
                     </ul>
                 </li>
-                <li class="link_active dropdown">
+                <li class="dropdown">
                     <a href="">Nuestra Institución <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="institucion.html">Quiénes somos</a></li>
@@ -59,7 +56,9 @@
                 <li><a href="https://sig.ligacancerseccionalmeta.com/">SIG Liga</a></li>
             </ul>
             <div class="btns">
-                <button class="btn">Como Donar</button>
+                <a href="donar.html">
+                    <button class="btn">Como Donar</button>
+                </a>
             </div>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -68,7 +67,7 @@
         <div class="dropdown_menu">
             <li class="link_active"><a href="index.html">Inicio</a></li>
             <li class="dropdown">
-                <a href="" class="dropdown-toggle">Atencion Paciente <i class="fa-solid fa-chevron-down"></i></a>
+                <a href="" class="dropdown-toggle">Atencion al Paciente <i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="derechoDeberes.html">Derechos y deberes del paciente</a></li>
                     <li><a href="historiaClinica.html#resultados">Entrega de resultados</a></li>
@@ -104,7 +103,7 @@
         <div class="contenedor-voluntariado">
             <aside class="sidebar-botones">
                 <div class="sidebar-header">
-                    Nuestros Pilares
+                    Nuestros equipo de trabajo
                 </div>
                 <nav class="menu-navegacion">
                     <button class="nav-b active" onclick="cambiarInfo(0)">¿Quiénes somos?</button>
@@ -119,7 +118,7 @@
             </aside>
 
             <main class="contenido-derecho" id="contenidoPrincipal">
-                <h2 id="tituloInfo">Nuestros Pilares</h2>
+                <h2 id="tituloInfo">Nuestros Equipo de Trabajo</h2>
                 <div id="textoInfo">
                     <p>Bienvenido al espacio dedicado a la identidad y el corazón de nuestra institución. En este
                         apartado, podrás explorar la trayectoria histórica de la Liga Contra el Cáncer Seccional Meta,
@@ -151,453 +150,71 @@
             <a class="trigger"><i class="fa-solid fa-share-nodes" style="color: rgb(103, 84, 226);"></i></a>
         </menu>
     </section>
-    <!--
-    <div class="servicios-preparacion">
-        <h2 class="titulo-preparacion">Profesionales</h2>
-        <div class="servicios-detalles">
-            <div class="tabs-container">
-                <button class="tab-btn active" onclick="mostrarContenido(event, 'dermatologos')">Dermatologos</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'ginecologia')">Ginecología</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'mastologo')">Mastologo</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'medicina-general')">Medicina General</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'medicina-interna')">Medicina Interna</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'neurologia')">Neurologia</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'nutricionistas')">Nutricionista</button>
-                <button class="tab-btn"
-                    onclick="mostrarContenido(event, 'otorrinolaringolo')">Otorrinolaringolo</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'pediatria')">Pediatria</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'psicologia')">Psicologia</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'radiologo')">Radiologo</button>
-                <button class="tab-btn" onclick="mostrarContenido(event, 'urologia')">Urologia</button>
 
+    <footer class="liga-footer">
+        <div class="contenedor-footer">
 
-            </div>
-
-            <div class="content-container">
-                <div id="dermatologos" class="tab-content active">
-                    <h3>Nuestros Dermatologos</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DIEGO SALOMÓN_Dermatologia_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. LEIDY LÓPEZ_Dermatologia_2.jpg" alt="Imagen 2">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Título 2</h3>
-                                    <p>Más información relevante aquí.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="ginecologia" class="tab-content">
-                    <h3>Nuestros Ginecologos</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR MARIA CAMILA RUIZ_Ginecologia_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. ANA SALAZAR_Ginecologia_2.jpg" alt="Imagen 2">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Título 2</h3>
-                                    <p>Más información relevante aquí.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. LIGIA GUTIERREZ_Ginecologia_3.jpg" alt="Imagen 3">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Título 2</h3>
-                                    <p>Más información relevante aquí.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. LILIANA LOGREIRA_Ginecologia_4.jpg" alt="Imagen 4">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Título 2</h3>
-                                    <p>Más información relevante aquí.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. LUCRECIA MOJICA_Ginecologia_5.jpg" alt="Imagen 5">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Título 2</h3>
-                                    <p>Más información relevante aquí.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. MONICA PEDROZA_Ginecologia6.jpg" alt="Imagen 6">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Título 2</h3>
-                                    <p>Más información relevante aquí.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    </p>
-                </div>
-                <div id="mastologo" class="tab-content">
-                    <h3>Nuestros Mastologos</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. EDWAR CASAS_Mastologo_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="medicina-general" class="tab-content">
-                    <h3>Nuestros Profesionales</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. RICARDO NOSAA_MedicinaGeneral_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DRA. LUZ ARLEDY RUIZ_MedicinaGeneral_2.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="medicina-interna" class="tab-content">
-                    <h3>Nuestros Profesionales</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. JHON ROJAS_MedicinaInterna_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="neurologia" class="tab-content">
-                    <h3>Nuestros Profesionales</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. JORGE ROJAS_Neurologia_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="nutricionistas" class="tab-content ">
-                    <h3>Nuestros Especialista</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/GREICY GUARNIZO_Nutricion_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="otorrinolaringolo" class="tab-content">
-                    <h3>Nuestros Especialistas</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. IVAN MONCADA_otorrinolaringolo_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="pediatria" class="tab-content">
-                    <h3>Nuestros Especialistas</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. ALVARO GUTIERREZ_Especialidad_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="psicologia" class="tab-content">
-                    <h3>Nuestros Especialistas</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/Claudia_Psicologia_1.jfif" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/FABIAN LUNA_Psicologia_2.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="radiologo" class="tab-content">
-                    <h3>Nuestros Especialista</h3>
-                    <p>
-                    <div class="card-container">
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. YURI GUTIERREZ_Radiologia_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/LORENZO SAENZ_Radiologia_2.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/Dr. LUIZ PAEZ_Radiologia_3.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-                <div id="urologia" class="tab-content">
-                    <h3>Nuestros Especialista</h3>
-                    <p>
-                    <div class="card-container">
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/DR. OSCAR MARTIN_Urologia_1.jpg" alt="Imagen 1">
-                                </div>
-                                <div class="card-back">
-                                    <h3>Sofia Ortiz</h3>
-                                    <p>Especialista dedicado a la detección temprana y educación sobre hábitos de vida
-                                        saludables. Con más de 10 años de experiencia brindando atención humanizada y
-                                        oportuna a nuestra comunidad.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="img/Cristian Melo_Urologia_2.jpg" alt="Imagen 1">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
---->
-
-    <footer class="footer-simple">
-        <div class="footer-content">
-
-            <div class="footer-column">
-                <div class="logo"><img src="img/logo-cancer.png" alt=""></div>
-                <p>Trabajamos incansablemente en la prevención, detección temprana y control del cáncer en nuestra
-                    región.</p>
-            </div>
-
-            <div class="footer-column">
-                <h3>Secciones</h3>
+            <div class="footer-columna contacto-col">
+                <h3>Información de Contacto</h3>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Nuestros Servicios</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Campañas</a></li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Sede Principal: Carrera 40 No. 37 – 102 Barrio Barzal, Villavicencio – Colombia
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Llamanos: 3102040672 – 3134628259 – (8)6719105
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="entregaresultados.ligameta@gmail.com">entregaresultados.ligameta@gmail.com</a>
+                    </li>
+                </ul>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=entregaresultados.ligameta@gmail.com"
+                    target="_blank" class="btn-contacto-electronico">
+                    <i class="fa-solid fa-paper-plane"></i> Contacto Electrónico
+                </a>
+            </div>
+
+            <div class="footer-columna acceso-col">
+                <h3>Acceso Rápido</h3>
+                <ul>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="historiaClinica.html#resultados">Entrega de Resultados</a></li>
                 </ul>
             </div>
 
-            <div class="footer-column">
-                <h3>Contacto</h3>
-                <p>Calle 33A # 38 - 56 Barzal</p>
-                <p>Villavicencio, Meta</p>
-                <p>Tel: 608 6632320</p>
-                <div class="social-icons">
-                    <a href="#" title="Facebook">FB</a>
-                    <a href="#" title="Instagram">IG</a>
-                    <a href="#" title="YouTube">YT</a>
+            <div class="footer-columna redes-col">
+                <h3>Nuestras Redes</h3>
+                <div class="iconos-redes">
+                    <a href="https://www.youtube.com/@ligacancermeta"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ligaCancermeta"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ligaseccionalmeta/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        <div class="barra-final-copy">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta - Todos los derechos reservados.</p>
         </div>
     </footer>
     <script>
 
+        window.addEventListener('scroll', function () {
+            const topBar = document.querySelector('.top-bar');
+            const header = document.querySelector('header');
+
+            // Si el scroll es mayor a 10 pixeles...
+            if (window.scrollY > 10) {
+                topBar.classList.add('scrolled');
+                header.classList.add('scrolled');
+            } else {
+                // Solo si regresas al puro inicio
+                topBar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
+            }
+        });
 
         function mostrarContenido(evt, nombreServicio) {
             // 1. Ocultar todos los contenidos
@@ -828,15 +445,15 @@
             },
             {
                 titulo: "Política de calidad",
-                texto:  `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
+                texto: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
             },
             {
                 titulo: "Política para gestión integral del riesgo",
-                texto:  `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
+                texto: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
             },
             {
                 titulo: "Sarlaft/Ftdam",
-                texto:  `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
+                texto: `<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nobis sunt itaque, aut voluptate cumque facere vitae, facilis quia veniam accusamus quisquam adipisci? Est labore nostrum temporibus hic possimus aperiam!</p>`
             }
 
 

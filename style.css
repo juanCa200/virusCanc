@@ -5,13 +5,13 @@ body {
 
 }
 
-/*
+
 .top-bar {
     width: 100%;
     background-color: #ffffff;
-position: fixed;
-z-index: 10001;
-top: 0;
+    position: fixed;
+    z-index: 10001;
+    top: 0;
     border-bottom: 1px solid #eee;
     font-size: 13px;
     color: #666;
@@ -21,8 +21,19 @@ top: 0;
     gap: 40px;
     align-items: center;
     box-sizing: border-box;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
-*/
+
+.top-bar.scrolled {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    /* Evita que se pueda dar click si está oculta */
+}
+
+header.scrolled {
+    top: 0;
+}
 
 .contact-info {
     font-size: 15px;
@@ -63,6 +74,8 @@ header {
 
     /* Opcional: un sombreado para que se note cuando pasa sobre el contenido */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    transition: top 0.3s ease;
 }
 
 .nav {
@@ -1918,140 +1931,214 @@ iframe {
 
 
 
-.footer-simple {
-    background-color: #010a1a;
-    /* Azul muy oscuro para que pegue con las estrellas */
+/******************** FOOOTER***********************/
+
+
+/* --- Estilos Base del Footer --- */
+.liga-footer {
+    /* Fondo azul oscuro corporativo de la Liga */
+    background-color: #002140;
     color: #ffffff;
-    padding: 60px 20px 20px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    border-top: 3px solid #c0272c;
-    /* Línea delgada rosa en la parte superior */
+    font-family: 'Open Sans', sans-serif;
+    /* Usando una fuente moderna y limpia */
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    border-top: 4px solid #e30613;
+    /* <--- Toque ROJO institucional */
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Contenedor Flex para las 4 columnas */
+.contenedor-footer {
     display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
+    /* Para móviles */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 5%;
+    gap: 30px;
 }
 
-.footer-column {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-logo {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-}
-
-.footer-logo span {
-    color: #c0272c;
-    /* Rosado característico de la Liga */
-    font-weight: bold;
-}
-
-.footer-column h3 {
-    font-size: 1.2rem;
+/* Títulos de las Columnas */
+.footer-columna h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 25px;
+    color: #ffffff;
     position: relative;
     padding-bottom: 10px;
 }
 
-.footer-column h3::after {
+.footer-columna h3::after {
     content: '';
     position: absolute;
-    left: 0;
     bottom: 0;
-    width: 40px;
-    height: 2px;
-    background-color: #c0272c;
-    /* Detalle rosa */
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #e30613;
+    /* <--- Detalle ROJO */
+    border-radius: 2px;
 }
 
-.footer-column p {
-    line-height: 1.6;
-    color: #cfcfcf;
-    font-size: 0.95rem;
-}
-
-.footer-column ul {
+/* Listas de Enlaces y Contacto */
+.footer-columna ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.footer-column ul li {
-    margin-bottom: 12px;
+.footer-columna ul li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.footer-column ul li a {
-    color: #cfcfcf;
+.footer-columna ul li i {
+    color: #e30613;
+    /* <--- Iconos ROJOS */
+    width: 20px;
+    text-align: center;
+}
+
+.footer-columna a {
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.footer-column ul li a:hover {
-    color: #c0272c;
-    padding-left: 8px;
+.footer-columna a:hover {
+    color: #e30613;
+    /* Hover en ROJO institucional */
+    letter-spacing: 0.5px;
 }
 
-.social-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
+/* --- Estilos Específicos por Columna --- */
 
-.social-icons a {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-    width: 38px;
-    height: 38px;
+/* 1. Botón Contacto Electrónico */
+.btn-contacto-electronico {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 0.75rem;
-    font-weight: bold;
-    transition: 0.3s;
+    gap: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.05);
+    /* Cristal traslúcido */
+    backdrop-filter: blur(5px);
 }
 
-.social-icons a:hover {
-    background: #c0272c;
-    transform: translateY(-3px);
+.btn-contacto-electronico:hover {
+    background-color: #e30613;
+    /* Relleno ROJO al hover */
+    border-color: #e30613;
 }
 
-.footer-bottom {
-    max-width: 1200px;
-    margin: 40px auto 0;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* 2. Enlaces Acceso Rápido */
+.acceso-col a {
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Bordes suaves */
+    border-radius: 50px;
+    padding: 10px 20px;
     text-align: center;
-    color: #888;
-    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.02);
 }
 
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-    .footer-content {
+.acceso-col a:hover {
+    background: rgba(255, 255, 255, 0.9);
+    /* <--- Hover BLANCO traslúcido */
+    color: #002140 !important;
+    /* Texto Azul al hover */
+    font-weight: bold;
+}
+
+/* 3. Iconos de Redes */
+.iconos-redes {
+    display: flex;
+    gap: 15px;
+    justify-content: left;
+}
+
+.iconos-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: #002140;
+    /* Icono Azul */
+    background: #ffffff;
+    /* Círculo BLANCO sólido */
+    transition: all 0.3s ease;
+}
+
+.iconos-redes a:hover {
+    background-color: #e30613;
+    /* Fondo ROJO institucional */
+    color: #ffffff;
+    /* Icono Blanco */
+    transform: scale(1.1);
+}
+
+/* --- Barra Final (Copyright) --- */
+.barra-final-copy {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Fondo aún más oscuro */
+    padding: 20px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.barra-final-copy p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* --- Estilos Responsive (Celulares) --- */
+@media (max-width: 992px) {
+    .contenedor-footer {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 40px;
     }
 
-    .footer-column h3::after {
+    .footer-columna {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-columna h3::after {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .social-icons {
+    .footer-columna ul li {
+        justify-content: center;
+    }
+
+    .iconos-redes {
         justify-content: center;
     }
 }
+
+/****** VOLUNTARIADO ***/
 
 .contenedor-voluntariado {
     display: flex;
@@ -2161,6 +2248,7 @@ iframe {
     flex: 1;
     padding: 20px;
     animation: fadeIn 0.5s ease;
+    margin-top: 15px;
 }
 
 @keyframes fadeIn {
@@ -2950,15 +3038,6 @@ video {
     border-radius: 2px;
 }
 
-/* Ajuste para el contenedor de imágenes para que no se desborde */
-.procedimientos-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    /* Importante para el diseño responsivo */
-    margin-top: 20px;
-}
 
 @media (max-width: 768px) {
     .titulo-preparacion {
@@ -3033,12 +3112,15 @@ video {
 
 .procedimientos-container {
     display: flex;
-    justify-content: space-between;
-    gap: 25px;
-    /* Espacio entre las imágenes */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Importante para el diseño responsivo */
+    margin-top: 20px;
 }
 
 .tarjeta-lab {
+    position: relative;
     flex: 1;
     overflow: hidden;
     border-radius: 20px;
@@ -3439,7 +3521,7 @@ video {
 .seccion-unete {
     padding: 80px 20px;
     background: linear-gradient(rgba(0, 33, 64, 0.9), rgba(0, 33, 64, 0.9)),
-        url('img/fondo-voluntarios.jpg');
+        url('img/voluntariado5.jpeg');
     /* Opcional: una foto de fondo con opacidad */
     background-size: cover;
     background-position: center;
@@ -3475,54 +3557,99 @@ video {
     line-height: 1.8;
     margin-bottom: 40px;
     opacity: 0.9;
+    color: white;
 }
 
-/* --- BOTÓN DE FORMULARIO --- */
+.acciones-unete {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+/* Estilo principal del botón */
 .btn-formulario {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    background-color: #c0272c;
-    color: white !important;
+    gap: 12px; /* Espacio entre el icono y el texto */
+    padding: 15px 35px;
+    background-color: #1a5276; /* Azul institucional */
+    color: white !important; /* Texto siempre blanco */
     text-decoration: none;
-    padding: 18px 35px;
-    border-radius: 50px;
-    /* Estilo píldora, muy moderno */
     font-weight: 700;
     font-size: 1.1rem;
+    border-radius: 50px; /* Bordes redondeados tipo cápsula */
+    box-shadow: 0 4px 15px rgba(26, 82, 118, 0.3);
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
-    text-transform: uppercase;
+    border: 2px solid transparent;
 }
 
-.btn-formulario:hover {
-    background-color: #c0272c;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(233, 30, 99, 0.4);
-}
-
+/* Estilo del icono (FontAwesome) */
 .btn-formulario i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efectos al pasar el mouse (Hover) */
+.btn-formulario:hover {
+    background-color: #c0272c; /* Cambio a rojo institucional */
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 20px rgba(192, 39, 44, 0.4);
+    color: white;
+}
+
+/* Efecto en el icono al hacer hover */
+.btn-formulario:hover i {
+    transform: rotate(15px) scale(1.1);
+}
+
+/* Efecto cuando se hace click */
+.btn-formulario:active {
+    transform: translateY(0);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+    .btn-formulario {
+        width: 100%;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+
+
+/* Contenedor especial para el Google Form */
+.contenedor-iframe-pqrsf {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    /* Consistencia con Clínica Primavera */
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.contenedor-iframe-pqrsf iframe {
+    display: block;
+    /* Ajuste de altura para que no scrollee doble en la medida de lo posible */
 }
 
 .nota-informativa {
     display: block;
-    margin-top: 25px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    color: #888;
     font-style: italic;
-    opacity: 0.7;
+    margin-top: 15px;
 }
 
-/* Responsivo */
+/* Responsivo para móviles */
 @media (max-width: 768px) {
-    .contenido-unete h2 {
-        font-size: 2rem;
-    }
-
-    .btn-formulario {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 5px;
+    .contenedor-iframe-pqrsf iframe {
+        height: 1000px;
+        /* Más alto en móviles por los campos verticales */
     }
 }
 
@@ -3556,80 +3683,87 @@ video {
 }
 
 /* Contenedor para solo 2 elementos */
+
 .contenedor-dual {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    /* Tarjetas más anchas */
-    gap: 40px;
-    max-width: 1000px;
-    /* Limita el ancho total para que no se estiren infinito */
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las tarjetas bajen si no caben */
+    gap: 30px;
+    justify-content: center;
+    /* Centra la última tarjeta si queda sola */
+    padding: 40px 5%;
 }
 
 .card-documento {
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 50px;
-    /* Más espacio interno */
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 33, 64, 0.08);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #fff;
+    /* Calculamos el ancho para que quepan 2 por fila con el gap */
+    flex: 1 1 calc(45% - 30px);
+    min-width: 300px;
+    /* Evita que se vuelvan muy flacas en tablets */
+    max-width: 500px;
+    /* Evita que se estiren demasiado en pantallas gigantes */
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 33, 64, 0.08);
+    transition: transform 0.3s ease;
+    border: 1px solid #f0f0f0;
 }
 
 .card-documento:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(233, 30, 99, 0.15);
-    /* Sombra rosada sutil */
-    border-color: #c0272c;
+    transform: translateY(-5px);
+    border-color: #3498db;
 }
 
+/* Estilos internos rápidos */
 .card-icon {
-    font-size: 4rem;
-    color: #c0272c;
-    margin-bottom: 25px;
+    font-size: 35px;
+    color: #003366;
 }
 
 .card-body h3 {
-    color: #002140;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
 .card-body p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 35px;
-    min-height: 80px;
-    /* Mantiene las tarjetas del mismo alto si el texto varía */
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
 }
 
 .btn-full-descarga {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: #002140;
-    color: #fff !important;
+    background: #f8fbff;
+    color: #3498db;
+    padding: 12px 20px;
+    border-radius: 10px;
     text-decoration: none;
-    padding: 18px;
-    border-radius: 15px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: bold;
+    border: 1px solid #e1effe;
     transition: 0.3s;
 }
 
 .btn-full-descarga:hover {
-    background: #c0272c;
-    transform: scale(1.02);
+    background: #3498db;
+    color: white;
 }
 
-/* Ajuste para pantallas pequeñas */
-@media (max-width: 850px) {
-    .contenedor-dual {
-        grid-template-columns: 1fr;
-        max-width: 500px;
+/* Ajuste para móviles: 1 sola columna */
+@media (max-width: 768px) {
+    .card-documento {
+        flex: 1 1 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-full-descarga {
+        justify-content: center;
+        gap: 10px;
     }
 }
 
@@ -3945,35 +4079,76 @@ video {
 
 
 /* HISTORIA CLINICA SECCION 2 : RESULTADOS */
+
+
 .seccion-resultados {
     padding: 40px 20px;
     background-color: #fff;
 }
 
+/* El contenedor principal en modo Grid */
 .grid-imagenes-resultados {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
     margin-bottom: 40px;
 }
 
+/* Cada tarjeta de imagen */
 .card-imagen {
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
-    border-radius: 15px;
+    position: relative;
+    height: 350px;
+    /* Ajusta la altura a tu gusto */
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
 }
 
 .card-imagen img {
     width: 100%;
-    height: 300px;
-    /* Altura fija para que todas sean iguales */
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
     display: block;
 }
+
+/* La barra azul inferior siempre visible */
+.pie-foto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    /* Altura de la barra */
+    background-color: #1a5276;
+    /* Azul institucional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    /* Siempre visible */
+    transition: background-color 0.3s ease;
+}
+
+.pie-foto span {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Efecto hover: la imagen se agranda un poco y la barra cambia a rojo/rosa */
+.card-imagen:hover img {
+    transform: scale(1.05);
+}
+
+.card-imagen:hover .capa-info {
+    background-color: #c0272c;
+    /* Cambio de color al pasar el mouse */
+}
+
+
 
 /* --- Botones de abajo --- */
 .footer-contacto-resultados {
@@ -4042,96 +4217,257 @@ video {
 }
 
 /* Galería de imágenes */
+/* Contenedor del mosaico de donaciones */
 .galeria-donacion {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.foto-donacion {
-    flex: 1;
-    min-width: 280px;
-    max-width: 380px;
-    height: 250px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.foto-donacion img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.foto-donacion:hover img {
-    transform: scale(1.08);
-}
-
-/* Bloque del Botón Abajo */
-.accion-certificado {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas */
+    gap: 15px;
     margin-top: 20px;
 }
 
-.caja-blanca-boton {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    max-width: 600px;
+/* Item de la imagen con proporción vertical */
+.img-item-donacion {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    /* CAMBIO CLAVE: 3 de ancho por 4 de alto para que sea más alta */
+    aspect-ratio: 3 / 4;
+    border: 2px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.img-item-donacion img {
     width: 100%;
-    border-bottom: 5px solid #e91e63;
-    /* Detalle rosa */
+    height: 100%;
+    object-fit: cover;
+    /* Mantiene la imagen sin deformar */
 }
 
-.caja-blanca-boton h3 {
-    color: #002140;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.img-item-donacion:hover {
+    transform: scale(1.05);
 }
 
-.caja-blanca-boton p {
-    color: #666;
-    margin-bottom: 25px;
+/* El pie azul con transparencia (Igual al tuyo) */
+.pie-donacion {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 74, 135, 0.8);
+    /* Azul Liga */
+    color: white;
+    width: 100%;
+    padding: 10px 5px;
+    /* Un poco más de padding para que luzca mejor */
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
 }
 
-/* El Botón "Bien Bonito" */
-.btn-cert {
+/* Responsive: 2 columnas en tablets/laptops pequeñas */
+@media (max-width: 992px) {
+    .galeria-donacion {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: 1 columna en celulares */
+@media (max-width: 600px) {
+    .galeria-donacion {
+        grid-template-columns: 1fr;
+    }
+}
+
+/********** Galeria historia Clinica ***/
+
+
+/* Bloque botonnn SOLICITUD Donar*/
+
+/* --- SECCIÓN DE FORMULARIO DE CERTIFICADO --- */
+
+.accion-certificado {
+    padding: 60px 20px;
+    background-color: #f8fafc;
+    /* Fondo gris muy tenue para resaltar la caja blanca */
+    display: flex;
+    justify-content: center;
+}
+
+.caja-blanca-formulario {
+    background: #ffffff;
+    max-width: 850px;
+    width: 100%;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 33, 64, 0.08);
+    /* Sombra suave y profesional */
+    text-align: center;
+    border: 1px solid #eef2f6;
+}
+
+.caja-blanca-formulario h3 {
+    color: #004a87;
+    /* Azul institucional */
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.caja-blanca-formulario p {
+    color: #5a67d8;
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor del Iframe para dar forma */
+.contenedor-iframe-certificado {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Corta bordes rectos del iframe */
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.contenedor-iframe-certificado iframe {
+    display: block;
+    /* Altura ajustable según el contenido de tu form */
+    min-height: 700px;
+}
+
+/* Aviso inferior tipo "Alerta" suave */
+.aviso-soporte {
+    margin-top: 35px;
+    padding: 15px 25px;
+    background-color: #fff5f5;
+    /* Fondo rojo muy claro */
+    border-left: 4px solid #e30613;
+    /* Borde rojo acento */
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background-color: #002140;
-    color: white;
-    padding: 18px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 33, 64, 0.2);
+    border-radius: 8px;
+    text-align: left;
 }
 
-.btn-cert:hover {
-    background-color: #e91e63;
-    /* Cambia a rosa */
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(233, 30, 99, 0.3);
+.aviso-soporte i {
+    color: #e30613;
+    font-size: 1.2rem;
 }
 
-/* Ajuste Móvil */
+.aviso-soporte span {
+    color: #2d3748;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* --- RESPONSIVE --- */
+
 @media (max-width: 768px) {
-    .foto-donacion {
-        max-width: 100%;
+    .caja-blanca-formulario {
+        padding: 30px 20px;
     }
 
-    .btn-cert {
+    .caja-blanca-formulario h3 {
+        font-size: 1.6rem;
+    }
+
+    .contenedor-iframe-certificado iframe {
+        min-height: 850px;
+        /* En móvil los formularios suelen estirarse más */
+    }
+
+    .aviso-soporte {
+        flex-direction: column;
+        text-align: center;
         width: 100%;
-        justify-content: center;
+    }
+}
+
+/*** Boton flotante */
+
+/* --- ESTILOS DEL BOTÓN FLOTANTE --- */
+
+.btn-flotante-cita {
+    position: fixed;
+    bottom: 30px; /* Distancia desde la parte inferior */
+    left: 10px; 
+    right: auto;
+    /* Distancia desde la derecha */
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre icono y texto */
+    padding: 15px 25px;
+    background-color: #c0272c; /* Rojo institucional de la Liga, más llamativo que el azul */
+    color: white !important; /* Texto blanco obligatorio */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 50px; /* Forma de cápsula moderna */
+    box-shadow: 0 6px 20px rgba(192, 39, 44, 0.4); /* Sombra roja sutil */
+    z-index: 2000; /* Asegura que esté por encima de menús, top-bars, etc. */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Animación de pulso inicial */
+    animation: pulsoCita 2s infinite;
+}
+
+/* Estilos del Icono */
+.btn-flotante-cita i {
+    font-size: 1.3rem;
+}
+
+/* Efectos al pasar el mouse (Hover) */
+.btn-flotante-cita:hover {
+    background-color: #1a5276; /* Cambia al azul institucional al hover */
+    transform: scale(1.05) translateY(-5px); /* Se agranda un poco y sube */
+    box-shadow: 0 8px 25px rgba(26, 82, 118, 0.5); /* Sombra azul más intensa */
+    color: white;
+    animation: none; /* Detiene el pulso al interactuar */
+}
+
+/* Efecto al hacer click */
+.btn-flotante-cita:active {
+    transform: scale(0.98); /* Pequeño efecto de presión */
+}
+
+/* --- Definición de la Animación de Pulso --- */
+@keyframes pulsoCita {
+    0% {
+        box-shadow: 0 0 0 0 rgba(192, 39, 44, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(192, 39, 44, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(192, 39, 44, 0);
+    }
+}
+
+/* --- Adaptación para Dispositivos Móviles --- */
+@media (max-width: 768px) {
+    .btn-flotante-cita {
+        left: 20px;
+        bottom: 30px;
+    }
+    
+    /* Opcional: En móviles muy pequeños, ocultar el texto y dejar solo el icono */
+    @media (max-width: 480px) {
+        .texto-cita {
+            display: none; /* Esconde el texto "Agendar Cita" */
+        }
+        .btn-flotante-cita {
+            padding: 18px; /* Hace el botón circular */
+            border-radius: 50%;
+        }
+        .btn-flotante-cita i {
+            font-size: 1.5rem; /* Agranda un poco el icono */
+            margin: 0;
+        }
     }
 }
