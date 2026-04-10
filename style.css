@@ -22,6 +22,7 @@ body {
     align-items: center;
     box-sizing: border-box;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    display: none;
 }
 
 .top-bar.scrolled {
@@ -29,6 +30,7 @@ body {
     opacity: 0;
     pointer-events: none;
     /* Evita que se pueda dar click si está oculta */
+    display: none;
 }
 
 header.scrolled {
