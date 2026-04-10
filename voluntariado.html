@@ -202,6 +202,14 @@
         <div id="caption-modal"></div>
     </div>
 
+    <a href="https://wa.me/573102040672?text=Hola,%20deseo%20agendar%20una%20cita%20medica" target="_blank"
+        class="btn-flotante-cita" title="Agendar Cita Médica">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span class="texto-cita">Agendar Cita</span>
+    </a>
+
+
+
     <footer class="liga-footer">
         <div class="contenedor-footer">
 
@@ -251,10 +259,13 @@
         </div>
     </footer>
 
-    <script>
-    
 
-    window.addEventListener('scroll', function () {
+
+
+    <script>
+
+
+        window.addEventListener('scroll', function () {
             const topBar = document.querySelector('.top-bar');
             const header = document.querySelector('header');
 
@@ -268,11 +279,11 @@
                 header.classList.remove('scrolled');
             }
         });
-    
-    
-    
-    
-    document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
             const modal = document.getElementById("modalImagen");
             const imgModal = document.getElementById("imgExpandida");
             const captionText = document.getElementById("caption-modal");

@@ -119,61 +119,82 @@
                 <div class="carousel-window">
                     <div class="carousel-track" id="trackServicios">
 
-                        <div class="service-card-eventos">
-                            <img src="img/eventoRosa1.jpeg" alt="Consulta Especializada">
+                        <div class="service-card-eventos" onclick="abrirGaleriaEvento('evento-rosa')">
+                            <img src="img/eventoRosa1.jpeg" alt="evento-rosa">
                             <div class="card-content">
                                 <h3>Evento Rosa</h3>
+                                <div class="imagenes-ocultas" data-grupo="evento-rosa">
+                                    <img src="img/eventoRosa1.jpeg">
+                                    <img src="img/eventoRosa2.jpeg">
+                                    <img src="img/eventoRosa3.jpeg">
+                                    <img src="img/eventoRosa4.jpeg">
+                                </div>
                                 <p class="resumen-servicio">Jornada deportiva y solidaria donde buscamos recaudar fondos
                                     para exámenes, biopsias y tratamientos de personas con cáncer que carecen de
                                     recursos.</p>
                             </div>
                         </div>
 
-                        <div class="service-card-eventos">
+                        <div class="service-card-eventos" onclick="abrirGaleriaEvento('evento-simposio')">
                             <img src="img/simposio.jpeg" alt="Ayudas Diagnósticas">
                             <div class="card-content">
                                 <h3>Simposio</h3>
+                                <div class="imagenes-ocultas" data-grupo="evento-simposio">
+                                    <img src="img/simposio.jpeg">
+                                    <img src="img/simposio3.jpeg">
+                                    <img src="img/simposio5.jpeg">
+                                    <img src="img/simposio4.jpeg">
+                                    <img src="img/simposio2.jpeg">
+
+                                </div>
                                 <p class="resumen-servicio">Encuentro académico de alto nivel donde expertos comparten
                                     los últimos avances en oncología y cuidado integral, fortaleciendo el conocimiento
                                     para una atención médica más humana y avanzada.</p>
                             </div>
                         </div>
 
-                        <div class="service-card-eventos">
+                        <div class="service-card-eventos" onclick="abrirGaleriaEvento('evento-bingo')">
                             <img src="img/Bingo1.jpeg" alt="Urgencias">
                             <div class="card-content">
                                 <h3>Bingo</h3>
+                                <div class="imagenes-ocultas" data-grupo="evento-bingo">
+                                    <img src="img/Bingo1.jpeg">
+                                    <img src="img/Bingo2.jpeg">
+                                    <img src="img/Bingo3.jpeg">
+                                    <img src="img/Bingo4.jpeg">
+                                </div>
                                 <p class="resumen-servicio">Tradicional evento solidario diseñado para unir a la
                                     comunidad en torno a una causa común: recaudar fondos que permiten brindar apoyo
                                     directo y esperanza a quienes más lo necesitan.</p>
                             </div>
                         </div>
 
-                        <div class="service-card-eventos">
+                        <div class="service-card-eventos" onclick="abrirGaleriaEvento('evento-paso')">
                             <img src="img/PasoPorlaVida1.jpeg" alt="Laboratorio">
                             <div class="card-content">
                                 <h3>Pasos por la vida</h3>
+                                <div class="imagenes-ocultas" data-grupo="evento-paso">
+                                    <img src="img/PasoPorlaVida1.jpeg">
+                                    <img src="img/PasoPorLaVida2.jpeg">
+                                    <img src="img/PasoPorLaVida3.jpeg">
+                                    <img src="img/PasoPorlaVida4.jpeg">
+                                </div>
                                 <p class="resumen-servicio">Caminata recreativa y solidaria que busca sensibilizar a la
                                     comunidad sobre la detección temprana del cáncer, promoviendo hábitos de vida
                                     saludables a través del deporte y la unión familiar.</p>
                             </div>
                         </div>
 
-
-                        <div class="service-card-eventos">
-                            <img src="img/PasoPorlaVida2.jpeg" alt="Laboratorio">
-                            <div class="card-content">
-                                <h3>Pasos por la vida</h3>
-                                <p class="resumen-servicio">Nuestra tradicional jornada de actividad física donde cada
-                                    kilómetro recorrido se traduce en esperanza y apoyo para los programas de prevención
-                                    en el departamento.</p>
-                            </div>
-                        </div>
-
-                        <div class="service-card-eventos">
+                        <div class="service-card-eventos" onclick="abrirGaleriaEvento('evento-relevo')">
                             <img src="img/RelevoPorLaVida1.jpeg" alt="Laboratorio">
                             <div class="card-content">
                                 <h3>Relevo por la vida</h3>
+                                <div class="imagenes-ocultas" data-grupo="evento-relevo">
+                                    <img src="img/RelevoPorLaVida1.jpeg">
+                                    <img src="img/RelevoPorLaVida2.jpeg">
+                                    <img src="img/RelevoPorLaVida3.jpeg">
+                                    <img src="img/RelevoPorLaVida4.jpeg">
+                                </div>
                                 <p class="resumen-servicio">Un emotivo evento de resistencia y amor donde equipos
                                     caminan por turnos para honrar a los valientes sobrevivientes, recordar a quienes ya
                                     no están y recaudar fondos para continuar nuestra misión.</p>
@@ -259,6 +280,12 @@
         <div id="caption-modal"></div>
     </div>
 
+    <a href="https://wa.me/573102040672?text=Hola,%20deseo%20agendar%20una%20cita%20medica" target="_blank"
+        class="btn-flotante-cita" title="Agendar Cita Médica">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span class="texto-cita">Agendar Cita</span>
+    </a>
+
     <script>
 
 
@@ -310,68 +337,68 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        let imagenesEventoActual = [];
+        let indiceActuall = 0;
+        let tituloEventoActual = "";
+
+        // Función principal que se llama desde el HTML: onclick="abrirGaleriaEvento(...)"
+        function abrirGaleriaEvento(nombreGrupo) {
             const modal = document.getElementById("modalImagen");
+
+            // 1. Buscar las imágenes ocultas de ese grupo
+            const contenedor = document.querySelector(`.imagenes-ocultas[data-grupo="${nombreGrupo}"]`);
+            if (!contenedor) return;
+
+            imagenesEventoActual = Array.from(contenedor.querySelectorAll('img'));
+            tituloEventoActual = contenedor.closest('.service-card-eventos').querySelector('h3').innerText;
+
+            // 2. Abrir el modal
+            indiceActuall = 0;
+            modal.style.display = "flex";
+            actualizarModal();
+        }
+
+        // Función para cambiar la imagen dentro del modal
+        function actualizarModal() {
             const imgModal = document.getElementById("imgExpandida");
             const captionText = document.getElementById("caption-modal");
+
+            imgModal.src = imagenesEventoActual[indiceActuall].src;
+            captionText.innerHTML = `${tituloEventoActual} <br> <small>Foto ${indiceActuall + 1} de ${imagenesEventoActual.length}</small>`;
+        }
+
+        // --- EVENTOS DE CIERRE Y NAVEGACIÓN ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById("modalImagen");
             const spanCerrar = document.querySelector(".cerrar-modal");
 
-            // Seleccionamos todas las imágenes dentro del carrusel
-            const imagenes = Array.from(document.querySelectorAll('.carousel-track .service-card-eventos img'));
-            let indiceActual = 0;
-
-            // Función para abrir y actualizar el modal
-            function abrirModal(index) {
-                indiceActual = index;
-                modal.style.display = "flex"; // Usamos flex para centrar
-                const imgSeleccionada = imagenes[indiceActual];
-
-                imgModal.src = imgSeleccionada.src;
-
-                // Buscamos el H3 más cercano para el título
-                const titulo = imgSeleccionada.closest('.service-card').querySelector('h3').innerText;
-                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
-            }
-
-            // Asignar el evento click a cada imagen
-            imagenes.forEach((img, index) => {
-                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
-                img.onclick = function () {
-                    abrirModal(index);
-                };
-            });
-
-            // --- NAVEGACIÓN POR TECLADO ---
-            document.addEventListener('keydown', function (e) {
-                // Solo si el modal está abierto
-                if (modal.style.display === "flex") {
-                    if (e.key === "ArrowRight") { // Flecha Derecha
-                        indiceActual = (indiceActual + 1) % imagenes.length;
-                        abrirModal(indiceActual);
-                    }
-                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
-                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-                        abrirModal(indiceActual);
-                    }
-                    else if (e.key === "Escape") { // Tecla Esc
-                        modal.style.display = "none";
-                    }
-                }
-            });
-
-            // Cerrar al clickear la X
+            // Cerrar con la X
             spanCerrar.onclick = function () {
                 modal.style.display = "none";
             };
 
-            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
+            // Cerrar al hacer clic en el fondo oscuro
             modal.onclick = function (e) {
                 if (e.target === modal) {
                     modal.style.display = "none";
                 }
             };
-        });
 
+            // Navegación por teclado
+            document.addEventListener('keydown', function (e) {
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") {
+                        indiceActuall = (indiceActuall + 1) % imagenesEventoActual.length;
+                        actualizarModal();
+                    } else if (e.key === "ArrowLeft") {
+                        indiceActuall = (indiceActuall - 1 + imagenesEventoActual.length) % imagenesEventoActual.length;
+                        actualizarModal();
+                    } else if (e.key === "Escape") {
+                        modal.style.display = "none";
+                    }
+                }
+            });
+        });
         //Menu Responsive y Trigger Redes Sociales
 
         const toggleBtn = document.querySelector('.toggle_btn')

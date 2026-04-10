@@ -1674,6 +1674,7 @@ iframe {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .service-card:hover,
@@ -1711,6 +1712,10 @@ iframe {
     object-position: center;
     border-bottom: 3px solid #004a87;
     display: block;
+}
+
+.imagenes-ocultas {
+    display: none; /* No se ven en la tarjeta, solo existen en el código */
 }
 
 
