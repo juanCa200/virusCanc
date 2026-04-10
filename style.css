@@ -22,7 +22,6 @@ body {
     align-items: center;
     box-sizing: border-box;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    display: none;
 }
 
 .top-bar.scrolled {
@@ -30,7 +29,6 @@ body {
     opacity: 0;
     pointer-events: none;
     /* Evita que se pueda dar click si está oculta */
-    display: none;
 }
 
 header.scrolled {
@@ -3858,63 +3856,80 @@ video {
 }
 
 /* --- TARJETAS DE NÚMEROS (Estilo Transparente) --- */
+
 .bloque-estadisticas {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.07);
-    /* Efecto cristal muy sutil */
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 30px;
-    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
     flex: 1;
-    min-width: 200px;
-    transition: all 0.3s ease;
+    min-width: 250px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalle: Borde lateral que se expande en hover */
+.stat-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #c0272c;
+    transition: width 0.3s ease;
 }
 
 .stat-card:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #c0272c;
-    /* Ilumina el borde en rojo al pasar el mouse */
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(192, 39, 44, 0.15);
+}
+
+.stat-card:hover::before {
+    width: 6px; /* Aparece una línea roja elegante a la izquierda */
 }
 
 .stat-value {
     font-size: 3.5rem;
-    font-weight: 800;
-    color: #ffffff;
+    font-weight: 900;
+    color: #c0272c; /* Número en rojo potente */
     display: block;
     line-height: 1;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    letter-spacing: -1.5px;
 }
 
 .stat-label {
-    color: #c0272c;
-    /* Etiquetas en rojo para contraste */
-    font-weight: 600;
+    color: #1a1a1a; /* Texto oscuro para máxima legibilidad */
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
 }
 
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
-    .titulo-banner {
-        font-size: 2rem;
-    }
-
     .stat-card {
         min-width: 100%;
+        padding: 30px 20px;
     }
-
-    .banner-profesionales-azul {
-        padding: 40px 20px;
+    
+    .stat-value {
+        font-size: 2.8rem;
     }
 }
-
 /* QUIENES SOMOS  VIDEO SECCION INSTITUCION.HTML*/
 
 .seccion-video-local {
