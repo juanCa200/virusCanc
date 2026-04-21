@@ -779,12 +779,12 @@ menu>* {
 }
 
 menu.open>.action {
-    --factor: 0;
+    --factor: 1;
 }
 
 menu>.action {
 
-    --factor: 1;
+    --factor: 0;
     width: var(--size);
     height: var(--size);
     right: calc(0.35 * var(--size));
@@ -1022,7 +1022,6 @@ menu>.action:nth-child(4) {
     line-height: 1.2;
 }
 
-/* --- ESTILO DEL DESPLEGABLE --- */
 
 /* --- ESTILO DEL DESPLEGABLE --- */
 .dropdown-servicio {
@@ -3016,6 +3015,7 @@ video {
     display: block;
     /* Asegura que no haya flex interfiriendo con el título */
     padding: 20px 0;
+
 }
 
 .titulo-preparacion {
@@ -3089,13 +3089,12 @@ video {
 /* Manejo de visibilidad de contenido */
 .tab-content {
     display: none;
-    /* Oculto por defecto */
     animation: fadeIn 0.5s ease;
 }
 
 .tab-content.active {
     display: block;
-    /* Solo el activo se ve */
+    cursor: pointer;
 }
 
 @keyframes fadeIn {

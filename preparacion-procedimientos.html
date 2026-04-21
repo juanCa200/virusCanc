@@ -333,66 +333,63 @@
 
 
         document.addEventListener('DOMContentLoaded', function () {
-            const modal = document.getElementById("modalImagen");
-            const imgModal = document.getElementById("imgExpandida");
-            const captionText = document.getElementById("caption-modal");
-            const spanCerrar = document.querySelector(".cerrar-modal");
+    const modal = document.getElementById("modalImagen");
+    const imgModal = document.getElementById("imgExpandida");
+    const captionText = document.getElementById("caption-modal");
+    const spanCerrar = document.querySelector(".cerrar-modal");
 
-            // Seleccionamos todas las imágenes dentro del carrusel
-            const imagenes = Array.from(document.querySelectorAll('.procedimientos .tarjeta-lab img'));
-            let indiceActual = 0;
+    // Variables de control
+    let imagenesFiltradas = []; 
+    let indiceActual = 0;
 
-            // Función para abrir y actualizar el modal
-            function abrirModal(index) {
-                indiceActual = index;
-                modal.style.display = "flex"; // Usamos flex para centrar
-                const imgSeleccionada = imagenes[indiceActual];
+    // Función para abrir y actualizar el modal
+    function abrirModal(index) {
+        indiceActual = index;
+        modal.style.display = "flex";
+        const imgSeleccionada = imagenesFiltradas[indiceActual];
 
-                imgModal.src = imgSeleccionada.src;
+        imgModal.src = imgSeleccionada.src;
+        
+        captionText.innerHTML = `<br> <small>${indiceActual + 1} / ${imagenesFiltradas.length}</small>`;
+    }
 
-                // Buscamos el H3 más cercano para el título
-                const titulo = imgSeleccionada.closest('.service-card').querySelector('h3').innerText;
-                captionText.innerHTML = `${titulo} <br> <small>${indiceActual + 1} / ${imagenes.length}</small>`;
+    // EVENTO DELEGADO: Escuchamos clicks en cualquier imagen de tarjeta-lab
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.tarjeta-lab img')) {
+            const imgClickeada = e.target;
+            
+            // 1. Encontrar solo las imágenes de la sección ACTUALMENTE visible
+            const seccionActiva = imgClickeada.closest('.tab-content');
+            imagenesFiltradas = Array.from(seccionActiva.querySelectorAll('.tarjeta-lab img'));
+            
+            // 2. Encontrar el índice de la imagen clickeada dentro de ese grupo filtrado
+            const nuevoIndice = imagenesFiltradas.indexOf(imgClickeada);
+            
+            abrirModal(nuevoIndice);
+        }
+    });
+
+    // --- NAVEGACIÓN POR TECLADO (Solo dentro del grupo filtrado) ---
+    document.addEventListener('keydown', function (e) {
+        if (modal.style.display === "flex") {
+            if (e.key === "ArrowRight") {
+                indiceActual = (indiceActual + 1) % imagenesFiltradas.length;
+                abrirModal(indiceActual);
             }
-
-            // Asignar el evento click a cada imagen
-            imagenes.forEach((img, index) => {
-                img.style.cursor = "zoom-in"; // Cambia el cursor para avisar que es clickable
-                img.onclick = function () {
-                    abrirModal(index);
-                };
-            });
-
-            // --- NAVEGACIÓN POR TECLADO ---
-            document.addEventListener('keydown', function (e) {
-                // Solo si el modal está abierto
-                if (modal.style.display === "flex") {
-                    if (e.key === "ArrowRight") { // Flecha Derecha
-                        indiceActual = (indiceActual + 1) % imagenes.length;
-                        abrirModal(indiceActual);
-                    }
-                    else if (e.key === "ArrowLeft") { // Flecha Izquierda
-                        indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-                        abrirModal(indiceActual);
-                    }
-                    else if (e.key === "Escape") { // Tecla Esc
-                        modal.style.display = "none";
-                    }
-                }
-            });
-
-            // Cerrar al clickear la X
-            spanCerrar.onclick = function () {
+            else if (e.key === "ArrowLeft") {
+                indiceActual = (indiceActual - 1 + imagenesFiltradas.length) % imagenesFiltradas.length;
+                abrirModal(indiceActual);
+            }
+            else if (e.key === "Escape") {
                 modal.style.display = "none";
-            };
+            }
+        }
+    });
 
-            // Cerrar al clickear fuera de la imagen (en el fondo oscuro)
-            modal.onclick = function (e) {
-                if (e.target === modal) {
-                    modal.style.display = "none";
-                }
-            };
-        });
+    // Cerrar modal
+    spanCerrar.onclick = () => modal.style.display = "none";
+    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+});
     </script>
 </body>
 
