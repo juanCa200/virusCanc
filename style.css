@@ -3518,6 +3518,9 @@ video {
     .mosaico-voluntariado {
         grid-template-columns: 1fr;
     }
+    .descripcion-vol{
+        margin-left: 15px;
+    }
 }
 
 

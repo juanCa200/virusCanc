@@ -393,63 +393,63 @@
 
 
         document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById("modalImagen");
-    const imgModal = document.getElementById("imgExpandida");
-    const captionText = document.getElementById("caption-modal");
-    const spanCerrar = document.querySelector(".cerrar-modal");
+            const modal = document.getElementById("modalImagen");
+            const imgModal = document.getElementById("imgExpandida");
+            const captionText = document.getElementById("caption-modal");
+            const spanCerrar = document.querySelector(".cerrar-modal");
 
-    // Variables de control
-    let imagenesFiltradas = []; 
-    let indiceActual = 0;
+            // Variables de control
+            let imagenesFiltradas = [];
+            let indiceActual = 0;
 
-    // Función para abrir y actualizar el modal
-    function abrirModal(index) {
-        indiceActual = index;
-        modal.style.display = "flex";
-        const imgSeleccionada = imagenesFiltradas[indiceActual];
+            // Función para abrir y actualizar el modal
+            function abrirModal(index) {
+                indiceActual = index;
+                modal.style.display = "flex";
+                const imgSeleccionada = imagenesFiltradas[indiceActual];
 
-        imgModal.src = imgSeleccionada.src;
-        
-        captionText.innerHTML = `<br> <small>${indiceActual + 1} / ${imagenesFiltradas.length}</small>`;
-    }
+                imgModal.src = imgSeleccionada.src;
 
-    // EVENTO DELEGADO: Escuchamos clicks en cualquier imagen de tarjeta-lab
-    document.addEventListener('click', function (e) {
-        if (e.target.closest('.tarjeta-lab img')) {
-            const imgClickeada = e.target;
-            
-            // 1. Encontrar solo las imágenes de la sección ACTUALMENTE visible
-            const seccionActiva = imgClickeada.closest('.tab-content');
-            imagenesFiltradas = Array.from(seccionActiva.querySelectorAll('.tarjeta-lab img'));
-            
-            // 2. Encontrar el índice de la imagen clickeada dentro de ese grupo filtrado
-            const nuevoIndice = imagenesFiltradas.indexOf(imgClickeada);
-            
-            abrirModal(nuevoIndice);
-        }
-    });
-
-    // --- NAVEGACIÓN POR TECLADO (Solo dentro del grupo filtrado) ---
-    document.addEventListener('keydown', function (e) {
-        if (modal.style.display === "flex") {
-            if (e.key === "ArrowRight") {
-                indiceActual = (indiceActual + 1) % imagenesFiltradas.length;
-                abrirModal(indiceActual);
+                captionText.innerHTML = `<br> <small>${indiceActual + 1} / ${imagenesFiltradas.length}</small>`;
             }
-            else if (e.key === "ArrowLeft") {
-                indiceActual = (indiceActual - 1 + imagenesFiltradas.length) % imagenesFiltradas.length;
-                abrirModal(indiceActual);
-            }
-            else if (e.key === "Escape") {
-                modal.style.display = "none";
-            }
-        }
-    });
 
-    // Cerrar modal
-    spanCerrar.onclick = () => modal.style.display = "none";
-    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
-});
+            // EVENTO DELEGADO: Escuchamos clicks en cualquier imagen de tarjeta-lab
+            document.addEventListener('click', function (e) {
+                if (e.target.closest('.tarjeta-lab img')) {
+                    const imgClickeada = e.target;
+
+                    // 1. Encontrar solo las imágenes de la sección ACTUALMENTE visible
+                    const seccionActiva = imgClickeada.closest('.tab-content');
+                    imagenesFiltradas = Array.from(seccionActiva.querySelectorAll('.tarjeta-lab img'));
+
+                    // 2. Encontrar el índice de la imagen clickeada dentro de ese grupo filtrado
+                    const nuevoIndice = imagenesFiltradas.indexOf(imgClickeada);
+
+                    abrirModal(nuevoIndice);
+                }
+            });
+
+            // --- NAVEGACIÓN POR TECLADO (Solo dentro del grupo filtrado) ---
+            document.addEventListener('keydown', function (e) {
+                if (modal.style.display === "flex") {
+                    if (e.key === "ArrowRight") {
+                        indiceActual = (indiceActual + 1) % imagenesFiltradas.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "ArrowLeft") {
+                        indiceActual = (indiceActual - 1 + imagenesFiltradas.length) % imagenesFiltradas.length;
+                        abrirModal(indiceActual);
+                    }
+                    else if (e.key === "Escape") {
+                        modal.style.display = "none";
+                    }
+                }
+            });
+
+            // Cerrar modal
+            spanCerrar.onclick = () => modal.style.display = "none";
+            modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+        });
 
 
         //Menu Responsive y Trigger Redes Sociales
@@ -471,6 +471,34 @@
         trigger.addEventListener('click', (e) => {
             e.currentTarget.parentElement.classList.toggle('open');
         })
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('a'); // El enlace principal
+
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault(); // Evita que el '#' o el link recargue la página
+
+                    // Cerrar otros menús abiertos (opcional, para que solo haya uno activo)
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) other.classList.remove('active');
+                    });
+
+                    // Alternar la clase active en el actual
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Cerrar el menú si se hace click fuera de él
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                }
+            });
+        });
     </script>
 </body>
 
