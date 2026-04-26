@@ -2230,7 +2230,7 @@ iframe {
 
 .img-valores {
     width: 100%;
-    max-height: 500px;
+    max-height: 600px;
     object-fit: cover;
     margin-bottom: 25px;
     display: block;
