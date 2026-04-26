@@ -115,9 +115,26 @@
                         nuestro equipo procesará su requerimiento en cumplimiento con las normas de privacidad y reserva
                         legal.
                     </p>
+
+                    <div class="tarjeta-info-paciente">
+                        <div class="tarjeta-icono">
+                            <i class="fa-solid fa-file-medical"></i>
+                        </div>
+                        <div class="tarjeta-contenido">
+                            <h3>Historia Clínica</h3>
+                            <p>Documento privado, obligatorio y sometido a reserva, en el cual se registran
+                                cronológicamente las condiciones de salud del paciente y los actos médicos realizados.
+                            </p>
+                            <a href="img/HistoriaClinica.pdf" target="_blank" class="boton-accion-primario">
+                                <span>Descargar Historia Clínica</span>
+                                <i class="fa-solid fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="acciones-unete">
-                        <a href="https://tu-formulario-de-google-o-typeform.com" target="_blank" class="btn-formulario">
-                            <i class="fa-solid fa-pen-to-square"></i> Formulario de Solicitud
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gestiondocumentalligameta@gmail.com" target="_blank" class="btn-formulario">
+                            <i class="fa-solid fa-pen-to-square"></i> Enviar Solicitud
                         </a>
                     </div>
                     <span class="nota-informativa">* Una vez enviado el formulario, nuestro equipo se pondrá en contacto
@@ -186,11 +203,11 @@
 
     </section>
 
-     <a href="https://wa.me/573102040672?text=Hola,%20deseo%20agendar%20una%20cita%20medica" target="_blank" class="btn-flotante-cita"
-            title="Agendar Cita Médica">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span class="texto-cita">Agendar Cita</span>
-        </a>
+    <a href="https://wa.me/573102040672?text=Hola,%20deseo%20agendar%20una%20cita%20medica" target="_blank"
+        class="btn-flotante-cita" title="Agendar Cita Médica">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span class="texto-cita">Agendar Cita</span>
+    </a>
 
     <footer class="liga-footer">
         <div class="contenedor-footer">
@@ -345,31 +362,31 @@
         })
 
         document.addEventListener('DOMContentLoaded', () => {
-    const dropdowns = document.querySelectorAll('.dropdown');
+            const dropdowns = document.querySelectorAll('.dropdown');
 
-    dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('a'); // El enlace principal
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('a'); // El enlace principal
 
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita que el '#' o el link recargue la página
-            
-            // Cerrar otros menús abiertos (opcional, para que solo haya uno activo)
-            dropdowns.forEach(other => {
-                if (other !== dropdown) other.classList.remove('active');
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault(); // Evita que el '#' o el link recargue la página
+
+                    // Cerrar otros menús abiertos (opcional, para que solo haya uno activo)
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) other.classList.remove('active');
+                    });
+
+                    // Alternar la clase active en el actual
+                    dropdown.classList.toggle('active');
+                });
             });
 
-            // Alternar la clase active en el actual
-            dropdown.classList.toggle('active');
+            // Cerrar el menú si se hace click fuera de él
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                }
+            });
         });
-    });
-
-    // Cerrar el menú si se hace click fuera de él
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.dropdown')) {
-            dropdowns.forEach(d => d.classList.remove('active'));
-        }
-    });
-});
     </script>
 </body>
 
