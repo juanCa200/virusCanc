@@ -12,6 +12,10 @@
             text-align: center;
             padding: 50px 20px;
         }
+        /* Ocultamos el formulario por defecto hasta verificar el pago en la API */
+        #seccion-formulario {
+            display: none; 
+        }
         .btn-reintentar {
             display: inline-block;
             margin-top: 20px;
@@ -21,11 +25,21 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .cargando {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
 
-<!-- MENSJE DE ERROR (Oculto por defecto) -->
+<!-- MENSAJE DE ESPERA MIENTRAS SE VERIFICA -->
+<div id="pantalla-cargando" class="cargando">
+    <p>🔄 Verificando el estado de tu pago con Wompi, por favor espera...</p>
+</div>
+
+<!-- MENSAJE DE ERROR (Oculto por defecto) -->
 <div id="pantalla-bloqueo">
     <div class="contenedor">
         <h1 style="color: #dc3545;">⚠️ Pago No Verificado</h1>
@@ -35,7 +49,7 @@
     </div>
 </div>
 
-<!-- FORMULARIO OFICIAL (Se ocultará si el pago no es válido) -->
+<!-- FORMULARIO OFICIAL (Se mostrará solo si el API retorna APPROVED) -->
 <section class="confirmacion" id="seccion-formulario">
     <div class="contenedor">
         <h1>¡Pago Confirmado! 🎉</h1>
@@ -76,23 +90,54 @@
 </section>
 
 <script>
-  // 🔒 VALIDACIÓN DE SEGURIDAD AL CARGAR LA PÁGINA
+  // 🔒 VALIDACIÓN DE SEGURIDAD MEDIANTE API DE WOMPI
   document.addEventListener("DOMContentLoaded", function() {
-      // Leemos los parámetros que Wompi pone en la URL
-      const valoresUrl = window.location.search;
-      const urlParams = new URLSearchParams(valoresUrl);
-      const estadoPago = urlParams.get('status'); // Captura 'APPROVED', 'DECLINED', etc.
+      const urlParams = new URLSearchParams(window.location.search);
+      const transaccionId = urlParams.get('id'); // Extrae el ID real de la URL
 
-      console.log("Estado del pago recibido de Wompi:", estadoPago);
+      console.log("ID de transacción recibido:", transaccionId);
 
-      // Si el estado NO es APPROVED, bloqueamos el formulario de inmediato
-      if (estadoPago !== "APPROVED") {
-          document.getElementById('seccion-formulario').style.display = 'none';
-          document.getElementById('pantalla-bloqueo').style.display = 'block';
+      // Si alguien intenta entrar sin hacer un pago (sin ID en la URL), se bloquea de inmediato
+      if (!transaccionId) {
+          mostrarBloqueo();
+          return;
       }
+
+      // Consultamos el estado real del ID usando el API de Sandbox de Wompi
+      const urlApiWompi = `https://sandbox.wompi.co/v1/transactions/${transaccionId}`;
+
+      fetch(urlApiWompi)
+      .then(response => response.json())
+      .then(apiData => {
+          // Validamos la respuesta estructural de Wompi
+          if (apiData && apiData.data && apiData.data.status) {
+              const estadoReal = apiData.data.status;
+              console.log("Estado real en Wompi:", estadoReal);
+
+              // Si el estado es APPROVED, quitamos pantallas de carga/bloqueo y abrimos el formulario
+              if (estadoReal === "APPROVED") {
+                  document.getElementById('pantalla-cargando').style.display = 'none';
+                  document.getElementById('seccion-formulario').style.display = 'block';
+              } else {
+                  mostrarBloqueo();
+              }
+          } else {
+              mostrarBloqueo();
+          }
+      })
+      .catch(error => {
+          console.error("Error consultando API de Wompi:", error);
+          mostrarBloqueo();
+      });
   });
 
-  // Envío a Google Sheets (Se mantiene igual)
+  function mostrarBloqueo() {
+      document.getElementById('pantalla-cargando').style.display = 'none';
+      document.getElementById('seccion-formulario').style.display = 'none';
+      document.getElementById('pantalla-bloqueo').style.display = 'block';
+  }
+
+  // Envío a Google Sheets (Ajustado con tu Apps Script)
   function enviarDatosAGoogle(event) {
       event.preventDefault();
       const btn = document.getElementById('btnEnviar');
@@ -106,6 +151,7 @@
           talla: document.getElementById('talla').value
       };
 
+      // ⚠️ Recuerda colocar aquí tu URL de producción de Apps Script actual
       const urlAppsScript = "TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI"; 
 
       fetch(urlAppsScript, {
