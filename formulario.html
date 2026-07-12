@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción Oficial</title>
+    <link rel="stylesheet" href="stylerosa.css">
+    <style>
+        /* Estilo para la pantalla de bloqueo en caso de fraude o fallo */
+        #pantalla-bloqueo {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .btn-reintentar {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- MENSJE DE ERROR (Oculto por defecto) -->
+<div id="pantalla-bloqueo">
+    <div class="contenedor">
+        <h1 style="color: #dc3545;">⚠️ Pago No Verificado</h1>
+        <p>No pudimos comprobar un pago aprobado para esta sesión o tu transacción fue rechazada.</p>
+        <p>Para poder rellenar el formulario de inscripción, primero debes completar el pago con éxito.</p>
+        <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
+    </div>
+</div>
+
+<!-- FORMULARIO OFICIAL (Se ocultará si el pago no es válido) -->
+<section class="confirmacion" id="seccion-formulario">
+    <div class="contenedor">
+        <h1>¡Pago Confirmado! 🎉</h1>
+        <p>Por favor, completa tus datos oficiales para asegurar tu kit y participación en el evento.</p>
+        
+        <form id="formInscripcion" onsubmit="enviarDatosAGoogle(event)">
+            <div style="margin-bottom: 15px;">
+                <label>Nombre Completo:</label>
+                <input type="text" id="nombre" required style="width:100%; padding:8px; margin-top:5px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Correo Electrónico:</label>
+                <input type="email" id="correo" required style="width:100%; padding:8px; margin-top:5px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Número de Cédula:</label>
+                <input type="text" id="cedula" required style="width:100%; padding:8px; margin-top:5px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>Talla de Camiseta:</label>
+                <select id="talla" required style="width:100%; padding:8px; margin-top:5px;">
+                    <option value="">Selecciona una talla</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
+            <button type="submit" id="btnEnviar" style="width: 100%; padding: 12px; background-color: #d63384; color: white; border: none; cursor: pointer; font-weight: bold;">
+                Finalizar Inscripción
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+  // 🔒 VALIDACIÓN DE SEGURIDAD AL CARGAR LA PÁGINA
+  document.addEventListener("DOMContentLoaded", function() {
+      // Leemos los parámetros que Wompi pone en la URL
+      const valoresUrl = window.location.search;
+      const urlParams = new URLSearchParams(valoresUrl);
+      const estadoPago = urlParams.get('status'); // Captura 'APPROVED', 'DECLINED', etc.
+
+      console.log("Estado del pago recibido de Wompi:", estadoPago);
+
+      // Si el estado NO es APPROVED, bloqueamos el formulario de inmediato
+      if (estadoPago !== "APPROVED") {
+          document.getElementById('seccion-formulario').style.display = 'none';
+          document.getElementById('pantalla-bloqueo').style.display = 'block';
+      }
+  });
+
+  // Envío a Google Sheets (Se mantiene igual)
+  function enviarDatosAGoogle(event) {
+      event.preventDefault();
+      const btn = document.getElementById('btnEnviar');
+      btn.disabled = true;
+      btn.innerText = "Guardando inscripción...";
+
+      const datos = {
+          nombre: document.getElementById('nombre').value,
+          correo: document.getElementById('correo').value,
+          cedula: document.getElementById('cedula').value,
+          talla: document.getElementById('talla').value
+      };
+
+      const urlAppsScript = "TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI"; 
+
+      fetch(urlAppsScript, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(datos)
+      })
+      .then(() => {
+          alert("¡Inscripción completada con éxito! Revisa tu correo electrónico.");
+          window.location.href = "gracias.html";
+      })
+      .catch(error => {
+          console.error("Error:", error);
+          alert("Hubo un error al guardar los datos.");
+          btn.disabled = false;
+          btn.innerText = "Finalizar Inscripción";
+      });
+  }
+</script>
+</body>
+</html>

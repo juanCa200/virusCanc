@@ -1,0 +1,1105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; 
+}
+
+body {
+    background-color: #f4f4f4;
+}
+/* --- CONTENEDOR PRINCIPAL DE LA BARRA DE NAVEGACIÓN --- */
+.navbar {
+    width: 100%;
+    background-color: #d92c73; 
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #d92c73; 
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;        
+    justify-content: flex-start; /* Alinea los elementos en fila continua */
+    gap: 15px;                   /* Separación corta y limpia entre los dos logos pegados */
+    width: 100%;
+    max-width: 1200px;          
+    margin: 0 auto;
+}
+
+/* 2. "EVENTO ROSA" (Se posiciona al lado del primer logo gracias al gap mínimo) */
+.logo-section {
+    display: flex;
+    align-items: center;
+    order: 2; /* Puesto en segunda posición */
+    
+    /* Empuja todo lo que venga después (Términos y Condiciones) hacia el extremo derecho */
+    margin-right: auto; 
+}
+
+/* Permite mezclar el orden de los elementos del nav-links de forma directa */
+.nav-links {
+    display: contents; 
+}
+
+/* REORDENAMIENTO INTERNO EN FILA */
+
+/* 1. LOGO LIGA CÁNCER (Va al inicio, pegado al borde izquierdo de la pantalla) */
+.nav-links a:nth-child(2) {
+    order: 1; /* Puesto en primera posición */
+}
+
+/* 3. TÉRMINOS Y CONDICIONES (Se desplaza al extremo derecho gracias al margen del elemento 2) */
+.nav-links a:nth-child(1) {
+    order: 3; /* Puesto en tercera posición */
+}
+
+/* Estilos base para los enlaces */
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* --- CONTROL UNIFICADO DE LAS IMÁGENES LOGO --- */
+.logo-img {
+    height: 45px;              
+    width: auto;               
+    display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+/* --- SECCIÓN HERO --- */
+.hero-section {
+    position: relative;
+    min-height: 100vh; 
+    background: url('img/eventoRosaPortada.jpeg') center/cover no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Capa con el filtro rosa translúcido de fondo */
+.pink-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(228, 105, 148, 0.7) 0%, rgba(186, 68, 109, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 950px; 
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+/* --- TEXTOS SUPERIORES --- */
+.hero-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.hero-tagline {
+    font-size: 15px; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 6px; 
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor que antes era fucsia, ahora es invisible para dejar el texto libre y gigante como la foto */
+.title-pill-container {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.hero-title {
+    font-size: 64px; 
+    font-weight: 900; 
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase; 
+    letter-spacing: -1.5px; 
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 24px; 
+    font-weight: 400;
+    margin: 5px 0 0 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* --- REJILLA Y TARJETA CON CENTRADO PERFECTO --- */
+.events-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Cuadro estilo vidrio esmerilado */
+.event-card.main-event {
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 255, 255, 0.35); 
+    border-radius: 32px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 520px;
+    min-height: 280px; /* Asegura proporciones perfectas */
+    padding: 40px;
+    box-sizing: border-box;
+    
+    /* Forzamos a que la tarjeta use Flexbox para centrar todo su HTML interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical absoluto */
+    align-items: center;     /* Centrado horizontal absoluto */
+    gap: 20px;               /* Distribuye los espacios entre ciudad, fecha y botón */
+}
+
+/* "BARRANQUILLA" */
+.event-city {
+    font-size: 46px; 
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    color: #ffffff;
+    line-height: 1;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de fechas original */
+.event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin: 0; /* Reseteamos márgenes antiguos para no romper el centrado */
+}
+
+.event-date .month-day {
+    font-size: 26px; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffd2e1; /* Color Oro Rosa de alto contraste */
+}
+
+.event-date .year {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    opacity: 0.85;
+}
+
+/* --- BOTÓN DE INSCRIPCIÓN REDONDO Y LLAMATIVO --- */
+.btn-inscripcion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;                  /* Espacio ideal entre el texto y el icono */
+    background-color: #e63980;  /* Fondo fucsia sólido para máxima visibilidad */
+    color: #ffffff;             /* Texto blanco puro */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 32px;         /* Espaciado interno generoso para darle cuerpo */
+    border-radius: 50px;        /* Hace que el botón sea completamente redondo en las esquinas */
+    text-transform: uppercase;  /* Mayúsculas para darle más impacto visual */
+    letter-spacing: 1px;        /* Un poco de aire entre las letras */
+    border: 2px solid transparent;
+    box-shadow: 0 8px 20px rgba(230, 57, 128, 0.35); /* Sombra suave para darle relieve */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición más fluida */
+}
+
+.btn-inscripcion:hover {
+    background-color: #ffffff;  /* Invierte el fondo a blanco al pasar el cursor */
+    color: #e63980;             /* El texto cambia al fucsia */
+    border-color: #e63980;      /* Añade el borde fucsia */
+    transform: translateY(-3px); /* Se eleva sutilmente */
+    box-shadow: 0 12px 28px rgba(230, 57, 128, 0.5); /* La sombra se intensifica al elevarse */
+}
+
+/* Ajuste opcional para asegurar que el icono SVG mantenga su color actual */
+.icon-whatsapp {
+    width: 18px;
+    height: 18px;
+    fill: currentColor; 
+}
+
+@media (max-width: 650px) {
+    .hero-title { font-size: 42px;}
+    .hero-subtitle { font-size: 18px; }
+    .event-card.main-event { padding: 30px 20px; min-height: 240px; }
+    .event-city { font-size: 36px; }
+    .event-date .month-day { font-size: 22px; }
+}
+
+
+
+/* --- RESPONSIVO --- */
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 32px;
+    }
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    .event-card {
+        padding: 20px;
+    }
+    .event-city {
+        font-size: 28px;
+    }
+    
+}
+/* --- ESTILOS PARA EL LOGO --- */
+.logo-img {
+    height: 90px; /* Controla la altura del logo en pantallas grandes */
+    width: auto;  /* Mantiene la proporción original para que no se deforme */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.03); /* Un pequeño efecto visual al pasar el mouse */
+}
+
+/* ==========================================================================
+   --- RESPONSIVO GENERAL Y BARRA DE NAVEGACIÓN (CORREGIDO) ---
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Reajustamos el contenedor de la Navbar para móviles */
+    .navbar {
+        padding: 10px 15px !important;
+        width: 100% !important;
+        overflow: hidden;
+    }
+
+    .nav-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important; /* Fuerza los extremos */
+        align-items: center !important;
+        gap: 0px !important; /* Quitamos el gap para controlar el espacio con flex */
+        width: 100% !important;
+    }
+
+    /* 2. Ocultamos por completo el logo de la Liga de Cáncer (Segundo elemento dentro de nav-links) */
+    .nav-links a:nth-child(2) {
+        display: none !important;
+    }
+
+    /* 3. Ajustamos la sección del logo Evento Rosa para que se quede estática a la izquierda */
+    .logo-section {
+        order: 1 !important;
+        margin-right: 0 !important;
+    }
+
+    .logo-section .logo-img {
+        height: 35px !important; /* Achicamos un poco el logo en móvil para dar aire */
+        width: auto !important;
+    }
+
+    /* 4. Quitamos el truco destructivo de 'contents' para controlar el enlace derecho */
+    .nav-links {
+        display: flex !important;
+        order: 2 !important;
+        max-width: 45% !important; /* Evita que el texto empuje y rompa la pantalla */
+    }
+
+    /* 5. Estilos hiper-controlados para "Términos y Condiciones" a la derecha */
+    .nav-links a:nth-child(1) {
+        order: 1 !important;
+        font-size: 11px !important; /* Reducimos la letra para que quepa perfecto */
+        line-height: 1.2 !important;
+        text-align: right !important;
+        white-space: normal !important; /* Permite que salte a dos líneas de ser necesario */
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* 6. Eliminación de la curva mágica (si existía en este componente) */
+    .contenedor-banner-rosa::before {
+        display: none !important;
+    }
+}
+
+/* --- Ajuste extra para el viewport del Hero (Evita desbordes fantasmas) --- */
+@media (max-width: 600px) {
+    body, html {
+        overflow-x: hidden; /* Elimina definitivamente el scroll horizontal blanco */
+    }
+    .hero-title {
+        font-size: 32px !important;
+    }
+    .hero-subtitle {
+        font-size: 16px !important;
+    }
+    .event-card.main-event {
+        padding: 25px 20px !important;
+        max-width: 100% !important;
+    }
+    .event-city {
+        font-size: 32px !important;
+    }
+}
+
+/* --- CONTENEDOR DE LA IMAGEN --- */
+.contenedor-banner-rosa {
+    position: relative; /* Permite posicionar la curva encima */
+    width: 100%;
+    overflow: hidden; /* Evita que la curva se salga de los bordes laterales */
+    line-height: 0; /* Elimina espacios extraños debajo de la imagen */
+}
+
+/* --- LA IMAGEN ADAPTABLE --- */
+.imagen-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- EL EFECTO CURVO PUESTO ENCIMA (MÁGICO) --- */
+.contenedor-banner-rosa::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* Creamos un círculo gigante descentrado para simular la caída de la curva */
+    width: 160%; 
+    height: 180px; /* Controla qué tan abajo llega el color rosa */
+    background-color: #e63980; /* El color rosa exacto */
+    
+    /* Movemos el círculo al centro y lo subimos para que solo se vea la panza inferior */
+    transform: translateX(-50%) translateY(-80px);
+    border-radius: 50%; /* Lo convierte en una elipse curva suave */
+    
+    z-index: 2; /* Obliga a la curva a ponerse por encima de la imagen */
+    pointer-events: none; /* Evita que interfiera si alguien intenta dar clic */
+}
+
+/* --- CONTENEDOR GENERAL --- */
+.seccion-evento-rosa-info {
+    position: relative;
+    width: 100%;
+    background-color: #fdfafb; /* Fondo sutilmente rosáceo para dar calidez */
+    padding: 70px 0;
+    box-sizing: border-box;
+}
+
+.contenedor-programa-rosa {
+    max-width: 1360px; /* Ampliado para simular pantalla completa estirada */
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* --- TÍTULO SECCIONAL --- */
+.titulo-evento-rosa {
+    font-size: 40px;
+    font-weight: 900;
+    color: #e63980; /* Rosa corporativo nítido */
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Barra vertical de diseño al lado del título */
+.titulo-evento-rosa::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 85px;
+    width: 6px;
+    background-color: #e63980;
+    border-radius: 4px;
+}
+
+/* --- DISEÑO DE REJILLA ENFOCADO A LA IZQUIERDA --- */
+.bloque-interactivo-rosa {
+    display: grid;
+    /* Forzamos al menú izquierdo a medir solo 260px para pegarlo drásticamente al borde */
+    grid-template-columns: 260px 1fr; 
+    gap: 55px; /* Espaciado elegante para que el contenido de la derecha respire */
+    align-items: start;
+}
+
+/* --- ASIDE: PANEL LATERAL DE BOTONES --- */
+.panel-navegacion-rosa {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(230, 57, 128, 0.05); /* Sombra suave tintada de rosa */
+    border: 1px solid rgba(230, 57, 128, 0.12);
+    overflow: hidden;
+}
+
+.header-panel-rosa {
+    background-color: #e63980;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 15px;
+    text-align: center;
+}
+
+/* --- ENLACES Y BOTONES DE NAVEGACIÓN --- */
+.lista-botones-rosa {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 6px;
+}
+
+.btn-rosa, .nav-b {
+    background: transparent;
+    border: none;
+    color: #4f5d73;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    padding: 14px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Hover suave interactivo */
+.btn-rosa:hover, .nav-b:hover {
+    background-color: rgba(230, 57, 128, 0.04);
+    color: #e63980;
+    padding-left: 22px; /* Efecto dinámico empujado a la derecha */
+}
+
+/* Botón de la pestaña activa */
+.btn-rosa.active, .nav-b.active {
+    background-color: #e63980;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(230, 57, 128, 0.25);
+}
+
+/* --- MAIN: CONTENIDO DINÁMICO --- */
+.pantalla-contenido-rosa {
+    padding: 5px 10px;
+}
+
+.subtitulo-dinamico-rosa {
+    font-size: 34px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.cuerpo-texto-rosa p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #475569;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+    /* Oculta por completo el logo central */
+    .logo-central {
+        display: none !important;
+    }
+
+    /* Asegura que los dos elementos restantes empujen hacia los extremos */
+    .header-rosa {
+        justify-content: space-between;
+        padding: 10px 15px; /* Reduce un poco el espacio en móviles */
+    }
+}
+
+/* --- RESPONSIVE DE ADAPTACIÓN (TABLETS Y SMARTPHONES) --- */
+@media (max-width: 992px) {
+    .bloque-interactivo-rosa {
+        grid-template-columns: 1fr; /* Colapsa a una sola columna */
+        gap: 40px;
+    }
+    
+    .panel-navegacion-rosa {
+        max-width: 100%;
+    }
+    
+    .titulo-evento-rosa {
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+    
+    .subtitulo-dinamico-rosa {
+        font-size: 28px;
+    }
+}
+
+/* --- 1. DETENER EL DESBORDAMIENTO EN LA REJILLA PRINCIPAL --- */
+.bloque-interactivo-rosa {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr); /* El uso de minmax(0, 1fr) es el secreto matemático que evita que la columna derecha crezca infinitamente */
+    gap: 55px;
+    align-items: start;
+    width: 100%;
+}
+
+/* --- 2. CONFIGURAR LA PANTALLA CONTENEDORA DE TEXTO --- */
+.pantalla-contenido-rosa {
+    padding: 5px 10px;
+    width: 100%;
+    min-width: 0; /* Forza al contenedor a respetar el ancho del padre */
+    overflow: hidden; /* Corta cualquier elemento rebelde */
+    box-sizing: border-box;
+}
+
+
+/* Asegura que la fila de prevención interna use flexbox adaptable */
+.contenedor-prevencion-fila {
+    display: flex;
+    flex-wrap: wrap; /* Si las columnas no caben, bajan automáticamente en lugar de desbordarse */
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Controla el tamaño de las mini-columnas educativas internas */
+.columna-educativa {
+    flex: 1 1 280px; /* Crece y se encoge dinámicamente, con un mínimo base de 280px */
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* Evita que el contenedor del video grande rompa el layout */
+.contenedor-video-estilizado {
+     position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 33, 64, 0.2);
+    background: #000;
+}
+
+@media (max-width: 992px) {
+    .bloque-interactivo-rosa {
+        grid-template-columns: 1fr; /* Colapsa a una sola columna en pantallas medianas/pequeñas */
+        gap: 30px;
+    }
+}
+.panel-educativo {
+    width: 100%;
+    display: block; /* Quitamos flex/grid viejos para que no busque dos columnas */
+    box-sizing: border-box;
+}
+
+
+.videos-dos-columnas {
+    display: flex;
+    gap: 15px; 
+    width: 100%;
+    max-width: 100%; 
+    margin: 5px auto; 
+}
+
+.contenedor-video-secundario {
+    flex: 1; 
+    width: 100%;
+}
+
+.contenedor-video-secundario video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; 
+    display: block;
+}
+
+/* --- LA IMAGEN ADAPTABLE --- */
+.imagen-educativa-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Evita que la imagen se corte o se deforme */
+}
+
+/* --- CONTENEDOR DE LAS 3 IMÁGENES INFERIORES --- */
+.galeria-tres-columnas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide en 3 columnas exactamente iguales */
+    gap: 20px; /* Espaciado elegante entre las 3 imágenes */
+    margin-top: 25px; /* Separación con respecto a la imagen grande de arriba */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- CONTENEDOR INDIVIDUAL DE CADA FOTO INFERIOR --- */
+.caja-foto-secundaria {
+    width: 100%;
+    border-radius: 12px; /* Bordes redondeados sutiles */
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(230, 57, 128, 0.05); /* Sutil sombra rosa */
+    background: #ffffff;
+}
+
+/* --- COMPORTAMIENTO DE LAS FOTOS INFERIORES --- */
+.foto-galeria-baja {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Asegura que si tienen proporciones ligeramente distintas, se adapten bonito */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto opcional: un sutil zoom al pasar el mouse por las imágenes pequeñas */
+.caja-foto-secundaria:hover .foto-galeria-baja {
+    transform: scale(1.03);
+}
+
+/* --- RESPONSIVE (MÓVILES) --- */
+@media (max-width: 650px) {
+    .galeria-tres-columnas {
+        grid-template-columns: 1fr; /* En celulares las 3 imágenes se apilan una debajo de otra */
+        gap: 15px;
+    }
+}
+
+/* Ocultar por completo las 4 imágenes secundarias en la interfaz */
+.imagenes-ocultas-lightbox {
+    display: none;
+}
+
+/* --- ESTILOS DEL VISOR PANORÁMICO (LIGHTBOX) --- */
+.visor-lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 99999; /* Por encima de menús y botones flotantes */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95); /* Fondo oscuro premium */
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+/* Imagen maximizada */
+.visor-lightbox img {
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: zoomEfecto 0.25s ease-out;
+}
+
+/* Botón de cerrar (X) */
+.cerrar-visor {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #f8fafc;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.cerrar-visor:hover {
+    color: #e63980; /* Cambia a rosa corporativo */
+}
+
+/* Flechas de navegación visuales */
+.flecha-visor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 18px 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.flecha-visor:hover {
+    background: #e63980;
+    box-shadow: 0 0 15px rgba(230, 57, 128, 0.4);
+}
+.flecha-visor.prev { left: 40px; }
+.flecha-visor.next { right: 40px; }
+
+/* Animación de apertura */
+@keyframes zoomEfecto {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Ocultar flechas en dispositivos táctiles */
+@media (max-width: 768px) {
+    .flecha-visor { display: none; }
+    .visor-lightbox img { max-width: 95%; }
+}
+
+/* --- CONFIGURACIÓN GENERAL DEL FOOTER --- */
+.footer-rosa {
+    background-color: #d92c73; /* Fondo rosa */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px 20px 20px;
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contenedor-footer-rosa {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.columna-footer-rosa {
+    flex: 1 1 300px;
+    min-width: 280px;
+}
+
+/* --- TÍTULOS Y LÍNEAS --- */
+.columna-footer-rosa h3 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.linea-decorativa-blanca {
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 25px;
+    border-radius: 2px;
+}
+
+/* --- LISTA DE CONTACTO --- */
+.lista-contacto-rosa {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-contacto-rosa li {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.lista-contacto-rosa li i {
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+/* --- TEXTO Y BOTÓN DE INSCRIPCIÓN --- */
+.txt-inscripcion {
+    font-size: 14px;
+    color: #fce7f3;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-inscripcion-evento {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #d92c73;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    max-width: 260px;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+}
+
+.btn-inscripcion-evento:hover {
+    background-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* --- REDES SOCIALES --- */
+.redes-sociales-rosa {
+    display: flex;
+    gap: 18px; /* Un poco más de separación para botones grandes */
+}
+
+.icono-red-rosa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;  /* Más grande (Antes 44px) */
+    height: 56px; /* Más grande (Antes 44px) */
+    background-color: #ffffff;
+    color: #d92c73;
+    border-radius: 50%;
+    font-size: 24px; /* Icono interno más grande (Antes 18px) */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icono-red-rosa:hover {
+    background-color: #4a0e2e;
+    color: #ffffff;
+    transform: translateY(-6px); /* Elevación sutilmente mayor */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icono-red-rosa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #ffffff;
+    color: #d92c73;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icono-red-rosa:hover {
+    background-color: #4a0e2e;
+    color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- BARRA INFERIOR DE CRÉDITOS --- */
+.barra-derechos-rosa {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #fce7f3;
+}
+
+/* ==========================================================================
+   ¡AJUSTE RESPONSIVE CORREGIDO! (MÓVILES Y TABLETS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .contenedor-footer-rosa {
+        flex-direction: column; /* Alineación vertical */
+        gap: 40px;
+        text-align: center; /* Centra todos los textos e h3 */
+    }
+
+    .linea-decorativa-blanca {
+        margin: 0 auto 25px auto; /* Centra las barritas decorativas */
+    }
+
+    .lista-contacto-rosa li {
+        justify-content: center; /* Centra los elementos de contacto */
+        text-align: center;
+    }
+
+    .btn-inscripcion-evento {
+        max-width: 100%; /* El botón ocupa todo el ancho disponible en móviles */
+    }
+
+    .redes-sociales-rosa {
+        justify-content: center; /* Centra la fila de iconos de redes sociales */
+    }
+}
+
+
+.confirmacion{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    background:
+    linear-gradient(
+    rgba(236,72,153,.10),
+    rgba(236,72,153,.10)
+    );
+}
+
+.contenedor{
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+}
+
+.evento-info,
+.politicas{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.08);
+}
+
+.evento-info h1{
+    font-size:42px;
+    color:#d81b60;
+    margin-bottom:15px;
+}
+
+.fecha{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.valor{
+    color:#777;
+    font-size:18px;
+}
+
+.evento-info h2{
+    font-size:52px;
+    color:#e91e63;
+    margin-bottom:30px;
+}
+
+.incluye h3{
+    margin-bottom:15px;
+    color:#333;
+}
+
+.incluye ul{
+    list-style:none;
+}
+
+.incluye li{
+    padding:10px 0;
+    font-size:18px;
+}
+
+.politicas h3{
+    margin-bottom:30px;
+    color:#d81b60;
+    font-size:28px;
+}
+
+.politicas label{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+    line-height:1.5;
+    cursor:pointer;
+}
+
+.check{
+    margin-top:5px;
+}
+
+#btnPagar{
+    width:100%;
+    margin-top:20px;
+    border:none;
+    background:#e91e63;
+    color:white;
+    padding:18px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:700;
+    cursor:not-allowed;
+    opacity:.5;
+    transition:.3s;
+}
+
+#btnPagar.activo{
+    opacity:1;
+    cursor:pointer;
+    transform:translateY(0);
+}
+
+#btnPagar.activo:hover{
+    transform:translateY(-2px);
+    background:#d81b60;
+}
+
+@media(max-width:900px){
+
+    .contenedor{
+        grid-template-columns:1fr;
+    }
+
+    .evento-info h1{
+        font-size:30px;
+    }
+
+    .evento-info h2{
+        font-size:40px;
+    }
+
+}

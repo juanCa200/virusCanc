@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Inscripción</title>
+    <link rel="stylesheet" href="stylerosa.css">
+</head>
+<body>
+
+<section class="confirmacion">
+    <div class="contenedor">
+        <div class="evento-info">
+            <h1>Evento Rosa Villavicencio 2026</h1>
+            <p class="fecha">📅 18 de Octubre de 2026</p>
+            <p class="valor">Valor de inscripción</p>
+            <h2>$85.000 COP</h2>
+            <div class="incluye">
+                <h3>Tu inscripción incluye:</h3>
+                <ul>
+                    <li>✔ Camiseta oficial</li>
+                    <li>✔ Medalla de participación</li>
+                    <li>✔ Número oficial</li>
+                    <li>✔ Hidratación</li>
+                    <li>✔ Atención médica</li>
+                    <li>✔ Kit del participantee</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="politicas">
+            <h3>Antes de continuar</h3>
+            <label><input type="checkbox" class="check" onchange="validarChecks()"> He leído y acepto las políticas del evento.</label>
+            <label><input type="checkbox" class="check" onchange="validarChecks()"> Autorizo el tratamiento de mis datos personales.</label>
+            <label><input type="checkbox" class="check" onchange="validarChecks()"> Entiendo que la inscripción es personal e intransferible.</label>
+            <label><input type="checkbox" class="check" onchange="validarChecks()"> Entiendo que no hay devolución del dinero una vez realizado el pago.</label>
+
+            <!-- Botón estético controlado por JS -->
+            <button id="btnPagar" disabled onclick="irAPagarWompi()" style="width: 100%; margin-top: 20px; padding: 12px; cursor: not-allowed; transition: all 0.3s ease;">
+                Continuar al pago
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+  function validarChecks() {
+      const checkboxes = document.querySelectorAll('.check');
+      const btnPagar = document.getElementById('btnPagar');
+      const todosMarcados = Array.from(checkboxes).every(chk => chk.checked);
+      
+      if (todosMarcados) {
+          btnPagar.disabled = false;
+          btnPagar.style.cursor = 'pointer';
+          btnPagar.style.backgroundColor = '#d63384'; // Tu color rosa de marca
+          btnPagar.style.color = '#fff';
+      } else {
+          btnPagar.disabled = true;
+          btnPagar.style.cursor = 'not-allowed';
+          btnPagar.style.backgroundColor = ''; 
+          btnPagar.style.color = '';
+      }
+  }
+
+  function irAPagarWompi() {
+      // ⚠️ REEMPLAZA ESTE LINK POR EL LINK QUE COPIASTE DE TU PANEL DE WOMPI
+      const urlEnlacePago = "https://checkout.wompi.co/l/test_zuFWio";
+      
+      console.log("Redirigiendo a zona segura de pagos...");
+      window.location.href = urlEnlacePago;
+  }
+</script>
+</body>
+</html>

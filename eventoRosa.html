@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga Cancer Meta</title>
+    <link rel="stylesheet" href="stylerosa.css">
+    <link rel="icon" type="image/png" href="img/iconLogo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="/">
+                    <img src="img/eventoRosaLogo.png" alt="Carrera de las Rosas" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="#">Términos y Condiciones</a>
+                <a href="index.html">
+                    <img src="img/LogoCancerRosa.png" alt="Carrera de las Rosas" class="logo-img">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <div class="pink-overlay"></div>
+
+        <div class="hero-content">
+
+            <header class="hero-header">
+                <span class="hero-tagline">Servimos para que viva la vida</span>
+
+                <div class="title-pill-container">
+                    <h1 class="hero-title">Por ti, por ellas, por la vida</h1>
+                </div>
+
+                <p class="hero-subtitle">Juntos podemos llegar a tiempo</p>
+            </header>
+
+            <div class="events-grid">
+                <article class="event-card main-event">
+                    <h2 class="event-city">VILLAVICENCIO</h2>
+
+                    <p class="event-date">
+                        <span class="month-day">Octubre 18</span>
+                        <span class="year">de 2026</span>
+                    </p>
+
+                    <a href="inscripcion.html" class="btn-inscripcion">Inscríbete aquí</a>
+                </article>
+            </div>
+
+        </div>
+    </main>
+    <div class="contenedor-banner-rosa">
+        <img src="img/eventoRosaQueEs.png" alt="¿Qué es el Evento Rosa?" class="imagen-banner">
+    </div>
+
+
+    <section class="seccion-evento-rosa-info" id="evento-rosa">
+        <div class="contenedor-programa-rosa">
+
+            <h2 class="titulo-evento-rosa">EVENTO ROSA</h2>
+
+            <div class="bloque-interactivo-rosa">
+
+                <aside class="panel-navegacion-rosa">
+                    <div class="header-panel-rosa">
+                        Información
+                    </div>
+                    <nav class="lista-botones-rosa">
+                        <button class="btn-rosa active" onclick="cambiarInfo(0)">Objetivos</button>
+                        <button class="btn-rosa" onclick="cambiarInfo(1)">Tu inscripción incluye</button>
+                        <button class="nav-b" onclick="cambiarInfo(2)">Recorrido</button>
+                        <button class="btn-rosa" onclick="cambiarInfo(3)">Evento Rosa 2025</button>
+                        <button class="btn-rosa" onclick="cambiarInfo(3)">Inscríbete</button>
+                    </nav>
+                </aside>
+
+                <main class="pantalla-contenido-rosa" id="contenidoPrincipal">
+                    <h2 id="tituloInfo" class="subtitulo-dinamico-rosa"></h2>
+                    <div id="textoInfo" class="cuerpo-texto-rosa">
+                        <p>
+                        <div class="panel-educativo">
+                            <div class="seccion-video">
+                                <div class="contenedor-video-estilizado">
+                                    <img src="img/rutaRosa.png" alt="Evento Rosa" class="imagen-educativa-banner">
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div id="visorLightboxRosa" class="visor-lightbox">
+        <span class="cerrar-visor" onclick="cerrarVisorRosa()">&times;</span>
+        <button class="flecha-visor prev" onclick="cambiarFotoVisor(-1)">&#10094;</button>
+        <img id="imagenVisorDinamica" src="" alt="Visor Evento Rosa">
+        <button class="flecha-visor next" onclick="cambiarFotoVisor(1)">&#10095;</button>
+    </div>
+
+    <div id="visorSencilloRosa" class="visor-lightbox" onclick="cerrarVisor()">
+        <span class="cerrar-visor">&times;</span>
+        <img id="imagenMaximizada" src="" alt="Imagen Ampliada">
+    </div>
+
+    <footer class="footer-rosa">
+        <div class="contenedor-footer-rosa">
+
+            <div class="columna-footer-rosa">
+                <h3>INFORMACIÓN DE CONTACTO</h3>
+                <div class="linea-decorativa-blanca"></div>
+                <ul class="lista-contacto-rosa">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Sede Principal: Carrera 40 No. 37 – 102 Barrio Barzal, Villavicencio – Colombia</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Contáctanos: 3102040672 – 3134628259</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>entregaresultados.ligameta@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="columna-footer-rosa centro-columna">
+                <h3>PARTICIPA EN EL EVENTO</h3>
+                <div class="linea-decorativa-blanca"></div>
+                <p class="txt-inscripcion">Asegura tu cupo en nuestras actividades y conferencias programadas.</p>
+                <a href="#" class="btn-inscripcion-evento">
+                    <i class="fa-solid fa-pen-to-square"></i> Inscribirse Ahora
+                </a>
+            </div>
+
+            <div class="columna-footer-rosa">
+                <h3>NUESTRAS REDES</h3>
+                <div class="linea-decorativa-blanca"></div>
+                <div class="redes-sociales-rosa">
+                    <a href="https://www.youtube.com/@ligacancermeta" class="icono-red-rosa" target="_blank"
+                        rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/ligaCancermeta" class="icono-red-rosa" target="_blank"
+                        rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ligaseccionalmeta/" class="icono-red-rosa" target="_blank"
+                        rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@ligacancermeta?is_from_webapp=1&sender_device=pc"
+                        class="icono-red-rosa" target="_blank" rel="noopener" aria-label="TikTok"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="barra-derechos-rosa">
+            <p>&copy; 2026 Liga Contra el Cáncer Seccional Meta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+
+
+        function agrandarImagen(elemento) {
+            const visor = document.getElementById('visorSencilloRosa');
+            const imgMax = document.getElementById('imagenMaximizada');
+
+            // Inyecta el src de la imagen clickeada directamente en el visor
+            imgMax.src = elemento.src;
+            visor.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Detiene el scroll del sitio de fondo
+        }
+
+        function cerrarVisor() {
+            document.getElementById('visorSencilloRosa').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Devuelve el scroll normal a la página
+        }
+
+        // Cierre opcional y cómodo con la tecla Escape
+        window.addEventListener('keydown', function (evento) {
+            if (evento.key === 'Escape') {
+                cerrarVisor();
+            }
+        });
+
+
+        const datosInfo = [
+            {
+                titulo: "",
+                texto: `<div class="panel-educativo">
+                    <div class="seccion-video">
+                        <div class="contenedor-video-estilizado">
+                            <img src="img/objetivosRosa.png" alt="Objetivos del Evento Rosa" class="imagen-educativa-banner" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                    </div>
+                </div>`
+            },
+            {
+                titulo: "",
+                texto: `<div class="panel-educativo">
+                    <div class="seccion-video">
+                        <div class="contenedor-video-estilizado">
+                            <img src="img/inscripcionRosa.png" alt="Imagen Principal Evento Rosa" class="imagen-educativa-banner" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                    </div>
+
+                    <div class="galeria-tres-columnas">
+                        <div class="caja-foto-secundaria">
+                            <img src="img/camisaRosa.png" alt="Registro 1" class="foto-galeria-baja" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                        <div class="caja-foto-secundaria">
+                            <img src="img/medallaRosa.png" alt="Registro 2" class="foto-galeria-baja" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                        <div class="caja-foto-secundaria">
+                            <img src="img/tulaRosa.png" alt="Registro 3" class="foto-galeria-baja" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                    </div>
+                </div>`
+            },
+            {
+                titulo: "",
+                texto: `<div class="panel-educativo">
+                    <div class="seccion-video">
+                        <div class="contenedor-video-estilizado">
+                            <img src="img/recorridoNuevoRosa.png" alt="Imagen Principal Evento Rosa" class="imagen-educativa-banner" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                    </div>
+
+                    <div class="galeria-tres-columnas">
+                        <div class="caja-foto-secundaria">
+                            <img src="img/2kmRosa.png" alt="Registro 1" class="foto-galeria-baja" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                        <div class="caja-foto-secundaria">
+                            <img src="img/5kmRosa.png" alt="Registro 2" class="foto-galeria-baja" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                        <div class="caja-foto-secundaria">
+                            <img src="img/10kmRosa.png" alt="Registro 3" class="foto-galeria-baja" onclick="agrandarImagen(this)" style="cursor: zoom-in;">
+                        </div>
+                    </div>
+                </div>`
+            },
+            {
+                titulo: "",
+                texto: `<div class="panel-educativo">
+                    <div class="seccion-video">
+                        <div class="contenedor-video-estilizado" style="cursor: pointer;" onclick="abrirVisorRosa(0)">
+                            <img src="img/eventoRosaPortada.jpeg" alt="Imagen Principal Evento Rosa" class="imagen-educativa-banner img-galeria-rosa">
+                        </div>
+                    </div>
+
+                    <div class="imagenes-ocultas-lightbox">
+                        <img src="img/eventoRosa1.jpeg" alt="Evento Rosa 1" class="img-galeria-rosa" onclick="abrirVisorRosa(1)">
+                        <img src="img/eventoRosa2.jpeg" alt="Evento Rosa 2" class="img-galeria-rosa" onclick="abrirVisorRosa(2)">
+                        <img src="img/eventoRosa3.jpeg" alt="Evento Rosa 3" class="img-galeria-rosa" onclick="abrirVisorRosa(3)">
+                        <img src="img/eventoRosa4.jpeg" alt="Evento Rosa 4" class="img-galeria-rosa" onclick="abrirVisorRosa(4)">
+                    </div>
+
+                    <div class="videos-dos-columnas">
+                        <div class="contenedor-video-secundario">
+                            <video controls>
+                                <source src="img/videoRosa1.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de videos.
+                            </video>
+                        </div>
+                        <div class="contenedor-video-secundario">
+                            <video controls>
+                                <source src="img/videoRosa2.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de videos.
+                            </video>
+                        </div>
+                    </div>
+                </div>`
+            }
+        ];
+
+        function cambiarInfo(indice) {
+            // 1. Pausar cualquier video activo antes de destruir el contenido previo
+            const videosActivos = document.querySelectorAll('#textoInfo video');
+            videosActivos.forEach(video => {
+                video.pause();
+            });
+
+            // 2. Actualizar los contenidos del panel de información dinámico
+            document.getElementById('tituloInfo').innerText = datosInfo[indice].titulo;
+            document.getElementById('textoInfo').innerHTML = datosInfo[indice].texto;
+
+            // 3. Manejar las clases de activación en los botones del nuevo menú (.btn-rosa)
+            const botones = document.querySelectorAll('.panel-navegacion-rosa .btn-rosa, .panel-navegacion-rosa .nav-b');
+
+            botones.forEach(btn => btn.classList.remove('active'));
+
+            if (botones[indice]) {
+                botones[indice].classList.add('active');
+            }
+        }
+
+        let indiceFotoActual = 0;
+        let listaImagenesGaleria = [];
+
+        // Abre el visor en la foto seleccionada
+        function abrirVisorRosa(indice) {
+            // Escanea las imágenes disponibles en la pestaña activa actual
+            listaImagenesGaleria = Array.from(document.querySelectorAll('.img-galeria-rosa'));
+
+            if (listaImagenesGaleria.length === 0) return;
+
+            indiceFotoActual = indice;
+            const visor = document.getElementById('visorLightboxRosa');
+            const imgVisor = document.getElementById('imagenVisorDinamica');
+
+            // Asigna el src de la imagen seleccionada al visor
+            imgVisor.src = listaImagenesGaleria[indiceFotoActual].src;
+            visor.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Bloquea el scroll de la web de fondo
+        }
+
+        // Cierra el visor
+        function cerrarVisorRosa() {
+            document.getElementById('visorLightboxRosa').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Devuelve el scroll a la web
+        }
+
+        // Avanza o retrocede imágenes con clics en flechas de la interfaz
+        function cambiarFotoVisor(direccion) {
+            if (listaImagenesGaleria.length === 0) return;
+
+            indiceFotoActual += direccion;
+
+            // Bucle infinito: si pasa el final vuelve a la primera, si baja de cero va a la última
+            if (indiceFotoActual >= listaImagenesGaleria.length) {
+                indiceFotoActual = 0;
+            }
+            if (indiceFotoActual < 0) {
+                indiceFotoActual = listaImagenesGaleria.length - 1;
+            }
+
+            document.getElementById('imagenVisorDinamica').src = listaImagenesGaleria[indiceFotoActual].src;
+        }
+
+        // --- ESCUCHA DE EVENTOS DE TECLADO ---
+        window.addEventListener('keydown', function (evento) {
+            const visor = document.getElementById('visorLightboxRosa');
+
+            // Solo responde si el visor está visible en pantalla
+            if (visor && visor.style.display === 'flex') {
+                if (evento.key === 'ArrowRight') {
+                    cambiarFotoVisor(1); // Flecha derecha -> Siguiente
+                } else if (evento.key === 'ArrowLeft') {
+                    cambiarFotoVisor(-1); // Flecha izquierda -> Anterior
+                } else if (evento.key === 'Escape') {
+                    cerrarVisorRosa(); // Tecla ESC -> Cerrar
+                }
+            }
+        });
+    </script>
+
+
+
+
+</body>
+
+
+</html>
