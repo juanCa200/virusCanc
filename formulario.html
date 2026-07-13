@@ -3,98 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Inscripción Oficial</title>
+    <title>Verificando Inscripción...</title>
     <link rel="stylesheet" href="stylerosa.css">
     <style>
-        /* Estilo para la pantalla de bloqueo en caso de fraude o fallo */
+        /* Estilos base para centrar las pantallas de estado */
+        body {
+            background-color: #fdf6f9; /* Fondo suave para que resalte la tarjeta */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .tarjeta-estado {
+            background: #ffffff;
+            max-width: 480px;
+            width: 90%;
+            margin: 20px;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(214, 51, 132, 0.08);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Pantalla de carga animada */
+        #pantalla-cargando {
+            display: block;
+        }
+        
+        .spinner {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: girar 2s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .texto-secundario {
+            font-size: 0.95rem;
+            color: #757575;
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+        /* Pantalla de Bloqueo / Fallo Mejorada */
         #pantalla-bloqueo {
             display: none;
-            text-align: center;
-            padding: 50px 20px;
         }
-        /* Ocultamos el formulario por defecto hasta verificar el pago en la API */
-        #seccion-formulario {
-            display: none; 
-        }
-        .btn-reintentar {
+
+        .icono-alerta {
+            background-color: #fff0f3;
+            color: #dc3545;
+            width: 80px;
+            height: 80px;
+            font-size: 2.5rem;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 24px auto;
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
+            font-weight: bold;
+        }
+
+        .titulo-error {
+            color: #2c3e50;
+            font-size: 1.6rem;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        .descripcion-error {
+            color: #616161;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 28px 0;
+        }
+
+        .btn-reintentar {
+            display: block;
+            width: 100%;
+            padding: 14px;
             background-color: #d63384;
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+            transition: all 0.2s ease;
+            box-sizing: border-box;
         }
-        .cargando {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 1.2rem;
+
+        .btn-reintentar:hover {
+            background-color: #c22573;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(214, 51, 132, 0.3);
         }
     </style>
 </head>
 <body>
 
-<!-- MENSAJE DE ESPERA MIENTRAS SE VERIFICA -->
-<div id="pantalla-cargando" class="cargando">
-    <p>🔄 Verificando el estado de tu pago con Wompi, por favor espera...</p>
-</div>
+    <!-- CONTENEDOR PRINCIPAL DE CARGA -->
+    <div id="pantalla-cargando" class="tarjeta-estado">
+        <span class="spinner">🔄</span>
+        <h2 style="color: #2c3e50; margin: 0 0 10px 0;">Verificando pago</h2>
+        <p class="texto-secundario">Estamos validando tu transacción con Wompi de forma segura. Si todo está correcto, accederás al formulario en un momento.</p>
+    </div>
 
-<!-- MENSAJE DE ERROR (Oculto por defecto) -->
-<div id="pantalla-bloqueo">
-    <div class="contenedor">
-        <h1 style="color: #dc3545;">⚠️ Pago No Verificado</h1>
-        <p>No pudimos comprobar un pago aprobado para esta sesión o tu transacción fue rechazada.</p>
-        <p>Para poder rellenar el formulario de inscripción, primero debes completar el pago con éxito.</p>
+    <!-- CONTENEDOR PRINCIPAL DE ERROR (DISEÑO MEJORADO) -->
+    <div id="pantalla-bloqueo" class="tarjeta-estado">
+        <div class="icono-alerta">!</div>
+        <h2 class="titulo-error">Pago No Verificado</h2>
+        <p class="descripcion-error">
+            No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda que para inscribirte debes completar el proceso de pago con éxito.
+        </p>
         <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
     </div>
-</div>
-
-<!-- FORMULARIO OFICIAL (Se mostrará solo si el API retorna APPROVED) -->
-<section class="confirmacion" id="seccion-formulario">
-    <div class="contenedor" style="max-width: 800px; margin: 0 auto; padding: 20px;">
-        <h1 style="text-align: center;">¡Pago Confirmado! 🎉</h1>
-        <p style="text-align: center; margin-bottom: 20px;">Por favor, completa el siguiente formulario oficial para asegurar tu kit y participación en el evento.</p>
-        
-        <!-- Google Form Incrustado con URL de incrustación obligatoria -->
-        <div style="position: relative; width: 100%; height: 0; padding-bottom: 150%; overflow: hidden; -webkit-overflow-scrolling: touch;">
-            <iframe 
-                src="https://docs.google.com/forms/d/1LrY2kSSRTYlAlN6MlkUfDzyyoPke0jQJ1JDwjVOku44/viewform?embedded=true" 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                allowfullscreen>
-                Cargando formulario...
-            </iframe>
-        </div>
-    </div>
-</section>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
       const urlParams = new URLSearchParams(window.location.search);
-      const transaccionId = urlParams.get('id'); // Extrae el ID real de la URL
+      const transaccionId = urlParams.get('id'); 
 
       console.log("ID de transacción recibido:", transaccionId);
 
-      // Si alguien intenta entrar sin hacer un pago (sin ID en la URL), se bloquea de inmediato
+      // Bloqueo inmediato si no hay ID
       if (!transaccionId) {
           mostrarBloqueo();
           return;
       }
 
-      // Consultamos el estado real del ID usando el API de Sandbox de Wompi
+      // Consulta a la API de Sandbox de Wompi
       const urlApiWompi = `https://sandbox.wompi.co/v1/transactions/${transaccionId}`;
 
       fetch(urlApiWompi)
       .then(response => response.json())
       .then(apiData => {
-          // Validamos la respuesta estructural de Wompi
           if (apiData && apiData.data && apiData.data.status) {
               const estadoReal = apiData.data.status;
               console.log("Estado real en Wompi:", estadoReal);
 
-              // Si el estado es APPROVED, quitamos pantallas de carga/bloqueo y abrimos el formulario
+              // Si está aprobado redirige limpiamente al Google Form externo
               if (estadoReal === "APPROVED") {
-                  document.getElementById('pantalla-cargando').style.display = 'none';
-                  document.getElementById('seccion-formulario').style.display = 'block';
+                  window.location.href = "https://docs.google.com/forms/d/1LrY2kSSRTYlAlN6MlkUfDzyyoPke0jQJ1JDwjVOku44/viewform";
               } else {
                   mostrarBloqueo();
               }
@@ -110,7 +168,6 @@
 
   function mostrarBloqueo() {
       document.getElementById('pantalla-cargando').style.display = 'none';
-      document.getElementById('seccion-formulario').style.display = 'none';
       document.getElementById('pantalla-bloqueo').style.display = 'block';
   }
 </script>
