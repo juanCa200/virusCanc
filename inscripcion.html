@@ -5,41 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmación de Inscripción</title>
     <link rel="stylesheet" href="stylerosa.css">
+    <style>
+        /* Reset y Estructura Base "Sin Scroll" */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100vh;
+            overflow: hidden; /* Garantiza que nada genere scroll global */
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirmacion {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        /* Contenedor más ancho y maximizado para llenar mejor la pantalla */
+        .contenedor {
+            width: 100%;
+            max-width: 1100px; /* Más ancho para mayor impacto visual */
+            height: 85vh; /* Alto fijo proporcional para forzar que todo encaje */
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr; /* Distribución de columnas optimizada */
+            overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(214, 51, 132, 0.18);
+        }
+
+        /* Columna Izquierda: Información Expandida */
+        .evento-info {
+            background-color: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 55px; /* Más espacio interno */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .evento-info h1 {
+            color: #2c3e50;
+            font-size: 2.3rem; /* Título más grande y llamativo */
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
+
+        .fecha {
+            color: #d63384;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            display: inline-block;
+        }
+
+        .valor {
+            color: #5c6e7e;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .evento-info h2 {
+            color: #d63384; 
+            font-size: 3.2rem; /* Precio gigante y limpio */
+            font-weight: 900;
+            margin-bottom: 35px;
+            line-height: 1;
+        }
+
+        .incluye h3 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        /* Rejilla de Kit ampliada */
+        .incluye ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 20px;
+        }
+
+        .incluye ul li {
+            color: #3e4c59;
+            font-size: 1rem; /* Items del kit más grandes */
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        /* Columna Derecha: Políticas y Acción */
+        .politicas {
+            background-color: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 55px; /* Más espacio interno */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .politicas h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* Tarjetas de políticas con más aire y mejor lectura */
+        .politicas label {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: #3e4c59;
+            font-size: 0.92rem;
+            line-height: 1.45;
+            margin-bottom: 16px;
+            cursor: pointer;
+            padding: 14px 18px; /* Cajas más grandes para hacer clic fácilmente */
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.35);
+            transition: all 0.25s ease;
+        }
+
+        .politicas label:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-color: #f0b2ce;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(214, 51, 132, 0.05);
+        }
+
+        /* Checkbox robustos */
+        .check {
+            accent-color: #d63384;
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        /* Botón de Pago Grande e Imponente */
+        #btnPagar {
+            width: 100%;
+            margin-top: 20px;
+            padding: 18px; /* Más robusto */
+            border: none;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.06);
+            color: #94a3b8;
+            cursor: not-allowed;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Ajustes responsivos clásicos para pantallas pequeñas */
+        @media (max-width: 900px) {
+            body, html {
+                overflow-y: auto;
+                height: auto;
+            }
+            .confirmacion {
+                height: auto;
+                padding: 15px;
+            }
+            .contenedor {
+                grid-template-columns: 1fr;
+                height: auto;
+                max-height: none;
+            }
+            .evento-info, .politicas {
+                padding: 35px 25px;
+            }
+            .evento-info {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        }
+    </style>
 </head>
 <body>
 
 <section class="confirmacion">
     <div class="contenedor">
+        
+        <!-- BLOQUE IZQUIERDO: DETALLES AMPLIADOS -->
         <div class="evento-info">
             <h1>Evento Rosa Villavicencio 2026</h1>
-            <p class="fecha">📅 18 de Octubre de 2026</p>
+            <span class="fecha">📅 18 de Octubre de 2026</span>
+            
             <p class="valor">Valor de inscripción</p>
             <h2>$25.000 COP</h2>
+            
             <div class="incluye">
                 <h3>Tu inscripción incluye:</h3>
                 <ul>
-                    <li>✔ Camiseta oficial</li>
-                    <li>✔ Medalla de participación</li>
-                    <li>✔ Número oficial</li>
-                    <li>✔ Hidratación</li>
-                    <li>✔ Atención médica</li>
-                    <li>✔ Kit del participantee</li>
+                    <li>🌸 Camiseta oficial</li>
+                    <li>🏅 Medalla oficial</li>
+                    <li>🔢 Número oficial</li>
+                    <li>💧 Hidratación</li>
+                    <li>🚑 Atención médica</li>
+                    <li>🎒 Kit participante</li>
                 </ul>
             </div>
         </div>
 
+        <!-- BLOQUE DERECHO: POLÍTICAS Y ACCIÓN -->
         <div class="politicas">
             <h3>Antes de continuar</h3>
-            <label><input type="checkbox" class="check" onchange="validarChecks()"> He leído y acepto las políticas del evento.</label>
-            <label><input type="checkbox" class="check" onchange="validarChecks()"> Autorizo el tratamiento de mis datos personales.</label>
-            <label><input type="checkbox" class="check" onchange="validarChecks()"> Entiendo que la inscripción es personal e intransferible.</label>
-            <label><input type="checkbox" class="check" onchange="validarChecks()"> Entiendo que no hay devolución del dinero una vez realizado el pago.</label>
+            
+            <label>
+                <input type="checkbox" class="check" onchange="validarChecks()"> 
+                <span>He leído y acepto las políticas generales del evento.</span>
+            </label>
+            <label>
+                <input type="checkbox" class="check" onchange="validarChecks()"> 
+                <span>Autorizo explícitamente el tratamiento seguro de mis datos personales.</span>
+            </label>
+            <label>
+                <input type="checkbox" class="check" onchange="validarChecks()"> 
+                <span>Entiendo que la inscripción asignada es personal e intransferible.</span>
+            </label>
+            <label>
+                <input type="checkbox" class="check" onchange="validarChecks()"> 
+                <span>Entiendo que no se realizarán devoluciones de dinero tras el pago.</span>
+            </label>
 
-            <!-- Botón estético controlado por JS -->
-            <button id="btnPagar" disabled onclick="irAPagarWompi()" style="width: 100%; margin-top: 20px; padding: 12px; cursor: not-allowed; transition: all 0.3s ease;">
+            <!-- Botón de acción principal -->
+            <button id="btnPagar" disabled onclick="irAPagarWompi()">
                 Continuar al pago
             </button>
         </div>
+
     </div>
 </section>
 
@@ -52,20 +269,20 @@
       if (todosMarcados) {
           btnPagar.disabled = false;
           btnPagar.style.cursor = 'pointer';
-          btnPagar.style.backgroundColor = '#d63384'; // Tu color rosa de marca
-          btnPagar.style.color = '#fff';
+          btnPagar.style.backgroundColor = '#d63384'; // Rosa institucional
+          btnPagar.style.color = '#ffffff';
+          btnPagar.style.boxShadow = '0 8px 25px rgba(214, 51, 132, 0.35)';
       } else {
           btnPagar.disabled = true;
           btnPagar.style.cursor = 'not-allowed';
-          btnPagar.style.backgroundColor = ''; 
-          btnPagar.style.color = '';
+          btnPagar.style.backgroundColor = 'rgba(0, 0, 0, 0.06)'; 
+          btnPagar.style.color = '#94a3b8';
+          btnPagar.style.boxShadow = 'none';
       }
   }
 
   function irAPagarWompi() {
-      // ⚠️ REEMPLAZA ESTE LINK POR EL LINK QUE COPIASTE DE TU PANEL DE WOMPI
       const urlEnlacePago = "https://checkout.wompi.co/l/test_BD86nV";
-      
       console.log("Redirigiendo a zona segura de pagos...");
       window.location.href = urlEnlacePago;
   }
