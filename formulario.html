@@ -51,27 +51,19 @@
 
 <!-- FORMULARIO OFICIAL (Se mostrará solo si el API retorna APPROVED) -->
 <section class="confirmacion" id="seccion-formulario">
-    <div class="contenedor">
-        <h1>¡Pago Confirmado! 🎉</h1>
-        <p>Por favor, completa tus datos oficiales para asegurar tu kit y participación en el evento.</p>
-        
-        <!-- FORMULARIO OFICIAL (Se mostrará solo si el API retorna APPROVED) -->
-<section class="confirmacion" id="seccion-formulario">
     <div class="contenedor" style="max-width: 800px; margin: 0 auto; padding: 20px;">
         <h1 style="text-align: center;">¡Pago Confirmado! 🎉</h1>
         <p style="text-align: center; margin-bottom: 20px;">Por favor, completa el siguiente formulario oficial para asegurar tu kit y participación en el evento.</p>
         
-        <!-- Google Form Incrustado -->
+        <!-- Google Form Incrustado con URL de incrustación obligatoria -->
         <div style="position: relative; width: 100%; height: 0; padding-bottom: 150%; overflow: hidden; -webkit-overflow-scrolling: touch;">
             <iframe 
-                src="https://docs.google.com/forms/d/1LrY2kSSRTYlAlN6MlkUfDzyyoPke0jQJ1JDwjVOku44/viewform?edit_requested=true" 
+                src="https://docs.google.com/forms/d/1LrY2kSSRTYlAlN6MlkUfDzyyoPke0jQJ1JDwjVOku44/viewform?embedded=true" 
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
                 allowfullscreen>
                 Cargando formulario...
             </iframe>
         </div>
-    </div>
-</section>
     </div>
 </section>
 
@@ -120,41 +112,6 @@
       document.getElementById('pantalla-cargando').style.display = 'none';
       document.getElementById('seccion-formulario').style.display = 'none';
       document.getElementById('pantalla-bloqueo').style.display = 'block';
-  }
-
-  // Envío a Google Sheets (Ajustado con tu Apps Script)
-  function enviarDatosAGoogle(event) {
-      event.preventDefault();
-      const btn = document.getElementById('btnEnviar');
-      btn.disabled = true;
-      btn.innerText = "Guardando inscripción...";
-
-      const datos = {
-          nombre: document.getElementById('nombre').value,
-          correo: document.getElementById('correo').value,
-          cedula: document.getElementById('cedula').value,
-          talla: document.getElementById('talla').value
-      };
-
-      // ⚠️ Recuerda colocar aquí tu URL de producción de Apps Script actual
-      const urlAppsScript = "TU_URL_DE_GOOGLE_APPS_SCRIPT_AQUI"; 
-
-      fetch(urlAppsScript, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(datos)
-      })
-      .then(() => {
-          alert("¡Inscripción completada con éxito! Revisa tu correo electrónico.");
-          window.location.href = "gracias.html";
-      })
-      .catch(error => {
-          console.error("Error:", error);
-          alert("Hubo un error al guardar los datos.");
-          btn.disabled = false;
-          btn.innerText = "Finalizar Inscripción";
-      });
   }
 </script>
 </body>
