@@ -55,42 +55,27 @@
         <h1>¡Pago Confirmado! 🎉</h1>
         <p>Por favor, completa tus datos oficiales para asegurar tu kit y participación en el evento.</p>
         
-        <form id="formInscripcion" onsubmit="enviarDatosAGoogle(event)">
-            <div style="margin-bottom: 15px;">
-                <label>Nombre Completo:</label>
-                <input type="text" id="nombre" required style="width:100%; padding:8px; margin-top:5px;">
-            </div>
-
-            <div style="margin-bottom: 15px;">
-                <label>Correo Electrónico:</label>
-                <input type="email" id="correo" required style="width:100%; padding:8px; margin-top:5px;">
-            </div>
-
-            <div style="margin-bottom: 15px;">
-                <label>Número de Cédula:</label>
-                <input type="text" id="cedula" required style="width:100%; padding:8px; margin-top:5px;">
-            </div>
-
-            <div style="margin-bottom: 15px;">
-                <label>Talla de Camiseta:</label>
-                <select id="talla" required style="width:100%; padding:8px; margin-top:5px;">
-                    <option value="">Selecciona una talla</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
-            </div>
-
-            <button type="submit" id="btnEnviar" style="width: 100%; padding: 12px; background-color: #d63384; color: white; border: none; cursor: pointer; font-weight: bold;">
-                Finalizar Inscripción
-            </button>
-        </form>
+        <!-- FORMULARIO OFICIAL (Se mostrará solo si el API retorna APPROVED) -->
+<section class="confirmacion" id="seccion-formulario">
+    <div class="contenedor" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1 style="text-align: center;">¡Pago Confirmado! 🎉</h1>
+        <p style="text-align: center; margin-bottom: 20px;">Por favor, completa el siguiente formulario oficial para asegurar tu kit y participación en el evento.</p>
+        
+        <!-- Google Form Incrustado -->
+        <div style="position: relative; width: 100%; height: 0; padding-bottom: 150%; overflow: hidden; -webkit-overflow-scrolling: touch;">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSc6NExCeeR088A5g4g5Z_w9Uon9K_UInhWzX4o_O_8835f5Lg/viewform?embedded=true" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                allowfullscreen>
+                Cargando formulario...
+            </iframe>
+        </div>
+    </div>
+</section>
     </div>
 </section>
 
 <script>
-  // 🔒 VALIDACIÓN DE SEGURIDAD MEDIANTE API DE WOMPI
   document.addEventListener("DOMContentLoaded", function() {
       const urlParams = new URLSearchParams(window.location.search);
       const transaccionId = urlParams.get('id'); // Extrae el ID real de la URL
