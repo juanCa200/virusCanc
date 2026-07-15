@@ -366,7 +366,6 @@
             }
         }
 
-        /* 1. Contenedor principal del formulario (La tarjeta rosa) */
         .seccion-formulario {
             max-width: 600px;
             margin: 20px auto;
@@ -375,39 +374,30 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(214, 51, 132, 0.1);
 
-            /* Limitamos la altura máxima de la tarjeta */
             max-height: 80vh;
-            /* Ocupará máximo el 80% del alto de la pantalla */
+
             display: flex;
             flex-direction: column;
         }
 
-        /* 2. El formulario interno que tiene los campos */
         .formulario-contenedor {
             padding: 30px;
             overflow-y: auto;
-            /* Activa el scroll (slider) vertical automáticamente */
             flex-grow: 1;
-
-            /* Configuración para scroll suave en celulares */
             -webkit-overflow-scrolling: touch;
         }
 
-        /* 3. OPCIONAL: Diseña un scrollbar (slider) elegante y sutil estilo "Rosa" */
         .formulario-contenedor::-webkit-scrollbar {
             width: 6px;
-            /* Ancho de la barrita */
         }
 
         .formulario-contenedor::-webkit-scrollbar-track {
             background: rgba(214, 51, 132, 0.02);
-            /* Color del fondo del camino */
             border-radius: 10px;
         }
 
         .formulario-contenedor::-webkit-scrollbar-thumb {
             background: rgba(214, 51, 132, 0.2);
-            /* Color de la barra que se mueve */
             border-radius: 10px;
         }
 
@@ -423,7 +413,6 @@
     <section class="confirmacion">
         <div class="contenedor">
 
-            <!-- VISTA 1: PASO DE PAGO -->
             <div id="vistaPago" class="seccion-pago">
                 <div class="evento-info">
                     <h1>Evento Rosa Villavicencio 2026</h1>
@@ -471,7 +460,6 @@
                 </div>
             </div>
 
-            <!-- VISTA 2: PANTALLA DE VERIFICACIÓN (TU SPINNER ORIGINAL) -->
             <div id="pantalla-cargando" class="seccion-estado">
                 <span class="spinner">🔄</span>
                 <h2 class="titulo-estado">Verificando pago</h2>
@@ -479,7 +467,6 @@
                     correcto, accederás al formulario en un momento.</p>
             </div>
 
-            <!-- VISTA 3: PANTALLA DE ERROR/BLOQUEO ORIGINAL -->
             <div id="pantalla-bloqueo" class="seccion-estado">
                 <div class="icono-alerta">!</div>
                 <h2 class="titulo-estado" style="color: #2c3e50;">Pago No Verificado</h2>
@@ -490,7 +477,6 @@
                 <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
             </div>
 
-            <!-- VISTA 4: FORMULARIO INTERNO SEGURO -->
             <div id="vistaFormulario" class="seccion-formulario">
                 <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
                     <h2>¡Pago Confirmado! 🎉</h2>
