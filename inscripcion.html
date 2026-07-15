@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,10 @@
             padding: 0;
         }
 
-        body, html {
+        body,
+        html {
             height: 100vh;
-            overflow: hidden; 
+            overflow: hidden;
             background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -88,7 +90,7 @@
         }
 
         .evento-info h2 {
-            color: #d63384; 
+            color: #d63384;
             font-size: 3.2rem;
             font-weight: 900;
             margin-bottom: 35px;
@@ -181,7 +183,8 @@
 
         /* PANTALLAS DE ESTADO (Carga y Bloqueo Unificadas) */
         .seccion-estado {
-            display: none; /* Se activa dinámicamente */
+            display: none;
+            /* Se activa dinámicamente */
             width: 100%;
             height: 100%;
             grid-column: span 2;
@@ -202,8 +205,13 @@
         }
 
         @keyframes girar {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .icono-alerta {
@@ -254,7 +262,8 @@
 
         /* VISTA 3: FORMULARIO INTERNO SEGURO */
         .seccion-formulario {
-            display: none; /* Se activa dinámicamente */
+            display: none;
+            /* Se activa dinámicamente */
             width: 100%;
             height: 100%;
             grid-column: span 2;
@@ -293,7 +302,8 @@
             font-size: 0.95rem;
         }
 
-        .grupo-campo input, .grupo-campo select {
+        .grupo-campo input,
+        .grupo-campo select {
             padding: 14px;
             border-radius: 10px;
             border: 1px solid rgba(214, 51, 132, 0.3);
@@ -302,7 +312,8 @@
             outline: none;
         }
 
-        .grupo-campo input:focus, .grupo-campo select:focus {
+        .grupo-campo input:focus,
+        .grupo-campo select:focus {
             border-color: #d63384;
         }
 
@@ -325,368 +336,433 @@
 
         /* Responsivo móvil */
         @media (max-width: 900px) {
-            body, html {
+
+            body,
+            html {
                 overflow-y: auto;
                 height: auto;
             }
+
             .confirmacion {
                 height: auto;
                 padding: 15px;
             }
+
             .contenedor {
                 grid-template-columns: 1fr;
                 height: auto;
                 max-height: none;
             }
+
             .seccion-pago {
                 grid-template-columns: 1fr;
             }
-            .evento-info, .politicas, .seccion-formulario, .seccion-estado {
+
+            .evento-info,
+            .politicas,
+            .seccion-formulario,
+            .seccion-estado {
                 padding: 35px 25px;
             }
         }
+
+        /* 1. Contenedor principal del formulario (La tarjeta rosa) */
+        .seccion-formulario {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(214, 51, 132, 0.1);
+
+            /* Limitamos la altura máxima de la tarjeta */
+            max-height: 80vh;
+            /* Ocupará máximo el 80% del alto de la pantalla */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 2. El formulario interno que tiene los campos */
+        .formulario-contenedor {
+            padding: 30px;
+            overflow-y: auto;
+            /* Activa el scroll (slider) vertical automáticamente */
+            flex-grow: 1;
+
+            /* Configuración para scroll suave en celulares */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* 3. OPCIONAL: Diseña un scrollbar (slider) elegante y sutil estilo "Rosa" */
+        .formulario-contenedor::-webkit-scrollbar {
+            width: 6px;
+            /* Ancho de la barrita */
+        }
+
+        .formulario-contenedor::-webkit-scrollbar-track {
+            background: rgba(214, 51, 132, 0.02);
+            /* Color del fondo del camino */
+            border-radius: 10px;
+        }
+
+        .formulario-contenedor::-webkit-scrollbar-thumb {
+            background: rgba(214, 51, 132, 0.2);
+            /* Color de la barra que se mueve */
+            border-radius: 10px;
+        }
+
+        .formulario-contenedor::-webkit-scrollbar-thumb:hover {
+            background: rgba(214, 51, 132, 0.4);
+            /* Color cuando pasas el mouse por encima */
+        }
     </style>
 </head>
+
 <body>
 
-<section class="confirmacion">
-    <div class="contenedor">
-        
-        <!-- VISTA 1: PASO DE PAGO -->
-        <div id="vistaPago" class="seccion-pago">
-            <div class="evento-info">
-                <h1>Evento Rosa Villavicencio 2026</h1>
-                <span class="fecha">📅 18 de Octubre de 2026</span>
-                
-                <p class="valor">Valor de inscripción</p>
-                <h2>$25.000 COP</h2>
-                
-                <div class="incluye">
-                    <h3>Tu inscripción incluye:</h3>
-                    <ul>
-                        <li>🌸 Camiseta oficial</li>
-                        <li>🏅 Medalla oficial</li>
-                        <li>🔢 Número oficial</li>
-                        <li>💧 Hidratación</li>
-                        <li>🚑 Atención médica</li>
-                        <li>🎒 Kit participante</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="confirmacion">
+        <div class="contenedor">
 
-            <div class="politicas">
-                <h3>Antes de continuar</h3>
-                
-                <label>
-                    <input type="checkbox" class="check" onchange="validarChecks()"> 
-                    <span>He leído y acepto las políticas generales del evento.</span>
-                </label>
-                <label>
-                    <input type="checkbox" class="check" onchange="validarChecks()"> 
-                    <span>Autorizo explícitamente el tratamiento seguro de mis datos personales.</span>
-                </label>
-                <label>
-                    <input type="checkbox" class="check" onchange="validarChecks()"> 
-                    <span>Entiendo que la inscripción asignada es personal e intransferible.</span>
-                </label>
-                <label>
-                    <input type="checkbox" class="check" onchange="validarChecks()"> 
-                    <span>Entiendo que no se realizarán devoluciones de dinero tras el pago.</span>
-                </label>
+            <!-- VISTA 1: PASO DE PAGO -->
+            <div id="vistaPago" class="seccion-pago">
+                <div class="evento-info">
+                    <h1>Evento Rosa Villavicencio 2026</h1>
+                    <span class="fecha">📅 18 de Octubre de 2026</span>
 
-                <button id="btnPagar" disabled onclick="irAPagarWompi()">
-                    Continuar al pago
-                </button>
-            </div>
-        </div>
+                    <p class="valor">Valor de inscripción</p>
+                    <h2>$25.000 COP</h2>
 
-        <!-- VISTA 2: PANTALLA DE VERIFICACIÓN (TU SPINNER ORIGINAL) -->
-        <div id="pantalla-cargando" class="seccion-estado">
-            <span class="spinner">🔄</span>
-            <h2 class="titulo-estado">Verificando pago</h2>
-            <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está correcto, accederás al formulario en un momento.</p>
-        </div>
-
-        <!-- VISTA 3: PANTALLA DE ERROR/BLOQUEO ORIGINAL -->
-        <div id="pantalla-bloqueo" class="seccion-estado">
-            <div class="icono-alerta">!</div>
-            <h2 class="titulo-estado" style="color: #2c3e50;">Pago No Verificado</h2>
-            <p class="descripcion-estado">
-                No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda que para inscribirte debes completar el proceso de pago con éxito.
-            </p>
-            <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
-        </div>
-
-        <!-- VISTA 4: FORMULARIO INTERNO SEGURO -->
-        <div id="vistaFormulario" class="seccion-formulario">
-            <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
-                <h2>¡Pago Confirmado! 🎉</h2>
-                <p style="text-align: center; color: #5c6e7e; margin-bottom: 25px;">Completa tus datos para finalizar la inscripción oficial al Evento Rosa.</p>
-                
-                <input type="hidden" id="inputTokenWompi">
-
-                <!-- Nombre y Apellidos -->
-                <div class="grupo-doble">
-                    <div class="grupo-campo">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" required placeholder="Tus nombres">
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="apellidos">Apellidos</label>
-                        <input type="text" id="apellidos" required placeholder="Tus apellidos">
+                    <div class="incluye">
+                        <h3>Tu inscripción incluye:</h3>
+                        <ul>
+                            <li>🌸 Camiseta oficial</li>
+                            <li>🏅 Medalla oficial</li>
+                            <li>🔢 Número oficial</li>
+                            <li>💧 Hidratación</li>
+                            <li>🚑 Atención médica</li>
+                            <li>🎒 Kit participante</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Documentación -->
-                <div class="grupo-doble">
-                    <div class="grupo-campo">
-                        <label for="tipo_documento">Tipo de documento</label>
-                        <select id="tipo_documento" required>
-                            <option value="">Selecciona...</option>
-                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
-                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="documento">Número de documento</label>
-                        <input type="text" id="documento" required placeholder="Ej. 1006543210">
-                    </div>
-                </div>
+                <div class="politicas">
+                    <h3>Antes de continuar</h3>
 
-                <!-- Perfil Básico (Sexo, Edad, Sangre) -->
-                <div class="grupo-triple">
-                    <div class="grupo-campo">
-                        <label for="sexo">Sexo</label>
-                        <select id="sexo" required>
-                            <option value="">Selecciona...</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="edad">Edad</label>
-                        <input type="number" id="edad" required min="1" max="120" placeholder="Años">
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="rh">Tipo Sangre</label>
-                        <select id="rh" required>
-                            <option value="">Selecciona...</option>
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- EPS y Dirección -->
-                <div class="grupo-doble">
-                    <div class="grupo-campo">
-                        <label for="eps">EPS</label>
-                        <input type="text" id="eps" required placeholder="Ej. Sanitas">
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="direccion">Dirección de residencia</label>
-                        <input type="text" id="direccion" required placeholder="Dirección completa">
-                    </div>
-                </div>
-
-                <!-- Contacto del Corredor -->
-                <div class="grupo-doble">
-                    <div class="grupo-campo">
-                        <label for="celular">Número Celular</label>
-                        <input type="tel" id="celular" required placeholder="Ej. 312 345 6789">
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="correo">Correo electrónico</label>
-                        <input type="email" id="correo" required placeholder="ejemplo@correo.com">
-                    </div>
-                </div>
-
-                <!-- Contacto de Emergencia -->
-                <div class="grupo-doble">
-                    <div class="grupo-campo">
-                        <label for="contacto_emergencia">Nombre de contacto de emergencia</label>
-                        <input type="text" id="contacto_emergencia" required placeholder="Nombre completo">
-                    </div>
-                    <div class="grupo-campo">
-                        <label for="telefono_emergencia">Número celular del contacto en caso de emergencia</label>
-                        <input type="tel" id="telefono_emergencia" required placeholder="Celular de emergencia">
-                    </div>
-                </div>
-
-                <!-- Talla de Buso con Advertencia -->
-                <div class="grupo-campo" style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
-                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">
-                        Por favor, elige la talla para tu buso.
+                    <label>
+                        <input type="checkbox" class="check" onchange="validarChecks()">
+                        <span>He leído y acepto las políticas generales del evento.</span>
                     </label>
-                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">
-                        ⚠ Recuerda que, una vez seleccionada, no podrá ser cambiada.
-                    </p>
-                    <select id="talla" required style="width: 100%;">
-                        <option value="">Elige una opción</option>
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="XL">XL</option>
-                    </select>
+                    <label>
+                        <input type="checkbox" class="check" onchange="validarChecks()">
+                        <span>Autorizo explícitamente el tratamiento seguro de mis datos personales.</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" class="check" onchange="validarChecks()">
+                        <span>Entiendo que la inscripción asignada es personal e intransferible.</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" class="check" onchange="validarChecks()">
+                        <span>Entiendo que no se realizarán devoluciones de dinero tras el pago.</span>
+                    </label>
+
+                    <button id="btnPagar" disabled onclick="irAPagarWompi()">
+                        Continuar al pago
+                    </button>
                 </div>
+            </div>
 
-                <button type="submit" class="btn-enviar" style="margin-top: 15px;">Finalizar Registro</button>
-            </form>
+            <!-- VISTA 2: PANTALLA DE VERIFICACIÓN (TU SPINNER ORIGINAL) -->
+            <div id="pantalla-cargando" class="seccion-estado">
+                <span class="spinner">🔄</span>
+                <h2 class="titulo-estado">Verificando pago</h2>
+                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está
+                    correcto, accederás al formulario en un momento.</p>
+            </div>
+
+            <!-- VISTA 3: PANTALLA DE ERROR/BLOQUEO ORIGINAL -->
+            <div id="pantalla-bloqueo" class="seccion-estado">
+                <div class="icono-alerta">!</div>
+                <h2 class="titulo-estado" style="color: #2c3e50;">Pago No Verificado</h2>
+                <p class="descripcion-estado">
+                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda
+                    que para inscribirte debes completar el proceso de pago con éxito.
+                </p>
+                <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
+            </div>
+
+            <!-- VISTA 4: FORMULARIO INTERNO SEGURO -->
+            <div id="vistaFormulario" class="seccion-formulario">
+                <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
+                    <h2>¡Pago Confirmado! 🎉</h2>
+                    <p style="text-align: center; color: #5c6e7e; margin-bottom: 25px;">Completa tus datos para
+                        finalizar la inscripción oficial al Evento Rosa.</p>
+
+                    <input type="hidden" id="inputTokenWompi">
+
+                    <!-- Nombre y Apellidos -->
+                    <div class="grupo-doble">
+                        <div class="grupo-campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" required placeholder="Tus nombres">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" required placeholder="Tus apellidos">
+                        </div>
+                    </div>
+
+                    <!-- Documentación -->
+                    <div class="grupo-doble">
+                        <div class="grupo-campo">
+                            <label for="tipo_documento">Tipo de documento</label>
+                            <select id="tipo_documento" required>
+                                <option value="">Selecciona...</option>
+                                <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                            </select>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="documento">Número de documento</label>
+                            <input type="text" id="documento" required placeholder="Ej. 1006543210">
+                        </div>
+                    </div>
+
+                    <!-- Perfil Básico (Sexo, Edad, Sangre) -->
+                    <div class="grupo-triple">
+                        <div class="grupo-campo">
+                            <label for="sexo">Sexo</label>
+                            <select id="sexo" required>
+                                <option value="">Selecciona...</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="edad">Edad</label>
+                            <input type="number" id="edad" required min="1" max="120" placeholder="Años">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="rh">Tipo Sangre</label>
+                            <select id="rh" required>
+                                <option value="">Selecciona...</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- EPS y Dirección -->
+                    <div class="grupo-doble">
+                        <div class="grupo-campo">
+                            <label for="eps">EPS</label>
+                            <input type="text" id="eps" required placeholder="Ej. Sanitas">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="direccion">Dirección de residencia</label>
+                            <input type="text" id="direccion" required placeholder="Dirección completa">
+                        </div>
+                    </div>
+
+                    <!-- Contacto del Corredor -->
+                    <div class="grupo-doble">
+                        <div class="grupo-campo">
+                            <label for="celular">Número Celular</label>
+                            <input type="tel" id="celular" required placeholder="Ej. 312 345 6789">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" required placeholder="ejemplo@correo.com">
+                        </div>
+                    </div>
+
+                    <!-- Contacto de Emergencia -->
+                    <div class="grupo-doble">
+                        <div class="grupo-campo">
+                            <label for="contacto_emergencia">Nombre de contacto de emergencia</label>
+                            <input type="text" id="contacto_emergencia" required placeholder="Nombre completo">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="telefono_emergencia">Número celular del contacto en caso de emergencia</label>
+                            <input type="tel" id="telefono_emergencia" required placeholder="Celular de emergencia">
+                        </div>
+                    </div>
+
+                    <!-- Talla de Buso con Advertencia -->
+                    <div class="grupo-campo"
+                        style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
+                        <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">
+                            Por favor, elige la talla para tu buso.
+                        </label>
+                        <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">
+                            ⚠ Recuerda que, una vez seleccionada, no podrá ser cambiada.
+                        </p>
+                        <select id="talla" required style="width: 100%;">
+                            <option value="">Elige una opción</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-enviar" style="margin-top: 15px;">Finalizar Registro</button>
+                </form>
+            </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
+    <script>
+        // Control de vistas de la UI
+        const vistaPago = document.getElementById('vistaPago');
+        const pantallaCargando = document.getElementById('pantalla-cargando');
+        const pantallaBloqueo = document.getElementById('pantalla-bloqueo');
+        const vistaFormulario = document.getElementById('vistaFormulario');
 
-<script>
-  // Control de vistas de la UI
-  const vistaPago = document.getElementById('vistaPago');
-  const pantallaCargando = document.getElementById('pantalla-cargando');
-  const pantallaBloqueo = document.getElementById('pantalla-bloqueo');
-  const vistaFormulario = document.getElementById('vistaFormulario');
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const transaccionId = urlParams.get('id');
 
-  document.addEventListener("DOMContentLoaded", function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const transaccionId = urlParams.get('id'); 
+            // Caso 1: Si no hay un ID en la URL, comprobamos si ya había un pago verificado en sessionStorage
+            if (!transaccionId) {
+                const tokenActivo = sessionStorage.getItem('token_pago_evento_rosa');
+                if (tokenActivo) {
+                    mostrarVistaFormulario(tokenActivo);
+                } else {
+                    // Si no tiene token guardado, simplemente mostramos el flujo de pago inicial
+                    vistaPago.style.display = 'grid';
+                }
+                return;
+            }
 
-      // Caso 1: Si no hay un ID en la URL, comprobamos si ya había un pago verificado en sessionStorage
-      if (!transaccionId) {
-          const tokenActivo = sessionStorage.getItem('token_pago_evento_rosa');
-          if (tokenActivo) {
-              mostrarVistaFormulario(tokenActivo);
-          } else {
-              // Si no tiene token guardado, simplemente mostramos el flujo de pago inicial
-              vistaPago.style.display = 'grid';
-          }
-          return;
-      }
+            // Caso 2: El usuario llega con un id de transacción de Wompi. Mostramos pantalla de carga
+            vistaPago.style.display = 'none';
+            pantallaCargando.style.display = 'flex';
 
-      // Caso 2: El usuario llega con un id de transacción de Wompi. Mostramos pantalla de carga
-      vistaPago.style.display = 'none';
-      pantallaCargando.style.display = 'flex';
+            // Consulta a la API de Sandbox de Wompi real
+            const urlApiWompi = `https://sandbox.wompi.co/v1/transactions/${transaccionId}`;
 
-      // Consulta a la API de Sandbox de Wompi real
-      const urlApiWompi = `https://sandbox.wompi.co/v1/transactions/${transaccionId}`;
+            fetch(urlApiWompi)
+                .then(response => response.json())
+                .then(apiData => {
+                    if (apiData && apiData.data && apiData.data.status) {
+                        const estadoReal = apiData.data.status;
+                        console.log("Estado real en Wompi:", estadoReal);
 
-      fetch(urlApiWompi)
-      .then(response => response.json())
-      .then(apiData => {
-          if (apiData && apiData.data && apiData.data.status) {
-              const estadoReal = apiData.data.status;
-              console.log("Estado real en Wompi:", estadoReal);
+                        // Si está aprobado de verdad, guardamos el token y desbloqueamos el formulario
+                        if (estadoReal === "APPROVED") {
+                            sessionStorage.setItem('token_pago_evento_rosa', transaccionId);
 
-              // Si está aprobado de verdad, guardamos el token y desbloqueamos el formulario
-              if (estadoReal === "APPROVED") {
-                  sessionStorage.setItem('token_pago_evento_rosa', transaccionId);
-                  
-                  // Limpiamos la URL para ocultar el ID de transacción al usuario
-                  window.history.replaceState({}, document.title, window.location.pathname);
-                  
-                  mostrarVistaFormulario(transaccionId);
-              } else {
-                  mostrarBloqueo();
-              }
-          } else {
-              mostrarBloqueo();
-          }
-      })
-      .catch(error => {
-          console.error("Error consultando API de Wompi:", error);
-          mostrarBloqueo();
-      });
-  });
+                            // Limpiamos la URL para ocultar el ID de transacción al usuario
+                            window.history.replaceState({}, document.title, window.location.pathname);
 
-  function mostrarVistaFormulario(token) {
-      pantallaCargando.style.display = 'none';
-      pantallaBloqueo.style.display = 'none';
-      vistaPago.style.display = 'none';
-      
-      vistaFormulario.style.display = 'flex';
-      document.getElementById('inputTokenWompi').value = token;
-  }
+                            mostrarVistaFormulario(transaccionId);
+                        } else {
+                            mostrarBloqueo();
+                        }
+                    } else {
+                        mostrarBloqueo();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error consultando API de Wompi:", error);
+                    mostrarBloqueo();
+                });
+        });
 
-  function mostrarBloqueo() {
-      vistaPago.style.display = 'none';
-      pantallaCargando.style.display = 'none';
-      vistaFormulario.style.display = 'none';
-      
-      pantallaBloqueo.style.display = 'flex';
-  }
+        function mostrarVistaFormulario(token) {
+            pantallaCargando.style.display = 'none';
+            pantallaBloqueo.style.display = 'none';
+            vistaPago.style.display = 'none';
 
-  function validarChecks() {
-      const checkboxes = document.querySelectorAll('.check');
-      const btnPagar = document.getElementById('btnPagar');
-      const todosMarcados = Array.from(checkboxes).every(chk => chk.checked);
-      
-      if (todosMarcados) {
-          btnPagar.disabled = false;
-          btnPagar.style.cursor = 'pointer';
-          btnPagar.style.backgroundColor = '#d63384';
-          btnPagar.style.color = '#ffffff';
-          btnPagar.style.boxShadow = '0 8px 25px rgba(214, 51, 132, 0.35)';
-      } else {
-          btnPagar.disabled = true;
-          btnPagar.style.cursor = 'not-allowed';
-          btnPagar.style.backgroundColor = 'rgba(0, 0, 0, 0.06)'; 
-          btnPagar.style.color = '#94a3b8';
-          btnPagar.style.boxShadow = 'none';
-      }
-  }
+            vistaFormulario.style.display = 'flex';
+            document.getElementById('inputTokenWompi').value = token;
+        }
 
-  function irAPagarWompi() {
-      const urlEnlacePago = "https://checkout.wompi.co/l/test_E87DG8";
-      window.location.href = urlEnlacePago;
-  }
+        function mostrarBloqueo() {
+            vistaPago.style.display = 'none';
+            pantallaCargando.style.display = 'none';
+            vistaFormulario.style.display = 'none';
 
-  function guardarRegistro(event) {
-      event.preventDefault();
-      
-      const datos = {
-          token: document.getElementById('inputTokenWompi').value,
-          nombre: document.getElementById('nombre').value,
-          apellidos: document.getElementById('apellidos').value,
-          tipo_documento: document.getElementById('tipo_documento').value,
-          documento: document.getElementById('documento').value,
-          sexo: document.getElementById('sexo').value,
-          rh: document.getElementById('rh').value,
-          eps: document.getElementById('eps').value,
-          edad: document.getElementById('edad').value,
-          celular: document.getElementById('celular').value,
-          correo: document.getElementById('correo').value,
-          direccion: document.getElementById('direccion').value,
-          contacto_emergencia: document.getElementById('contacto_emergencia').value,
-          telefono_emergencia: document.getElementById('telefono_emergencia').value,
-          talla: document.getElementById('talla').value
-      };
+            pantallaBloqueo.style.display = 'flex';
+        }
 
-      const urlScript = "https://script.google.com/macros/s/AKfycbzhgGTmarm4PHBspwk57N2TrEYsRjBCrP5fOAimeYGtIOvx80VjxPAXDHude7Jag7nH/exec";
+        function validarChecks() {
+            const checkboxes = document.querySelectorAll('.check');
+            const btnPagar = document.getElementById('btnPagar');
+            const todosMarcados = Array.from(checkboxes).every(chk => chk.checked);
 
-      fetch(urlScript, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(datos)
-      })
-      .then(() => {
-          alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
-          sessionStorage.removeItem('token_pago_evento_rosa');
-          window.location.reload();
-      })
-      .catch(error => {
-          alert("Hubo un error al guardar tu registro. Por favor inténtalo de nuevo.");
-          console.error("Error guardando datos:", error);
-      });
-  }
-</script>
+            if (todosMarcados) {
+                btnPagar.disabled = false;
+                btnPagar.style.cursor = 'pointer';
+                btnPagar.style.backgroundColor = '#d63384';
+                btnPagar.style.color = '#ffffff';
+                btnPagar.style.boxShadow = '0 8px 25px rgba(214, 51, 132, 0.35)';
+            } else {
+                btnPagar.disabled = true;
+                btnPagar.style.cursor = 'not-allowed';
+                btnPagar.style.backgroundColor = 'rgba(0, 0, 0, 0.06)';
+                btnPagar.style.color = '#94a3b8';
+                btnPagar.style.boxShadow = 'none';
+            }
+        }
+
+        function irAPagarWompi() {
+            const urlEnlacePago = "https://checkout.wompi.co/l/test_E87DG8";
+            window.location.href = urlEnlacePago;
+        }
+
+        function guardarRegistro(event) {
+            event.preventDefault();
+
+            const datos = {
+                token: document.getElementById('inputTokenWompi').value,
+                nombre: document.getElementById('nombre').value,
+                apellidos: document.getElementById('apellidos').value,
+                tipo_documento: document.getElementById('tipo_documento').value,
+                documento: document.getElementById('documento').value,
+                sexo: document.getElementById('sexo').value,
+                rh: document.getElementById('rh').value,
+                eps: document.getElementById('eps').value,
+                edad: document.getElementById('edad').value,
+                celular: document.getElementById('celular').value,
+                correo: document.getElementById('correo').value,
+                direccion: document.getElementById('direccion').value,
+                contacto_emergencia: document.getElementById('contacto_emergencia').value,
+                telefono_emergencia: document.getElementById('telefono_emergencia').value,
+                talla: document.getElementById('talla').value
+            };
+
+            const urlScript = "https://script.google.com/macros/s/AKfycbzhgGTmarm4PHBspwk57N2TrEYsRjBCrP5fOAimeYGtIOvx80VjxPAXDHude7Jag7nH/exec";
+
+            fetch(urlScript, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datos)
+            })
+                .then(() => {
+                    alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
+                    sessionStorage.removeItem('token_pago_evento_rosa');
+                    window.location.reload();
+                })
+                .catch(error => {
+                    alert("Hubo un error al guardar tu registro. Por favor inténtalo de nuevo.");
+                    console.error("Error guardando datos:", error);
+                });
+        }
+    </script>
 </body>
+
 </html>
