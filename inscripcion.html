@@ -260,19 +260,25 @@
             transform: translateY(-2px);
         }
 
-        /* VISTA 3: FORMULARIO INTERNO SEGURO */
         .seccion-formulario {
-            display: none;
-            /* Se activa dinámicamente */
+            display: none; /* Oculto por defecto para que JS lo controle */
             width: 100%;
             height: 100%;
             grid-column: span 2;
-            background-color: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             padding: 50px;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            
+            /* Estilos de la tarjeta rosa */
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(214, 51, 132, 0.1);
+            max-height: 80vh; /* Limitamos la altura máxima de la tarjeta */
         }
 
         .formulario-contenedor {
@@ -281,6 +287,10 @@
             display: flex;
             flex-direction: column;
             gap: 18px;
+            padding: 30px;
+            overflow-y: auto; /* Activa el scroll (slider) vertical automáticamente */
+            flex-grow: 1;
+            -webkit-overflow-scrolling: touch; /* Scroll suave en celulares */
         }
 
         .formulario-contenedor h2 {
@@ -366,27 +376,7 @@
             }
         }
 
-        .seccion-formulario {
-            max-width: 600px;
-            margin: 20px auto;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(214, 51, 132, 0.1);
-
-            max-height: 80vh;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .formulario-contenedor {
-            padding: 30px;
-            overflow-y: auto;
-            flex-grow: 1;
-            -webkit-overflow-scrolling: touch;
-        }
-
+        /* Scrollbar elegante estilo "Rosa" */
         .formulario-contenedor::-webkit-scrollbar {
             width: 6px;
         }
@@ -403,8 +393,8 @@
 
         .formulario-contenedor::-webkit-scrollbar-thumb:hover {
             background: rgba(214, 51, 132, 0.4);
-            /* Color cuando pasas el mouse por encima */
         }
+        
     </style>
 </head>
 
