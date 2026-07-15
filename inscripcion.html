@@ -421,24 +421,117 @@
         <div id="vistaFormulario" class="seccion-formulario">
             <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
                 <h2>¡Pago Confirmado! 🎉</h2>
-                <p style="text-align: center; color: #5c6e7e; margin-bottom: 15px;">Completa tus datos para finalizar la inscripción oficial.</p>
+                <p style="text-align: center; color: #5c6e7e; margin-bottom: 25px;">Completa tus datos para finalizar la inscripción oficial al Evento Rosa.</p>
                 
                 <input type="hidden" id="inputTokenWompi">
 
-                <div class="grupo-campo">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
+                <!-- Nombre y Apellidos -->
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required placeholder="Tus nombres">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" required placeholder="Tus apellidos">
+                    </div>
                 </div>
 
-                <div class="grupo-campo">
-                    <label for="documento">Documento de Identidad</label>
-                    <input type="text" id="documento" required placeholder="C.C. o T.I.">
+                <!-- Documentación -->
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="tipo_documento">Tipo de documento</label>
+                        <select id="tipo_documento" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="documento">Número de documento</label>
+                        <input type="text" id="documento" required placeholder="Ej. 1006543210">
+                    </div>
                 </div>
 
-                <div class="grupo-campo">
-                    <label for="talla">Talla de Camiseta</label>
-                    <select id="talla" required>
-                        <option value="">Selecciona tu talla</option>
+                <!-- Perfil Básico (Sexo, Edad, Sangre) -->
+                <div class="grupo-triple">
+                    <div class="grupo-campo">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad" required min="1" max="120" placeholder="Años">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="rh">Tipo Sangre</label>
+                        <select id="rh" required>
+                            <option value="">Selecciona...</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- EPS y Dirección -->
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="eps">EPS</label>
+                        <input type="text" id="eps" required placeholder="Ej. Sanitas">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="direccion">Dirección de residencia</label>
+                        <input type="text" id="direccion" required placeholder="Dirección completa">
+                    </div>
+                </div>
+
+                <!-- Contacto del Corredor -->
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="celular">Número Celular</label>
+                        <input type="tel" id="celular" required placeholder="Ej. 312 345 6789">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" required placeholder="ejemplo@correo.com">
+                    </div>
+                </div>
+
+                <!-- Contacto de Emergencia -->
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="contacto_emergencia">Nombre de contacto de emergencia</label>
+                        <input type="text" id="contacto_emergencia" required placeholder="Nombre completo">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="telefono_emergencia">Número celular del contacto en caso de emergencia</label>
+                        <input type="tel" id="telefono_emergencia" required placeholder="Celular de emergencia">
+                    </div>
+                </div>
+
+                <!-- Talla de Buso con Advertencia -->
+                <div class="grupo-campo" style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
+                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">
+                        Por favor, elige la talla para tu buso.
+                    </label>
+                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">
+                        ⚠ Recuerda que, una vez seleccionada, no podrá ser cambiada.
+                    </p>
+                    <select id="talla" required style="width: 100%;">
+                        <option value="">Elige una opción</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
@@ -446,7 +539,7 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn-enviar">Finalizar Registro</button>
+                <button type="submit" class="btn-enviar" style="margin-top: 15px;">Finalizar Registro</button>
             </form>
         </div>
 
@@ -559,11 +652,21 @@
       const datos = {
           token: document.getElementById('inputTokenWompi').value,
           nombre: document.getElementById('nombre').value,
+          apellidos: document.getElementById('apellidos').value,
+          tipo_documento: document.getElementById('tipo_documento').value,
           documento: document.getElementById('documento').value,
+          sexo: document.getElementById('sexo').value,
+          rh: document.getElementById('rh').value,
+          eps: document.getElementById('eps').value,
+          edad: document.getElementById('edad').value,
+          celular: document.getElementById('celular').value,
+          correo: document.getElementById('correo').value,
+          direccion: document.getElementById('direccion').value,
+          contacto_emergencia: document.getElementById('contacto_emergencia').value,
+          telefono_emergencia: document.getElementById('telefono_emergencia').value,
           talla: document.getElementById('talla').value
       };
 
-      // Aquí va la URL del Apps Script de tu Google Sheet (Opción 1)
       const urlScript = "https://script.google.com/macros/s/AKfycbzhgGTmarm4PHBspwk57N2TrEYsRjBCrP5fOAimeYGtIOvx80VjxPAXDHude7Jag7nH/exec";
 
       fetch(urlScript, {
