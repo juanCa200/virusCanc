@@ -18,7 +18,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Evita scroll en el body principal */
+            overflow: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -44,7 +44,7 @@
             width: 100%;
             height: 100vh;
             display: flex;
-            justify(content: center;
+            justify-content: center;
             align-items: center;
             background: rgba(0, 0, 0, 0.12); /* Sutil velo para dar contraste general */
         }
@@ -56,8 +56,7 @@
             height: 85vh;    
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            /* overflow: hidden; -- ELIMINADO PARA PERMITIR SCROLL EN HIJOS */
-            overflow: visible; /* Asegura que el contenedor no corte el contenido */
+            overflow: hidden;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
@@ -78,7 +77,7 @@
             padding: 50px 60px; 
             display: flex;
             flex-direction: column;
-            justify(content: center;
+            justify-content: center;
             border-right: 1px solid rgba(0, 0, 0, 0.05);
         }
 
@@ -152,7 +151,7 @@
             padding: 50px 50px;
             display: flex;
             flex-direction: column;
-            justify(content: center;
+            justify-content: center;
         }
 
         .politicas h3 {
@@ -296,7 +295,7 @@
             height: 100%;
             grid-column: span 2;
             background-color: transparent;
-            justify(content: center;
+            justify-content: center;
             align-items: center;
         }
 
@@ -309,7 +308,7 @@
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            overflow-y: auto; /* PERMITE SCROLL VERTICAL SI EL CONTENIDO SUPERA EL ALTO */
+            overflow-y: auto; 
             background: rgba(255, 255, 255, 0.96); 
             backdrop-filter: blur(8px);
             border-radius: 20px;
@@ -399,7 +398,6 @@
                 grid-template-columns: 1fr;
                 height: auto;
                 width: 100%;
-                overflow: visible; /* Mantiene overflow visible en móvil */
                 border-radius: 16px;
             }
 
@@ -421,32 +419,12 @@
                 max-height: none;
                 padding: 25px 15px;
                 border-radius: 16px;
-                overflow-y: visible; /* Desactiva scroll interno en móvil si el body tiene scroll */
             }
 
             .grupo-doble, .grupo-triple {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
-        }
-
-        /* Scrollbar elegante para el formulario */
-        .formulario-contenedor::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .formulario-contenedor::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.03);
-            border-radius: 10px;
-        }
-
-        .formulario-contenedor::-webkit-scrollbar-thumb {
-            background: rgba(214, 51, 132, 0.3);
-            border-radius: 10px;
-        }
-
-        .formulario-contenedor::-webkit-scrollbar-thumb:hover {
-            background: rgba(214, 51, 132, 0.5);
         }
     </style>
 </head>
