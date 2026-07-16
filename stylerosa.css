@@ -1103,3 +1103,138 @@ body {
     }
 
 }
+.terminos-contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Título Principal Principal (Rosa Fucsia y Redondeado) */
+        .titulo-principal {
+            color: #e91e63; /* Rosa fuerte / fucsia */
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Subtítulos en Mayúsculas (Rosa Medio) */
+        .subtitulo-declaracion {
+            color: #e040fb; /* Rosa intermedio brillante */
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .subtitulo-declaracion-secundario {
+            color: #ec407a;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        /* Títulos de sección */
+        h2 {
+            color: #d81b60;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #f8bbd0;
+            padding-bottom: 8px;
+        }
+
+        /* Títulos de preguntas frecuentes o subapartados */
+        h3 {
+            color: #c2185b;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 18px;
+            text-align: justify;
+            font-weight: 400;
+        }
+
+        /* Listados */
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 5px;
+        }
+
+        li {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            text-align: justify;
+        }
+
+        /* Viñetas personalizadas en color rosa */
+        li::before {
+            content: "•";
+            color: #e91e63;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Enlaces */
+        a {
+            color: #e91e63;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #c2185b;
+            text-decoration: underline;
+        }
+
+        /* Bloque destacado para preguntas frecuentes (FAQ) */
+        .faq-bloque {
+            background-color: #fff8fa;
+            border-left: 4px solid #e91e63;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .faq-bloque h3 {
+            margin-top: 0;
+            color: #880e4f;
+        }
+
+        .faq-bloque p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsivo móvil */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .titulo-principal {
+                font-size: 1.6rem;
+            }
+            .subtitulo-declaracion {
+                font-size: 0.9rem;
+            }
+            h2 {
+                font-size: 1.15rem;
+            }
+        }
