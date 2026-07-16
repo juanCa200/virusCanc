@@ -363,6 +363,50 @@
             border-color: #d63384;
         }
 
+        /* Caja de Tratamiento de Datos al Final */
+        .caja-tratamiento {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .caja-tratamiento .titulo-tratamiento {
+            color: #0d6efd;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .caja-tratamiento .titulo-tratamiento:hover {
+            color: #0a58ca;
+        }
+
+        .caja-tratamiento label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #333333;
+            font-size: 0.9rem;
+            cursor: pointer;
+            line-height: 1.4;
+        }
+
+        .caja-tratamiento label input {
+            width: 18px;
+            height: 18px;
+            accent-color: #0d6efd;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
         .btn-enviar {
             background-color: #d63384;
             color: white;
@@ -625,7 +669,7 @@
                     <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de camiseta</label>
                     <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la tabla de medidas</p>
                     <select id="talla" required style="width: 100%; margin-bottom: 15px;">
-                        <option value="">Elige una opción</option>
+                        <option value="">Tallaje unisex</option>
                         <option value="XS">XS</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
@@ -651,6 +695,15 @@
                         <option value="PUBLICIDAD IMPRESA O DIGITAL">PUBLICIDAD IMPRESA O DIGITAL</option>
                         <option value="VISITA DIRECTA A LA SEDE">VISITA DIRECTA A LA SEDE</option>
                     </select>
+                </div>
+
+                <!-- Caja de Tratamiento de Datos (De la imagen) -->
+                <div class="caja-tratamiento">
+                    <span class="titulo-tratamiento" onclick="window.open('#', '_blank')">Autorización tratamiento de datos *</span>
+                    <label>
+                        <input type="checkbox" id="checkTratamientoDatos" required>
+                        <span>He leído y acepto las políticas de tratamiento de datos.</span>
+                    </label>
                 </div>
 
                 <button type="submit" class="btn-enviar">Finalizar Registro</button>
