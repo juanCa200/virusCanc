@@ -18,7 +18,8 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Evita el scroll doble en la ventana principal en escritorio */
+            overflow: hidden;
+            /* Evita el scroll doble en la ventana principal en escritorio */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8bbd0;
         }
@@ -27,9 +28,9 @@
            IMAGEN DE FONDO + DIFUMINADO ROSADO MULTICAPA
         */
         body {
-            background: 
-                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%), 
-                url('img/eventoRosaPortada.jpeg'); 
+            background:
+                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%),
+                url('img/eventoRosaPortada.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -53,11 +54,12 @@
         /* Contenedor Principal */
         .contenedor {
             width: 92%;
-            max-width: 1200px; 
-            height: 85vh;    
+            max-width: 1200px;
+            height: 85vh;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            overflow: hidden; /* Mantiene bordes limpios para los paneles de pago */
+            overflow: hidden;
+            /* Mantiene bordes limpios para los paneles de pago */
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
@@ -74,8 +76,8 @@
 
         /* PANEL IZQUIERDO (Información del Evento) */
         .evento-info {
-            background-color: rgba(255, 255, 255, 0.94); 
-            padding: 50px 60px; 
+            background-color: rgba(255, 255, 255, 0.94);
+            padding: 50px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -84,7 +86,7 @@
 
         .evento-info h1 {
             color: #1a252f;
-            font-size: 2.4rem; 
+            font-size: 2.4rem;
             font-weight: 800;
             margin-bottom: 8px;
             line-height: 1.2;
@@ -109,7 +111,7 @@
 
         .evento-info h2 {
             color: #d63384;
-            font-size: 3.4rem; 
+            font-size: 3.4rem;
             font-weight: 900;
             margin-bottom: 30px;
             line-height: 1;
@@ -148,7 +150,7 @@
 
         /* PANEL DERECHO (Políticas y Acción de Pago) */
         .politicas {
-            background-color: rgba(252, 248, 249, 0.96); 
+            background-color: rgba(252, 248, 249, 0.96);
             padding: 50px 50px;
             display: flex;
             flex-direction: column;
@@ -175,7 +177,7 @@
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
             transition: all 0.2s ease;
         }
 
@@ -244,8 +246,13 @@
         }
 
         @keyframes girar {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .icono-alerta {
@@ -291,26 +298,28 @@
 
         /* SECCIÓN FORMULARIO */
         .seccion-formulario {
-            display: none !important; 
+            display: none !important;
             width: 100%;
             height: 100%;
             grid-column: span 2;
             background-color: transparent;
             justify-content: center;
             align-items: center;
+            overflow-y: auto;
+            /* <--- Agrega esto para permitir scroll dentro de la sección */
         }
 
         /* Tarjeta del formulario: CORRECCIÓN CRUCIAL DEL SCROLL */
         .formulario-contenedor {
             width: 100%;
-            max-width: 600px; 
-            max-height: 100%; /* El formulario nunca medirá más que el contenedor padre (85vh) */
+            max-width: 600px;
+            margin: auto;
+            /* <--- Asegura que se centre verticalmente al hacer scroll */
             display: flex;
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            overflow-y: auto; /* Habilita el scroll interno si el contenido supera los 85vh */
-            background: rgba(255, 255, 255, 0.96); 
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(8px);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -385,8 +394,11 @@
 
         /* Responsividad Móvil */
         @media (max-width: 900px) {
-            body, html {
-                overflow-y: auto; /* Permite scroll natural de la página en móvil */
+
+            body,
+            html {
+                overflow-y: auto;
+                /* Permite scroll natural de la página en móvil */
                 height: auto;
             }
 
@@ -399,7 +411,8 @@
                 grid-template-columns: 1fr;
                 height: auto;
                 width: 100%;
-                overflow: visible; /* Elimina cortes visuales en móviles */
+                overflow: visible;
+                /* Elimina cortes visuales en móviles */
                 border-radius: 16px;
             }
 
@@ -419,13 +432,15 @@
 
             .formulario-contenedor {
                 height: auto;
-                max-height: none; /* No limita altura en móvil para que el scroll lo haga el body */
+                max-height: none;
+                /* No limita altura en móvil para que el scroll lo haga el body */
                 padding: 25px 15px;
                 border-radius: 16px;
-                overflow-y: visible; 
+                overflow-y: visible;
             }
 
-            .grupo-doble, .grupo-triple {
+            .grupo-doble,
+            .grupo-triple {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
@@ -483,7 +498,8 @@
 
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
-                        <span>He leído y acepto los <a href="#" target="_blank" class="enlace-terminos">términos y condiciones</a> del evento.</span>
+                        <span>He leído y acepto los <a href="#" target="_blank" class="enlace-terminos">términos y
+                                condiciones</a> del evento.</span>
                     </label>
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
@@ -508,7 +524,8 @@
             <div id="pantalla-cargando" class="seccion-estado">
                 <span class="spinner">🔄</span>
                 <h2 class="titulo-estado">Verificando pago</h2>
-                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está correcto, accederás al formulario en un momento.</p>
+                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está
+                    correcto, accederás al formulario en un momento.</p>
             </div>
 
             <!-- Pantalla Bloqueo -->
@@ -516,7 +533,8 @@
                 <div class="icono-alerta">!</div>
                 <h2 class="titulo-estado">Pago No Verificado</h2>
                 <p class="descripcion-estado">
-                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda que para inscribirte debes completar el proceso de pago con éxito.
+                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda
+                    que para inscribirte debes completar el proceso de pago con éxito.
                 </p>
                 <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
             </div>
@@ -525,12 +543,13 @@
             <div id="vistaFormulario" class="seccion-formulario">
                 <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
                     <h2>¡Pago Confirmado! 🎉</h2>
-                    
+
                     <!-- Subtítulo de la Liga Contra el Cáncer Seccional Meta -->
-                    <p style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
+                    <p
+                        style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
                         2026 de la Liga Contra el Cancer Seccional Meta
                     </p>
-                    
+
                     <p style="text-align: center; color: #5c6e7e; margin-bottom: 12px; font-size: 0.9rem;">
                         Completa tus datos para finalizar la inscripción oficial al Evento Rosa.
                     </p>
@@ -629,9 +648,12 @@
                     </div>
 
                     <!-- Tallas de Camiseta -->
-                    <div class="grupo-campo" style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
-                        <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de camiseta</label>
-                        <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la tabla de medidas</p>
+                    <div class="grupo-campo"
+                        style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
+                        <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de
+                            camiseta</label>
+                        <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con
+                            la tabla de medidas</p>
                         <select id="talla" required style="width: 100%; margin-bottom: 15px;">
                             <option value="">Elige una opción</option>
                             <option value="XS">XS</option>
@@ -641,9 +663,11 @@
                             <option value="XL">XL</option>
                             <option value="XXL">XXL</option>
                         </select>
-                        
-                        <div style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
-                            <img src="img/tallaBuso.png" alt="Guía de Tallas" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
+
+                        <div
+                            style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
+                            <img src="img/tallaBuso.png" alt="Guía de Tallas"
+                                style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
                         </div>
                     </div>
 
@@ -751,7 +775,7 @@
         }
 
         // Evitar que el clic en el enlace marque o desmarque la casilla por error
-        document.querySelector('.enlace-terminos').addEventListener('click', function(e) {
+        document.querySelector('.enlace-terminos').addEventListener('click', function (e) {
             e.stopPropagation();
         });
 
@@ -788,15 +812,15 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             })
-            .then(() => {
-                alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
-                sessionStorage.removeItem('token_pago_evento_rosa');
-                window.location.reload();
-            })
-            .catch(error => {
-                alert("Hubo un error al guardar tu registro.");
-                console.error(error);
-            });
+                .then(() => {
+                    alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
+                    sessionStorage.removeItem('token_pago_evento_rosa');
+                    window.location.reload();
+                })
+                .catch(error => {
+                    alert("Hubo un error al guardar tu registro.");
+                    console.error(error);
+                });
         }
     </script>
 </body>
