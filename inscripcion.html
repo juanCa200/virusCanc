@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción Evento Rosa 2026</title>
     <style>
-        /* Reset y Estructura Base "Sin Scroll" en el body */
+        /* Reset y Estructura Base */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,14 +18,13 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Evita scroll en el body principal */
+            overflow: hidden; /* Evita el scroll doble en la ventana principal en escritorio */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8bbd0; /* Color de respaldo */
+            background-color: #f8bbd0;
         }
 
         /* 
            IMAGEN DE FONDO + DIFUMINADO ROSADO MULTICAPA
-           Se mantiene constante y visible durante todo el proceso.
         */
         body {
             background: 
@@ -46,25 +45,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(0, 0, 0, 0.12); /* Sutil velo para dar contraste general */
+            background: rgba(0, 0, 0, 0.12);
             position: relative;
             z-index: 1;
         }
 
-        /* Contenedor Principal: Fijo y ancho */
+        /* Contenedor Principal */
         .contenedor {
             width: 92%;
             max-width: 1200px; 
             height: 85vh;    
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            overflow: hidden; /* Mantiene los paneles fijos y los bordes limpios */
+            overflow: hidden; /* Mantiene bordes limpios para los paneles de pago */
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
         }
 
-        /* VISTA 1: PASO DE PAGO (Estilos Fijos) */
+        /* VISTA 1: PASO DE PAGO */
         .seccion-pago {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -290,7 +289,7 @@
             transition: all 0.2s ease;
         }
 
-        /* SECCIÓN FORMULARIO (Diseño Ancho y Limpio) */
+        /* SECCIÓN FORMULARIO */
         .seccion-formulario {
             display: none !important; 
             width: 100%;
@@ -301,16 +300,16 @@
             align-items: center;
         }
 
-        /* Tarjeta del formulario: CORREGIDO EL SCROLL */
+        /* Tarjeta del formulario: CORRECCIÓN CRUCIAL DEL SCROLL */
         .formulario-contenedor {
             width: 100%;
             max-width: 600px; 
-            height: 100%; /* Ocupa el alto completo del contenedor padre (85vh) */
+            max-height: 100%; /* El formulario nunca medirá más que el contenedor padre (85vh) */
             display: flex;
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            overflow-y: auto; /* PERMITE SCROLL VERTICAL EXCLUSIVAMENTE AQUÍ */
+            overflow-y: auto; /* Habilita el scroll interno si el contenido supera los 85vh */
             background: rgba(255, 255, 255, 0.96); 
             backdrop-filter: blur(8px);
             border-radius: 20px;
@@ -387,7 +386,7 @@
         /* Responsividad Móvil */
         @media (max-width: 900px) {
             body, html {
-                overflow-y: auto;
+                overflow-y: auto; /* Permite scroll natural de la página en móvil */
                 height: auto;
             }
 
@@ -400,7 +399,7 @@
                 grid-template-columns: 1fr;
                 height: auto;
                 width: 100%;
-                overflow: visible; /* Permite scroll del body en móvil */
+                overflow: visible; /* Elimina cortes visuales en móviles */
                 border-radius: 16px;
             }
 
@@ -415,14 +414,15 @@
 
             .seccion-formulario {
                 padding: 10px;
+                height: auto;
             }
 
             .formulario-contenedor {
                 height: auto;
-                max-height: none;
+                max-height: none; /* No limita altura en móvil para que el scroll lo haga el body */
                 padding: 25px 15px;
                 border-radius: 16px;
-                overflow-y: visible; /* Desactiva scroll interno en móvil si el body tiene scroll */
+                overflow-y: visible; 
             }
 
             .grupo-doble, .grupo-triple {
@@ -431,7 +431,7 @@
             }
         }
 
-        /* Scrollbar elegante para el formulario (Webkit) */
+        /* Scrollbar elegante para el formulario (Navegadores basados en Webkit como Chrome, Safari, Edge) */
         .formulario-contenedor::-webkit-scrollbar {
             width: 8px;
         }
