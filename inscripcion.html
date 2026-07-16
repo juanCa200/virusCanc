@@ -15,22 +15,19 @@
 
         body,
         html {
-            height: 100vh;
+            height: auto;
+            min-height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            /* Evita el scroll doble en la ventana principal en escritorio */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8bbd0;
         }
 
-        /* 
-           IMAGEN DE FONDO + DIFUMINADO ROSADO MULTICAPA
-        */
+        /* IMAGEN DE FONDO + DIFUMINADO ROSADO MULTICAPA */
         body {
-            background:
-                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%),
-                url('img/eventoRosaPortada.jpeg');
+            background: 
+                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%), 
+                url('img/eventoRosaPortada.jpeg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -38,31 +35,33 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-y: auto; /* Permite el scroll general de la pantalla */
         }
 
         .confirmacion {
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: rgba(0, 0, 0, 0.12);
             position: relative;
             z-index: 1;
+            padding: 40px 0; /* Espaciado para que la tarjeta respire al hacer scroll */
         }
 
-        /* Contenedor Principal */
+        /* Contenedor Principal (Vista de pago) */
         .contenedor {
             width: 92%;
-            max-width: 1200px;
-            height: 85vh;
+            max-width: 1200px; 
+            height: 85vh; 
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            overflow: hidden;
-            /* Mantiene bordes limpios para los paneles de pago */
+            overflow: hidden; 
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
+            transition: all 0.3s ease;
         }
 
         /* VISTA 1: PASO DE PAGO */
@@ -76,8 +75,8 @@
 
         /* PANEL IZQUIERDO (Información del Evento) */
         .evento-info {
-            background-color: rgba(255, 255, 255, 0.94);
-            padding: 50px 60px;
+            background-color: rgba(255, 255, 255, 0.94); 
+            padding: 50px 60px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -86,7 +85,7 @@
 
         .evento-info h1 {
             color: #1a252f;
-            font-size: 2.4rem;
+            font-size: 2.4rem; 
             font-weight: 800;
             margin-bottom: 8px;
             line-height: 1.2;
@@ -111,7 +110,7 @@
 
         .evento-info h2 {
             color: #d63384;
-            font-size: 3.4rem;
+            font-size: 3.4rem; 
             font-weight: 900;
             margin-bottom: 30px;
             line-height: 1;
@@ -148,9 +147,9 @@
             font-weight: 600;
         }
 
-        /* PANEL DERECHO (Políticas y Acción de Pago) */
+        /* PANEL DERECHO (Políticas) */
         .politicas {
-            background-color: rgba(252, 248, 249, 0.96);
+            background-color: rgba(252, 248, 249, 0.96); 
             padding: 50px 50px;
             display: flex;
             flex-direction: column;
@@ -177,7 +176,7 @@
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
             transition: all 0.2s ease;
         }
 
@@ -188,7 +187,6 @@
             box-shadow: 0 4px 8px rgba(214, 51, 132, 0.05);
         }
 
-        /* Enlace de Términos y Condiciones */
         .enlace-terminos {
             color: #d63384;
             text-decoration: underline;
@@ -223,7 +221,7 @@
             transition: all 0.25s ease;
         }
 
-        /* PANTALLAS DE ESTADO (Cargando y Error) */
+        /* PANTALLAS DE ESTADO */
         .seccion-estado {
             display: none;
             width: 100%;
@@ -246,13 +244,8 @@
         }
 
         @keyframes girar {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .icono-alerta {
@@ -296,33 +289,29 @@
             transition: all 0.2s ease;
         }
 
-        /* SECCIÓN FORMULARIO */
+        /* SECCIÓN FORMULARIO (AFUERA DEL CONTENEDOR DE PAGO) */
         .seccion-formulario {
-            display: none !important;
+            display: none !important; 
             width: 100%;
-            height: 100%;
-            grid-column: span 2;
+            max-width: 600px;
             background-color: transparent;
             justify-content: center;
             align-items: center;
-            overflow-y: auto;
-            /* <--- Agrega esto para permitir scroll dentro de la sección */
+            padding: 20px 0;
         }
 
-        /* Tarjeta del formulario: CORRECCIÓN CRUCIAL DEL SCROLL */
         .formulario-contenedor {
             width: 100%;
-            max-width: 600px;
-            margin: auto;
-            /* <--- Asegura que se centre verticalmente al hacer scroll */
             display: flex;
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.96); 
             backdrop-filter: blur(8px);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            max-height: none;
+            overflow: visible;
         }
 
         .formulario-contenedor h2 {
@@ -332,7 +321,7 @@
             margin-bottom: 2px;
         }
 
-        /* Grid de campos */
+        /* Grid de campos del formulario */
         .grupo-doble {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -394,25 +383,15 @@
 
         /* Responsividad Móvil */
         @media (max-width: 900px) {
-
-            body,
-            html {
-                overflow-y: auto;
-                /* Permite scroll natural de la página en móvil */
-                height: auto;
-            }
-
             .confirmacion {
-                height: auto;
                 padding: 20px 10px;
             }
 
             .contenedor {
                 grid-template-columns: 1fr;
-                height: auto;
+                height: auto !important; 
                 width: 100%;
-                overflow: visible;
-                /* Elimina cortes visuales en móviles */
+                overflow: visible; 
                 border-radius: 16px;
             }
 
@@ -427,42 +406,36 @@
 
             .seccion-formulario {
                 padding: 10px;
-                height: auto;
             }
 
             .formulario-contenedor {
-                height: auto;
-                max-height: none;
-                /* No limita altura en móvil para que el scroll lo haga el body */
                 padding: 25px 15px;
                 border-radius: 16px;
-                overflow-y: visible;
             }
 
-            .grupo-doble,
-            .grupo-triple {
+            .grupo-doble, .grupo-triple {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
         }
 
-        /* Scrollbar elegante para el formulario (Navegadores basados en Webkit como Chrome, Safari, Edge) */
-        .formulario-contenedor::-webkit-scrollbar {
-            width: 8px;
+        /* Scrollbar estética */
+        body::-webkit-scrollbar {
+            width: 10px;
         }
 
-        .formulario-contenedor::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.03);
+        body::-webkit-scrollbar-track {
+            background: rgba(248, 187, 208, 0.3);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #d63384;
             border-radius: 10px;
+            border: 2px solid #f8bbd0;
         }
 
-        .formulario-contenedor::-webkit-scrollbar-thumb {
-            background: rgba(214, 51, 132, 0.3);
-            border-radius: 10px;
-        }
-
-        .formulario-contenedor::-webkit-scrollbar-thumb:hover {
-            background: rgba(214, 51, 132, 0.5);
+        body::-webkit-scrollbar-thumb:hover {
+            background: #b8226b;
         }
     </style>
 </head>
@@ -470,7 +443,9 @@
 <body>
 
     <section class="confirmacion">
-        <div class="contenedor">
+        
+        <!-- CONTENEDOR PRINCIPAL: Solo contiene la compra y las pantallas de estado -->
+        <div id="contenedorPrincipal" class="contenedor">
 
             <div id="vistaPago" class="seccion-pago">
                 <div class="evento-info">
@@ -498,8 +473,7 @@
 
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
-                        <span>He leído y acepto los <a href="#" target="_blank" class="enlace-terminos">términos y
-                                condiciones</a> del evento.</span>
+                        <span>He leído y acepto los <a href="#" target="_blank" class="enlace-terminos">términos y condiciones</a> del evento.</span>
                     </label>
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
@@ -524,8 +498,7 @@
             <div id="pantalla-cargando" class="seccion-estado">
                 <span class="spinner">🔄</span>
                 <h2 class="titulo-estado">Verificando pago</h2>
-                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está
-                    correcto, accederás al formulario en un momento.</p>
+                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está correcto, accederás al formulario en un momento.</p>
             </div>
 
             <!-- Pantalla Bloqueo -->
@@ -533,166 +506,161 @@
                 <div class="icono-alerta">!</div>
                 <h2 class="titulo-estado">Pago No Verificado</h2>
                 <p class="descripcion-estado">
-                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda
-                    que para inscribirte debes completar el proceso de pago con éxito.
+                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda que para inscribirte debes completar el proceso de pago con éxito.
                 </p>
                 <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
             </div>
 
-            <!-- Formulario -->
-            <div id="vistaFormulario" class="seccion-formulario">
-                <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
-                    <h2>¡Pago Confirmado! 🎉</h2>
+        </div> <!-- CIERRE DEL CONTENEDOR DE PAGO -->
 
-                    <!-- Subtítulo de la Liga Contra el Cáncer Seccional Meta -->
-                    <p
-                        style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
-                        2026 de la Liga Contra el Cancer Seccional Meta
-                    </p>
+        <!-- SECCIÓN FORMULARIO: UBICADA POR FUERA DEL CONTENEDOR ORIGINAL PARA HACER SCROLL PERFECTAMENTE -->
+        <div id="vistaFormulario" class="seccion-formulario">
+            <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
+                <h2>¡Pago Confirmado! 🎉</h2>
+                
+                <!-- Subtítulo de la Liga Contra el Cáncer Seccional Meta -->
+                <p style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
+                    2026 de la Liga Contra el Cancer Seccional Meta
+                </p>
+                
+                <p style="text-align: center; color: #5c6e7e; margin-bottom: 12px; font-size: 0.9rem;">
+                    Completa tus datos para finalizar la inscripción oficial al Evento Rosa.
+                </p>
 
-                    <p style="text-align: center; color: #5c6e7e; margin-bottom: 12px; font-size: 0.9rem;">
-                        Completa tus datos para finalizar la inscripción oficial al Evento Rosa.
-                    </p>
+                <input type="hidden" id="inputTokenWompi">
 
-                    <input type="hidden" id="inputTokenWompi">
-
-                    <div class="grupo-doble">
-                        <div class="grupo-campo">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" required placeholder="Tus nombres">
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="apellidos">Apellidos</label>
-                            <input type="text" id="apellidos" required placeholder="Tus apellidos">
-                        </div>
-                    </div>
-
-                    <div class="grupo-doble">
-                        <div class="grupo-campo">
-                            <label for="tipo_documento">Tipo de documento</label>
-                            <select id="tipo_documento" required>
-                                <option value="">Selecciona...</option>
-                                <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
-                                <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                                <option value="Cédula de Extranjería">Cédula de Extranjería</option>
-                                <option value="Pasaporte">Pasaporte</option>
-                            </select>
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="documento">Número de documento</label>
-                            <input type="text" id="documento" required placeholder="Ej. 1006543210">
-                        </div>
-                    </div>
-
-                    <div class="grupo-triple">
-                        <div class="grupo-campo">
-                            <label for="sexo">Sexo</label>
-                            <select id="sexo" required>
-                                <option value="">Selecciona...</option>
-                                <option value="Femenino">Femenino</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Intersexual">Intersexual</option>
-                            </select>
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="edad">Edad</label>
-                            <input type="number" id="edad" required min="1" max="120" placeholder="Años">
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="rh">Tipo Sangre</label>
-                            <select id="rh" required>
-                                <option value="">Selecciona...</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grupo-doble">
-                        <div class="grupo-campo">
-                            <label for="eps">EPS</label>
-                            <input type="text" id="eps" required placeholder="Ej. Sanitas">
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="direccion">Residencia</label>
-                            <input type="text" id="direccion" required placeholder="Dirección completa">
-                        </div>
-                    </div>
-
-                    <div class="grupo-doble">
-                        <div class="grupo-campo">
-                            <label for="celular">Número Celular</label>
-                            <input type="tel" id="celular" required placeholder="Ej. 312 345 6789">
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="correo">Correo electrónico</label>
-                            <input type="email" id="correo" required placeholder="ejemplo@correo.com">
-                        </div>
-                    </div>
-
-                    <div class="grupo-doble">
-                        <div class="grupo-campo">
-                            <label for="contacto_emergencia">Contacto emergencia</label>
-                            <input type="text" id="contacto_emergencia" required placeholder="Nombre completo">
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="telefono_emergencia">Celular emergencia</label>
-                            <input type="tel" id="telefono_emergencia" required placeholder="Celular de emergencia">
-                        </div>
-                    </div>
-
-                    <!-- Tallas de Camiseta -->
-                    <div class="grupo-campo"
-                        style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
-                        <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de
-                            camiseta</label>
-                        <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con
-                            la tabla de medidas</p>
-                        <select id="talla" required style="width: 100%; margin-bottom: 15px;">
-                            <option value="">Elige una opción</option>
-                            <option value="XS">XS</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="XXL">XXL</option>
-                        </select>
-
-                        <div
-                            style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
-                            <img src="img/tallaBuso.png" alt="Guía de Tallas"
-                                style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
-                        </div>
-                    </div>
-
-                    <!-- Pregunta Medio de Conocimiento -->
+                <div class="grupo-doble">
                     <div class="grupo-campo">
-                        <label for="medio_conocimiento">¿Por qué medio conoció el evento rosa?</label>
-                        <select id="medio_conocimiento" required>
-                            <option value="">Selecciona una opción...</option>
-                            <option value="RECOMENDACIÓN">RECOMENDACIÓN</option>
-                            <option value="PAGINA WEB">PAGINA WEB</option>
-                            <option value="REDES SOCIALES">REDES SOCIALES</option>
-                            <option value="EVENTO O CAMPAÑA">EVENTO O CAMPAÑA</option>
-                            <option value="PUBLICIDAD IMPRESA O DIGITAL">PUBLICIDAD IMPRESA O DIGITAL</option>
-                            <option value="VISITA DIRECTA A LA SEDE">VISITA DIRECTA A LA SEDE</option>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required placeholder="Tus nombres">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" required placeholder="Tus apellidos">
+                    </div>
+                </div>
+
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="tipo_documento">Tipo de documento</label>
+                        <select id="tipo_documento" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+                            <option value="Pasaporte">Pasaporte</option>
                         </select>
                     </div>
+                    <div class="grupo-campo">
+                        <label for="documento">Número de documento</label>
+                        <input type="text" id="documento" required placeholder="Ej. 1006543210">
+                    </div>
+                </div>
 
-                    <button type="submit" class="btn-enviar">Finalizar Registro</button>
-                </form>
-            </div>
+                <div class="grupo-triple">
+                    <div class="grupo-campo">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" required>
+                            <option value="">Selecciona...</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Intersexual">Intersexual</option>
+                        </select>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="edad">Edad</label>
+                        <input type="number" id="edad" required min="1" max="120" placeholder="Años">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="rh">Tipo Sangre</label>
+                        <select id="rh" required>
+                            <option value="">Selecciona...</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </div>
 
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="eps">EPS</label>
+                        <input type="text" id="eps" required placeholder="Ej. Sanitas">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="direccion">Residencia</label>
+                        <input type="text" id="direccion" required placeholder="Dirección completa">
+                    </div>
+                </div>
+
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="celular">Número Celular</label>
+                        <input type="tel" id="celular" required placeholder="Ej. 312 345 6789">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" required placeholder="ejemplo@correo.com">
+                    </div>
+                </div>
+
+                <div class="grupo-doble">
+                    <div class="grupo-campo">
+                        <label for="contacto_emergencia">Contacto emergencia</label>
+                        <input type="text" id="contacto_emergencia" required placeholder="Nombre completo">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="telefono_emergencia">Celular emergencia</label>
+                        <input type="tel" id="telefono_emergencia" required placeholder="Celular de emergencia">
+                    </div>
+                </div>
+
+                <!-- Tallas de Camiseta -->
+                <div class="grupo-campo" style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
+                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de camiseta</label>
+                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la tabla de medidas</p>
+                    <select id="talla" required style="width: 100%; margin-bottom: 15px;">
+                        <option value="">Elige una opción</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                    
+                    <div style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
+                        <img src="img/tallaBuso.png" alt="Guía de Tallas" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
+                    </div>
+                </div>
+
+                <!-- Pregunta Medio de Conocimiento -->
+                <div class="grupo-campo">
+                    <label for="medio_conocimiento">¿Por qué medio conoció el evento rosa?</label>
+                    <select id="medio_conocimiento" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="RECOMENDACIÓN">RECOMENDACIÓN</option>
+                        <option value="PAGINA WEB">PAGINA WEB</option>
+                        <option value="REDES SOCIALES">REDES SOCIALES</option>
+                        <option value="EVENTO O CAMPAÑA">EVENTO O CAMPAÑA</option>
+                        <option value="PUBLICIDAD IMPRESA O DIGITAL">PUBLICIDAD IMPRESA O DIGITAL</option>
+                        <option value="VISITA DIRECTA A LA SEDE">VISITA DIRECTA A LA SEDE</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Finalizar Registro</button>
+            </form>
         </div>
+
     </section>
 
     <script>
+        const contenedorPrincipal = document.getElementById('contenedorPrincipal');
         const vistaPago = document.getElementById('vistaPago');
         const pantallaCargando = document.getElementById('pantalla-cargando');
         const pantallaBloqueo = document.getElementById('pantalla-bloqueo');
@@ -742,15 +710,21 @@
         function mostrarVistaFormulario(token) {
             pantallaCargando.style.display = 'none';
             pantallaBloqueo.style.display = 'none';
-            vistaPago.style.display = 'none';
+            
+            // Ocultamos completamente el contenedor de pago para que la pantalla quede limpia
+            contenedorPrincipal.style.display = 'none'; 
+            
+            // Mostramos la sección del formulario de manera libre y flexible
             vistaFormulario.style.setProperty('display', 'flex', 'important');
             document.getElementById('inputTokenWompi').value = token;
         }
 
         function mostrarBloqueo() {
-            vistaPago.style.display = 'none';
             pantallaCargando.style.display = 'none';
             vistaFormulario.style.setProperty('display', 'none', 'important');
+            
+            // Mostramos el contenedor original en pantalla con el mensaje de bloqueo
+            contenedorPrincipal.style.display = 'grid'; 
             pantallaBloqueo.style.display = 'flex';
         }
 
@@ -774,8 +748,8 @@
             }
         }
 
-        // Evitar que el clic en el enlace marque o desmarque la casilla por error
-        document.querySelector('.enlace-terminos').addEventListener('click', function (e) {
+        // Detener la propagación del click al marcar la casilla de los TyC
+        document.querySelector('.enlace-terminos').addEventListener('click', function(e) {
             e.stopPropagation();
         });
 
@@ -812,15 +786,15 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             })
-                .then(() => {
-                    alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
-                    sessionStorage.removeItem('token_pago_evento_rosa');
-                    window.location.reload();
-                })
-                .catch(error => {
-                    alert("Hubo un error al guardar tu registro.");
-                    console.error(error);
-                });
+            .then(() => {
+                alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
+                sessionStorage.removeItem('token_pago_evento_rosa');
+                window.location.reload();
+            })
+            .catch(error => {
+                alert("Hubo un error al guardar tu registro.");
+                console.error(error);
+            });
         }
     </script>
 </body>
