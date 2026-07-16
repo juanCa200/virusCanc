@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción Evento Rosa 2026</title>
     <style>
-        /* Reset y Estructura Base */
+        /* Reset y Estructura Base "Sin Scroll" en el body */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,6 +20,7 @@
             padding: 0;
             overflow: hidden; /* Evita scroll en el body principal */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8bbd0; /* Color de respaldo */
         }
 
         /* 
@@ -34,7 +35,6 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-color: #f8bbd0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -47,22 +47,24 @@
             justify-content: center;
             align-items: center;
             background: rgba(0, 0, 0, 0.12); /* Sutil velo para dar contraste general */
+            position: relative;
+            z-index: 1;
         }
 
-        /* Contenedor Principal */
+        /* Contenedor Principal: Fijo y ancho */
         .contenedor {
             width: 92%;
             max-width: 1200px; 
             height: 85vh;    
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            overflow: visible; /* Asegura que el contenedor no corte el contenido */
+            overflow: hidden; /* Mantiene los paneles fijos y los bordes limpios */
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
         }
 
-        /* VISTA 1: PASO DE PAGO */
+        /* VISTA 1: PASO DE PAGO (Estilos Fijos) */
         .seccion-pago {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -288,7 +290,7 @@
             transition: all 0.2s ease;
         }
 
-        /* SECCIÓN FORMULARIO */
+        /* SECCIÓN FORMULARIO (Diseño Ancho y Limpio) */
         .seccion-formulario {
             display: none !important; 
             width: 100%;
@@ -299,16 +301,16 @@
             align-items: center;
         }
 
-        /* Tarjeta del formulario */
+        /* Tarjeta del formulario: CORREGIDO EL SCROLL */
         .formulario-contenedor {
             width: 100%;
             max-width: 600px; 
-            height: 100%;
+            height: 100%; /* Ocupa el alto completo del contenedor padre (85vh) */
             display: flex;
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            overflow-y: auto; /* PERMITE SCROLL VERTICAL SI EL CONTENIDO SUPERA EL ALTO */
+            overflow-y: auto; /* PERMITE SCROLL VERTICAL EXCLUSIVAMENTE AQUÍ */
             background: rgba(255, 255, 255, 0.96); 
             backdrop-filter: blur(8px);
             border-radius: 20px;
@@ -398,7 +400,7 @@
                 grid-template-columns: 1fr;
                 height: auto;
                 width: 100%;
-                overflow: visible; /* Mantiene overflow visible en móvil */
+                overflow: visible; /* Permite scroll del body en móvil */
                 border-radius: 16px;
             }
 
@@ -429,7 +431,7 @@
             }
         }
 
-        /* Scrollbar elegante para el formulario */
+        /* Scrollbar elegante para el formulario (Webkit) */
         .formulario-contenedor::-webkit-scrollbar {
             width: 8px;
         }
