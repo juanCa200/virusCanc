@@ -4139,11 +4139,34 @@ video {
     animation: pulsoCita 2s infinite;
 }
 
-.btn-flotante-cita i {
+.btn-flotante-evento {
+    position: fixed;
+    bottom: 100px;
+    left: 10px;
+    right: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    background-color: #d92c73;
+    color: white !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(192, 39, 44, 0.4);
+    z-index: 2000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pulsoCita 2s infinite;
+}
+
+
+
+.btn-flotante-cita i, .btn-flotante-evento i {
     font-size: 1.3rem;
 }
 
-.btn-flotante-cita:hover {
+.btn-flotante-cita:hover, .btn-flotante-evento:hover {
     background-color: #1a5276;
     transform: scale(1.05) translateY(-5px);
     box-shadow: 0 8px 25px rgba(26, 82, 118, 0.5);
@@ -4151,7 +4174,7 @@ video {
     animation: none;
 }
 
-.btn-flotante-cita:active {
+.btn-flotante-cita:active, .btn-flotante-evento:active {
     transform: scale(0.98);
 }
 
@@ -4175,24 +4198,27 @@ video {
         bottom: 30px;
     }
 
+     .btn-flotante-evento {
+        left: 20px;
+        bottom: 100px;
+    }
+
     @media (max-width: 480px) {
         .texto-cita {
             display: none;
         }
 
-        .btn-flotante-cita {
+        .btn-flotante-cita, .btn-flotante-evento {
             padding: 18px;
             border-radius: 50%;
         }
 
-        .btn-flotante-cita i {
+        .btn-flotante-cita i, .btn-flotante-evento i {
             font-size: 1.5rem;
             margin: 0;
         }
     }
 }
-
-
 
 .tarjeta-info-paciente {
     max-width: 450px;
@@ -4215,7 +4241,6 @@ video {
     border: 1px solid #f0f0f0;
 
 }
-
 
 .tarjeta-info-paciente:hover {
     transform: translateY(-5px);
