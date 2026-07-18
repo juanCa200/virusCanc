@@ -561,8 +561,8 @@
                     </button>
 
                     <button id="btnVolver" onclick="window.location.href='eventoRosa.html';">
-    Volver
-</button>
+                        Volver
+                    </button>
 
                 </div>
             </div>
@@ -601,7 +601,9 @@
 
                 <p
                     style="text-align: center; color: #1a252f; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
-                    Declaro que la información entregada es cierta y que podrá ser verificada por cualquier medio legal por parte de la LIGA CONTRA EL CÁNCER SECCIONAL META, así mismo, que soy titular de la información y que no infrijo ninguna ley o acuerdo contractual o comercial al realizarlo.
+                    Declaro que la información entregada es cierta y que podrá ser verificada por cualquier medio legal
+                    por parte de la LIGA CONTRA EL CÁNCER SECCIONAL META, así mismo, que soy titular de la información y
+                    que no infrijo ninguna ley o acuerdo contractual o comercial al realizarlo.
                 </p>
 
 
@@ -743,138 +745,138 @@
     </section>
 
     <script>
-    const contenedorPrincipal = document.getElementById('contenedorPrincipal');
-    const vistaPago = document.getElementById('vistaPago');
-    const pantallaCargando = document.getElementById('pantalla-cargando');
-    const pantallaBloqueo = document.getElementById('pantalla-bloqueo');
-    const vistaFormulario = document.getElementById('vistaFormulario');
+        const contenedorPrincipal = document.getElementById('contenedorPrincipal');
+        const vistaPago = document.getElementById('vistaPago');
+        const pantallaCargando = document.getElementById('pantalla-cargando');
+        const pantallaBloqueo = document.getElementById('pantalla-bloqueo');
+        const vistaFormulario = document.getElementById('vistaFormulario');
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const transaccionId = urlParams.get('id');
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const transaccionId = urlParams.get('id');
 
-        if (!transaccionId) {
-            const tokenActivo = sessionStorage.getItem('token_pago_evento_rosa');
-            if (tokenActivo) {
-                mostrarVistaFormulario(tokenActivo);
-            } else {
-                vistaPago.style.display = 'grid';
-            }
-            return;
-        }
-
-        vistaPago.style.display = 'none';
-        pantallaCargando.style.display = 'flex';
-
-        const urlScript = "https://script.google.com/macros/s/AKfycbyoQJs2TQV3o1EA-wPVZK1l5aYyemyUNC55CAFcpKnQlDbz-dzXX0jdflxya-zKwg/exec";
-
-        fetch(`${urlScript}?consultar_id=${transaccionId}`)
-            .then(response => response.json())
-            .then(resultado => {
-                if (resultado && resultado.status === "APPROVED") {
-                    sessionStorage.setItem('token_pago_evento_rosa', transaccionId);
-                    window.history.replaceState({}, document.title, window.location.pathname);
-                    mostrarVistaFormulario(transaccionId);
+            if (!transaccionId) {
+                const tokenActivo = sessionStorage.getItem('token_pago_evento_rosa');
+                if (tokenActivo) {
+                    mostrarVistaFormulario(tokenActivo);
                 } else {
-                    mostrarBloqueo();
+                    vistaPago.style.display = 'grid';
                 }
-            })
-            .catch(error => {
-                console.error("Error validando pago:", error);
-                mostrarBloqueo();
-            });
-    });
+                return;
+            }
 
-    function mostrarVistaFormulario(token) {
-        pantallaCargando.style.display = 'none';
-        pantallaBloqueo.style.display = 'none';
-        contenedorPrincipal.style.display = 'none';
-        vistaFormulario.style.setProperty('display', 'flex', 'important');
-        document.getElementById('inputTokenWompi').value = token;
-    }
+            vistaPago.style.display = 'none';
+            pantallaCargando.style.display = 'flex';
 
-    function mostrarBloqueo() {
-        pantallaCargando.style.display = 'none';
-        vistaFormulario.style.setProperty('display', 'none', 'important');
-        contenedorPrincipal.style.display = 'grid';
-        pantallaBloqueo.style.display = 'flex';
-    }
+            const urlScript = "https://script.google.com/macros/s/AKfycbyoQJs2TQV3o1EA-wPVZK1l5aYyemyUNC55CAFcpKnQlDbz-dzXX0jdflxya-zKwg/exec";
 
-    function validarChecks() {
-        const checkboxes = document.querySelectorAll('.check');
-        const btnPagar = document.getElementById('btnPagar');
-        const todosMarcados = Array.from(checkboxes).every(chk => chk.checked);
+            fetch(`${urlScript}?consultar_id=${transaccionId}`)
+                .then(response => response.json())
+                .then(resultado => {
+                    if (resultado && resultado.status === "APPROVED") {
+                        sessionStorage.setItem('token_pago_evento_rosa', transaccionId);
+                        window.history.replaceState({}, document.title, window.location.pathname);
+                        mostrarVistaFormulario(transaccionId);
+                    } else {
+                        mostrarBloqueo();
+                    }
+                })
+                .catch(error => {
+                    console.error("Error validando pago:", error);
+                    mostrarBloqueo();
+                });
+        });
 
-        if (todosMarcados) {
-            btnPagar.disabled = false;
-            btnPagar.style.cursor = 'pointer';
-            btnPagar.style.backgroundColor = '#d63384';
-            btnPagar.style.color = '#ffffff';
-            btnPagar.style.boxShadow = '0 8px 25px rgba(214, 51, 132, 0.35)';
-        } else {
-            btnPagar.disabled = true;
-            btnPagar.style.cursor = 'not-allowed';
-            btnPagar.style.backgroundColor = '#e2e8f0';
-            btnPagar.style.color = '#94a3b8';
-            btnPagar.style.boxShadow = 'none';
+        function mostrarVistaFormulario(token) {
+            pantallaCargando.style.display = 'none';
+            pantallaBloqueo.style.display = 'none';
+            contenedorPrincipal.style.display = 'none';
+            vistaFormulario.style.setProperty('display', 'flex', 'important');
+            document.getElementById('inputTokenWompi').value = token;
         }
-    }
 
-    document.querySelectorAll('.enlace-terminos').forEach(enlace => {
-        enlace.addEventListener('click', function (e) {
-            e.stopPropagation();
+        function mostrarBloqueo() {
+            pantallaCargando.style.display = 'none';
+            vistaFormulario.style.setProperty('display', 'none', 'important');
+            contenedorPrincipal.style.display = 'grid';
+            pantallaBloqueo.style.display = 'flex';
+        }
+
+        function validarChecks() {
+            const checkboxes = document.querySelectorAll('.check');
+            const btnPagar = document.getElementById('btnPagar');
+            const todosMarcados = Array.from(checkboxes).every(chk => chk.checked);
+
+            if (todosMarcados) {
+                btnPagar.disabled = false;
+                btnPagar.style.cursor = 'pointer';
+                btnPagar.style.backgroundColor = '#d63384';
+                btnPagar.style.color = '#ffffff';
+                btnPagar.style.boxShadow = '0 8px 25px rgba(214, 51, 132, 0.35)';
+            } else {
+                btnPagar.disabled = true;
+                btnPagar.style.cursor = 'not-allowed';
+                btnPagar.style.backgroundColor = '#e2e8f0';
+                btnPagar.style.color = '#94a3b8';
+                btnPagar.style.boxShadow = 'none';
+            }
+        }
+
+        document.querySelectorAll('.enlace-terminos').forEach(enlace => {
+            enlace.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
         });
-    });
 
-    function irAPagarWompi() {
-        window.location.href = "https://checkout.wompi.co/l/zgEpBw";
-    }
+        function irAPagarWompi() {
+            window.location.href = "https://checkout.sandbox.wompi.co/l/test_gnbtoK";
+        }
 
-    function guardarRegistro(event) {
-        event.preventDefault();
-        
-        const btnEnviar = event.target.querySelector('.btn-enviar');
-        if(btnEnviar) btnEnviar.disabled = true;
+        function guardarRegistro(event) {
+            event.preventDefault();
 
-        const datos = {
-            token: document.getElementById('inputTokenWompi').value,
-            nombre: document.getElementById('nombre').value,
-            apellidos: document.getElementById('apellidos').value,
-            tipo_documento: document.getElementById('tipo_documento').value,
-            documento: document.getElementById('documento').value,
-            sexo: document.getElementById('sexo').value,
-            rh: document.getElementById('rh').value,
-            eps: document.getElementById('eps').value,
-            edad: document.getElementById('edad').value,
-            celular: document.getElementById('celular').value,
-            correo: document.getElementById('correo').value,
-            direccion: document.getElementById('direccion').value,
-            contacto_emergencia: document.getElementById('contacto_emergencia').value,
-            telefono_emergencia: document.getElementById('telefono_emergencia').value,
-            talla: document.getElementById('talla').value,
-            medio_conocimiento: document.getElementById('medio_conocimiento').value
-        };
+            const btnEnviar = event.target.querySelector('.btn-enviar');
+            if (btnEnviar) btnEnviar.disabled = true;
 
-        const urlScript = "https://script.google.com/macros/s/AKfycbyoQJs2TQV3o1EA-wPVZK1l5aYyemyUNC55CAFcpKnQlDbz-dzXX0jdflxya-zKwg/exec";
+            const datos = {
+                token: document.getElementById('inputTokenWompi').value,
+                nombre: document.getElementById('nombre').value,
+                apellidos: document.getElementById('apellidos').value,
+                tipo_documento: document.getElementById('tipo_documento').value,
+                documento: document.getElementById('documento').value,
+                sexo: document.getElementById('sexo').value,
+                rh: document.getElementById('rh').value,
+                eps: document.getElementById('eps').value,
+                edad: document.getElementById('edad').value,
+                celular: document.getElementById('celular').value,
+                correo: document.getElementById('correo').value,
+                direccion: document.getElementById('direccion').value,
+                contacto_emergencia: document.getElementById('contacto_emergencia').value,
+                telefono_emergencia: document.getElementById('telefono_emergencia').value,
+                talla: document.getElementById('talla').value,
+                medio_conocimiento: document.getElementById('medio_conocimiento').value
+            };
 
-        fetch(urlScript, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datos)
-        })
-        .then(() => {
-            alert(`¡Gracias por ser parte del Evento Rosa! 💗\n\nTU INSCRIPCIÓN HA SIDO REGISTRADA CON ÉXITO.\n\nHoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.\n\nCada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.\n\n¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
-            sessionStorage.removeItem('token_pago_evento_rosa');
-            window.location.href = 'eventoRosa.html';
-        })
-        .catch(error => {
-            console.error("Error al guardar:", error);
-            alert("Ocurrió un inconveniente al guardar tus datos. Por favor intenta de nuevo.");
-            if(btnEnviar) btnEnviar.disabled = false;
-        });
-    }
-</script>
+            const urlScript = "https://script.google.com/macros/s/AKfycbyoQJs2TQV3o1EA-wPVZK1l5aYyemyUNC55CAFcpKnQlDbz-dzXX0jdflxya-zKwg/exec";
+
+            fetch(urlScript, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            })
+                .then(() => {
+                    alert(`¡Gracias por ser parte del Evento Rosa! 💗\n\nTU INSCRIPCIÓN HA SIDO REGISTRADA CON ÉXITO.\n\nHoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.\n\nCada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.\n\n¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
+                    sessionStorage.removeItem('token_pago_evento_rosa');
+                    window.location.href = 'eventoRosa.html';
+                })
+                .catch(error => {
+                    console.error("Error al guardar:", error);
+                    alert("Ocurrió un inconveniente al guardar tus datos. Por favor intenta de nuevo.");
+                    if (btnEnviar) btnEnviar.disabled = false;
+                });
+        }
+    </script>
 </body>
 
 </html>
