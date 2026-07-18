@@ -14,18 +14,11 @@
 
     <style>
         /* Reset y Estructura Base */
-
         * {
-
             box-sizing: border-box;
-
             margin: 0;
-
             padding: 0;
-
         }
-
-
 
         body,
 
@@ -423,6 +416,25 @@
 
             cursor: pointer;
 
+        }
+
+
+
+        /* ALERTA DE ADVERTENCIA PARA EL PAGO */
+        .alerta-wompi {
+            background-color: #fff0f3;
+            border: 1px dashed #d63384;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin: 10px 0 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #c2185b;
+            font-size: 0.88rem;
+            font-weight: bold;
+            line-height: 1.4;
+            box-shadow: 0 2px 6px rgba(214, 51, 132, 0.08);
         }
 
 
@@ -1018,11 +1030,7 @@
 
     <section class="confirmacion">
 
-
-
         <div id="contenedorPrincipal" class="contenedor">
-
-
 
             <div id="vistaPago" class="seccion-pago">
 
@@ -1110,19 +1118,18 @@
                     </label>
 
 
+                    <!-- MENSAJE DE ADVERTENCIA PARA WOMPI -->
+                    <div class="alerta-wompi">
+                        <span>⚠️ <strong>IMPORTANTE:</strong> DESPUES DE REALIZAR EL PAGO DALE "VOLVER AL COMERCIO"</span>
+                    </div>
+
 
                     <button id="btnPagar" disabled onclick="irAPagarWompi()">
-
                         Continuar al pago
-
                     </button>
 
-
-
                     <button id="btnVolver" onclick="window.location.href='eventoRosa.html';">
-
                         Volver
-
                     </button>
 
 
@@ -1130,8 +1137,6 @@
                 </div>
 
             </div>
-
-
 
             <!-- Pantalla Cargando -->
 
@@ -1401,11 +1406,9 @@
                     style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
 
                     <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de
-
                         camiseta</label>
 
                     <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la
-
                         tabla de medidas</p>
 
                     <select id="talla" required style="width: 100%; margin-bottom: 15px;">
