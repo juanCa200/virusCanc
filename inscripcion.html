@@ -66,7 +66,6 @@
             transition: all 0.3s ease;
         }
 
-        /* VISTA 1: PASO DE PAGO */
         .seccion-pago {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -75,7 +74,6 @@
             grid-column: span 2;
         }
 
-        /* PANEL IZQUIERDO (Información del Evento) */
         .evento-info {
             background-color: rgba(255, 255, 255, 0.94);
             padding: 50px 60px;
@@ -126,7 +124,6 @@
             line-height: 1;
         }
 
-        /* Caja de beneficios */
         .incluye {
             background: rgba(214, 51, 132, 0.04);
             padding: 24px;
@@ -157,7 +154,6 @@
             font-weight: 600;
         }
 
-        /* PANEL DERECHO (Políticas) */
         .politicas {
             background-color: rgba(252, 248, 249, 0.96);
             padding: 50px 50px;
@@ -231,7 +227,6 @@
             transition: all 0.25s ease;
         }
 
-        /* PANTALLAS DE ESTADO */
         .seccion-estado {
             display: none;
             width: 100%;
@@ -304,7 +299,6 @@
             transition: all 0.2s ease;
         }
 
-        /* SECCIÓN FORMULARIO (AFUERA DEL CONTENEDOR DE PAGO) */
         .seccion-formulario {
             display: none !important;
             width: 100%;
@@ -336,7 +330,6 @@
             margin-bottom: 2px;
         }
 
-        /* Grid de campos del formulario */
         .grupo-doble {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -378,7 +371,6 @@
             border-color: #d63384;
         }
 
-        /* Caja de Tratamiento de Datos al Final */
         .caja-tratamiento {
             background-color: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.08);
@@ -440,7 +432,6 @@
             background-color: #b8226b;
         }
 
-        /* Responsividad Móvil */
         @media (max-width: 900px) {
             .confirmacion {
                 padding: 20px 10px;
@@ -479,7 +470,6 @@
             }
         }
 
-        /* Scrollbar estética */
         body::-webkit-scrollbar {
             width: 10px;
         }
@@ -504,7 +494,6 @@
 
     <section class="confirmacion">
 
-        <!-- CONTENEDOR PRINCIPAL: Solo contiene la compra y las pantallas de estado -->
         <div id="contenedorPrincipal" class="contenedor">
 
             <div id="vistaPago" class="seccion-pago">
@@ -583,11 +572,15 @@
             <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
                 <h2>¡Pago Confirmado! 🎉</h2>
 
-                <!-- Subtítulo de la Liga Contra el Cáncer Seccional Meta -->
                 <p
                     style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
                     Completa tus datos para finalizar la inscripción oficial al Evento Rosa 2026 de la Liga Contra el
                     Cáncer Seccional Meta
+                </p>
+
+                <p
+                    style="text-align: center; color: #1a252f; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
+                    Declaro que la información entregada es cierta y que podrá ser verificada por cualquier medio legal por parte de la LIGA CONTRA EL CÁNCER SECCIONAL META, así mismo, que soy titular de la información y que no infrijo ninguna ley o acuerdo contractual o comercial al realizarlo.
                 </p>
 
 
