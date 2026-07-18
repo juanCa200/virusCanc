@@ -25,9 +25,9 @@
 
         /* IMAGEN DE FONDO + DIFUMINADO ROSADO MULTICAPA */
         body {
-            background:
-                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%),
-                url('img/fondoInscripcion.jpeg');
+            background: 
+                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%), 
+                url('img/eventoRosaPortada.jpeg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -35,8 +35,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow-y: auto;
-            /* Permite el scroll general de la pantalla */
+            overflow-y: auto; /* Permite el scroll general de la pantalla */
         }
 
         .confirmacion {
@@ -48,24 +47,24 @@
             background: rgba(0, 0, 0, 0.12);
             position: relative;
             z-index: 1;
-            padding: 40px 0;
-            /* Espaciado para que la tarjeta respire al hacer scroll */
+            padding: 40px 0; /* Espaciado para que la tarjeta respire al hacer scroll */
         }
 
         /* Contenedor Principal (Vista de pago) */
         .contenedor {
             width: 92%;
-            max-width: 1200px;
-            height: 85vh;
+            max-width: 1200px; 
+            height: 85vh; 
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            overflow: hidden;
+            overflow: hidden; 
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
             transition: all 0.3s ease;
         }
 
+        /* VISTA 1: PASO DE PAGO */
         .seccion-pago {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -74,9 +73,10 @@
             grid-column: span 2;
         }
 
+        /* PANEL IZQUIERDO (Información del Evento) */
         .evento-info {
-            background-color: rgba(255, 255, 255, 0.94);
-            padding: 50px 60px;
+            background-color: rgba(255, 255, 255, 0.94); 
+            padding: 50px 60px; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -85,7 +85,7 @@
 
         .evento-info h1 {
             color: #1a252f;
-            font-size: 2.4rem;
+            font-size: 2.4rem; 
             font-weight: 800;
             margin-bottom: 8px;
             line-height: 1.2;
@@ -118,12 +118,13 @@
 
         .evento-info h2 {
             color: #d63384;
-            font-size: 3.4rem;
+            font-size: 3.4rem; 
             font-weight: 900;
             margin-bottom: 30px;
             line-height: 1;
         }
 
+        /* Caja de beneficios */
         .incluye {
             background: rgba(214, 51, 132, 0.04);
             padding: 24px;
@@ -154,8 +155,9 @@
             font-weight: 600;
         }
 
+        /* PANEL DERECHO (Políticas) */
         .politicas {
-            background-color: rgba(252, 248, 249, 0.96);
+            background-color: rgba(252, 248, 249, 0.96); 
             padding: 50px 50px;
             display: flex;
             flex-direction: column;
@@ -182,7 +184,7 @@
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
             transition: all 0.2s ease;
         }
 
@@ -227,22 +229,7 @@
             transition: all 0.25s ease;
         }
 
-        #btnVolver {
-            width: 100%;
-            margin-top: 15px;
-            padding: 16px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: bold;
-            background-color: #d63384;
-            color: white;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-
-
-
+        /* PANTALLAS DE ESTADO */
         .seccion-estado {
             display: none;
             width: 100%;
@@ -265,13 +252,8 @@
         }
 
         @keyframes girar {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .icono-alerta {
@@ -315,8 +297,9 @@
             transition: all 0.2s ease;
         }
 
+        /* SECCIÓN FORMULARIO (AFUERA DEL CONTENEDOR DE PAGO) */
         .seccion-formulario {
-            display: none !important;
+            display: none !important; 
             width: 100%;
             max-width: 600px;
             background-color: transparent;
@@ -331,7 +314,7 @@
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.96); 
             backdrop-filter: blur(8px);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -346,6 +329,7 @@
             margin-bottom: 2px;
         }
 
+        /* Grid de campos del formulario */
         .grupo-doble {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -387,6 +371,7 @@
             border-color: #d63384;
         }
 
+        /* Caja de Tratamiento de Datos al Final */
         .caja-tratamiento {
             background-color: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.08);
@@ -448,6 +433,7 @@
             background-color: #b8226b;
         }
 
+        /* Responsividad Móvil */
         @media (max-width: 900px) {
             .confirmacion {
                 padding: 20px 10px;
@@ -455,9 +441,9 @@
 
             .contenedor {
                 grid-template-columns: 1fr;
-                height: auto !important;
+                height: auto !important; 
                 width: 100%;
-                overflow: visible;
+                overflow: visible; 
                 border-radius: 16px;
             }
 
@@ -479,13 +465,13 @@
                 border-radius: 16px;
             }
 
-            .grupo-doble,
-            .grupo-triple {
+            .grupo-doble, .grupo-triple {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
         }
 
+        /* Scrollbar estética */
         body::-webkit-scrollbar {
             width: 10px;
         }
@@ -509,7 +495,8 @@
 <body>
 
     <section class="confirmacion">
-
+        
+        <!-- CONTENEDOR PRINCIPAL: Solo contiene la compra y las pantallas de estado -->
         <div id="contenedorPrincipal" class="contenedor">
 
             <div id="vistaPago" class="seccion-pago">
@@ -539,13 +526,11 @@
 
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
-                        <span>He leído y acepto los <a href="terminos.html" target="_blank"
-                                class="enlace-terminos">términos y condiciones</a> del evento.</span>
+                        <span>He leído y acepto los <a href="#" target="_blank" class="enlace-terminos">términos y condiciones</a> del evento.</span>
                     </label>
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
-                        <span>Autorizo el <a href="institucion.html" target="_blank" class="enlace-terminos">tratamiento
-                                de datos</a> personales.</span>
+                        <span>Autorizo el tratamiento seguro de mis datos personales.</span>
                     </label>
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
@@ -559,11 +544,6 @@
                     <button id="btnPagar" disabled onclick="irAPagarWompi()">
                         Continuar al pago
                     </button>
-
-                    <button id="btnVolver" onclick="window.location.href='eventoRosa.html';">
-                        Volver
-                    </button>
-
                 </div>
             </div>
 
@@ -571,8 +551,7 @@
             <div id="pantalla-cargando" class="seccion-estado">
                 <span class="spinner">🔄</span>
                 <h2 class="titulo-estado">Verificando pago</h2>
-                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está
-                    correcto, accederás al formulario en un momento.</p>
+                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está correcto, accederás al formulario en un momento.</p>
             </div>
 
             <!-- Pantalla Bloqueo -->
@@ -580,8 +559,7 @@
                 <div class="icono-alerta">!</div>
                 <h2 class="titulo-estado">Pago No Verificado</h2>
                 <p class="descripcion-estado">
-                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda
-                    que para inscribirte debes completar el proceso de pago con éxito.
+                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda que para inscribirte debes completar el proceso de pago con éxito.
                 </p>
                 <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
             </div>
@@ -592,20 +570,15 @@
         <div id="vistaFormulario" class="seccion-formulario">
             <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
                 <h2>¡Pago Confirmado! 🎉</h2>
-
-                <p
-                    style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
-                    Completa tus datos para finalizar la inscripción oficial al Evento Rosa 2026 de la Liga Contra el
-                    Cáncer Seccional Meta
+                
+                <!-- Subtítulo de la Liga Contra el Cáncer Seccional Meta -->
+                <p style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
+                    2026 de la Liga Contra el Cancer Seccional Meta
                 </p>
-
-                <p
-                    style="text-align: center; color: #1a252f; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
-                    Declaro que la información entregada es cierta y que podrá ser verificada por cualquier medio legal
-                    por parte de la LIGA CONTRA EL CÁNCER SECCIONAL META, así mismo, que soy titular de la información y
-                    que no infrijo ninguna ley o acuerdo contractual o comercial al realizarlo.
+                
+                <p style="text-align: center; color: #5c6e7e; margin-bottom: 12px; font-size: 0.9rem;">
+                    Completa tus datos para finalizar la inscripción oficial al Evento Rosa.
                 </p>
-
 
                 <input type="hidden" id="inputTokenWompi">
 
@@ -701,12 +674,9 @@
                 </div>
 
                 <!-- Tallas de Camiseta -->
-                <div class="grupo-campo"
-                    style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
-                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de
-                        camiseta</label>
-                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la
-                        tabla de medidas</p>
+                <div class="grupo-campo" style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
+                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de camiseta</label>
+                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la tabla de medidas</p>
                     <select id="talla" required style="width: 100%; margin-bottom: 15px;">
                         <option value="">Tallaje unisex</option>
                         <option value="XS">XS</option>
@@ -716,11 +686,9 @@
                         <option value="XL">XL</option>
                         <option value="XXL">XXL</option>
                     </select>
-
-                    <div
-                        style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
-                        <img src="img/tallaBuso.png" alt="Guía de Tallas"
-                            style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
+                    
+                    <div style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
+                        <img src="img/tallaBuso.png" alt="Guía de Tallas" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
                     </div>
                 </div>
 
@@ -736,6 +704,15 @@
                         <option value="PUBLICIDAD IMPRESA O DIGITAL">PUBLICIDAD IMPRESA O DIGITAL</option>
                         <option value="VISITA DIRECTA A LA SEDE">VISITA DIRECTA A LA SEDE</option>
                     </select>
+                </div>
+
+                <!-- Caja de Tratamiento de Datos (De la imagen) -->
+                <div class="caja-tratamiento">
+                    <span class="titulo-tratamiento" onclick="window.open('#', '_blank')">Autorización tratamiento de datos *</span>
+                    <label>
+                        <input type="checkbox" id="checkTratamientoDatos" required>
+                        <span>He leído y acepto las políticas de tratamiento de datos.</span>
+                    </label>
                 </div>
 
                 <button type="submit" class="btn-enviar">Finalizar Registro</button>
@@ -768,21 +745,26 @@
             vistaPago.style.display = 'none';
             pantallaCargando.style.display = 'flex';
 
-            const urlScript = "https://script.google.com/macros/s/AKfycbyoQJs2TQV3o1EA-wPVZK1l5aYyemyUNC55CAFcpKnQlDbz-dzXX0jdflxya-zKwg/exec";
+            const urlApiWompi = `https://sandbox.wompi.co/v1/transactions/${transaccionId}`;
 
-            fetch(`${urlScript}?consultar_id=${transaccionId}`)
+            fetch(urlApiWompi)
                 .then(response => response.json())
-                .then(resultado => {
-                    if (resultado && resultado.status === "APPROVED") {
-                        sessionStorage.setItem('token_pago_evento_rosa', transaccionId);
-                        window.history.replaceState({}, document.title, window.location.pathname);
-                        mostrarVistaFormulario(transaccionId);
+                .then(apiData => {
+                    if (apiData && apiData.data && apiData.data.status) {
+                        const estadoReal = apiData.data.status;
+                        if (estadoReal === "APPROVED") {
+                            sessionStorage.setItem('token_pago_evento_rosa', transaccionId);
+                            window.history.replaceState({}, document.title, window.location.pathname);
+                            mostrarVistaFormulario(transaccionId);
+                        } else {
+                            mostrarBloqueo();
+                        }
                     } else {
                         mostrarBloqueo();
                     }
                 })
                 .catch(error => {
-                    console.error("Error validando pago:", error);
+                    console.error("Error:", error);
                     mostrarBloqueo();
                 });
         });
@@ -790,7 +772,11 @@
         function mostrarVistaFormulario(token) {
             pantallaCargando.style.display = 'none';
             pantallaBloqueo.style.display = 'none';
-            contenedorPrincipal.style.display = 'none';
+            
+            // Ocultamos completamente el contenedor de pago para que la pantalla quede limpia
+            contenedorPrincipal.style.display = 'none'; 
+            
+            // Mostramos la sección del formulario de manera libre y flexible
             vistaFormulario.style.setProperty('display', 'flex', 'important');
             document.getElementById('inputTokenWompi').value = token;
         }
@@ -798,7 +784,9 @@
         function mostrarBloqueo() {
             pantallaCargando.style.display = 'none';
             vistaFormulario.style.setProperty('display', 'none', 'important');
-            contenedorPrincipal.style.display = 'grid';
+            
+            // Mostramos el contenedor original en pantalla con el mensaje de bloqueo
+            contenedorPrincipal.style.display = 'grid'; 
             pantallaBloqueo.style.display = 'flex';
         }
 
@@ -822,10 +810,9 @@
             }
         }
 
-        document.querySelectorAll('.enlace-terminos').forEach(enlace => {
-            enlace.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
+        // Detener la propagación del click al marcar la casilla de los TyC
+        document.querySelector('.enlace-terminos').addEventListener('click', function(e) {
+            e.stopPropagation();
         });
 
         function irAPagarWompi() {
@@ -834,10 +821,6 @@
 
         function guardarRegistro(event) {
             event.preventDefault();
-
-            const btnEnviar = event.target.querySelector('.btn-enviar');
-            if (btnEnviar) btnEnviar.disabled = true;
-
             const datos = {
                 token: document.getElementById('inputTokenWompi').value,
                 nombre: document.getElementById('nombre').value,
@@ -856,7 +839,8 @@
                 talla: document.getElementById('talla').value,
                 medio_conocimiento: document.getElementById('medio_conocimiento').value
             };
-            const urlScript = "https://script.google.com/macros/s/AKfycbyoQJs2TQV3o1EA-wPVZK1l5aYyemyUNC55CAFcpKnQlDbz-dzXX0jdflxya-zKwg/exec";
+
+            const urlScript = "https://script.google.com/macros/s/AKfycbzhgGTmarm4PHBspwk57N2TrEYsRjBCrP5fOAimeYGtIOvx80VjxPAXDHude7Jag7nH/exec";
 
             fetch(urlScript, {
                 method: 'POST',
@@ -864,16 +848,15 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             })
-                .then(() => {
-                    alert(`¡Gracias por ser parte del Evento Rosa! 💗\n\nTU INSCRIPCIÓN HA SIDO REGISTRADA CON ÉXITO.\n\nHoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.\n\nCada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.\n\n¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
-                    sessionStorage.removeItem('token_pago_evento_rosa');
-                    window.location.href = 'eventoRosa.html';
-                })
-                .catch(error => {
-                    console.error("Error al guardar:", error);
-                    alert("Ocurrió un inconveniente al guardar tus datos. Por favor intenta de nuevo.");
-                    if (btnEnviar) btnEnviar.disabled = false;
-                });
+            .then(() => {
+                alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
+                sessionStorage.removeItem('token_pago_evento_rosa');
+                window.location.reload();
+            })
+            .catch(error => {
+                alert("Hubo un error al guardar tu registro.");
+                console.error(error);
+            });
         }
     </script>
 </body>
