@@ -25,9 +25,9 @@
 
         /* IMAGEN DE FONDO + DIFUMINADO ROSADO MULTICAPA */
         body {
-            background: 
-                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%), 
-                url('img/eventoRosaPortada.jpeg'); 
+            background:
+                radial-gradient(circle, rgba(248, 187, 208, 0.7) 0%, rgba(248, 187, 208, 0.2) 60%),
+                url('img/fondoInscripcion.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -35,7 +35,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow-y: auto; /* Permite el scroll general de la pantalla */
+            overflow-y: auto;
+            /* Permite el scroll general de la pantalla */
         }
 
         .confirmacion {
@@ -47,17 +48,18 @@
             background: rgba(0, 0, 0, 0.12);
             position: relative;
             z-index: 1;
-            padding: 40px 0; /* Espaciado para que la tarjeta respire al hacer scroll */
+            padding: 40px 0;
+            /* Espaciado para que la tarjeta respire al hacer scroll */
         }
 
         /* Contenedor Principal (Vista de pago) */
         .contenedor {
             width: 92%;
-            max-width: 1200px; 
-            height: 85vh; 
+            max-width: 1200px;
+            height: 85vh;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            overflow: hidden; 
+            overflow: hidden;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25), 0 0 30px rgba(214, 51, 132, 0.15);
             background: transparent;
@@ -75,8 +77,8 @@
 
         /* PANEL IZQUIERDO (Información del Evento) */
         .evento-info {
-            background-color: rgba(255, 255, 255, 0.94); 
-            padding: 50px 60px; 
+            background-color: rgba(255, 255, 255, 0.94);
+            padding: 50px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -85,7 +87,7 @@
 
         .evento-info h1 {
             color: #1a252f;
-            font-size: 2.4rem; 
+            font-size: 2.4rem;
             font-weight: 800;
             margin-bottom: 8px;
             line-height: 1.2;
@@ -118,7 +120,7 @@
 
         .evento-info h2 {
             color: #d63384;
-            font-size: 3.4rem; 
+            font-size: 3.4rem;
             font-weight: 900;
             margin-bottom: 30px;
             line-height: 1;
@@ -157,7 +159,7 @@
 
         /* PANEL DERECHO (Políticas) */
         .politicas {
-            background-color: rgba(252, 248, 249, 0.96); 
+            background-color: rgba(252, 248, 249, 0.96);
             padding: 50px 50px;
             display: flex;
             flex-direction: column;
@@ -184,7 +186,7 @@
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
             transition: all 0.2s ease;
         }
 
@@ -252,8 +254,13 @@
         }
 
         @keyframes girar {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .icono-alerta {
@@ -299,7 +306,7 @@
 
         /* SECCIÓN FORMULARIO (AFUERA DEL CONTENEDOR DE PAGO) */
         .seccion-formulario {
-            display: none !important; 
+            display: none !important;
             width: 100%;
             max-width: 600px;
             background-color: transparent;
@@ -314,7 +321,7 @@
             flex-direction: column;
             gap: 16px;
             padding: 35px;
-            background: rgba(255, 255, 255, 0.96); 
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(8px);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -441,9 +448,9 @@
 
             .contenedor {
                 grid-template-columns: 1fr;
-                height: auto !important; 
+                height: auto !important;
                 width: 100%;
-                overflow: visible; 
+                overflow: visible;
                 border-radius: 16px;
             }
 
@@ -465,7 +472,8 @@
                 border-radius: 16px;
             }
 
-            .grupo-doble, .grupo-triple {
+            .grupo-doble,
+            .grupo-triple {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
@@ -495,7 +503,7 @@
 <body>
 
     <section class="confirmacion">
-        
+
         <!-- CONTENEDOR PRINCIPAL: Solo contiene la compra y las pantallas de estado -->
         <div id="contenedorPrincipal" class="contenedor">
 
@@ -526,11 +534,13 @@
 
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
-                        <span>He leído y acepto los <a href="terminos.html" target="_blank" class="enlace-terminos">términos y condiciones</a> del evento.</span>
+                        <span>He leído y acepto los <a href="terminos.html" target="_blank"
+                                class="enlace-terminos">términos y condiciones</a> del evento.</span>
                     </label>
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
-                        <span>Autorizo el <a href="institucion.html" target="_blank" class="enlace-terminos">tratamiento de datos</a> personales.</span>
+                        <span>Autorizo el <a href="institucion.html" target="_blank" class="enlace-terminos">tratamiento
+                                de datos</a> personales.</span>
                     </label>
                     <label>
                         <input type="checkbox" class="check" onchange="validarChecks()">
@@ -551,7 +561,8 @@
             <div id="pantalla-cargando" class="seccion-estado">
                 <span class="spinner">🔄</span>
                 <h2 class="titulo-estado">Verificando pago</h2>
-                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está correcto, accederás al formulario en un momento.</p>
+                <p class="descripcion-estado">Estamos validando tu transacción con Wompi de forma segura. Si todo está
+                    correcto, accederás al formulario en un momento.</p>
             </div>
 
             <!-- Pantalla Bloqueo -->
@@ -559,7 +570,8 @@
                 <div class="icono-alerta">!</div>
                 <h2 class="titulo-estado">Pago No Verificado</h2>
                 <p class="descripcion-estado">
-                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda que para inscribirte debes completar el proceso de pago con éxito.
+                    No logramos comprobar una transacción aprobada para esta sesión o el pago fue cancelado. Recuerda
+                    que para inscribirte debes completar el proceso de pago con éxito.
                 </p>
                 <a href="inscripcion.html" class="btn-reintentar">Volver a intentar el pago</a>
             </div>
@@ -570,12 +582,14 @@
         <div id="vistaFormulario" class="seccion-formulario">
             <form class="formulario-contenedor" onsubmit="guardarRegistro(event)">
                 <h2>¡Pago Confirmado! 🎉</h2>
-                
+
                 <!-- Subtítulo de la Liga Contra el Cáncer Seccional Meta -->
-                <p style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
-                    Completa tus datos para finalizar la inscripción oficial al Evento Rosa 2026 de la Liga Contra el Cáncer Seccional Meta
+                <p
+                    style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
+                    Completa tus datos para finalizar la inscripción oficial al Evento Rosa 2026 de la Liga Contra el
+                    Cáncer Seccional Meta
                 </p>
-                
+
 
                 <input type="hidden" id="inputTokenWompi">
 
@@ -671,9 +685,12 @@
                 </div>
 
                 <!-- Tallas de Camiseta -->
-                <div class="grupo-campo" style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
-                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de camiseta</label>
-                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la tabla de medidas</p>
+                <div class="grupo-campo"
+                    style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
+                    <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de
+                        camiseta</label>
+                    <p style="color: #d81b60; font-size: 0.85rem; margin-bottom: 12px; font-weight: 500;">Guíate con la
+                        tabla de medidas</p>
                     <select id="talla" required style="width: 100%; margin-bottom: 15px;">
                         <option value="">Tallaje unisex</option>
                         <option value="XS">XS</option>
@@ -683,9 +700,11 @@
                         <option value="XL">XL</option>
                         <option value="XXL">XXL</option>
                     </select>
-                    
-                    <div style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
-                        <img src="img/tallaBuso.png" alt="Guía de Tallas" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
+
+                    <div
+                        style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
+                        <img src="img/tallaBuso.png" alt="Guía de Tallas"
+                            style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
                     </div>
                 </div>
 
@@ -701,7 +720,7 @@
                         <option value="PUBLICIDAD IMPRESA O DIGITAL">PUBLICIDAD IMPRESA O DIGITAL</option>
                         <option value="VISITA DIRECTA A LA SEDE">VISITA DIRECTA A LA SEDE</option>
                     </select>
-                </div>                
+                </div>
 
                 <button type="submit" class="btn-enviar">Finalizar Registro</button>
             </form>
@@ -760,10 +779,10 @@
         function mostrarVistaFormulario(token) {
             pantallaCargando.style.display = 'none';
             pantallaBloqueo.style.display = 'none';
-            
+
             // Ocultamos completamente el contenedor de pago para que la pantalla quede limpia
-            contenedorPrincipal.style.display = 'none'; 
-            
+            contenedorPrincipal.style.display = 'none';
+
             // Mostramos la sección del formulario de manera libre y flexible
             vistaFormulario.style.setProperty('display', 'flex', 'important');
             document.getElementById('inputTokenWompi').value = token;
@@ -772,9 +791,9 @@
         function mostrarBloqueo() {
             pantallaCargando.style.display = 'none';
             vistaFormulario.style.setProperty('display', 'none', 'important');
-            
+
             // Mostramos el contenedor original en pantalla con el mensaje de bloqueo
-            contenedorPrincipal.style.display = 'grid'; 
+            contenedorPrincipal.style.display = 'grid';
             pantallaBloqueo.style.display = 'flex';
         }
 
@@ -799,7 +818,7 @@
         }
 
         // Detener la propagación del click al marcar la casilla de los TyC
-        document.querySelector('.enlace-terminos').addEventListener('click', function(e) {
+        document.querySelector('.enlace-terminos').addEventListener('click', function (e) {
             e.stopPropagation();
         });
 
@@ -836,15 +855,24 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             })
-            .then(() => {
-                alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
-                sessionStorage.removeItem('token_pago_evento_rosa');
-                window.location.reload();
-            })
-            .catch(error => {
-                alert("Hubo un error al guardar tu registro.");
-                console.error(error);
-            });
+                .then(() => {
+                    alert(`¡Gracias por ser parte del Evento Rosa! 💗
+
+                            Tu inscripción ha sido registrada con éxito.
+
+                            Hoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.
+
+                            Cada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.
+
+                            ¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
+
+                    sessionStorage.removeItem('token_pago_evento_rosa');
+                    window.location.reload();
+                })
+                .catch(error => {
+                    alert("Hubo un error al guardar tu registro.");
+                    console.error(error);
+                });
         }
     </script>
 </body>
