@@ -13,7 +13,6 @@
     <title>Inscripción Evento Rosa 2026</title>
 
     <style>
-
         /* Reset y Estructura Base */
 
         * {
@@ -1007,7 +1006,6 @@
             background: #b8226b;
 
         }
-
     </style>
 
 </head>
@@ -1081,7 +1079,6 @@
                         <input type="checkbox" class="check" onchange="validarChecks()">
 
                         <span>He leído y acepto los <a href="terminos.html" target="_blank"
-
                                 class="enlace-terminos">términos y condiciones</a> del evento.</span>
 
                     </label>
@@ -1124,9 +1121,9 @@
 
                     <button id="btnVolver" onclick="window.location.href='eventoRosa.html';">
 
-    Volver
+                        Volver
 
-</button>
+                    </button>
 
 
 
@@ -1189,7 +1186,6 @@
 
 
                 <p
-
                     style="text-align: center; color: #c2185b; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
 
                     Completa tus datos para finalizar la inscripción oficial al Evento Rosa 2026 de la Liga Contra el
@@ -1201,10 +1197,11 @@
 
 
                 <p
-
                     style="text-align: center; color: #1a252f; font-weight: 700; font-size: 0.95rem; margin-top: -2px; margin-bottom: 4px;">
 
-                    Declaro que la información entregada es cierta y que podrá ser verificada por cualquier medio legal por parte de la LIGA CONTRA EL CÁNCER SECCIONAL META, así mismo, que soy titular de la información y que no infrijo ninguna ley o acuerdo contractual o comercial al realizarlo.
+                    Declaro que la información entregada es cierta y que podrá ser verificada por cualquier medio legal
+                    por parte de la LIGA CONTRA EL CÁNCER SECCIONAL META, así mismo, que soy titular de la información y
+                    que no infrijo ninguna ley o acuerdo contractual o comercial al realizarlo.
 
                 </p>
 
@@ -1401,7 +1398,6 @@
                 <!-- Tallas de Camiseta -->
 
                 <div class="grupo-campo"
-
                     style="background-color: rgba(214, 51, 132, 0.05); padding: 18px; border-radius: 12px; border: 1px dashed rgba(214, 51, 132, 0.3);">
 
                     <label for="talla" style="color: #c2185b; font-weight: 700; margin-bottom: 5px;">Talla de
@@ -1433,11 +1429,9 @@
 
 
                     <div
-
                         style="width: 100%; text-align: center; background: #ffffff; padding: 8px; border-radius: 8px; border: 1px solid rgba(214, 51, 132, 0.15);">
 
                         <img src="img/tallaBuso.png" alt="Guía de Tallas"
-
                             style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 6px;">
 
                     </div>
@@ -1572,7 +1566,6 @@
             }
         }
 
-        // Detener la propagación del click al marcar la casilla de los TyC
         document.querySelector('.enlace-terminos').addEventListener('click', function (e) {
             e.stopPropagation();
         });
@@ -1602,7 +1595,7 @@
                 medio_conocimiento: document.getElementById('medio_conocimiento').value
             };
 
-            const urlScript = "https://script.google.com/macros/s/AKfycbzhgGTmarm4PHBspwk57N2TrEYsRjBCrP5fOAimeYGtIOvx80VjxPAXDHude7Jag7nH/exec";
+            const urlScript = "https://script.google.com/macros/s/AKfycbzYXjbAA50FxJy5bLYaI-ArkHkPtyeEdjQu7BsP9TFVY_HOjQkySBzrkM9p9Vg6wFLQ/exec";
 
             fetch(urlScript, {
                 method: 'POST',
@@ -1611,7 +1604,8 @@
                 body: JSON.stringify(datos)
             })
                 .then(() => {
-                    alert("¡Inscripción exitosa! Te esperamos el 18 de Octubre.");
+
+                    alert(`¡Gracias por ser parte del Evento Rosa! 💗\n\nTU INSCRIPCIÓN HA SIDO REGISTRADA CON ÉXITO.\n\nHoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.\n\nCada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.\n\n¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
                     sessionStorage.removeItem('token_pago_evento_rosa');
                     window.location.reload();
                 })
