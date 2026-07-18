@@ -848,20 +848,20 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             })
-                .then(() => {
-                    alert(`¡Gracias por ser parte del Evento Rosa! 💗
+               .then(() => {
+    alert(`¡Gracias por ser parte del Evento Rosa! 💗
 
-                            Tu inscripción ha sido registrada con éxito.
+TU INSCRIPCIÓN HA SIDO REGISTRADA CON ÉXITO.
 
-                            Hoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.
+Hoy no solo adquiriste un kit, elegiste apoyar una causa que salva vidas. Con tu aporte contribuyes a que más mujeres y hombres accedan a jornadas de prevención, tamización y diagnóstico oportuno del cáncer, brindando esperanza a quienes más lo necesitan.
 
-                            Cada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.
+Cada paso que darás en esta carrera puede representar una oportunidad de detección temprana para alguien más.
 
-                            ¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
+¡Gracias por correr con el corazón y hacer parte de esta misión de vida!`);
 
-                    sessionStorage.removeItem('token_pago_evento_rosa');
-                    window.location.reload();
-                })
+    sessionStorage.removeItem('token_pago_evento_rosa');
+    window.location.reload();
+})
                 .catch(error => {
                     alert("Hubo un error al guardar tu registro.");
                     console.error(error);
